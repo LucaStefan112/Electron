@@ -3,8 +3,13 @@
 
 #include "ElectronicComponent.h"
 #include "Helper.h"
+#include <iostream>
 
-Helper helper;
+Helper ElectronicComponent_helper;
+
+ElectronicComponent::ElectronicComponent(){
+
+}
 
 //Setter of the up_left point:
 void ElectronicComponent::setPositionUpLeft(Helper::Vector_2D thisPosition){
@@ -38,31 +43,31 @@ void ElectronicComponent::setPositionDownRight(Helper::Vector_2D thisPosition){
 
 //Setter of the width:
 void ElectronicComponent::setWidth(double thisWidth){
-    width = thisWidth;
+    width = thisWidth;  height = width / width_height_ratio;
     position.up_left.x = position.center.x - width / 2;
     position.down_right.x = position.center.x + width / 2;
 }
 
 //Setter of the height:
 void ElectronicComponent::setHeight(double thisHeight){
-    height = thisHeight;
+    height = thisHeight;    width = height * width_height_ratio;
     position.up_left.y = position.center.y - height / 2;
     position.down_right.y = position.center.y + height / 2;
 }
 
 //Getter of the up_left point:
 Helper::Vector_2D ElectronicComponent::getPositionUpLeft(){
-    return helper.makeVector_2D(position.up_left.x, position.up_left.y);
+    return ElectronicComponent_helper.makeVector_2D(position.up_left.x, position.up_left.y);
 }
 
 //Getter of the center point:
 Helper::Vector_2D ElectronicComponent::getPositionCenter(){
-    return helper.makeVector_2D(position.center.x, position.center.y);
+    return ElectronicComponent_helper.makeVector_2D(position.center.x, position.center.y);
 }
 
 //Getter of the down_right point:
 Helper::Vector_2D ElectronicComponent::getPositionDownRight(){
-    return helper.makeVector_2D(position.down_right.x, position.down_right.y);
+    return ElectronicComponent_helper.makeVector_2D(position.down_right.x, position.down_right.y);
 }
 
 //Getter of the width:
@@ -82,7 +87,7 @@ void ElectronicComponent::Show(){
 
 //Passing trough a string all the data about the component:
 std::string ElectronicComponent::toString(){
-    return std::string("Type: ElectronicComponent;\n") +
+    return std::string(std::string("Type: ElectronicComponent;\n") +
            std::string("Width: ") + std::to_string(width) + std::string(";\n") +
            std::string("Height: ") + std::to_string(height) + std::string(";\n") +
            std::string("Up_Left Coordinates: ") +
@@ -93,5 +98,5 @@ std::string ElectronicComponent::toString(){
            std::string("y: ") + std::to_string(position.center.y) + std::string(";\n") +
            std::string("Down_Right Coordinates: ") +
            std::string("x: ") + std::to_string(position.down_right.x) + std::string(" \ ") +
-           std::string("y: ") + std::to_string(position.down_right.y) + std::string(";\n");
+           std::string("y: ") + std::to_string(position.down_right.y) + std::string(";\n"));
 }

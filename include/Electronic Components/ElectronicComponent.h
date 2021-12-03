@@ -5,17 +5,18 @@
 #include "Helper.h"
 
 class ElectronicComponent{
-private:
+protected:
     //Reference points:
     struct{
         Helper::Vector_2D up_left, center, down_right;
     }position;
 
     //Dimensions of the component:
-    double width = 0, height = 0;
-
+    double width = 100, height = 100, width_height_ratio = 1;
 
 public:
+    ElectronicComponent();
+
     //Setters:
     void setPositionUpLeft(Helper::Vector_2D thisPosition);
     void setPositionCenter(Helper::Vector_2D thisPosition);
