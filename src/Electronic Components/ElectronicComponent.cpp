@@ -3,7 +3,6 @@
 
 #include "ElectronicComponent.h"
 #include "Helper.h"
-#include <iostream>
 
 Helper ElectronicComponent_helper;
 
@@ -92,7 +91,7 @@ std::string ElectronicComponent::toString(){
            std::string("Height: ") + std::to_string(height) + std::string(";\n") +
            std::string("Up_Left Coordinates: ") +
            std::string("x: ") + std::to_string(position.up_left.x) + std::string(" \ ") +
-           std::string("y: ") + std::to_string(position.down_right.y) + std::string(";\n") +
+           std::string("y: ") + std::to_string(position.up_left.y) + std::string(";\n") +
            std::string("Center Coordinates: ") +
            std::string("x: ") + std::to_string(position.center.x) + std::string(" \ ") +
            std::string("y: ") + std::to_string(position.center.y) + std::string(";\n") +

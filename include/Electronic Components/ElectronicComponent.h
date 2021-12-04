@@ -5,7 +5,7 @@
 #include "Helper.h"
 
 class ElectronicComponent{
-protected:
+private:
     //Reference points:
     struct{
         Helper::Vector_2D up_left, center, down_right;
