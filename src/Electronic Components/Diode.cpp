@@ -11,7 +11,7 @@ void Diode::Show(){
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    //line(up_left_x, center_y, center_x - height / 2, center_y);
+    line(up_left_x, center_y, center_x - height / 2, center_y);
     line(center_x - height / 2, up_left_y, center_x - height / 2, down_right_y);
     line(center_x - height / 2, up_left_y, center_x + height / 2, center_y);
     line(center_x - height / 2, down_right_y, center_x + height / 2, center_y);
