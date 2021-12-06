@@ -7,5 +7,6 @@
 #include "Capacitor.h"
 #include "Switch.h"
 #include "Battery.h"
+#include "Ampermeter.h"
 
 #endif // ELECTRONICS_H
