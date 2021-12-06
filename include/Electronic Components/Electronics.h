@@ -5,5 +5,6 @@
 #include "ElectronicComponent.h"
 #include "Diode.h"
 #include "Capacitor.h"
+#include "Switch.h"
 
 #endif // ELECTRONICS_H
