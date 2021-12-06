@@ -39,4 +39,3 @@ public:
 };
 
 #endif // DIODE_H
-
