@@ -2,7 +2,7 @@
 #define DIODE_H
 
 #include <string>
-#include "ElectronicComponent.h"
+#include "Helper.h"
 
 class Diode{
 private:
