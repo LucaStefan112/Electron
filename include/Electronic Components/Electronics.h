@@ -9,5 +9,6 @@
 #include "Battery.h"
 #include "Ampermeter.h"
 #include "Voltmeter.h"
+#include "Ground.h"
 
 #endif // ELECTRONICS_H
