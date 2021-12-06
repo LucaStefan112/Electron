@@ -8,5 +8,6 @@
 #include "Switch.h"
 #include "Battery.h"
 #include "Ampermeter.h"
+#include "Voltmeter.h"
 
 #endif // ELECTRONICS_H
