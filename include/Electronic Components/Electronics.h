@@ -6,5 +6,6 @@
 #include "Diode.h"
 #include "Capacitor.h"
 #include "Switch.h"
+#include "Battery.h"
 
 #endif // ELECTRONICS_H
