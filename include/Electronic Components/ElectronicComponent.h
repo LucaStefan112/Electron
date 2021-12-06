@@ -23,6 +23,7 @@ public:
     void setPositionDownRight(Helper::Vector_2D thisPosition);
     void setWidth(double thisWidth);
     void setHeight(double thisHeight);
+    void setWidth_Height_Ratio(double thisWidth_Height_Ratio);
 
     //Getters:
     Helper::Vector_2D getPositionUpLeft();
@@ -30,6 +31,7 @@ public:
     Helper::Vector_2D getPositionDownRight();
     double getWidth();
     double getHeight();
+    double getWidth_Height_Ratio();
 
     //Drawing the component:
     void Show();

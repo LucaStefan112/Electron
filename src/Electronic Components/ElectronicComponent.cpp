@@ -54,6 +54,11 @@ void ElectronicComponent::setHeight(double thisHeight){
     position.down_right.y = position.center.y + height / 2;
 }
 
+//Setter of the with / height ratio:
+void ElectronicComponent::setWidth_Height_Ratio(double thisWidth_Height_Ratio){
+    if(thisWidth_Height_Ratio > 0) width_height_ratio = thisWidth_Height_Ratio;
+}
+
 //Getter of the up_left point:
 Helper::Vector_2D ElectronicComponent::getPositionUpLeft(){
     return ElectronicComponent_helper.makeVector_2D(position.up_left.x, position.up_left.y);
@@ -77,6 +82,11 @@ double ElectronicComponent::getWidth(){
 //Getter of the height:
 double ElectronicComponent::getHeight(){
     return height;
+}
+
+//Getter of the width / height ratio:
+double ElectronicComponent::getWidth_Height_Ratio(){
+    return width_height_ratio;
 }
 
 //Drawing the component:
