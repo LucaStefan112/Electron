@@ -98,6 +98,7 @@ std::string Diode::toString(){
     return std::string(std::string("Type: Diode;\n") +
            std::string("Width: ") + std::to_string(width) + std::string(";\n") +
            std::string("Height: ") + std::to_string(height) + std::string(";\n") +
+           std::string("Width / Height ratio: ") + std::to_string(width_height_ratio) + std::string(";\n") +
            std::string("Up_Left Coordinates: ") +
            std::string("x: ") + std::to_string(position.up_left.x) + std::string(" \ ") +
            std::string("y: ") + std::to_string(position.up_left.y) + std::string(";\n") +
