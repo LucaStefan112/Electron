@@ -1,7 +1,7 @@
 #include <graphics.h>
 #include <string>
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 #include "Helper.h"
 
 Helper ElectronicComponent_helper;

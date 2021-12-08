@@ -1,7 +1,7 @@
 #include <graphics.h>
 #include <string>
 
-#include "Battery.h"
+#include "Electronic Components/Battery.h"
 #include "Helper.h"
 
 Helper Battery_helper;

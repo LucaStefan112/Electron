@@ -1,7 +1,7 @@
 #include <graphics.h>
 #include <string>
 
-#include "Ampermeter.h"
+#include "Electronic Components/Ampermeter.h"
 #include "Helper.h"
 
 Helper Ampermeter_helper;

@@ -1,7 +1,7 @@
 #include <graphics.h>
 #include <string>
 
-#include "Ground.h"
+#include "Electronic Components/Ground.h"
 #include "Helper.h"
 
 Helper Ground_helper;

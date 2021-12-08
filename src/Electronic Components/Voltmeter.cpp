@@ -1,7 +1,7 @@
 #include <graphics.h>
 #include <string>
 
-#include "Voltmeter.h"
+#include "Electronic Components/Voltmeter.h"
 #include "Helper.h"
 
 Helper Voltmeter_helper;

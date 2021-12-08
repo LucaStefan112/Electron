@@ -1,7 +1,7 @@
 #include <graphics.h>
 #include <string>
 
-#include "Capacitor.h"
+#include "Electronic Components/Capacitor.h"
 #include "Helper.h"
 
 Helper Capacitor_helper;

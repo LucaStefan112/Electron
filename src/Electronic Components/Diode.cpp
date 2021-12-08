@@ -1,7 +1,7 @@
 #include <graphics.h>
 #include <string>
 
-#include "Diode.h"
+#include "Electronic Components/Diode.h"
 #include "Helper.h"
 
 Helper Diode_helper;

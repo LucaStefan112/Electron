@@ -1,7 +1,7 @@
 #include <graphics.h>
 #include <string>
 
-#include "Switch.h"
+#include "Electronic Components/Switch.h"
 #include "Helper.h"
 
 Helper Switch_helper;

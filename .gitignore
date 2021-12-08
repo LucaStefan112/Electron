@@ -1,3 +1,7 @@
 .git
 electron.cbp
 main.cpp
+bin
+obj
+electron.depend
+electron.layout
