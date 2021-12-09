@@ -1,5 +1,7 @@
 #include "Electronic Components/ElectronicComponent.h"
 
+Helper ElectronicComponent_helper;
+
 ElectronicComponent::ElectronicComponent(double thisWidth, double thisHeight, std::string thisName){
 
     if(thisWidth <= 0 || thisHeight <= 0){

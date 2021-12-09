@@ -18,5 +18,10 @@
 #include "Speaker.h"
 #include "Microphone.h"
 #include "Motor.h"
+#include "AndGate.h"
+#include "NandGate.h"
+#include "OrGate.h"
+#include "NorGate.h"
+#include "XorGate.h"
 
 #endif // ELECTRONICS_H
