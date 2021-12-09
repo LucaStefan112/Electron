@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Electron2" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Electron2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="include" />
+					<Add directory="include/Electronic Components" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Electron2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include" />
+					<Add directory="include/Electronic Components" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="include/Ampermeter.h" />
+		<Unit filename="include/Electronic Components/Battery.h" />
+		<Unit filename="include/Electronic Components/Capacitor.h" />
+		<Unit filename="include/Electronic Components/Diode.h" />
+		<Unit filename="include/Electronic Components/ElectronicComponent.h" />
+		<Unit filename="include/Electronic Components/Electronics.h" />
+		<Unit filename="include/Electronic Components/Ground.h" />
+		<Unit filename="include/Electronic Components/Switch.h" />
+		<Unit filename="include/Electronic Components/Voltmeter.h" />
+		<Unit filename="include/Helper.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/Ampermeter.cpp" />
+		<Unit filename="src/Electronic Components/Battery.cpp" />
+		<Unit filename="src/Electronic Components/Capacitor.cpp" />
+		<Unit filename="src/Electronic Components/Diode.cpp" />
+		<Unit filename="src/Electronic Components/ElectronicComponent.cpp" />
+		<Unit filename="src/Electronic Components/Ground.cpp" />
+		<Unit filename="src/Electronic Components/Switch.cpp" />
+		<Unit filename="src/Electronic Components/Voltmeter.cpp" />
+		<Unit filename="src/Helper.cpp" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

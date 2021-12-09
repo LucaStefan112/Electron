@@ -1,10 +1,10 @@
-#ifndef REZISTORS_H
-#define REZISTORS_H
+#ifndef REZISTOR_H
+#define REZISTOR_H
 
 #include <string>
 #include "Helper.h"
 
-class Rezistors
+class Rezistor
 {
     private:
         //Reference points:
@@ -16,7 +16,7 @@ class Rezistors
         double width = 200, height = 50, width_height_ratio = 4;
 
     public:
-        Rezistors();
+        Rezistor();
 
         //Setters:
         void setPositionUpLeft(Helper::Vector_2D thisPosition);
@@ -39,4 +39,4 @@ class Rezistors
         std::string toString();
 };
 
-#endif // REZISTORS_H
+#endif // REZISTOR_H

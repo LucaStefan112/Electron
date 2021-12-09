@@ -10,6 +10,6 @@
 #include "Ampermeter.h"
 #include "Voltmeter.h"
 #include "Ground.h"
-#include "Rezistors.h"
+#include "Rezistor.h"
 
 #endif // ELECTRONICS_H

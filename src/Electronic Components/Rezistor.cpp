@@ -1,19 +1,19 @@
 #include <graphics.h>
 #include <string>
 
-#include "Electronic Components/Rezistors.h"
+#include "Electronic Components/Rezistor.h"
 #include "Helper.h"
 
 Helper Rezistor_helper;
 
-Rezistors::Rezistors()
+Rezistor::Rezistor()
 {
     //ctor
 }
 
 
 //Setter of the up_left point:
-void Rezistors::setPositionUpLeft(Helper::Vector_2D thisPosition)
+void Rezistor::setPositionUpLeft(Helper::Vector_2D thisPosition)
 {
     //Updating the other reference points:
     position.up_left.x = thisPosition.x;
@@ -26,7 +26,7 @@ void Rezistors::setPositionUpLeft(Helper::Vector_2D thisPosition)
 }
 
 //Setter of the center point:
-void Rezistors::setPositionCenter(Helper::Vector_2D thisPosition)
+void Rezistor::setPositionCenter(Helper::Vector_2D thisPosition)
 {
     //Updating the other reference points:
     position.center.x = thisPosition.x;
@@ -39,7 +39,7 @@ void Rezistors::setPositionCenter(Helper::Vector_2D thisPosition)
 }
 
 //Setter of the down_right point:
-void Rezistors::setPositionDownRight(Helper::Vector_2D thisPosition)
+void Rezistor::setPositionDownRight(Helper::Vector_2D thisPosition)
 {
     //Updating the other reference points:
     position.down_right.x = thisPosition.x;
@@ -52,7 +52,7 @@ void Rezistors::setPositionDownRight(Helper::Vector_2D thisPosition)
 }
 
 //Setter of the width:
-void Rezistors::setWidth(double thisWidth)
+void Rezistor::setWidth(double thisWidth)
 {
     width = thisWidth;
     position.up_left.x = position.center.x - width / 2;
@@ -60,7 +60,7 @@ void Rezistors::setWidth(double thisWidth)
 }
 
 //Setter of the height:
-void Rezistors::setHeight(double thisHeight)
+void Rezistor::setHeight(double thisHeight)
 {
     height = thisHeight;
     position.up_left.y = position.center.y - height / 2;
@@ -68,37 +68,37 @@ void Rezistors::setHeight(double thisHeight)
 }
 
 //Getter of the up_left point:
-Helper::Vector_2D Rezistors::getPositionUpLeft()
+Helper::Vector_2D Rezistor::getPositionUpLeft()
 {
     return Rezistor_helper.makeVector_2D(position.up_left.x, position.up_left.y);
 }
 
 //Getter of the center point:
-Helper::Vector_2D Rezistors::getPositionCenter()
+Helper::Vector_2D Rezistor::getPositionCenter()
 {
     return Rezistor_helper.makeVector_2D(position.center.x, position.center.y);
 }
 
 //Getter of the down_right point:
-Helper::Vector_2D Rezistors::getPositionDownRight()
+Helper::Vector_2D Rezistor::getPositionDownRight()
 {
     return Rezistor_helper.makeVector_2D(position.down_right.x, position.down_right.y);
 }
 
 //Getter of the width:
-double Rezistors::getWidth()
+double Rezistor::getWidth()
 {
     return width;
 }
 
 //Getter of the height:
-double Rezistors::getHeight()
+double Rezistor::getHeight()
 {
     return height;
 }
 
 //Drawing the component:
-void Rezistors::Show()
+void Rezistor::Show()
 {
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double x = height + up_left_x;
@@ -146,7 +146,7 @@ void Rezistors::Show()
 }
 
 //Passing trough a string all the data about the component:
-std::string Rezistors::toString()
+std::string Rezistor::toString()
 {
     return std::string(std::string("Type: Rezistor;\n") +
                        std::string("Width: ") + std::to_string(width) + std::string(";\n") +
