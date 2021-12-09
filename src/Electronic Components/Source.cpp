@@ -85,41 +85,22 @@ void Source::Show(){
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
+    double offPlus = height / 5;
 
-    double rase = height / 10;
+    circle(up_left_x + height / 10, center_y, height / 10);
+    line(up_left_x + height / 5, center_y, center_x - height / 4, center_y);
 
-    //circle
-    circle(up_left_x, center_y, rase);
+    line(center_x - height / 4, up_left_y, center_x - height / 4, down_right_y);
+    line(center_x + height / 4, center_y + height / 4, center_x + height / 4, center_y - height / 4);
 
-    //wire
-    line(up_left_x + rase, center_y, center_x - height / 5, center_y);
+    line(center_x + height / 4, center_y, down_right_x - height / 5, center_y);
+    circle(down_right_x - height / 10, center_y, height / 10);
 
-    // source lines
-    line(center_x - height / 5, center_y - height / 2, center_x - height / 5, center_y + height / 2);
-    line(center_x + height / 5, center_y - height / 3, center_x + height / 5, center_y + height / 3);
+    line(center_x - height / 4 - offPlus, center_y - offPlus - height / 8, center_x - height / 4 - offPlus - height / 4, center_y - offPlus - height / 8);
+    line(center_x - height / 4 - offPlus - height / 8, center_y - offPlus, center_x - height / 4 - offPlus - height / 8, center_y - offPlus - height / 4);
 
-    double plus_length = (height - center_y) / 2 - rase;
-
-    // plus
-    line(
-         center_x + height / 5 + 5,
-         up_left_y + plus_length,
-         center_x + height / 5 + 5 + plus_length,
-         up_left_y + plus_length
-    );
-    line(
-         center_x + height / 5 + 5 + plus_length / 2,
-         height / 4,
-         center_x + height / 5 + 5 + plus_length / 2,
-         height / 4
-    );
-
-    //wire
-    line(center_x + height / 5, center_y, down_right_x - rase, center_y);
-
-    //circle
-    circle(down_right_x, center_y, rase);
-}
+    line(center_x + height / 4 + offPlus, center_y - offPlus - height / 8, center_x + height / 4 + offPlus + height / 4, center_y - offPlus - height / 8);
+    }
 
 //Passing trough a string all the data about the component:
 std::string Source::toString(){

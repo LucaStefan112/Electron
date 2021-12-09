@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1639039805 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
+1639040197 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
 	<iostream>
 	<graphics.h>
 	"Electronics.h"
@@ -107,7 +107,7 @@
 	<string>
 	"Helper.h"
 
-1639033874 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\rezistor.cpp
+1639044921 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\rezistor.cpp
 	<graphics.h>
 	<string>
 	"Electronic Components/Rezistor.h"
@@ -131,7 +131,7 @@
 	<string>
 	"Helper.h"
 
-1639039776 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\notgate.cpp
+1639039871 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\notgate.cpp
 	<graphics.h>
 	<string>
 	"Electronic Components/NotGate.h"

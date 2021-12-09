@@ -101,48 +101,20 @@ double Rezistor::getHeight()
 void Rezistor::Show()
 {
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
-    double x = height + up_left_x;
-    double y = up_left_y;
+    double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
+    double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    double middleOfComponentHeight = x / 2;
+    circle(up_left_x + height / 10, center_y, height / 10);
+    line(up_left_x + height / 5, center_y, center_x - height, center_y);
 
-    //circle
-    circle(x, middleOfComponentHeight, 4);
-    x += 4;
-
-    //wire
-    line(x, middleOfComponentHeight, x + 50, middleOfComponentHeight);
-    x += 50;
-
-    //resistor lines
-    line(x, middleOfComponentHeight, x + 5, middleOfComponentHeight - 10);
-    x += 5;
-
-    for (int i = 1; i < 3; i++)
-    {
-        line(x, middleOfComponentHeight - 10, x + 10, middleOfComponentHeight + 10);
-        x += 10;
-
-        line(x, middleOfComponentHeight + 10, x + 10, middleOfComponentHeight - 10);
-        x += 10;
-    }
-
-    line(x, middleOfComponentHeight - 10, x + 10, middleOfComponentHeight + 10);
-    x += 10;
-
-    line(x, middleOfComponentHeight + 10, x + 5, middleOfComponentHeight);
-    x += 5;
-
-    //wire
-    line(x, middleOfComponentHeight, x + 50, middleOfComponentHeight);
-    x += 50;
-
-    //circle
-    x += 4;
-    circle(x, middleOfComponentHeight, 4);
-    x += 4;
-
-    width = x - height - up_left_x;
+    line(center_x - height + 0 * height / 3, center_y, center_x - height + 1 * height / 3, up_left_y + height / 4);
+    line(center_x - height + 1 * height / 3, up_left_y + height / 4, center_x - height + 2 * height / 3, down_right_y - height / 4);
+    line(center_x - height + 2 * height / 3, down_right_y - height / 4, center_x - height + 3 * height / 3, up_left_y + height / 4);
+    line(center_x - height + 3 * height / 3, up_left_y + height / 4, center_x - height + 4 * height / 3, down_right_y - height / 4);
+    line(center_x - height + 4 * height / 3, down_right_y - height / 4, center_x - height + 5 * height / 3, up_left_y + height / 4);
+    line(center_x - height + 5 * height / 3, up_left_y + height / 4, center_x + height, center_y);
+    line(center_x + height, center_y, down_right_x - height / 5, center_y);
+    circle(down_right_x - height / 10, center_y, height / 10);
 }
 
 //Passing trough a string all the data about the component:
