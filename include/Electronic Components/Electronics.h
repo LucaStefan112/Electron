@@ -11,5 +11,7 @@
 #include "Voltmeter.h"
 #include "Ground.h"
 #include "Rezistors.h"
+#include "Source.h"
+#include "NotGate.h"
 
 #endif // ELECTRONICS_H
