@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1638899895 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
+1639036283 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
 	<iostream>
 	<graphics.h>
 	"Electronics.h"
@@ -10,10 +10,10 @@
 
 1638527863 d:\info\c++\proiecte\electron 2\electron2\include\helper.h
 
-1638788653 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\electroniccomponent.cpp
+1639033680 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\electroniccomponent.cpp
 	<graphics.h>
 	<string>
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 	"Helper.h"
 
 1638786794 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electroniccomponent.h
@@ -24,13 +24,13 @@
 	<string>
 	"Helper.h"
 
-1638788589 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\diode.cpp
+1639036199 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\diode.cpp
 	<graphics.h>
 	<string>
-	"Diode.h"
+	"Electronic Components/Diode.h"
 	"Helper.h"
 
-1638828863 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electronics.h
+1639033807 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electronics.h
 	"ElectronicComponent.h"
 	"Diode.h"
 	"Capacitor.h"
@@ -39,21 +39,22 @@
 	"Ampermeter.h"
 	"Voltmeter.h"
 	"Ground.h"
+	"Rezistor.h"
 
-1638788655 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitor.cpp
+1639036151 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitor.cpp
 	<graphics.h>
 	<string>
-	"Capacitor.h"
+	"Electronic Components/Capacitor.h"
 	"Helper.h"
 
 1638787904 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\capacitor.h
 	<string>
 	"Helper.h"
 
-1638798867 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switch.cpp
+1639036434 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switch.cpp
 	<graphics.h>
 	<string>
-	"Switch.h"
+	"Electronic Components/Switch.h"
 	"Helper.h"
 
 1638790213 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switch.h
@@ -64,10 +65,10 @@
 	<string>
 	"Helper.h"
 
-1638804682 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\battery.cpp
+1639036100 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\battery.cpp
 	<graphics.h>
 	<string>
-	"Battery.h"
+	"Electronic Components/Battery.h"
 	"Helper.h"
 
 1638803512 d:\info\c++\proiecte\electron 2\electron2\include\ampermeter.h
@@ -88,19 +89,35 @@
 	<string>
 	"Helper.h"
 
-1638828057 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\voltmeter.cpp
+1639033681 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\voltmeter.cpp
 	<graphics.h>
 	<string>
-	"Voltmeter.h"
+	"Electronic Components/Voltmeter.h"
 	"Helper.h"
 
-1638829159 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\ground.cpp
+1639036258 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\ground.cpp
 	<graphics.h>
 	<string>
-	"Ground.h"
+	"Electronic Components/Ground.h"
 	"Helper.h"
 
 1638829196 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\ground.h
 	<string>
+	"Helper.h"
+
+1639033874 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\rezistor.cpp
+	<graphics.h>
+	<string>
+	"Electronic Components/Rezistor.h"
+	"Helper.h"
+
+1639033923 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\rezistor.h
+	<string>
+	"Helper.h"
+
+1639036033 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\ampermeter.cpp
+	<graphics.h>
+	<string>
+	"Electronic Components/Ampermeter.h"
 	"Helper.h"
 

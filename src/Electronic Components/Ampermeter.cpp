@@ -87,12 +87,14 @@ void Ampermeter::Show(){
     double sin30 = 0.5, cos30 = 0.86602540378;
     double offSet = height / 5;
 
-    line(up_left_x, center_y, center_x - height / 2, center_y);
+    circle(up_left_x + height / 10, center_y, height / 10);
+    line(up_left_x + height / 5, center_y, center_x - height / 2, center_y);
     circle(center_x, center_y, height / 2);
     line(center_x - height / 2 * sin30, center_y + height / 2 * cos30 - offSet, center_x, up_left_y + offSet);
     line(center_x + height / 2 * sin30, center_y + height / 2 * cos30 - offSet, center_x, up_left_y + offSet);
     line(center_x - height / 7.2, center_y, center_x + height / 7.2, center_y);
-    line(center_x + height / 2, center_y, down_right_x, center_y);
+    line(center_x + height / 2, center_y, down_right_x - height / 5, center_y);
+    circle(down_right_x - height / 10, center_y, height / 10);
 }
 
 //Passing trough a string all the data about the component:
