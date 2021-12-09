@@ -1,13 +1,17 @@
-#include <graphics.h>
-#include <string>
-
 #include "Electronic Components/ElectronicComponent.h"
-#include "Helper.h"
 
 Helper ElectronicComponent_helper;
 
-ElectronicComponent::ElectronicComponent(){
+ElectronicComponent::ElectronicComponent(double thisWidth, double thisHeight, std::string thisName){
 
+    if(thisWidth <= 0 || thisHeight <= 0){
+        std::cout << "Width and height must be greater than 0!";
+        return;
+    }
+    else{
+        width = thisWidth;  height = thisHeight;    width_height_ratio = thisWidth / thisHeight;
+        name = thisName;
+    }
 }
 
 //Setter of the up_left point:
@@ -37,7 +41,7 @@ void ElectronicComponent::setPositionDownRight(Helper::Vector_2D thisPosition){
     position.up_left.x = position.down_right.x - width; position.center.x = position.down_right.x - width / 2;
 
     position.down_right.y = thisPosition.y;
-    position.up_left.y = position.down_right.x - height; position.center.y = position.down_right.y - height / 2;
+    position.up_left.y = position.down_right.y - height; position.center.y = position.down_right.y - height / 2;
 }
 
 //Setter of the width:
@@ -52,11 +56,6 @@ void ElectronicComponent::setHeight(double thisHeight){
     height = thisHeight;    width = height * width_height_ratio;
     position.up_left.y = position.center.y - height / 2;
     position.down_right.y = position.center.y + height / 2;
-}
-
-//Setter of the with / height ratio:
-void ElectronicComponent::setWidth_Height_Ratio(double thisWidth_Height_Ratio){
-    if(thisWidth_Height_Ratio > 0) width_height_ratio = thisWidth_Height_Ratio;
 }
 
 //Getter of the up_left point:
@@ -84,11 +83,6 @@ double ElectronicComponent::getHeight(){
     return height;
 }
 
-//Getter of the width / height ratio:
-double ElectronicComponent::getWidth_Height_Ratio(){
-    return width_height_ratio;
-}
-
 //Drawing the component:
 void ElectronicComponent::Show(){
     bar(position.up_left.x, position.up_left.y, position.down_right.x, position.down_right.y);
@@ -96,7 +90,7 @@ void ElectronicComponent::Show(){
 
 //Passing trough a string all the data about the component:
 std::string ElectronicComponent::toString(){
-    return std::string(std::string("Type: ElectronicComponent;\n") +
+    return std::string(std::string("Type: ") + name + std::string(";\n") +
            std::string("Width: ") + std::to_string(width) + std::string(";\n") +
            std::string("Height: ") + std::to_string(height) + std::string(";\n") +
            std::string("Width / Height ratio: ") + std::to_string(width_height_ratio) + std::string(";\n") +
