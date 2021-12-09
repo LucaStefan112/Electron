@@ -86,11 +86,13 @@ void Switch::Show(){
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
     const double sinAngle = 0.4472135955, cosAngle = 0.894427191;
 
-    line(up_left_x, center_y, center_x - height / 2 - height / 10, center_y);
+    circle(up_left_x + height / 10, center_y, height / 10);
+    line(up_left_x + height / 5, center_y, center_x - height / 2 - height / 10, center_y);
     circle(center_x - height / 2, center_y, height / 10);
     line(center_x - height / 2 + height / 10 * cosAngle, center_y - height / 10 * sinAngle, center_x + height / 2 - height / 9, up_left_y);
     circle(center_x + height / 2, center_y, height / 10);
-    line(center_x + height / 2 + height / 10, center_y, down_right_x, center_y);
+    line(center_x + height / 2 + height / 10, center_y, down_right_x - height / 5, center_y);
+    circle(down_right_x - height / 10, center_y, height / 10);
 }
 
 //Passing trough a string all the data about the component:

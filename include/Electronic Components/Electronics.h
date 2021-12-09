@@ -10,8 +10,8 @@
 #include "Ampermeter.h"
 #include "Voltmeter.h"
 #include "Ground.h"
-#include "Rezistors.h"
 #include "Source.h"
 #include "NotGate.h"
+#include "Rezistor.h"
 
 #endif // ELECTRONICS_H

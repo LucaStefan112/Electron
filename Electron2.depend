@@ -1,0 +1,123 @@
+# depslib dependency file v1.0
+1639036283 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
+	<iostream>
+	<graphics.h>
+	"Electronics.h"
+	"Helper.h"
+
+1638527820 source:d:\info\c++\proiecte\electron 2\electron2\src\helper.cpp
+	"Helper.h"
+
+1638527863 d:\info\c++\proiecte\electron 2\electron2\include\helper.h
+
+1639033680 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\electroniccomponent.cpp
+	<graphics.h>
+	<string>
+	"Electronic Components/ElectronicComponent.h"
+	"Helper.h"
+
+1638786794 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electroniccomponent.h
+	<string>
+	"Helper.h"
+
+1638787932 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\diode.h
+	<string>
+	"Helper.h"
+
+1639036199 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\diode.cpp
+	<graphics.h>
+	<string>
+	"Electronic Components/Diode.h"
+	"Helper.h"
+
+1639033807 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electronics.h
+	"ElectronicComponent.h"
+	"Diode.h"
+	"Capacitor.h"
+	"Switch.h"
+	"Battery.h"
+	"Ampermeter.h"
+	"Voltmeter.h"
+	"Ground.h"
+	"Rezistor.h"
+
+1639036151 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitor.cpp
+	<graphics.h>
+	<string>
+	"Electronic Components/Capacitor.h"
+	"Helper.h"
+
+1638787904 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\capacitor.h
+	<string>
+	"Helper.h"
+
+1639036434 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switch.cpp
+	<graphics.h>
+	<string>
+	"Electronic Components/Switch.h"
+	"Helper.h"
+
+1638790213 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switch.h
+	<string>
+	"Helper.h"
+
+1638800786 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\battery.h
+	<string>
+	"Helper.h"
+
+1639036100 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\battery.cpp
+	<graphics.h>
+	<string>
+	"Electronic Components/Battery.h"
+	"Helper.h"
+
+1638803512 d:\info\c++\proiecte\electron 2\electron2\include\ampermeter.h
+	<string>
+	"Helper.h"
+
+1638806010 source:d:\info\c++\proiecte\electron 2\electron2\src\ampermeter.cpp
+	<graphics.h>
+	<string>
+	"Ampermeter.h"
+	"Helper.h"
+
+1638803512 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\ampermeter.h
+	<string>
+	"Helper.h"
+
+1638826803 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\voltmeter.h
+	<string>
+	"Helper.h"
+
+1639033681 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\voltmeter.cpp
+	<graphics.h>
+	<string>
+	"Electronic Components/Voltmeter.h"
+	"Helper.h"
+
+1639036258 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\ground.cpp
+	<graphics.h>
+	<string>
+	"Electronic Components/Ground.h"
+	"Helper.h"
+
+1638829196 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\ground.h
+	<string>
+	"Helper.h"
+
+1639033874 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\rezistor.cpp
+	<graphics.h>
+	<string>
+	"Electronic Components/Rezistor.h"
+	"Helper.h"
+
+1639033923 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\rezistor.h
+	<string>
+	"Helper.h"
+
+1639036033 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\ampermeter.cpp
+	<graphics.h>
+	<string>
+	"Electronic Components/Ampermeter.h"
+	"Helper.h"
+
