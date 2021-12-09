@@ -101,39 +101,26 @@ double NotGate::getHeight()
 void NotGate::Show()
 {
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
-    double x = height + up_left_x;
-    double y = up_left_y;
-
-    double middleOfComponentHeight = x / 2;
+    double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
+    double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
     //circle
-    circle(x, middleOfComponentHeight, 4);
-    x += 4;
+    circle(up_left_x + height / 10, center_y, height / 10);
 
     //wire
-    line(x, middleOfComponentHeight, x + 50, middleOfComponentHeight);
-    x += 50;
+    line(up_left_x + height / 5, center_y, center_x - height / 2, center_y);
 
     // not symbol
-    line(x, middleOfComponentHeight - 10, x, middleOfComponentHeight + 10);
-    line(x, middleOfComponentHeight - 10, x + 10, middleOfComponentHeight);
-    line(x, middleOfComponentHeight + 10, x + 10, middleOfComponentHeight);
-    x += 10;
-
-    x += 2;
-    circle(x, middleOfComponentHeight, 2);
-    x += 2;
+    line(center_x - height / 2, up_left_y, center_x - height / 2, down_right_y);
+    line(center_x - height / 2, up_left_y, center_x + height / 2, center_y);
+    line(center_x - height / 2, down_right_y, center_x + height / 2, center_y);
+    circle(center_x + height / 2 + height / 5, center_y, height / 5);
 
     //wire
-    line(x, middleOfComponentHeight, x + 50, middleOfComponentHeight);
-    x += 50;
+    line(center_x + height / 2 + height / 2.5, center_y, down_right_x - height / 5, center_y);
 
     //circle
-    x += 4;
-    circle(x, middleOfComponentHeight, 4);
-    x += 4;
-
-    width = x - height - up_left_x;
+    circle(down_right_x - height / 10, center_y, height / 10);
 }
 
 //Passing trough a string all the data about the component:

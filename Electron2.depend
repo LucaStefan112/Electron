@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1639036283 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
+1639039805 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
 	<iostream>
 	<graphics.h>
 	"Electronics.h"
@@ -30,7 +30,7 @@
 	"Electronic Components/Diode.h"
 	"Helper.h"
 
-1639033807 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electronics.h
+1639036693 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electronics.h
 	"ElectronicComponent.h"
 	"Diode.h"
 	"Capacitor.h"
@@ -39,6 +39,8 @@
 	"Ampermeter.h"
 	"Voltmeter.h"
 	"Ground.h"
+	"Source.h"
+	"NotGate.h"
 	"Rezistor.h"
 
 1639036151 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitor.cpp
@@ -89,7 +91,7 @@
 	<string>
 	"Helper.h"
 
-1639033681 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\voltmeter.cpp
+1639036485 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\voltmeter.cpp
 	<graphics.h>
 	<string>
 	"Electronic Components/Voltmeter.h"
@@ -119,5 +121,25 @@
 	<graphics.h>
 	<string>
 	"Electronic Components/Ampermeter.h"
+	"Helper.h"
+
+1639036693 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\source.h
+	<string>
+	"Helper.h"
+
+1639036693 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\notgate.h
+	<string>
+	"Helper.h"
+
+1639039776 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\notgate.cpp
+	<graphics.h>
+	<string>
+	"Electronic Components/NotGate.h"
+	"Helper.h"
+
+1639036693 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\source.cpp
+	<graphics.h>
+	<string>
+	"Electronic Components/Source.h"
 	"Helper.h"
 
