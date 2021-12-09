@@ -1,7 +1,5 @@
 #include "Electronic Components/Switch.h"
 
-Helper Switch_helper;
-
 Switch::Switch(): ElectronicComponent(200, 50, "Switch"){}
 
 //Drawing the component:

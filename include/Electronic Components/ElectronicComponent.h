@@ -15,7 +15,7 @@ protected:
     std::string name;
 
 public:
-    ElectronicComponent(double thisWidth = 100, double thisHeight = 100, std::string thisName = "ElectronicComponent");
+    ElectronicComponent(double thisWidth = 100, double thisHeight = 100, std::string thisName = "Electronic Component");
 
     //Setters:
     void setPositionUpLeft(Helper::Vector_2D thisPosition);

@@ -1,7 +1,5 @@
 #include "Electronic Components/Ampermeter.h"
 
-Helper Ampermeter_helper;
-
 Ampermeter::Ampermeter() : ElectronicComponent(200, 50, "Ampermeter"){}
 
 //Drawing the component:

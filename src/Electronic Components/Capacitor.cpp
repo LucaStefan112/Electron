@@ -1,7 +1,5 @@
 #include "Electronic Components/Capacitor.h"
 
-Helper Capacitor_helper;
-
 Capacitor::Capacitor(): ElectronicComponent(200, 50, "Capacitor"){}
 
 //Drawing the component:

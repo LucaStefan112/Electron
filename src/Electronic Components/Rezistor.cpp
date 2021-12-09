@@ -1,7 +1,5 @@
 #include "Electronic Components/Rezistor.h"
 
-Helper Rezistor_helper;
-
 Rezistor::Rezistor(): ElectronicComponent(200, 50, "Rezistor"){}
 
 //Drawing the component:

@@ -1,7 +1,5 @@
 #include "Electronic Components/Battery.h"
 
-Helper Battery_helper;
-
 Battery::Battery(): ElectronicComponent(200, 50, "Battery"){}
 
 //Drawing the component:

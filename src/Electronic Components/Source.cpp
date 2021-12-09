@@ -1,7 +1,5 @@
 #include "Electronic Components/Source.h"
 
-Helper Source_helper;
-
 Source::Source(): ElectronicComponent(200, 50, "Source"){}
 
 //Drawing the component:

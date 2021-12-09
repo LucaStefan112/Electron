@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1639069986 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
+1639081254 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
 	"Electronics.h"
 
 1639062762 source:d:\info\c++\proiecte\electron 2\electron2\src\helper.cpp
@@ -22,7 +22,7 @@
 1639069614 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\diode.cpp
 	"Electronic Components/Diode.h"
 
-1639069021 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electronics.h
+1639081270 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electronics.h
 	"Diode.h"
 	"Capacitor.h"
 	"Switch.h"
@@ -33,6 +33,12 @@
 	"Source.h"
 	"NotGate.h"
 	"Rezistor.h"
+	"Inductor.h"
+	"Buzzer.h"
+	"Lamp.h"
+	"Speaker.h"
+	"Microphone.h"
+	"Motor.h"
 
 1639069576 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitor.cpp
 	"Electronic Components/Capacitor.h"
@@ -77,13 +83,13 @@
 1639069123 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\ground.h
 	"ElectronicComponent.h"
 
-1639069903 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\rezistor.cpp
+1639070220 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\rezistor.cpp
 	"Electronic Components/Rezistor.h"
 
 1639069326 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\rezistor.h
 	"ElectronicComponent.h"
 
-1639069432 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\ampermeter.cpp
+1639070205 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\ampermeter.cpp
 	"Electronic Components/Ampermeter.h"
 
 1639069340 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\source.h
@@ -97,4 +103,40 @@
 
 1639069790 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\source.cpp
 	"Electronic Components/Source.h"
+
+1639072114 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\inductor.cpp
+	"Electronic Components/Inductor.h"
+
+1639071513 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\inductor.h
+	"ElectronicComponent.h"
+
+1639074594 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\buzzer.h
+	"ElectronicComponent.h"
+
+1639075243 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\buzzer.cpp
+	"Electronic Components/Buzzer.h"
+
+1639078508 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\lamp.h
+	"ElectronicComponent.h"
+
+1639078875 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\lamp.cpp
+	"Electronic Components/Lamp.h"
+
+1639079394 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\speaker.h
+	"ElectronicComponent.h"
+
+1639080136 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\speaker.cpp
+	"Electronic Components/Speaker.h"
+
+1639080831 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\microphone.cpp
+	"Electronic Components/Microphone.h"
+
+1639080296 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\microphone.h
+	"ElectronicComponent.h"
+
+1639081223 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\motor.cpp
+	"Electronic Components/Motor.h"
+
+1639081244 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\motor.h
+	"ElectronicComponent.h"
 

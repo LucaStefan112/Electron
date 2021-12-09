@@ -1,7 +1,5 @@
 #include "Electronic Components/Diode.h"
 
-Helper Diode_helper;
-
 Diode::Diode(): ElectronicComponent(200, 50, "Diode"){}
 
 //Drawing the component:

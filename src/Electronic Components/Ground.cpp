@@ -1,7 +1,5 @@
 #include "Electronic Components/Ground.h"
 
-Helper Ground_helper;
-
 Ground::Ground(): ElectronicComponent(50, 50, "Ground"){}
 
 //Drawing the component:

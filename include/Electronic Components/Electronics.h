@@ -12,5 +12,11 @@
 #include "Source.h"
 #include "NotGate.h"
 #include "Rezistor.h"
+#include "Inductor.h"
+#include "Buzzer.h"
+#include "Lamp.h"
+#include "Speaker.h"
+#include "Microphone.h"
+#include "Motor.h"
 
 #endif // ELECTRONICS_H
