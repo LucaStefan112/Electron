@@ -15,6 +15,7 @@
 					<Add option="-g" />
 					<Add directory="include" />
 					<Add directory="include/Electronic Components" />
+					<Add directory="include/Electronic Components/Transistors" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -26,6 +27,7 @@
 					<Add option="-O2" />
 					<Add directory="include" />
 					<Add directory="include/Electronic Components" />
+					<Add directory="include/Electronic Components/Transistors" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -37,7 +39,6 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/Electronic Components/Ampermeter.h" />
-		<Unit filename="include/Electronic Components/AndGate.h" />
 		<Unit filename="include/Electronic Components/Battery.h" />
 		<Unit filename="include/Electronic Components/Buzzer.h" />
 		<Unit filename="include/Electronic Components/Capacitor.h" />
@@ -47,22 +48,34 @@
 		<Unit filename="include/Electronic Components/Ground.h" />
 		<Unit filename="include/Electronic Components/Inductor.h" />
 		<Unit filename="include/Electronic Components/Lamp.h" />
+		<Unit filename="include/Electronic Components/Logic Gates/AndGate.h" />
+		<Unit filename="include/Electronic Components/Logic Gates/NandGate.h" />
+		<Unit filename="include/Electronic Components/Logic Gates/NorGate.h" />
+		<Unit filename="include/Electronic Components/Logic Gates/NotGate.h" />
+		<Unit filename="include/Electronic Components/Logic Gates/OrGate.h" />
+		<Unit filename="include/Electronic Components/Logic Gates/XorGate.h" />
 		<Unit filename="include/Electronic Components/Microphone.h" />
 		<Unit filename="include/Electronic Components/Motor.h" />
-		<Unit filename="include/Electronic Components/NandGate.h" />
-		<Unit filename="include/Electronic Components/NorGate.h" />
-		<Unit filename="include/Electronic Components/NotGate.h" />
-		<Unit filename="include/Electronic Components/OrGate.h" />
 		<Unit filename="include/Electronic Components/Rezistor.h" />
 		<Unit filename="include/Electronic Components/Source.h" />
 		<Unit filename="include/Electronic Components/Speaker.h" />
 		<Unit filename="include/Electronic Components/Switch.h" />
+		<Unit filename="include/Electronic Components/Transistors/Transistor_Bipolar_NPN.h" />
+		<Unit filename="include/Electronic Components/Transistors/Transistor_Bipolar_PNP.h" />
+		<Unit filename="include/Electronic Components/Transistors/Transistor_Dual_Gate_MOSFET_Nchannel.h" />
+		<Unit filename="include/Electronic Components/Transistors/Transistor_Dual_Gate_MOSFET_Pchannel.h" />
+		<Unit filename="include/Electronic Components/Transistors/Transistor_FET_Nchannel.h" />
+		<Unit filename="include/Electronic Components/Transistors/Transistor_FET_Pchannel.h" />
+		<Unit filename="include/Electronic Components/Transistors/Transistor_Inductive_Channel_MOSFET_Nchannel.h" />
+		<Unit filename="include/Electronic Components/Transistors/Transistor_Inductive_Channel_MOSFET_Pchannel.h" />
+		<Unit filename="include/Electronic Components/Transistors/Transistor_MOSFET_Nchannel.h" />
+		<Unit filename="include/Electronic Components/Transistors/Transistor_MOSFET_Pchannel.h" />
+		<Unit filename="include/Electronic Components/Transistors/Transistor_Single_Connection_Nchannel.h" />
+		<Unit filename="include/Electronic Components/Transistors/Transistor_Single_Connection_Pchannel.h" />
 		<Unit filename="include/Electronic Components/Voltmeter.h" />
-		<Unit filename="include/Electronic Components/XorGate.h" />
 		<Unit filename="include/Helper.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Electronic Components/Ampermeter.cpp" />
-		<Unit filename="src/Electronic Components/AndGate.cpp" />
 		<Unit filename="src/Electronic Components/Battery.cpp" />
 		<Unit filename="src/Electronic Components/Buzzer.cpp" />
 		<Unit filename="src/Electronic Components/Capacitor.cpp" />
@@ -71,18 +84,31 @@
 		<Unit filename="src/Electronic Components/Ground.cpp" />
 		<Unit filename="src/Electronic Components/Inductor.cpp" />
 		<Unit filename="src/Electronic Components/Lamp.cpp" />
+		<Unit filename="src/Electronic Components/Logic Gates/AndGate.cpp" />
+		<Unit filename="src/Electronic Components/Logic Gates/NandGate.cpp" />
+		<Unit filename="src/Electronic Components/Logic Gates/NorGate.cpp" />
+		<Unit filename="src/Electronic Components/Logic Gates/NotGate.cpp" />
+		<Unit filename="src/Electronic Components/Logic Gates/OrGate.cpp" />
+		<Unit filename="src/Electronic Components/Logic Gates/XorGate.cpp" />
 		<Unit filename="src/Electronic Components/Microphone.cpp" />
 		<Unit filename="src/Electronic Components/Motor.cpp" />
-		<Unit filename="src/Electronic Components/NandGate.cpp" />
-		<Unit filename="src/Electronic Components/NorGate.cpp" />
-		<Unit filename="src/Electronic Components/NotGate.cpp" />
-		<Unit filename="src/Electronic Components/OrGate.cpp" />
 		<Unit filename="src/Electronic Components/Rezistor.cpp" />
 		<Unit filename="src/Electronic Components/Source.cpp" />
 		<Unit filename="src/Electronic Components/Speaker.cpp" />
 		<Unit filename="src/Electronic Components/Switch.cpp" />
+		<Unit filename="src/Electronic Components/Transistors/Transistor_Bipolar_NPN.cpp" />
+		<Unit filename="src/Electronic Components/Transistors/Transistor_Bipolar_PNP.cpp" />
+		<Unit filename="src/Electronic Components/Transistors/Transistor_Dual_Gate_MOSFET_Nchannel.cpp" />
+		<Unit filename="src/Electronic Components/Transistors/Transistor_Dual_Gate_MOSFET_Pchannel.cpp" />
+		<Unit filename="src/Electronic Components/Transistors/Transistor_FET_Nchannel.cpp" />
+		<Unit filename="src/Electronic Components/Transistors/Transistor_FET_Pchannel.cpp" />
+		<Unit filename="src/Electronic Components/Transistors/Transistor_Inductive_Channel_MOSFET_Nchannel.cpp" />
+		<Unit filename="src/Electronic Components/Transistors/Transistor_Inductive_Channel_MOSFET_Pchannel.cpp" />
+		<Unit filename="src/Electronic Components/Transistors/Transistor_MOSFET_Nchannel.cpp" />
+		<Unit filename="src/Electronic Components/Transistors/Transistor_MOSFET_Pchannel.cpp" />
+		<Unit filename="src/Electronic Components/Transistors/Transistor_Single_Connection_Nchannel.cpp" />
+		<Unit filename="src/Electronic Components/Transistors/Transistor_Single_Connection_Pchannel.cpp" />
 		<Unit filename="src/Electronic Components/Voltmeter.cpp" />
-		<Unit filename="src/Electronic Components/XorGate.cpp" />
 		<Unit filename="src/Helper.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

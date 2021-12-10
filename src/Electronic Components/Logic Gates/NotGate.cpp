@@ -1,4 +1,4 @@
-#include "Electronic Components/NotGate.h"
+#include "Electronic Components/Logic Gates/NotGate.h"
 
 NotGate::NotGate(): ElectronicComponent(200, 50, "Not Gate"){}
 

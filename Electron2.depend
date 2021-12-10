@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1639084402 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
+1639171854 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
 	"Electronics.h"
 
 1639062762 source:d:\info\c++\proiecte\electron 2\electron2\src\helper.cpp
@@ -22,7 +22,7 @@
 1639082296 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\diode.cpp
 	"Electronic Components/Diode.h"
 
-1639084409 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electronics.h
+1639170884 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electronics.h
 	"Diode.h"
 	"Capacitor.h"
 	"Switch.h"
@@ -31,7 +31,6 @@
 	"Voltmeter.h"
 	"Ground.h"
 	"Source.h"
-	"NotGate.h"
 	"Rezistor.h"
 	"Inductor.h"
 	"Buzzer.h"
@@ -39,10 +38,24 @@
 	"Speaker.h"
 	"Microphone.h"
 	"Motor.h"
-	"AndGate.h"
-	"NandGate.h"
-	"OrGate.h"
-	"NorGate.h"
+	"Logic Gates/NotGate.h"
+	"Logic Gates/AndGate.h"
+	"Logic Gates/NandGate.h"
+	"Logic Gates/OrGate.h"
+	"Logic Gates/NorGate.h"
+	"Logic Gates/XorGate.h"
+	"Transistors/Transistor_Bipolar_NPN.h"
+	"Transistors/Transistor_Bipolar_PNP.h"
+	"Transistors/Transistor_FET_Nchannel.h"
+	"Transistors/Transistor_FET_Pchannel.h"
+	"Transistors/Transistor_MOSFET_Nchannel.h"
+	"Transistors/Transistor_MOSFET_Pchannel.h"
+	"Electronic Components/Transistors/Transistor_Dual_Gate_MOSFET_Nchannel.h"
+	"Electronic Components/Transistors/Transistor_Dual_Gate_MOSFET_Pchannel.h"
+	"Electronic Components/Transistors/Transistor_Inductive_Channel_MOSFET_Nchannel.h"
+	"Electronic Components/Transistors/Transistor_Inductive_Channel_MOSFET_Pchannel.h"
+	"Electronic Components/Transistors/Transistor_Single_Connection_Nchannel.h"
+	"Electronic Components/Transistors/Transistor_Single_Connection_Pchannel.h"
 
 1639082292 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitor.cpp
 	"Electronic Components/Capacitor.h"
@@ -167,4 +180,127 @@
 
 1639084547 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\norgate.cpp
 	"Electronic Components/NorGate.h"
+
+1639084746 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\xorgate.cpp
+	"Electronic Components/XorGate.h"
+
+1639069239 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\notgate.h
+	"ElectronicComponent.h"
+
+1639082563 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\andgate.h
+	"ElectronicComponent.h"
+
+1639083152 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\nandgate.h
+	"ElectronicComponent.h"
+
+1639083739 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\orgate.h
+	"ElectronicComponent.h"
+
+1639084432 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\norgate.h
+	"ElectronicComponent.h"
+
+1639084694 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\xorgate.h
+	"ElectronicComponent.h"
+
+1639139279 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_bipolarnpn.h
+	"ElectronicComponent.h"
+
+1639143457 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_bipolarnpn.cpp
+	"Electronic Components/Transistors/Transistor_BipolarNPN.h"
+
+1639143816 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_bipolarpnp.h
+	"ElectronicComponent.h"
+
+1639144034 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_bipolarpnp.cpp
+	"Electronic Components/Transistors/Transistor_BipolarPNP.h"
+
+1639138864 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\logic gates\andgate.cpp
+	"Electronic Components/Logic Gates/AndGate.h"
+
+1639138871 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\logic gates\nandgate.cpp
+	"Electronic Components/Logic Gates/NandGate.h"
+
+1639138891 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\logic gates\norgate.cpp
+	"Electronic Components/Logic Gates/NorGate.h"
+
+1639138892 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\logic gates\notgate.cpp
+	"Electronic Components/Logic Gates/NotGate.h"
+
+1639138893 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\logic gates\orgate.cpp
+	"Electronic Components/Logic Gates/OrGate.h"
+
+1639138894 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\logic gates\xorgate.cpp
+	"Electronic Components/Logic Gates/XorGate.h"
+
+1639145035 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_bipolar_npn.cpp
+	"Electronic Components/Transistors/Transistor_Bipolar_NPN.h"
+
+1639145083 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_bipolar_npn.h
+	"ElectronicComponent.h"
+
+1639145068 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_bipolar_pnp.h
+	"ElectronicComponent.h"
+
+1639145900 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_fet_nchannel.h
+	"ElectronicComponent.h"
+
+1639145047 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_bipolar_pnp.cpp
+	"Electronic Components/Transistors/Transistor_Bipolar_PNP.h"
+
+1639149316 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_fet_nchannel.cpp
+	"Electronic Components/Transistors/Transistor_FET_Nchannel.h"
+
+1639146807 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_fet_pchannel.h
+	"ElectronicComponent.h"
+
+1639149328 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_fet_pchannel.cpp
+	"Electronic Components/Transistors/Transistor_FET_Pchannel.h"
+
+1639148612 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_mosfet_nchannel.h
+	"ElectronicComponent.h"
+
+1639149210 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_mosfet_nchannel.cpp
+	"Electronic Components/Transistors/Transistor_MOSFET_Nchannel.h"
+
+1639149473 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_mosfet_pchannel.h
+	"ElectronicComponent.h"
+
+1639149614 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_mosfet_pchannel.cpp
+	"Electronic Components/Transistors/Transistor_MOSFET_Pchannel.h"
+
+1639149878 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_dual_gate_mosfet_nchannel.h
+	"ElectronicComponent.h"
+
+1639167923 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_dual_gate_mosfet_nchannel.cpp
+	"Electronic Components/Transistors/Transistor_Dual_Gate_MOSFET_Nchannel.h"
+
+1639167804 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_dual_gate_mosfet_pchannel.cpp
+	"Electronic Components/Transistors/Transistor_Dual_Gate_MOSFET_Pchannel.h"
+
+1639167569 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_dual_gate_mosfet_pchannel.h
+	"ElectronicComponent.h"
+
+1639168465 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_inductive_channel_mosfet_nchannel.h
+	"ElectronicComponent.h"
+
+1639169583 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_inductive_channel_mosfet_nchannel.cpp
+	"Electronic Components/Transistors/Transistor_Inductive_Channel_MOSFET_Nchannel.h"
+
+1639169804 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_inductive_channel_mosfet_pchannel.cpp
+	"Electronic Components/Transistors/Transistor_Inductive_Channel_MOSFET_Pchannel.h"
+
+1639169691 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_inductive_channel_mosfet_pchannel.h
+	"ElectronicComponent.h"
+
+1639171825 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_single_connection_nchannel.cpp
+	"Electronic Components/Transistors/Transistor_Single_Connection_Nchannel.h"
+
+1639170058 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_single_connection_nchannel.h
+	"ElectronicComponent.h"
+
+1639170906 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_single_connection_pchannel.h
+	"ElectronicComponent.h"
+
+1639171971 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_single_connection_pchannel.cpp
+	"Electronic Components/Transistors/Transistor_Single_Connection_Pchannel.h"
 
