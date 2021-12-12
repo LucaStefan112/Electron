@@ -1,7 +1,7 @@
 #ifndef ANDGATE_H
 #define ANDGATE_H
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class AndGate : public ElectronicComponent{
 

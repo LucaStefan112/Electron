@@ -1,7 +1,7 @@
 #ifndef TRANSISTOR_FET_NCHANNEL_H
 #define TRANSISTOR_FET_NCHANNEL_H
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class Transistor_FET_Nchannel : public ElectronicComponent{
 

@@ -1,7 +1,7 @@
 #ifndef NANDGATE_H
 #define NANDGATE_H
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class NandGate : public ElectronicComponent{
 

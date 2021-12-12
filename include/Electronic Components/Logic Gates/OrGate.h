@@ -1,7 +1,7 @@
 #ifndef ORGATE_H
 #define ORGATE_H
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class OrGate : public ElectronicComponent{
 

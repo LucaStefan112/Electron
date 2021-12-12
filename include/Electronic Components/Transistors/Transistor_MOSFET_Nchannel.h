@@ -1,7 +1,7 @@
 #ifndef TRANSISTOR_MOSFET_NCHANNEL_H
 #define TRANSISTOR_MOSFET_NCHANNEL_H
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class Transistor_MOSFET_Nchannel : public ElectronicComponent{
 

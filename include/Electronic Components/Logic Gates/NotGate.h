@@ -1,7 +1,7 @@
 #ifndef NOTGATE_H
 #define NOTGATE_H
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class NotGate : public ElectronicComponent{
 

@@ -1,7 +1,7 @@
 #ifndef TRANSISTOR_SINGLE_CONNECTION_PCHANNEL_H
 #define TRANSISTOR_SINGLE_CONNECTION_PCHANNEL_H
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class Transistor_Single_Connection_Pchannel : public ElectronicComponent{
 
