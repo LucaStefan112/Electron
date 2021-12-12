@@ -1,6 +1,12 @@
 # depslib dependency file v1.0
-1639171854 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
+1639313341 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
 	"Electronics.h"
+	<iostream>
+	<graphics.h>
+	<winbgim.h>
+	"Electronic Components/Electronics.h"
+	"UI/UI.h"
+	"Helper.h"
 
 1639062762 source:d:\info\c++\proiecte\electron 2\electron2\src\helper.cpp
 	"Helper.h"
@@ -22,7 +28,7 @@
 1639082296 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\diode.cpp
 	"Electronic Components/Diode.h"
 
-1639170884 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electronics.h
+1639312233 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electronics.h
 	"Diode.h"
 	"Capacitor.h"
 	"Switch.h"
@@ -30,7 +36,6 @@
 	"Ampermeter.h"
 	"Voltmeter.h"
 	"Ground.h"
-	"Source.h"
 	"Rezistor.h"
 	"Inductor.h"
 	"Buzzer.h"
@@ -38,24 +43,26 @@
 	"Speaker.h"
 	"Microphone.h"
 	"Motor.h"
-	"Logic Gates/NotGate.h"
-	"Logic Gates/AndGate.h"
-	"Logic Gates/NandGate.h"
-	"Logic Gates/OrGate.h"
-	"Logic Gates/NorGate.h"
-	"Logic Gates/XorGate.h"
-	"Transistors/Transistor_Bipolar_NPN.h"
-	"Transistors/Transistor_Bipolar_PNP.h"
-	"Transistors/Transistor_FET_Nchannel.h"
-	"Transistors/Transistor_FET_Pchannel.h"
-	"Transistors/Transistor_MOSFET_Nchannel.h"
-	"Transistors/Transistor_MOSFET_Pchannel.h"
+	"Electronic Components/Logic Gates/NotGate.h"
+	"Electronic Components/Logic Gates/AndGate.h"
+	"Electronic Components/Logic Gates/NandGate.h"
+	"Electronic Components/Logic Gates/OrGate.h"
+	"Electronic Components/Logic Gates/NorGate.h"
+	"Electronic Components/Logic Gates/XorGate.h"
+	"Electronic Components/Transistors/Transistor_Bipolar_NPN.h"
+	"Electronic Components/Transistors/Transistor_Bipolar_PNP.h"
+	"Electronic Components/Transistors/Transistor_FET_Nchannel.h"
+	"Electronic Components/Transistors/Transistor_FET_Pchannel.h"
+	"Electronic Components/Transistors/Transistor_MOSFET_Nchannel.h"
+	"Electronic Components/Transistors/Transistor_MOSFET_Pchannel.h"
 	"Electronic Components/Transistors/Transistor_Dual_Gate_MOSFET_Nchannel.h"
 	"Electronic Components/Transistors/Transistor_Dual_Gate_MOSFET_Pchannel.h"
 	"Electronic Components/Transistors/Transistor_Inductive_Channel_MOSFET_Nchannel.h"
 	"Electronic Components/Transistors/Transistor_Inductive_Channel_MOSFET_Pchannel.h"
 	"Electronic Components/Transistors/Transistor_Single_Connection_Nchannel.h"
 	"Electronic Components/Transistors/Transistor_Single_Connection_Pchannel.h"
+	"Electronic Components/Sources/Source_Voltage_DC.h"
+	"Electronic Components/Sources/Source_Voltage_AC.h"
 
 1639082292 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitor.cpp
 	"Electronic Components/Capacitor.h"
@@ -184,23 +191,23 @@
 1639084746 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\xorgate.cpp
 	"Electronic Components/XorGate.h"
 
-1639069239 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\notgate.h
-	"ElectronicComponent.h"
+1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\notgate.h
+	"Electronic Components/ElectronicComponent.h"
 
-1639082563 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\andgate.h
-	"ElectronicComponent.h"
+1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\andgate.h
+	"Electronic Components/ElectronicComponent.h"
 
-1639083152 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\nandgate.h
-	"ElectronicComponent.h"
+1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\nandgate.h
+	"Electronic Components/ElectronicComponent.h"
 
-1639083739 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\orgate.h
-	"ElectronicComponent.h"
+1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\orgate.h
+	"Electronic Components/ElectronicComponent.h"
 
-1639084432 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\norgate.h
-	"ElectronicComponent.h"
+1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\norgate.h
+	"Electronic Components/ElectronicComponent.h"
 
-1639084694 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\xorgate.h
-	"ElectronicComponent.h"
+1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\xorgate.h
+	"Electronic Components/ElectronicComponent.h"
 
 1639139279 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_bipolarnpn.h
 	"ElectronicComponent.h"
@@ -235,14 +242,14 @@
 1639145035 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_bipolar_npn.cpp
 	"Electronic Components/Transistors/Transistor_Bipolar_NPN.h"
 
-1639145083 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_bipolar_npn.h
-	"ElectronicComponent.h"
+1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_bipolar_npn.h
+	"Electronic Components/ElectronicComponent.h"
 
-1639145068 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_bipolar_pnp.h
-	"ElectronicComponent.h"
+1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_bipolar_pnp.h
+	"Electronic Components/ElectronicComponent.h"
 
-1639145900 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_fet_nchannel.h
-	"ElectronicComponent.h"
+1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_fet_nchannel.h
+	"Electronic Components/ElectronicComponent.h"
 
 1639145047 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_bipolar_pnp.cpp
 	"Electronic Components/Transistors/Transistor_Bipolar_PNP.h"
@@ -250,26 +257,26 @@
 1639149316 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_fet_nchannel.cpp
 	"Electronic Components/Transistors/Transistor_FET_Nchannel.h"
 
-1639146807 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_fet_pchannel.h
-	"ElectronicComponent.h"
+1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_fet_pchannel.h
+	"Electronic Components/ElectronicComponent.h"
 
 1639149328 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_fet_pchannel.cpp
 	"Electronic Components/Transistors/Transistor_FET_Pchannel.h"
 
-1639148612 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_mosfet_nchannel.h
-	"ElectronicComponent.h"
+1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_mosfet_nchannel.h
+	"Electronic Components/ElectronicComponent.h"
 
 1639149210 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_mosfet_nchannel.cpp
 	"Electronic Components/Transistors/Transistor_MOSFET_Nchannel.h"
 
-1639149473 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_mosfet_pchannel.h
-	"ElectronicComponent.h"
+1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_mosfet_pchannel.h
+	"Electronic Components/ElectronicComponent.h"
 
 1639149614 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_mosfet_pchannel.cpp
 	"Electronic Components/Transistors/Transistor_MOSFET_Pchannel.h"
 
-1639149878 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_dual_gate_mosfet_nchannel.h
-	"ElectronicComponent.h"
+1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_dual_gate_mosfet_nchannel.h
+	"Electronic Components/ElectronicComponent.h"
 
 1639167923 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_dual_gate_mosfet_nchannel.cpp
 	"Electronic Components/Transistors/Transistor_Dual_Gate_MOSFET_Nchannel.h"
@@ -277,11 +284,11 @@
 1639167804 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_dual_gate_mosfet_pchannel.cpp
 	"Electronic Components/Transistors/Transistor_Dual_Gate_MOSFET_Pchannel.h"
 
-1639167569 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_dual_gate_mosfet_pchannel.h
-	"ElectronicComponent.h"
+1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_dual_gate_mosfet_pchannel.h
+	"Electronic Components/ElectronicComponent.h"
 
-1639168465 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_inductive_channel_mosfet_nchannel.h
-	"ElectronicComponent.h"
+1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_inductive_channel_mosfet_nchannel.h
+	"Electronic Components/ElectronicComponent.h"
 
 1639169583 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_inductive_channel_mosfet_nchannel.cpp
 	"Electronic Components/Transistors/Transistor_Inductive_Channel_MOSFET_Nchannel.h"
@@ -289,18 +296,40 @@
 1639169804 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_inductive_channel_mosfet_pchannel.cpp
 	"Electronic Components/Transistors/Transistor_Inductive_Channel_MOSFET_Pchannel.h"
 
-1639169691 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_inductive_channel_mosfet_pchannel.h
-	"ElectronicComponent.h"
+1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_inductive_channel_mosfet_pchannel.h
+	"Electronic Components/ElectronicComponent.h"
 
 1639171825 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_single_connection_nchannel.cpp
 	"Electronic Components/Transistors/Transistor_Single_Connection_Nchannel.h"
 
-1639170058 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_single_connection_nchannel.h
-	"ElectronicComponent.h"
+1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_single_connection_nchannel.h
+	"Electronic Components/ElectronicComponent.h"
 
-1639170906 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_single_connection_pchannel.h
-	"ElectronicComponent.h"
+1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_single_connection_pchannel.h
+	"Electronic Components/ElectronicComponent.h"
 
 1639171971 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_single_connection_pchannel.cpp
 	"Electronic Components/Transistors/Transistor_Single_Connection_Pchannel.h"
+
+1639240353 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\sources\source_voltage_dc.h
+	"ElectronicComponent.h"
+
+1639311842 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\sources\source_voltage_dc.cpp
+	"Electronic Components/Sources/Source_Voltage_DC.h"
+
+1639311186 d:\info\c++\proiecte\electron 2\electron2\include\ui\ui.h
+	"Button.h"
+
+1639311186 d:\info\c++\proiecte\electron 2\electron2\include\ui\button.h
+	"Helper.h"
+
+1639311186 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\button.cpp
+	"UI/Button.h"
+	<string>
+
+1639312255 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\sources\source_voltage_ac.h
+	"ElectronicComponent.h"
+
+1639313331 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\sources\source_voltage_ac.cpp
+	"Electronic Components/Sources/Source_Voltage_AC.h"
 
