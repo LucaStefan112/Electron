@@ -45,7 +45,6 @@
 		<Unit filename="include/Electronic Components/Ampermeter.h" />
 		<Unit filename="include/Electronic Components/Buzzer.h" />
 		<Unit filename="include/Electronic Components/Capacitor.h" />
-		<Unit filename="include/Electronic Components/Diode.h" />
 		<Unit filename="include/Electronic Components/Diodes/Diode_Avalance.h" />
 		<Unit filename="include/Electronic Components/Diodes/Diode_Constant_Current.h" />
 		<Unit filename="include/Electronic Components/Diodes/Diode_Gunn.h" />
@@ -99,7 +98,6 @@
 		<Unit filename="src/Electronic Components/Ampermeter.cpp" />
 		<Unit filename="src/Electronic Components/Buzzer.cpp" />
 		<Unit filename="src/Electronic Components/Capacitor.cpp" />
-		<Unit filename="src/Electronic Components/Diode.cpp" />
 		<Unit filename="src/Electronic Components/Diodes/Diode_Avalance.cpp" />
 		<Unit filename="src/Electronic Components/Diodes/Diode_Constant_Current.cpp" />
 		<Unit filename="src/Electronic Components/Diodes/Diode_Gunn.cpp" />
