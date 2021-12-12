@@ -16,6 +16,8 @@
 					<Add directory="include" />
 					<Add directory="include/Electronic Components" />
 					<Add directory="include/Electronic Components/Transistors" />
+					<Add directory="include/Electronic Components/Sources" />
+					<Add directory="include/Electronic Components/Diodes" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -28,6 +30,8 @@
 					<Add directory="include" />
 					<Add directory="include/Electronic Components" />
 					<Add directory="include/Electronic Components/Transistors" />
+					<Add directory="include/Electronic Components/Sources" />
+					<Add directory="include/Electronic Components/Diodes" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -39,10 +43,23 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/Electronic Components/Ampermeter.h" />
-		<Unit filename="include/Electronic Components/Battery.h" />
 		<Unit filename="include/Electronic Components/Buzzer.h" />
 		<Unit filename="include/Electronic Components/Capacitor.h" />
 		<Unit filename="include/Electronic Components/Diode.h" />
+		<Unit filename="include/Electronic Components/Diodes/Diode_Avalance.h" />
+		<Unit filename="include/Electronic Components/Diodes/Diode_Constant_Current.h" />
+		<Unit filename="include/Electronic Components/Diodes/Diode_Gunn.h" />
+		<Unit filename="include/Electronic Components/Diodes/Diode_Junction_PN.h" />
+		<Unit filename="include/Electronic Components/Diodes/Diode_Laser.h" />
+		<Unit filename="include/Electronic Components/Diodes/Diode_Light_Emitting.h" />
+		<Unit filename="include/Electronic Components/Diodes/Diode_PIN.h" />
+		<Unit filename="include/Electronic Components/Diodes/Diode_Photo.h" />
+		<Unit filename="include/Electronic Components/Diodes/Diode_Schottky.h" />
+		<Unit filename="include/Electronic Components/Diodes/Diode_Shockley.h" />
+		<Unit filename="include/Electronic Components/Diodes/Diode_Transient_Voltage_Suppression.h" />
+		<Unit filename="include/Electronic Components/Diodes/Diode_Tunnel.h" />
+		<Unit filename="include/Electronic Components/Diodes/Diode_Varactor.h" />
+		<Unit filename="include/Electronic Components/Diodes/Diode_Zener.h" />
 		<Unit filename="include/Electronic Components/ElectronicComponent.h" />
 		<Unit filename="include/Electronic Components/Electronics.h" />
 		<Unit filename="include/Electronic Components/Ground.h" />
@@ -57,7 +74,9 @@
 		<Unit filename="include/Electronic Components/Microphone.h" />
 		<Unit filename="include/Electronic Components/Motor.h" />
 		<Unit filename="include/Electronic Components/Rezistor.h" />
-		<Unit filename="include/Electronic Components/Source.h" />
+		<Unit filename="include/Electronic Components/Sources/Battery.h" />
+		<Unit filename="include/Electronic Components/Sources/Source_Voltage_AC.h" />
+		<Unit filename="include/Electronic Components/Sources/Source_Voltage_DC.h" />
 		<Unit filename="include/Electronic Components/Speaker.h" />
 		<Unit filename="include/Electronic Components/Switch.h" />
 		<Unit filename="include/Electronic Components/Transistors/Transistor_Bipolar_NPN.h" />
@@ -74,12 +93,27 @@
 		<Unit filename="include/Electronic Components/Transistors/Transistor_Single_Connection_Pchannel.h" />
 		<Unit filename="include/Electronic Components/Voltmeter.h" />
 		<Unit filename="include/Helper.h" />
+		<Unit filename="include/UI/Button.h" />
+		<Unit filename="include/UI/UI.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Electronic Components/Ampermeter.cpp" />
-		<Unit filename="src/Electronic Components/Battery.cpp" />
 		<Unit filename="src/Electronic Components/Buzzer.cpp" />
 		<Unit filename="src/Electronic Components/Capacitor.cpp" />
 		<Unit filename="src/Electronic Components/Diode.cpp" />
+		<Unit filename="src/Electronic Components/Diodes/Diode_Avalance.cpp" />
+		<Unit filename="src/Electronic Components/Diodes/Diode_Constant_Current.cpp" />
+		<Unit filename="src/Electronic Components/Diodes/Diode_Gunn.cpp" />
+		<Unit filename="src/Electronic Components/Diodes/Diode_Junction_PN.cpp" />
+		<Unit filename="src/Electronic Components/Diodes/Diode_Laser.cpp" />
+		<Unit filename="src/Electronic Components/Diodes/Diode_Light_Emitting.cpp" />
+		<Unit filename="src/Electronic Components/Diodes/Diode_PIN.cpp" />
+		<Unit filename="src/Electronic Components/Diodes/Diode_Photo.cpp" />
+		<Unit filename="src/Electronic Components/Diodes/Diode_Schottky.cpp" />
+		<Unit filename="src/Electronic Components/Diodes/Diode_Shockley.cpp" />
+		<Unit filename="src/Electronic Components/Diodes/Diode_Transient_Voltage_Suppression.cpp" />
+		<Unit filename="src/Electronic Components/Diodes/Diode_Tunnel.cpp" />
+		<Unit filename="src/Electronic Components/Diodes/Diode_Varactor.cpp" />
+		<Unit filename="src/Electronic Components/Diodes/Diode_Zener.cpp" />
 		<Unit filename="src/Electronic Components/ElectronicComponent.cpp" />
 		<Unit filename="src/Electronic Components/Ground.cpp" />
 		<Unit filename="src/Electronic Components/Inductor.cpp" />
@@ -93,7 +127,9 @@
 		<Unit filename="src/Electronic Components/Microphone.cpp" />
 		<Unit filename="src/Electronic Components/Motor.cpp" />
 		<Unit filename="src/Electronic Components/Rezistor.cpp" />
-		<Unit filename="src/Electronic Components/Source.cpp" />
+		<Unit filename="src/Electronic Components/Sources/Battery.cpp" />
+		<Unit filename="src/Electronic Components/Sources/Source_Voltage_AC.cpp" />
+		<Unit filename="src/Electronic Components/Sources/Source_Voltage_DC.cpp" />
 		<Unit filename="src/Electronic Components/Speaker.cpp" />
 		<Unit filename="src/Electronic Components/Switch.cpp" />
 		<Unit filename="src/Electronic Components/Transistors/Transistor_Bipolar_NPN.cpp" />
@@ -110,6 +146,7 @@
 		<Unit filename="src/Electronic Components/Transistors/Transistor_Single_Connection_Pchannel.cpp" />
 		<Unit filename="src/Electronic Components/Voltmeter.cpp" />
 		<Unit filename="src/Helper.cpp" />
+		<Unit filename="src/UI/Button.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

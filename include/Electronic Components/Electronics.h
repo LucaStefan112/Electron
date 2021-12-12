@@ -44,4 +44,19 @@
 #include "Electronic Components/Sources/Source_Voltage_AC.h"
 #include "Electronic Components/Sources/Battery.h"
 
+//Diodes:
+#include "Electronic Components/Diodes/Diode_Junction_PN.h"
+#include "Electronic Components/Diodes/Diode_Zener.h"
+#include "Electronic Components/Diodes/Diode_Light_Emitting.h"
+#include "Electronic Components/Diodes/Diode_Constant_Current.h"
+#include "Electronic Components/Diodes/Diode_Schottky.h"
+#include "Electronic Components/Diodes/Diode_Tunnel.h"
+#include "Electronic Components/Diodes/Diode_Varactor.h"
+#include "Electronic Components/Diodes/Diode_PIN.h"
+#include "Electronic Components/Diodes/Diode_Photo.h"
+#include "Electronic Components/Diodes/Diode_Laser.h"
+#include "Electronic Components/Diodes/Diode_Transient_Voltage_Suppression.h"
+#include "Electronic Components/Diodes/Diode_Avalance.h"
+#include "Electronic Components/Diodes/Diode_Gunn.h"
+
 #endif // ELECTRONICS_H
