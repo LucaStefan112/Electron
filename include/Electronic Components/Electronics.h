@@ -42,5 +42,6 @@
 //Sources:
 #include "Electronic Components/Sources/Source_Voltage_DC.h"
 #include "Electronic Components/Sources/Source_Voltage_AC.h"
+#include "Electronic Components/Sources/Battery.h"
 
 #endif // ELECTRONICS_H

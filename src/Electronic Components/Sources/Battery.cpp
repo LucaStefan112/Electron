@@ -1,4 +1,4 @@
-#include "Electronic Components/Battery.h"
+#include "Electronic Components/Sources/Battery.h"
 
 Battery::Battery(): ElectronicComponent(200, 50, "Battery"){}
 

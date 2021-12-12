@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1639313341 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
+1639314288 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
 	"Electronics.h"
 	<iostream>
 	<graphics.h>
@@ -28,7 +28,7 @@
 1639082296 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\diode.cpp
 	"Electronic Components/Diode.h"
 
-1639312233 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electronics.h
+1639314057 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electronics.h
 	"Diode.h"
 	"Capacitor.h"
 	"Switch.h"
@@ -63,6 +63,7 @@
 	"Electronic Components/Transistors/Transistor_Single_Connection_Pchannel.h"
 	"Electronic Components/Sources/Source_Voltage_DC.h"
 	"Electronic Components/Sources/Source_Voltage_AC.h"
+	"Electronic Components/Sources/Battery.h"
 
 1639082292 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitor.cpp
 	"Electronic Components/Capacitor.h"
@@ -330,6 +331,12 @@
 1639312255 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\sources\source_voltage_ac.h
 	"ElectronicComponent.h"
 
-1639313331 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\sources\source_voltage_ac.cpp
+1639313814 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\sources\source_voltage_ac.cpp
 	"Electronic Components/Sources/Source_Voltage_AC.h"
+
+1639069064 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\sources\battery.h
+	"ElectronicComponent.h"
+
+1639314271 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\sources\battery.cpp
+	"Electronic Components/Sources/Battery.h"
 
