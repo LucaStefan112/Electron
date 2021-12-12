@@ -101,7 +101,7 @@ void Source::Show(){
     double plus_length = (height - center_y) / 2 - rase;
 
     // plus
-    line(
+    /*line(
          center_x + height / 5 + 5,
          up_left_y + plus_length,
          center_x + height / 5 + 5 + plus_length,
@@ -112,7 +112,7 @@ void Source::Show(){
          height / 4,
          center_x + height / 5 + 5 + plus_length / 2,
          height / 4
-    );
+    );*/
 
     //wire
     line(center_x + height / 5, center_y, down_right_x - rase, center_y);
