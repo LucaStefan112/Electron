@@ -18,6 +18,7 @@
 					<Add directory="include/Electronic Components/Transistors" />
 					<Add directory="include/Electronic Components/Sources" />
 					<Add directory="include/Electronic Components/Diodes" />
+					<Add directory="include/Electronic Components/Capacitors" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -32,6 +33,7 @@
 					<Add directory="include/Electronic Components/Transistors" />
 					<Add directory="include/Electronic Components/Sources" />
 					<Add directory="include/Electronic Components/Diodes" />
+					<Add directory="include/Electronic Components/Capacitors" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -44,7 +46,10 @@
 		</Compiler>
 		<Unit filename="include/Electronic Components/Ampermeter.h" />
 		<Unit filename="include/Electronic Components/Buzzer.h" />
-		<Unit filename="include/Electronic Components/Capacitor.h" />
+		<Unit filename="include/Electronic Components/Capacitors/Capacitor_Ceramic.h" />
+		<Unit filename="include/Electronic Components/Capacitors/Capacitor_Electrolytic.h" />
+		<Unit filename="include/Electronic Components/Capacitors/Capacitor_Trimmer.h" />
+		<Unit filename="include/Electronic Components/Capacitors/Capacitor_Variable.h" />
 		<Unit filename="include/Electronic Components/Diodes/Diode_Avalance.h" />
 		<Unit filename="include/Electronic Components/Diodes/Diode_Constant_Current.h" />
 		<Unit filename="include/Electronic Components/Diodes/Diode_Gunn.h" />
@@ -97,7 +102,10 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Electronic Components/Ampermeter.cpp" />
 		<Unit filename="src/Electronic Components/Buzzer.cpp" />
-		<Unit filename="src/Electronic Components/Capacitor.cpp" />
+		<Unit filename="src/Electronic Components/Capacitors/Capacitor_Ceramic.cpp" />
+		<Unit filename="src/Electronic Components/Capacitors/Capacitor_Electrolytic.cpp" />
+		<Unit filename="src/Electronic Components/Capacitors/Capacitor_Trimmer.cpp" />
+		<Unit filename="src/Electronic Components/Capacitors/Capacitor_Variable.cpp" />
 		<Unit filename="src/Electronic Components/Diodes/Diode_Avalance.cpp" />
 		<Unit filename="src/Electronic Components/Diodes/Diode_Constant_Current.cpp" />
 		<Unit filename="src/Electronic Components/Diodes/Diode_Gunn.cpp" />

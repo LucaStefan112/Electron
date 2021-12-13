@@ -2,10 +2,7 @@
 #define ELECTRONICS_H
 
 //Header for including all electronic components headers:
-#include "Diode.h"
-#include "Capacitor.h"
 #include "Switch.h"
-#include "Battery.h"
 #include "Ampermeter.h"
 #include "Voltmeter.h"
 #include "Ground.h"
@@ -58,5 +55,11 @@
 #include "Electronic Components/Diodes/Diode_Transient_Voltage_Suppression.h"
 #include "Electronic Components/Diodes/Diode_Avalance.h"
 #include "Electronic Components/Diodes/Diode_Gunn.h"
+
+//Capacitors:
+#include "Electronic Components/Capacitors/Capacitor_Ceramic.h"
+#include "Electronic Components/Capacitors/Capacitor_Electrolytic.h"
+#include "Electronic Components/Capacitors/Capacitor_Trimmer.h"
+#include "Electronic Components/Capacitors/Capacitor_Variable.h"
 
 #endif // ELECTRONICS_H

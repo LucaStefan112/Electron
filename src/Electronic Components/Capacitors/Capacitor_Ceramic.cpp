@@ -1,9 +1,9 @@
-#include "Electronic Components/Capacitor.h"
+#include "Electronic Components/Capacitors/Capacitor_Ceramic.h"
 
-Capacitor::Capacitor(): ElectronicComponent(200, 50, "Capacitor"){}
+Capacitor_Ceramic::Capacitor_Ceramic(): ElectronicComponent(200, 50, "Ceramic Capacitor"){}
 
 //Drawing the component:
-void Capacitor::Show(){
+void Capacitor_Ceramic::Show(){
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
@@ -15,3 +15,4 @@ void Capacitor::Show(){
     line(center_x + height / 4, center_y, down_right_x - height / 5, center_y);
     circle(down_right_x - height / 10, center_y, height / 10);
 }
+

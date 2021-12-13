@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1639346538 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
+1639429291 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
 	"Electronics.h"
 
 1639062762 source:d:\info\c++\proiecte\electron 2\electron2\src\helper.cpp
@@ -22,11 +22,8 @@
 1639333310 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\diode.cpp
 	"Electronic Components/Diode.h"
 
-1639346455 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electronics.h
-	"Diode.h"
-	"Capacitor.h"
+1639429287 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electronics.h
 	"Switch.h"
-	"Battery.h"
 	"Ampermeter.h"
 	"Voltmeter.h"
 	"Ground.h"
@@ -70,6 +67,11 @@
 	"Electronic Components/Diodes/Diode_Laser.h"
 	"Electronic Components/Diodes/Diode_Transient_Voltage_Suppression.h"
 	"Electronic Components/Diodes/Diode_Avalance.h"
+	"Electronic Components/Diodes/Diode_Gunn.h"
+	"Electronic Components/Capacitors/Capacitor_Ceramic.h"
+	"Electronic Components/Capacitors/Capacitor_Electrolytic.h"
+	"Electronic Components/Capacitors/Capacitor_Trimmer.h"
+	"Electronic Components/Capacitors/Capacitor_Variable.h"
 
 1639082292 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitor.cpp
 	"Electronic Components/Capacitor.h"
@@ -423,4 +425,34 @@
 
 1639346620 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\diodes\diode_avalance.cpp
 	"Electronic Components/Diodes/Diode_Avalance.h"
+
+1639346780 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\diodes\diode_gunn.cpp
+	"Electronic Components/Diodes/Diode_Gunn.h"
+
+1639346742 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\diodes\diode_gunn.h
+	"ElectronicComponent.h"
+
+1639427280 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitors\capacitor_ceramic.cpp
+	"Electronic Components/Capacitors/Capacitor_Ceramic.h"
+
+1639427144 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\capacitors\capacitor_ceramic.h
+	"ElectronicComponent.h"
+
+1639427536 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\capacitors\capacitor_electrolytic.h
+	"ElectronicComponent.h"
+
+1639428475 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitors\capacitor_electrolytic.cpp
+	"Electronic Components/Capacitors/Capacitor_Electrolytic.h"
+
+1639428579 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\capacitors\capacitor_trimmer.h
+	"ElectronicComponent.h"
+
+1639429198 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitors\capacitor_trimmer.cpp
+	"Electronic Components/Capacitors/Capacitor_Trimmer.h"
+
+1639429310 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\capacitors\capacitor_variable.h
+	"ElectronicComponent.h"
+
+1639429671 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitors\capacitor_variable.cpp
+	"Electronic Components/Capacitors/Capacitor_Variable.h"
 
