@@ -1,9 +1,9 @@
-#include "Electronic Components/Rezistor.h"
+#include "Electronic Components/Resistors/Resistor.h"
 
-Rezistor::Rezistor(): ElectronicComponent(200, 50, "Rezistor"){}
+Resistor::Resistor(): ElectronicComponent(200, 50, "Resistor"){}
 
 //Drawing the component:
-void Rezistor::Show(){
+void Resistor::Show(){
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;

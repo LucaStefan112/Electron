@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1639429291 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
+1639435869 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
 	"Electronics.h"
 
 1639062762 source:d:\info\c++\proiecte\electron 2\electron2\src\helper.cpp
@@ -22,12 +22,11 @@
 1639333310 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\diode.cpp
 	"Electronic Components/Diode.h"
 
-1639429287 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electronics.h
+1639435815 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electronics.h
 	"Switch.h"
 	"Ampermeter.h"
 	"Voltmeter.h"
 	"Ground.h"
-	"Rezistor.h"
 	"Inductor.h"
 	"Buzzer.h"
 	"Lamp.h"
@@ -72,6 +71,8 @@
 	"Electronic Components/Capacitors/Capacitor_Electrolytic.h"
 	"Electronic Components/Capacitors/Capacitor_Trimmer.h"
 	"Electronic Components/Capacitors/Capacitor_Variable.h"
+	"Electronic Components/Resistors/Resistor.h"
+	"Electronic Components/Resistors/Resistor_Variable_Resistance.h"
 
 1639082292 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitor.cpp
 	"Electronic Components/Capacitor.h"
@@ -455,4 +456,16 @@
 
 1639429671 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitors\capacitor_variable.cpp
 	"Electronic Components/Capacitors/Capacitor_Variable.h"
+
+1639435202 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\resistors\resistor.h
+	"ElectronicComponent.h"
+
+1639435799 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\resistors\resistor_variable_resistance.h
+	"ElectronicComponent.h"
+
+1639435858 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\resistors\resistor.cpp
+	"Electronic Components/Resistors/Resistor.h"
+
+1639435843 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\resistors\resistor_variable_resistance.cpp
+	"Electronic Components/Resistors/Resistor_Variable_Resistance.h"
 

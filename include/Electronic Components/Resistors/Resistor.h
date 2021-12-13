@@ -3,10 +3,10 @@
 
 #include "ElectronicComponent.h"
 
-class Rezistor : public ElectronicComponent{
+class Resistor : public ElectronicComponent{
 
 public:
-    Rezistor();
+    Resistor();
 
     //Drawing the component:
     void Show();

@@ -6,7 +6,6 @@
 #include "Ampermeter.h"
 #include "Voltmeter.h"
 #include "Ground.h"
-#include "Rezistor.h"
 #include "Inductor.h"
 #include "Buzzer.h"
 #include "Lamp.h"
@@ -61,5 +60,9 @@
 #include "Electronic Components/Capacitors/Capacitor_Electrolytic.h"
 #include "Electronic Components/Capacitors/Capacitor_Trimmer.h"
 #include "Electronic Components/Capacitors/Capacitor_Variable.h"
+
+//Resistors:
+#include "Electronic Components/Resistors/Resistor.h"
+#include "Electronic Components/Resistors/Resistor_Variable_Resistance.h"
 
 #endif // ELECTRONICS_H
