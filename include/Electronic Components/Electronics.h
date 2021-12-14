@@ -2,16 +2,14 @@
 #define ELECTRONICS_H
 
 //Header for including all electronic components headers:
-#include "Switch.h"
-#include "Ampermeter.h"
-#include "Voltmeter.h"
-#include "Ground.h"
-#include "Inductor.h"
-#include "Buzzer.h"
-#include "Lamp.h"
-#include "Speaker.h"
-#include "Microphone.h"
-#include "Motor.h"
+#include "Electronic Components/Switch.h"
+#include "Electronic Components/Ground.h"
+#include "Electronic Components/Inductor.h"
+#include "Electronic Components/Buzzer.h"
+#include "Electronic Components/Lamp.h"
+#include "Electronic Components/Speaker.h"
+#include "Electronic Components/Microphone.h"
+#include "Electronic Components/Motor.h"
 
 //Logic Gates:
 #include "Electronic Components/Logic Gates/NotGate.h"
@@ -67,5 +65,9 @@
 #include "Electronic Components/Resistors/Resistor_Mobile_Contact.h"
 #include "Electronic Components/Resistors/Resistor_Mobile_Contact_Stop_Position.h"
 #include "Electronic Components/Resistors/Potentiometer_Mobile_Contact.h"
+
+//Measurements:
+#include "Electronic Components/Measurements/Ammeter.h"
+#include "Electronic Components/Measurements/Voltmeter.h"
 
 #endif // ELECTRONICS_H

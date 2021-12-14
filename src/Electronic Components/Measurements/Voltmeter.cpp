@@ -1,4 +1,4 @@
-#include "Electronic Components/Voltmeter.h"
+#include "Electronic Components/Measurements/Voltmeter.h"
 
 Voltmeter::Voltmeter(): ElectronicComponent(200, 50, "Voltmeter"){}
 

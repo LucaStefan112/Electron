@@ -46,7 +46,6 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="include/Electronic Components/Ampermeter.h" />
 		<Unit filename="include/Electronic Components/Buzzer.h" />
 		<Unit filename="include/Electronic Components/Capacitors/Capacitor_Ceramic.h" />
 		<Unit filename="include/Electronic Components/Capacitors/Capacitor_Electrolytic.h" />
@@ -77,6 +76,8 @@
 		<Unit filename="include/Electronic Components/Logic Gates/NotGate.h" />
 		<Unit filename="include/Electronic Components/Logic Gates/OrGate.h" />
 		<Unit filename="include/Electronic Components/Logic Gates/XorGate.h" />
+		<Unit filename="include/Electronic Components/Measurements/Ammeter.h" />
+		<Unit filename="include/Electronic Components/Measurements/Voltmeter.h" />
 		<Unit filename="include/Electronic Components/Microphone.h" />
 		<Unit filename="include/Electronic Components/Motor.h" />
 		<Unit filename="include/Electronic Components/Resistors/Potentiometer_Mobile_Contact.h" />
@@ -101,12 +102,10 @@
 		<Unit filename="include/Electronic Components/Transistors/Transistor_MOSFET_Pchannel.h" />
 		<Unit filename="include/Electronic Components/Transistors/Transistor_Single_Connection_Nchannel.h" />
 		<Unit filename="include/Electronic Components/Transistors/Transistor_Single_Connection_Pchannel.h" />
-		<Unit filename="include/Electronic Components/Voltmeter.h" />
 		<Unit filename="include/Helper.h" />
 		<Unit filename="include/UI/Button.h" />
 		<Unit filename="include/UI/UI.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/Electronic Components/Ampermeter.cpp" />
 		<Unit filename="src/Electronic Components/Buzzer.cpp" />
 		<Unit filename="src/Electronic Components/Capacitors/Capacitor_Ceramic.cpp" />
 		<Unit filename="src/Electronic Components/Capacitors/Capacitor_Electrolytic.cpp" />
@@ -136,6 +135,8 @@
 		<Unit filename="src/Electronic Components/Logic Gates/NotGate.cpp" />
 		<Unit filename="src/Electronic Components/Logic Gates/OrGate.cpp" />
 		<Unit filename="src/Electronic Components/Logic Gates/XorGate.cpp" />
+		<Unit filename="src/Electronic Components/Measurements/Ammeter.cpp" />
+		<Unit filename="src/Electronic Components/Measurements/Voltmeter.cpp" />
 		<Unit filename="src/Electronic Components/Microphone.cpp" />
 		<Unit filename="src/Electronic Components/Motor.cpp" />
 		<Unit filename="src/Electronic Components/Resistors/Potentiometer_Mobile_Contact.cpp" />
@@ -160,7 +161,6 @@
 		<Unit filename="src/Electronic Components/Transistors/Transistor_MOSFET_Pchannel.cpp" />
 		<Unit filename="src/Electronic Components/Transistors/Transistor_Single_Connection_Nchannel.cpp" />
 		<Unit filename="src/Electronic Components/Transistors/Transistor_Single_Connection_Pchannel.cpp" />
-		<Unit filename="src/Electronic Components/Voltmeter.cpp" />
 		<Unit filename="src/Helper.cpp" />
 		<Unit filename="src/UI/Button.cpp" />
 		<Extensions>

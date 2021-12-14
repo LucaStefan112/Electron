@@ -487,6 +487,18 @@
 1639482396 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\resistors\potentiometer_mobile_contact.h
 	"ElectronicComponent.h"
 
-1639482403 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\resistors\potentiometer_mobile_contact.cpp
+1639482450 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\resistors\potentiometer_mobile_contact.cpp
 	"Electronic Components/Resistors/Potentiometer_Mobile_Contact.h"
+
+1639485236 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\measurements\ammeter.cpp
+	"Electronic Components/Measurements/Ammeter.h"
+
+1639485425 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\measurements\ammeter.h
+	"ElectronicComponent.h"
+
+1639485462 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\measurements\voltmeter.cpp
+	"Electronic Components/Measurements/Voltmeter.h"
+
+1639069370 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\measurements\voltmeter.h
+	"ElectronicComponent.h"
 
