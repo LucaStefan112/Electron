@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1639435869 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
+1639482429 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
 	"Electronics.h"
 
 1639062762 source:d:\info\c++\proiecte\electron 2\electron2\src\helper.cpp
@@ -22,7 +22,7 @@
 1639333310 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\diode.cpp
 	"Electronic Components/Diode.h"
 
-1639435815 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electronics.h
+1639482366 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electronics.h
 	"Switch.h"
 	"Ampermeter.h"
 	"Voltmeter.h"
@@ -73,6 +73,9 @@
 	"Electronic Components/Capacitors/Capacitor_Variable.h"
 	"Electronic Components/Resistors/Resistor.h"
 	"Electronic Components/Resistors/Resistor_Variable_Resistance.h"
+	"Electronic Components/Resistors/Resistor_Mobile_Contact.h"
+	"Electronic Components/Resistors/Resistor_Mobile_Contact_Stop_Position.h"
+	"Electronic Components/Resistors/Potentiometer_Mobile_Contact.h"
 
 1639082292 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitor.cpp
 	"Electronic Components/Capacitor.h"
@@ -466,6 +469,24 @@
 1639435858 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\resistors\resistor.cpp
 	"Electronic Components/Resistors/Resistor.h"
 
-1639435843 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\resistors\resistor_variable_resistance.cpp
+1639435921 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\resistors\resistor_variable_resistance.cpp
 	"Electronic Components/Resistors/Resistor_Variable_Resistance.h"
+
+1639481218 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\resistors\resistor_mobile_contact.h
+	"ElectronicComponent.h"
+
+1639482004 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\resistors\resistor_mobile_contact.cpp
+	"Electronic Components/Resistors/Resistor_Mobile_Contact.h"
+
+1639481955 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\resistors\resistor_mobile_contact_stop_position.h
+	"ElectronicComponent.h"
+
+1639482159 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\resistors\resistor_mobile_contact_stop_position.cpp
+	"Electronic Components/Resistors/Resistor_Mobile_Contact_Stop_Position.h"
+
+1639482396 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\resistors\potentiometer_mobile_contact.h
+	"ElectronicComponent.h"
+
+1639482403 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\resistors\potentiometer_mobile_contact.cpp
+	"Electronic Components/Resistors/Potentiometer_Mobile_Contact.h"
 

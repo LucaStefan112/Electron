@@ -79,7 +79,10 @@
 		<Unit filename="include/Electronic Components/Logic Gates/XorGate.h" />
 		<Unit filename="include/Electronic Components/Microphone.h" />
 		<Unit filename="include/Electronic Components/Motor.h" />
+		<Unit filename="include/Electronic Components/Resistors/Potentiometer_Mobile_Contact.h" />
 		<Unit filename="include/Electronic Components/Resistors/Resistor.h" />
+		<Unit filename="include/Electronic Components/Resistors/Resistor_Mobile_Contact.h" />
+		<Unit filename="include/Electronic Components/Resistors/Resistor_Mobile_Contact_Stop_Position.h" />
 		<Unit filename="include/Electronic Components/Resistors/Resistor_Variable_Resistance.h" />
 		<Unit filename="include/Electronic Components/Sources/Battery.h" />
 		<Unit filename="include/Electronic Components/Sources/Source_Voltage_AC.h" />
@@ -135,7 +138,10 @@
 		<Unit filename="src/Electronic Components/Logic Gates/XorGate.cpp" />
 		<Unit filename="src/Electronic Components/Microphone.cpp" />
 		<Unit filename="src/Electronic Components/Motor.cpp" />
+		<Unit filename="src/Electronic Components/Resistors/Potentiometer_Mobile_Contact.cpp" />
 		<Unit filename="src/Electronic Components/Resistors/Resistor.cpp" />
+		<Unit filename="src/Electronic Components/Resistors/Resistor_Mobile_Contact.cpp" />
+		<Unit filename="src/Electronic Components/Resistors/Resistor_Mobile_Contact_Stop_Position.cpp" />
 		<Unit filename="src/Electronic Components/Resistors/Resistor_Variable_Resistance.cpp" />
 		<Unit filename="src/Electronic Components/Sources/Battery.cpp" />
 		<Unit filename="src/Electronic Components/Sources/Source_Voltage_AC.cpp" />

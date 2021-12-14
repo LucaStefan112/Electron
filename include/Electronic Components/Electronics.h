@@ -64,5 +64,8 @@
 //Resistors:
 #include "Electronic Components/Resistors/Resistor.h"
 #include "Electronic Components/Resistors/Resistor_Variable_Resistance.h"
+#include "Electronic Components/Resistors/Resistor_Mobile_Contact.h"
+#include "Electronic Components/Resistors/Resistor_Mobile_Contact_Stop_Position.h"
+#include "Electronic Components/Resistors/Potentiometer_Mobile_Contact.h"
 
 #endif // ELECTRONICS_H
