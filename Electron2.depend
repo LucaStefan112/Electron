@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1639482429 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
+1639514578 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
 	"Electronics.h"
 
 1639062762 source:d:\info\c++\proiecte\electron 2\electron2\src\helper.cpp
@@ -22,17 +22,14 @@
 1639333310 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\diode.cpp
 	"Electronic Components/Diode.h"
 
-1639482366 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electronics.h
-	"Switch.h"
-	"Ampermeter.h"
-	"Voltmeter.h"
-	"Ground.h"
-	"Inductor.h"
-	"Buzzer.h"
-	"Lamp.h"
-	"Speaker.h"
-	"Microphone.h"
-	"Motor.h"
+1639514573 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electronics.h
+	"Electronic Components/Ground.h"
+	"Electronic Components/Inductor.h"
+	"Electronic Components/Buzzer.h"
+	"Electronic Components/Lamp.h"
+	"Electronic Components/Speaker.h"
+	"Electronic Components/Microphone.h"
+	"Electronic Components/Motor.h"
 	"Electronic Components/Logic Gates/NotGate.h"
 	"Electronic Components/Logic Gates/AndGate.h"
 	"Electronic Components/Logic Gates/NandGate.h"
@@ -76,6 +73,14 @@
 	"Electronic Components/Resistors/Resistor_Mobile_Contact.h"
 	"Electronic Components/Resistors/Resistor_Mobile_Contact_Stop_Position.h"
 	"Electronic Components/Resistors/Potentiometer_Mobile_Contact.h"
+	"Electronic Components/Measurements/Ammeter.h"
+	"Electronic Components/Measurements/Voltmeter.h"
+	"Electronic Components/Switches/Switch_Open.h"
+	"Electronic Components/Switches/Switch_Closed.h"
+	"Electronic Components/Switches/Switch_Thermal_Magnetic_Breaker.h"
+	"Electronic Components/Switches/Switch_Telegraph.h"
+	"Electronic Components/Switches/Switch_SPDT.h"
+	"Electronic Components/Switches/Switch_DPST.h"
 
 1639082292 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitor.cpp
 	"Electronic Components/Capacitor.h"
@@ -501,4 +506,43 @@
 
 1639069370 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\measurements\voltmeter.h
 	"ElectronicComponent.h"
+
+1639069354 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch.h
+	"ElectronicComponent.h"
+
+1639486333 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_open.cpp
+	"Electronic Components/Switches/Switch_Open.h"
+
+1639486350 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch_open.h
+	"ElectronicComponent.h"
+
+1639486965 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch_closed.h
+	"ElectronicComponent.h"
+
+1639487053 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_closed.cpp
+	"Electronic Components/Switches/Switch_Closed.h"
+
+1639487241 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch_thermal_magnetic_breaker.h
+	"ElectronicComponent.h"
+
+1639500522 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_thermal_magnetic_breaker.cpp
+	"Electronic Components/Switches/Switch_Thermal_Magnetic_Breaker.h"
+
+1639500635 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch_telegraph.h
+	"ElectronicComponent.h"
+
+1639500730 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_telegraph.cpp
+	"Electronic Components/Switches/Switch_Telegraph.h"
+
+1639508015 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch_spdt.h
+	"ElectronicComponent.h"
+
+1639514657 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_spdt.cpp
+	"Electronic Components/Switches/Switch_SPDT.h"
+
+1639514594 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch_dpst.h
+	"ElectronicComponent.h"
+
+1639516533 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_dpst.cpp
+	"Electronic Components/Switches/Switch_DPST.h"
 

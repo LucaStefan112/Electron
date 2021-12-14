@@ -2,7 +2,6 @@
 #define ELECTRONICS_H
 
 //Header for including all electronic components headers:
-#include "Electronic Components/Switch.h"
 #include "Electronic Components/Ground.h"
 #include "Electronic Components/Inductor.h"
 #include "Electronic Components/Buzzer.h"
@@ -69,5 +68,13 @@
 //Measurements:
 #include "Electronic Components/Measurements/Ammeter.h"
 #include "Electronic Components/Measurements/Voltmeter.h"
+
+//Switches:
+#include "Electronic Components/Switches/Switch_Open.h"
+#include "Electronic Components/Switches/Switch_Closed.h"
+#include "Electronic Components/Switches/Switch_Thermal_Magnetic_Breaker.h"
+#include "Electronic Components/Switches/Switch_Telegraph.h"
+#include "Electronic Components/Switches/Switch_SPDT.h"
+#include "Electronic Components/Switches/Switch_DPST.h"
 
 #endif // ELECTRONICS_H

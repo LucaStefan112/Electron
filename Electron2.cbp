@@ -20,6 +20,7 @@
 					<Add directory="include/Electronic Components/Diodes" />
 					<Add directory="include/Electronic Components/Capacitors" />
 					<Add directory="include/Electronic Components/Resistors" />
+					<Add directory="include/Electronic Components/Switches" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -36,6 +37,7 @@
 					<Add directory="include/Electronic Components/Diodes" />
 					<Add directory="include/Electronic Components/Capacitors" />
 					<Add directory="include/Electronic Components/Resistors" />
+					<Add directory="include/Electronic Components/Switches" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -89,7 +91,12 @@
 		<Unit filename="include/Electronic Components/Sources/Source_Voltage_AC.h" />
 		<Unit filename="include/Electronic Components/Sources/Source_Voltage_DC.h" />
 		<Unit filename="include/Electronic Components/Speaker.h" />
-		<Unit filename="include/Electronic Components/Switch.h" />
+		<Unit filename="include/Electronic Components/Switches/Switch_Closed.h" />
+		<Unit filename="include/Electronic Components/Switches/Switch_DPST.h" />
+		<Unit filename="include/Electronic Components/Switches/Switch_Open.h" />
+		<Unit filename="include/Electronic Components/Switches/Switch_SPDT.h" />
+		<Unit filename="include/Electronic Components/Switches/Switch_Telegraph.h" />
+		<Unit filename="include/Electronic Components/Switches/Switch_Thermal_Magnetic_Breaker.h" />
 		<Unit filename="include/Electronic Components/Transistors/Transistor_Bipolar_NPN.h" />
 		<Unit filename="include/Electronic Components/Transistors/Transistor_Bipolar_PNP.h" />
 		<Unit filename="include/Electronic Components/Transistors/Transistor_Dual_Gate_MOSFET_Nchannel.h" />
@@ -148,7 +155,12 @@
 		<Unit filename="src/Electronic Components/Sources/Source_Voltage_AC.cpp" />
 		<Unit filename="src/Electronic Components/Sources/Source_Voltage_DC.cpp" />
 		<Unit filename="src/Electronic Components/Speaker.cpp" />
-		<Unit filename="src/Electronic Components/Switch.cpp" />
+		<Unit filename="src/Electronic Components/Switches/Switch_Closed.cpp" />
+		<Unit filename="src/Electronic Components/Switches/Switch_DPST.cpp" />
+		<Unit filename="src/Electronic Components/Switches/Switch_Open.cpp" />
+		<Unit filename="src/Electronic Components/Switches/Switch_SPDT.cpp" />
+		<Unit filename="src/Electronic Components/Switches/Switch_Telegraph.cpp" />
+		<Unit filename="src/Electronic Components/Switches/Switch_Thermal_Magnetic_Breaker.cpp" />
 		<Unit filename="src/Electronic Components/Transistors/Transistor_Bipolar_NPN.cpp" />
 		<Unit filename="src/Electronic Components/Transistors/Transistor_Bipolar_PNP.cpp" />
 		<Unit filename="src/Electronic Components/Transistors/Transistor_Dual_Gate_MOSFET_Nchannel.cpp" />

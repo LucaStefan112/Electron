@@ -1,9 +1,9 @@
-#include "Electronic Components/Switch.h"
+#include "Electronic Components/Switches/Switch_Open.h"
 
-Switch::Switch(): ElectronicComponent(200, 50, "Switch"){}
+Switch_Open::Switch_Open(): ElectronicComponent(200, 50, "Open Switch"){}
 
 //Drawing the component:
-void Switch::Show(){
+void Switch_Open::Show(){
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
