@@ -148,24 +148,24 @@ bool Button::isCursorPointInButton()
     std::cout << position.up_left.x << " " << position.up_left.y << std::endl;
     std::cout << position.down_right.x << " " << position.down_right.y << std::endl;
 
-    // if (cursorPoint.x < this->getPositionUpLeft().x)
-    // {
-    //     return false;
-    // }
+    if (cursorPoint.x < position.up_left.x)
+    {
+        return false;
+    }
 
-    // if (cursorPoint.x > this->getPositionDownRight().x)
-    // {
-    //     return false;
-    // }
+    if (cursorPoint.x > position.down_right.x)
+    {
+        return false;
+    }
 
-    // if (cursorPoint.y < this->getPositionUpLeft().y)
-    // {
-    //     return false;
-    // }
-    // if (cursorPoint.y > this->getPositionDownRight().y)
-    // {
-    //     return false;
-    // }
+    if (cursorPoint.y < position.up_left.y)
+    {
+        return false;
+    }
+    if (cursorPoint.y > position.down_right.y)
+    {
+        return false;
+    }
     return true;
 
 }

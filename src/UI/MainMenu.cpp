@@ -8,7 +8,8 @@ MainMenu::MainMenu()
 }
 
 void MainMenu::WatchClick() {
-    while (1) {
+    int ok = 1;
+    while (ok) {
         if (GetAsyncKeyState(VK_LBUTTON)) {
             if (NewProject.isCursorPointInButton()) {
                 // create new project functionality
@@ -23,12 +24,12 @@ void MainMenu::WatchClick() {
             }
             if (Exit.isCursorPointInButton()) {
                 std::cout << "exit" << std::endl;
-                break;
+                ok = 0;
+                closegraph(CURRENT_WINDOW);
             }
         }
         delay(200);
     }
-    closegraph();
 }
 
 void MainMenu::Show() {
