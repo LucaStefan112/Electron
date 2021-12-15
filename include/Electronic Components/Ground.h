@@ -1,7 +1,7 @@
 #ifndef GROUND_H
 #define GROUND_H
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class Ground : public ElectronicComponent{
 

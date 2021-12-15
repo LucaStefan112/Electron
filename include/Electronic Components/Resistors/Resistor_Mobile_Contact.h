@@ -1,7 +1,7 @@
 #ifndef RESISTOR_MOBILE_CONTACT_H
 #define RESISTOR_MOBILE_CONTACT_H
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class Resistor_Mobile_Contact : public ElectronicComponent{
 

@@ -1,7 +1,7 @@
 #ifndef DIODE_JUNCTION_PN_H
 #define DIODE_JUNCTION_PN_H
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class Diode_Junction_PN : public ElectronicComponent{
 

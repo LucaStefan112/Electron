@@ -1,7 +1,7 @@
 #ifndef BUZZER_H
 #define BUZZER_H
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class Buzzer : public ElectronicComponent{
 

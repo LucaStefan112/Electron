@@ -1,7 +1,7 @@
 #ifndef INDUCTOR_H
 #define INDUCTOR_H
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class Inductor : public ElectronicComponent{
 

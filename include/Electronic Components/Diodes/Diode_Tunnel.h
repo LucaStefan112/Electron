@@ -1,7 +1,7 @@
 #ifndef DIODE_TUNNEL_H
 #define DIODE_TUNNEL_H
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class Diode_Tunnel : public ElectronicComponent{
 

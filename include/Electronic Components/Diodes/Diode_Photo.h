@@ -1,7 +1,7 @@
 #ifndef DIODE_PHOTO_H
 #define DIODE_PHOTO_H
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class Diode_Photo : public ElectronicComponent{
 

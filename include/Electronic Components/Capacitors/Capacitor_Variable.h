@@ -1,7 +1,7 @@
 #ifndef CAPACITOR_VARIABLE_H
 #define CAPACITOR_VARIABLE_H
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class Capacitor_Variable : public ElectronicComponent{
 

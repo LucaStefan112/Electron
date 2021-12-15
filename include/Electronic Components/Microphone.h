@@ -1,7 +1,7 @@
 #ifndef MICROPHONE_H
 #define MICROPHONE_H
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class Microphone : public ElectronicComponent{
 

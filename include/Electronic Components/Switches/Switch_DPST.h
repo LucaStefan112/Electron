@@ -1,7 +1,7 @@
 #ifndef SWITCH_DPST_H
 #define SWITCH_DPST_H
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class Switch_DPST : public ElectronicComponent{
 
