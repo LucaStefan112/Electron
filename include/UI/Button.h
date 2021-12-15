@@ -35,6 +35,8 @@ protected:
         double getHeight();
         std::string getTitle();
 
+        bool isCursorPointInButton();
+
         //Show the component:
         void Show();
 

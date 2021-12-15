@@ -81,7 +81,7 @@ void ElectronicComponent::setWidth(double thisWidth)
         position.center.x = position.down_right.x - width / 2;
     }
 
-    ElectronicComponent::setHeight(width / width_height_ratio);
+    this->ElectronicComponent::setHeight(width / width_height_ratio);
 }
 
 //Setter of the height:
@@ -108,7 +108,7 @@ void ElectronicComponent::setHeight(double thisHeight)
         break;
     }
 
-    ElectronicComponent::setWidth(height * width_height_ratio);
+    this->setWidth(height * width_height_ratio);
 }
 
 //Getter of the up_left point:
