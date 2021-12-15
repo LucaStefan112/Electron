@@ -1,7 +1,7 @@
 #ifndef AMMETER_H
 #define AMMETER_H
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class Ammeter : public ElectronicComponent{
 

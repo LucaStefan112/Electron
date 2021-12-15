@@ -19,38 +19,35 @@ Button::Button(double thisWidth, double thisHeight, std::string thisTitle){
 
 //Setter of the up_left point:
 void Button::setPositionUpLeft(Helper::Vector_2D thisPosition){
+    positionType = up_left;
     //Updating the other reference points:
     position.up_left.x = thisPosition.x;
-    position.center.x = position.up_left.x + width / 2;
-    position.down_right.x = position.up_left.x + width;
+    position.center.x = position.up_left.x + width / 2; position.down_right.x = position.up_left.x + width;
 
     position.up_left.y = thisPosition.y;
-    position.center.y = position.up_left.y + height / 2;
-    position.down_right.y = position.up_left.y + height;
+    position.center.y = position.up_left.y + height / 2; position.down_right.y = position.up_left.y + height;
 }
 
 //Setter of the center point:
 void Button::setPositionCenter(Helper::Vector_2D thisPosition){
+    positionType = center;
     //Updating the other reference points:
     position.center.x = thisPosition.x;
-    position.up_left.x = position.center.x - width / 2;
-    position.down_right.x = position.center.x + width / 2;
+    position.up_left.x = position.center.x - width / 2; position.down_right.x = position.center.x + width / 2;
 
     position.center.y = thisPosition.y;
-    position.up_left.y = position.center.y - height / 2;
-    position.down_right.y = position.center.y + height / 2;
+    position.up_left.y = position.center.y - height / 2; position.down_right.y = position.center.y + height / 2;
 }
 
 //Setter of the down_right point:
 void Button::setPositionDownRight(Helper::Vector_2D thisPosition){
+    positionType = down_right;
     //Updating the other reference points:
     position.down_right.x = thisPosition.x;
-    position.up_left.x = position.down_right.x - width;
-    position.center.x = position.down_right.x - width / 2;
+    position.up_left.x = position.down_right.x - width; position.center.x = position.down_right.x - width / 2;
 
     position.down_right.y = thisPosition.y;
-    position.up_left.y = position.down_right.y - height;
-    position.center.y = position.down_right.y - height / 2;
+    position.up_left.y = position.down_right.y - height; position.center.y = position.down_right.y - height / 2;
 }
 
 //Setter of the title:
@@ -63,6 +60,18 @@ void Button::setWidth(double thisWidth){
     width = thisWidth;
     position.up_left.x = position.center.x - width / 2;
     position.down_right.x = position.center.x + width / 2;
+
+    switch (positionType) {
+        case up_left:
+            position.center.x = position.up_left.x + width / 2;
+            position.down_right.x = position.up_left.x + width;
+        case center:
+            position.up_left.x = position.center.x - width / 2;
+            position.down_right.x = position.center.x + width / 2;
+        case down_right:
+            position.up_left.x = position.down_right.x - width;
+            position.center.x = position.down_right.x - width / 2;
+    }
 }
 
 //Setter of the height:
@@ -70,6 +79,22 @@ void Button::setHeight(double thisHeight){
     height = thisHeight;
     position.up_left.y = position.center.y - height / 2;
     position.down_right.y = position.center.y + height / 2;
+
+
+    switch (positionType) {
+        case up_left:
+            position.center.y = position.up_left.y + height / 2;
+            position.down_right.y = position.up_left.y + height;
+            break;
+        case center:
+            position.up_left.y = position.center.y - height / 2;
+            position.down_right.y = position.center.y + height / 2;
+            break;
+        case down_right:
+            position.up_left.y = position.down_right.y - height;
+            position.center.y = position.down_right.y - height / 2;
+            break;
+    }
 }
 
 //Getter of the up_left point:
@@ -103,16 +128,13 @@ std::string Button::getTitle(){
 
 void Button::Show() {
     int textSpace = title.size() * LETTER_SPACE;
-    std::cout << position.up_left.x << " " << position.up_left.y << " " << position.down_right.x << " " << position.down_right.y;
-    std::cout << std::endl;
-    std::cout << title << " " << title.size();
-    //bar(position.up_left.x, position.up_left.y, position.down_right.x, position.down_right.y);
-
     char char_array[title.size() + 1];
     strcpy(char_array, title.c_str());
 
+    int buttonHeight = position.up_left.y - position.down_right.y;
+
     setlinestyle(0, 0, 3);
     rectangle(position.up_left.x, position.up_left.y, position.down_right.x, position.down_right.y);
-    settextstyle(9, 0, 2);
-    outtextxy(position.up_left.x + 20, position.up_left.y + 20, char_array);
+    settextstyle(3, 0, 1);
+    outtextxy(position.center.x - textSpace / 2, position.up_left.y + 4, char_array);
 }

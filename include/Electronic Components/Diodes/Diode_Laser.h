@@ -1,7 +1,7 @@
 #ifndef DIODE_LASER_H
 #define DIODE_LASER_H
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class Diode_Laser : public ElectronicComponent{
 

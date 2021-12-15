@@ -1,7 +1,7 @@
 #ifndef REZISTOR_H
 #define REZISTOR_H
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class Resistor : public ElectronicComponent{
 
