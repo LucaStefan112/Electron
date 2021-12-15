@@ -128,16 +128,13 @@ std::string Button::getTitle(){
 
 void Button::Show() {
     int textSpace = title.size() * LETTER_SPACE;
-    std::cout << position.up_left.x << " " << position.up_left.y << " " << position.down_right.x << " " << position.down_right.y;
-    std::cout << std::endl;
-    std::cout << title << " " << title.size();
-    //bar(position.up_left.x, position.up_left.y, position.down_right.x, position.down_right.y);
-
     char char_array[title.size() + 1];
     strcpy(char_array, title.c_str());
 
+    int buttonHeight = position.up_left.y - position.down_right.y;
+
     setlinestyle(0, 0, 3);
     rectangle(position.up_left.x, position.up_left.y, position.down_right.x, position.down_right.y);
-    settextstyle(9, 0, 2);
-    outtextxy(position.up_left.x + 20, position.up_left.y + 20, char_array);
+    settextstyle(3, 0, 1);
+    outtextxy(position.center.x - textSpace / 2, position.up_left.y + 4, char_array);
 }
