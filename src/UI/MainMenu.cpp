@@ -21,11 +21,10 @@ void MainMenu::WatchClick() {
             }
             if (info.isCursorPointInButton()) {
                 std::cout << "info" << std::endl;
-                //infoMenu.Show();
+                infoMenu.Show();
                 //infoMenu.WatchClick();
             }
             if (exit.isCursorPointInButton()) {
-                std::cout << "exit" << std::endl;
                 ok = 0;
                 closegraph(CURRENT_WINDOW);
             }

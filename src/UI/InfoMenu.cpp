@@ -51,6 +51,11 @@ void InfoMenu::WatchClick() {
 void InfoMenu::Show() {
     Helper helper;
 
+    DWORD screenWidth = GetSystemMetrics(SM_CXSCREEN);
+    DWORD screenHeight = GetSystemMetrics(SM_CYSCREEN);
+
+    initwindow(screenWidth/2, screenHeight/2, "", -3, -3);
+
     int windowWidth = getwindowwidth();
     int windowHeight = getwindowheight();
 

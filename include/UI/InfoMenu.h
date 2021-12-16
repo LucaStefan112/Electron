@@ -3,6 +3,7 @@
 
 #include <graphics.h>
 #include <winbgim.h>
+#include <windows.h>
 
 #include "Button.h"
 

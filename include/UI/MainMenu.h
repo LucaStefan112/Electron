@@ -5,13 +5,13 @@
 #include <winbgim.h>
 
 #include "Button.h"
-//#include "InfoMenu.h"
+#include "InfoMenu.h"
 
 class MainMenu
 {
     protected:
         Button newProject, openProject, info, exit;
-        //InfoMenu infoMenu;
+        InfoMenu infoMenu;
     public:
         MainMenu();
         void Show();
