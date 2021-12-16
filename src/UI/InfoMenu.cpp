@@ -72,13 +72,13 @@ void InfoMenu::Show() {
     diodes.Show();
 
     logicGates.setPositionCenter(helper.makeVector_2D(windowWidth / 4, windowHeight / 2));
-    logicGates.setWidth(160);
+    logicGates.setWidth(210);
     logicGates.setHeight(BUTTON_HEIGHT);
     logicGates.setTitle("Logic Gates");
     logicGates.Show();
 
     measurements.setPositionCenter(helper.makeVector_2D(windowWidth / 4, windowHeight / 2 + BUTTON_HEIGHT * 2));
-    measurements.setWidth(160);
+    measurements.setWidth(210);
     measurements.setHeight(BUTTON_HEIGHT);
     measurements.setTitle("Measurements");
     measurements.Show();

@@ -11,7 +11,6 @@ class MainMenu
 {
     protected:
         Button newProject, openProject, info, exit;
-        InfoMenu infoMenu;
     public:
         MainMenu();
         void Show();

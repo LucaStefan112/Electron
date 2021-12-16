@@ -21,8 +21,9 @@ void MainMenu::WatchClick() {
             }
             if (info.isCursorPointInButton()) {
                 std::cout << "info" << std::endl;
+                InfoMenu infoMenu;
                 infoMenu.Show();
-                //infoMenu.WatchClick();
+                infoMenu.WatchClick();
             }
             if (exit.isCursorPointInButton()) {
                 ok = 0;
