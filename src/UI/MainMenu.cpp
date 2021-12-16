@@ -11,19 +11,21 @@ void MainMenu::WatchClick() {
     int ok = 1;
     while (ok) {
         if (GetAsyncKeyState(VK_LBUTTON)) {
-            if (NewProject.isCursorPointInButton()) {
+            if (newProject.isCursorPointInButton()) {
                 // create new project functionality
                 std::cout << "create new project ..." << std::endl;
             }
-            if (OpenProject.isCursorPointInButton()) {
+            if (openProject.isCursorPointInButton()) {
                 // open project functionality
                 std::cout << "open project ..." << std::endl;
             }
-            if (Info.isCursorPointInButton()) {
+            if (info.isCursorPointInButton()) {
                 std::cout << "info" << std::endl;
+                InfoMenu infoMenu;
+                infoMenu.Show();
+                infoMenu.WatchClick();
             }
-            if (Exit.isCursorPointInButton()) {
-                std::cout << "exit" << std::endl;
+            if (exit.isCursorPointInButton()) {
                 ok = 0;
                 closegraph(CURRENT_WINDOW);
             }
@@ -38,27 +40,27 @@ void MainMenu::Show() {
     int windowWidth = getwindowwidth();
     int windowHeight = getwindowheight();
 
-    NewProject.setPositionCenter(helper.makeVector_2D(windowWidth / 2, windowHeight / 2 - BUTTON_HEIGHT * 3));
-    NewProject.setWidth(210);
-    NewProject.setHeight(BUTTON_HEIGHT);
-    NewProject.setTitle("New Project");
-    NewProject.Show();
+    newProject.setPositionCenter(helper.makeVector_2D(windowWidth / 2, windowHeight / 2 - BUTTON_HEIGHT * 3));
+    newProject.setWidth(210);
+    newProject.setHeight(BUTTON_HEIGHT);
+    newProject.setTitle("New Project");
+    newProject.Show();
 
-    OpenProject.setPositionCenter(helper.makeVector_2D(windowWidth / 2, windowHeight / 2 - BUTTON_HEIGHT));
-    OpenProject.setWidth(210);
-    OpenProject.setHeight(BUTTON_HEIGHT);
-    OpenProject.setTitle("Open Project");
-    OpenProject.Show();
+    openProject.setPositionCenter(helper.makeVector_2D(windowWidth / 2, windowHeight / 2 - BUTTON_HEIGHT));
+    openProject.setWidth(210);
+    openProject.setHeight(BUTTON_HEIGHT);
+    openProject.setTitle("Open Project");
+    openProject.Show();
 
-    Info.setPositionCenter(helper.makeVector_2D(windowWidth / 2, windowHeight / 2 + BUTTON_HEIGHT));
-    Info.setWidth(160);
-    Info.setHeight(BUTTON_HEIGHT);
-    Info.setTitle("Info");
-    Info.Show();
+    info.setPositionCenter(helper.makeVector_2D(windowWidth / 2, windowHeight / 2 + BUTTON_HEIGHT));
+    info.setWidth(160);
+    info.setHeight(BUTTON_HEIGHT);
+    info.setTitle("Info");
+    info.Show();
 
-    Exit.setPositionCenter(helper.makeVector_2D(windowWidth / 2, windowHeight / 2 + BUTTON_HEIGHT * 3));
-    Exit.setWidth(160);
-    Exit.setHeight(BUTTON_HEIGHT);
-    Exit.setTitle("Exit");
-    Exit.Show();
+    exit.setPositionCenter(helper.makeVector_2D(windowWidth / 2, windowHeight / 2 + BUTTON_HEIGHT * 3));
+    exit.setWidth(160);
+    exit.setHeight(BUTTON_HEIGHT);
+    exit.setTitle("Exit");
+    exit.Show();
 }
