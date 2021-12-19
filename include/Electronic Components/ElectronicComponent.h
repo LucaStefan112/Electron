@@ -3,6 +3,13 @@
 
 #include "Helper.h"
 #include "Enums.h"
+#define MAX_NUMBER_OF_CONNECTION_POINTS 5
+#define DEFAULT_WIDTH 100
+#define DEFAULT_HEIGHT 100
+#define DEFAULT_WIDTH_HEIGHT_RATIO 1
+#define DEFAULT_NAME "Electronic Component"
+#define DEFAULT_NUMBER_OF_CONNECTION_POINTS 0
+#define DEFAULT_COMPONENT_CODE -1
 
 class ElectronicComponent{
 protected:
@@ -12,26 +19,28 @@ protected:
     }position;
 
     //Dimensions of the component:
-    double width = 100, height = 100, width_height_ratio = 1;
+    double width = DEFAULT_WIDTH, height = DEFAULT_HEIGHT, width_height_ratio = DEFAULT_WIDTH_HEIGHT_RATIO;
 
-    std::string name;
+    std::string name = DEFAULT_NAME;
 
     PositionType positionType = up_left;
 
-    struct ConnectionPoint{
-        ElectronicComponent* connectedComponent = NULL;
-        Helper::Vector_2D connectionPointPosition;
-    }connectionPoints[10];
+    int componentCode = DEFAULT_COMPONENT_CODE;
+
+    int numberOfConnectionPoints = DEFAULT_NUMBER_OF_CONNECTION_POINTS;
+    Helper::ConnectionPoint connectionPoints[MAX_NUMBER_OF_CONNECTION_POINTS];
 
 public:
-    ElectronicComponent(double thisWidth = 100, double thisHeight = 100, std::string thisName = "Electronic Component");
-    std::string name;
+    ElectronicComponent(double thisWidth = DEFAULT_WIDTH, double thisHeight = DEFAULT_HEIGHT, std::string thisName = DEFAULT_NAME, int thisNumberOfConnectionPoints = DEFAULT_NUMBER_OF_CONNECTION_POINTS);
+
     //Setters:
     void setPositionUpLeft(Helper::Vector_2D thisPosition);
     void setPositionCenter(Helper::Vector_2D thisPosition);
     void setPositionDownRight(Helper::Vector_2D thisPosition);
     void setWidth(double thisWidth);
     void setHeight(double thisHeight);
+    void setComponentCode(int thisComponentCode);
+    void setConnectedComponentCodeAtPoint(int thisPoint, int thisComponentCode);
 
     //Getters:
     Helper::Vector_2D getPositionUpLeft();
@@ -39,6 +48,13 @@ public:
     Helper::Vector_2D getPositionDownRight();
     double getWidth();
     double getHeight();
+    int getComponentCode();
+    int getNumberOfConnectionPoints();
+    int getCodeOfConnectedComponentAtPoint(int thisPoint);
+    Helper::ConnectionPoint* getConnectionPoints();
+
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
 
     //Drawing the component:
     void Show();

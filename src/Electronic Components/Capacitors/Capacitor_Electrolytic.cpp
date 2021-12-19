@@ -1,6 +1,6 @@
 #include "Electronic Components/Capacitors/Capacitor_Electrolytic.h"
 
-Capacitor_Electrolytic::Capacitor_Electrolytic(): ElectronicComponent(200, 50, "Electrolytic Capacitor"){}
+Capacitor_Electrolytic::Capacitor_Electrolytic(): ElectronicComponent(200, 50, "Electrolytic Capacitor", 2){}
 
 //Drawing the component:
 void Capacitor_Electrolytic::Show(){
@@ -21,3 +21,15 @@ void Capacitor_Electrolytic::Show(){
     circle(down_right_x - height / 10, center_y, height / 10);
 }
 
+//Updating the positions of the connection points:
+void Capacitor_Electrolytic::updateConnectionPointsPosition(){
+    double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
+    double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
+    double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
+
+    connectionPoints[0].position.x = up_left_x + height / 10;
+    connectionPoints[0].position.y = center_y;
+
+    connectionPoints[1].position.x = down_right_x - height / 10;
+    connectionPoints[1].position.y = center_y;
+}

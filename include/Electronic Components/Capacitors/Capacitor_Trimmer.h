@@ -8,6 +8,9 @@ class Capacitor_Trimmer : public ElectronicComponent{
 public:
     Capacitor_Trimmer();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };

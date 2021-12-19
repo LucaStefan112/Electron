@@ -8,6 +8,9 @@ class Capacitor_Electrolytic : public ElectronicComponent{
 public:
     Capacitor_Electrolytic();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };
