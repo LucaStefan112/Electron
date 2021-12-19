@@ -1,7 +1,7 @@
 #ifndef DIODE_CONSTANT_CURRENT_H
 #define DIODE_CONSTANT_CURRENT_H
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class Diode_Constant_Current : public ElectronicComponent{
 

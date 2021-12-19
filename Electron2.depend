@@ -18,7 +18,7 @@
 	"Helper.h"
 
 1639069104 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\diode.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639333310 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\diode.cpp
 	"Electronic Components/Diode.h"
@@ -87,16 +87,16 @@
 	"Electronic Components/Capacitor.h"
 
 1639069089 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\capacitor.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639082260 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switch.cpp
 	"Electronic Components/Switch.h"
 
 1639069354 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switch.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639069064 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\battery.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639082285 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\battery.cpp
 	"Electronic Components/Battery.h"
@@ -112,10 +112,10 @@
 	"Helper.h"
 
 1639068900 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\ampermeter.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639069370 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\voltmeter.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639082266 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\voltmeter.cpp
 	"Electronic Components/Voltmeter.h"
@@ -124,22 +124,22 @@
 	"Electronic Components/Ground.h"
 
 1639069123 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\ground.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639082241 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\rezistor.cpp
 	"Electronic Components/Rezistor.h"
 
 1639069326 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\rezistor.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639082280 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\ampermeter.cpp
 	"Electronic Components/Ampermeter.h"
 
 1639069340 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\source.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639069239 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\notgate.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639082237 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\notgate.cpp
 	"Electronic Components/NotGate.h"
@@ -151,22 +151,22 @@
 	"Electronic Components/Inductor.h"
 
 1639071513 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\inductor.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639074594 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\buzzer.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639075243 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\buzzer.cpp
 	"Electronic Components/Buzzer.h"
 
 1639078508 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\lamp.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639078875 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\lamp.cpp
 	"Electronic Components/Lamp.h"
 
 1639079394 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\speaker.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639080136 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\speaker.cpp
 	"Electronic Components/Speaker.h"
@@ -175,34 +175,34 @@
 	"Electronic Components/Microphone.h"
 
 1639080296 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\microphone.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639081339 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\motor.cpp
 	"Electronic Components/Motor.h"
 
 1639081244 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\motor.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639083014 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\andgate.cpp
 	"Electronic Components/AndGate.h"
 
 1639082563 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\andgate.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639083152 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\nandgate.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639083265 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\nandgate.cpp
 	"Electronic Components/NandGate.h"
 
 1639083739 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\orgate.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639084463 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\orgate.cpp
 	"Electronic Components/OrGate.h"
 
 1639084432 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\norgate.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639084547 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\norgate.cpp
 	"Electronic Components/NorGate.h"
@@ -229,13 +229,13 @@
 	"Electronic Components/ElectronicComponent.h"
 
 1639139279 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_bipolarnpn.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639143457 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_bipolarnpn.cpp
 	"Electronic Components/Transistors/Transistor_BipolarNPN.h"
 
 1639143816 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_bipolarpnp.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639144034 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_bipolarpnp.cpp
 	"Electronic Components/Transistors/Transistor_BipolarPNP.h"
@@ -331,7 +331,7 @@
 	"Electronic Components/Transistors/Transistor_Single_Connection_Pchannel.h"
 
 1639240353 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\sources\source_voltage_dc.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639311842 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\sources\source_voltage_dc.cpp
 	"Electronic Components/Sources/Source_Voltage_DC.h"
@@ -347,19 +347,19 @@
 	<string>
 
 1639312255 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\sources\source_voltage_ac.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639313814 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\sources\source_voltage_ac.cpp
 	"Electronic Components/Sources/Source_Voltage_AC.h"
 
 1639069064 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\sources\battery.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639314271 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\sources\battery.cpp
 	"Electronic Components/Sources/Battery.h"
 
 1639333271 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\diodes\diode_junction_pn.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639344168 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\diodes\diode_junction_pn.cpp
 	"Electronic Components/Diodes/Diode_Junction_PN.h"
@@ -368,19 +368,19 @@
 	"Electronic Components/Diodes/Diode_Zener.h"
 
 1639333464 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\diodes\diode_zener.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639333922 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\diodes\diode_light_emitting.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639344117 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\diodes\diode_light_emitting.cpp
 	"Electronic Components/Diodes/Diode_Light_Emitting.h"
 
 1639336338 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\diodes\diode_constant_current.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639336578 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\diodes\diode_schottky.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639336430 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\diodes\diode_constant_current.cpp
 	"Electronic Components/Diodes/Diode_Constant_Current.h"
@@ -389,10 +389,10 @@
 	"Electronic Components/Diodes/Diode_Schottky.h"
 
 1639337077 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\diodes\diode_shockley.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639338262 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\diodes\diode_tunnel.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639337177 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\diodes\diode_shockley.cpp
 	"Electronic Components/Diodes/Diode_Shockley.h"
@@ -401,16 +401,16 @@
 	"Electronic Components/Diodes/Diode_Tunnel.h"
 
 1639338607 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\diodes\diode_varactor.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639339463 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\diodes\diode_varactor.cpp
 	"Electronic Components/Diodes/Diode_Varactor.h"
 
 1639339588 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\diodes\diode_pin.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639340093 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\diodes\diode_photo.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639339931 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\diodes\diode_pin.cpp
 	"Electronic Components/Diodes/Diode_PIN.h"
@@ -419,19 +419,19 @@
 	"Electronic Components/Diodes/Diode_Photo.h"
 
 1639340549 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\diodes\diode_laser.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639346362 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\diodes\diode_laser.cpp
 	"Electronic Components/Diodes/Diode_Laser.h"
 
 1639345700 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\diodes\diode_transient_voltage_suppression.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639346197 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\diodes\diode_transient_voltage_suppression.cpp
 	"Electronic Components/Diodes/Diode_Transient_Voltage_Suppression.h"
 
 1639346471 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\diodes\diode_avalance.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639346620 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\diodes\diode_avalance.cpp
 	"Electronic Components/Diodes/Diode_Avalance.h"
@@ -440,37 +440,37 @@
 	"Electronic Components/Diodes/Diode_Gunn.h"
 
 1639346742 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\diodes\diode_gunn.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639427280 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitors\capacitor_ceramic.cpp
 	"Electronic Components/Capacitors/Capacitor_Ceramic.h"
 
 1639427144 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\capacitors\capacitor_ceramic.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639427536 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\capacitors\capacitor_electrolytic.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639428475 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitors\capacitor_electrolytic.cpp
 	"Electronic Components/Capacitors/Capacitor_Electrolytic.h"
 
 1639428579 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\capacitors\capacitor_trimmer.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639429198 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitors\capacitor_trimmer.cpp
 	"Electronic Components/Capacitors/Capacitor_Trimmer.h"
 
 1639429310 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\capacitors\capacitor_variable.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639429671 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitors\capacitor_variable.cpp
 	"Electronic Components/Capacitors/Capacitor_Variable.h"
 
 1639435202 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\resistors\resistor.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639435799 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\resistors\resistor_variable_resistance.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639435858 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\resistors\resistor.cpp
 	"Electronic Components/Resistors/Resistor.h"
@@ -479,19 +479,19 @@
 	"Electronic Components/Resistors/Resistor_Variable_Resistance.h"
 
 1639481218 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\resistors\resistor_mobile_contact.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639482004 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\resistors\resistor_mobile_contact.cpp
 	"Electronic Components/Resistors/Resistor_Mobile_Contact.h"
 
 1639481955 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\resistors\resistor_mobile_contact_stop_position.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639482159 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\resistors\resistor_mobile_contact_stop_position.cpp
 	"Electronic Components/Resistors/Resistor_Mobile_Contact_Stop_Position.h"
 
 1639482396 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\resistors\potentiometer_mobile_contact.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639482450 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\resistors\potentiometer_mobile_contact.cpp
 	"Electronic Components/Resistors/Potentiometer_Mobile_Contact.h"
@@ -500,49 +500,49 @@
 	"Electronic Components/Measurements/Ammeter.h"
 
 1639485425 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\measurements\ammeter.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639485462 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\measurements\voltmeter.cpp
 	"Electronic Components/Measurements/Voltmeter.h"
 
 1639069370 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\measurements\voltmeter.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639069354 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639486333 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_open.cpp
 	"Electronic Components/Switches/Switch_Open.h"
 
 1639486350 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch_open.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639486965 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch_closed.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639487053 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_closed.cpp
 	"Electronic Components/Switches/Switch_Closed.h"
 
 1639487241 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch_thermal_magnetic_breaker.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639500522 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_thermal_magnetic_breaker.cpp
 	"Electronic Components/Switches/Switch_Thermal_Magnetic_Breaker.h"
 
 1639500635 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch_telegraph.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639500730 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_telegraph.cpp
 	"Electronic Components/Switches/Switch_Telegraph.h"
 
 1639508015 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch_spdt.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639514657 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_spdt.cpp
 	"Electronic Components/Switches/Switch_SPDT.h"
 
 1639514594 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch_dpst.h
-	"ElectronicComponent.h"
+	"Electronic Components/ElectronicComponent.h"
 
 1639517130 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_dpst.cpp
 	"Electronic Components/Switches/Switch_DPST.h"

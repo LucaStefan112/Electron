@@ -1,7 +1,7 @@
 #ifndef CAPACITOR_ELECTROLYTIC_H
 #define CAPACITOR_ELECTROLYTIC_H
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class Capacitor_Electrolytic : public ElectronicComponent{
 

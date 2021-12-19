@@ -1,7 +1,7 @@
 #ifndef SOURCE_VOLTAGE_AC_H
 #define SOURCE_VOLTAGE_AC_H
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class Source_Voltage_AC : public ElectronicComponent{
 

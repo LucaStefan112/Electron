@@ -1,7 +1,7 @@
 #ifndef RESISTOR_VARIABLE_RESISTANCE_H
 #define RESISTOR_VARIABLE_RESISTANCE_H
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class Resistor_Variable_Resistance : public ElectronicComponent{
 

@@ -2,6 +2,7 @@
 #define ELECTRONICCOMPONENT_H_INCLUDED
 
 #include "Helper.h"
+#include "Enums.h"
 
 class ElectronicComponent{
 protected:
@@ -15,6 +16,8 @@ protected:
 
     std::string name;
 
+    PositionType positionType = up_left;
+
     struct ConnectionPoint{
         ElectronicComponent* connectedComponent = NULL;
         Helper::Vector_2D connectionPointPosition;
@@ -22,7 +25,7 @@ protected:
 
 public:
     ElectronicComponent(double thisWidth = 100, double thisHeight = 100, std::string thisName = "Electronic Component");
-
+    std::string name;
     //Setters:
     void setPositionUpLeft(Helper::Vector_2D thisPosition);
     void setPositionCenter(Helper::Vector_2D thisPosition);

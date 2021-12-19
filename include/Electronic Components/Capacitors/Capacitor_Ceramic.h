@@ -1,7 +1,7 @@
 #ifndef CAPACITOR_CERAMIC_H
 #define CAPACITOR_CERAMIC_H
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class Capacitor_Ceramic : public ElectronicComponent{
 

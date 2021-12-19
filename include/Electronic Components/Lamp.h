@@ -1,7 +1,7 @@
 #ifndef LAMP_H
 #define LAMP_H
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class Lamp : public ElectronicComponent{
 

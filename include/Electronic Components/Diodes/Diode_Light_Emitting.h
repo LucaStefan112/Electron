@@ -1,7 +1,7 @@
 #ifndef DIODE_LIGHT_EMITTING_H
 #define DIODE_LIGHT_EMITTING_H
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class Diode_Light_Emitting : public ElectronicComponent{
 

@@ -1,7 +1,10 @@
 #ifndef BUTTON_H
 #define BUTTON_H
 
+#include "string.h"
+
 #include "Helper.h"
+#include "Enums.h"
 
 class Button
 {
@@ -10,13 +13,13 @@ protected:
         struct{
             Helper::Vector_2D up_left, center, down_right;
         }position;
-
+        PositionType positionType = up_left;
         //Dimensions of the component:
-        double width = 100, height = 100;
+        double width = 100, height = 50;
         std::string title;
 
     public:
-        Button(double thisWidth = 100, double thisHeight = 100, std::string thisTitle = "Button");
+        Button(double thisWidth = 100, double thisHeight = 50, std::string thisTitle = "Button");
 
         //Setters:
         void setPositionUpLeft(Helper::Vector_2D thisPosition);
@@ -33,6 +36,8 @@ protected:
         double getWidth();
         double getHeight();
         std::string getTitle();
+
+        bool isCursorPointInButton();
 
         //Show the component:
         void Show();
