@@ -7,38 +7,63 @@ InfoMenu::InfoMenu()
 {
     //ctor
 }
-void InfoMenu::WatchClick() {
+void InfoMenu::WatchClick()
+{
     int ok = 1;
-    while (ok) {
-        if (GetAsyncKeyState(VK_LBUTTON)) {
-            if (capacitors.isCursorPointInButton()) {
-                std::cout << "capacitors" << std::endl;
+
+    Helper helper;
+
+    int windowWidth = getwindowwidth();
+    int windowHeight = getwindowheight();
+
+    while (ok)
+    {
+        if (GetAsyncKeyState(VK_LBUTTON))
+        {
+            if (capacitors.isCursorPointInButton())
+            {
+                CapacitorsInfo capacitors;
+                capacitors.CreateScreen();
+                capacitors.Show((double)(windowWidth / 7), (double)(windowHeight / 3));
+                capacitors.AddExit();
             }
-            if (diodes.isCursorPointInButton()) {
-                std::cout << "diodes" << std::endl;
+            if (diodes.isCursorPointInButton())
+            {
+                DiodesInfo diodes;
+                diodes.CreateScreen();
+                diodes.Show((double)(windowWidth / 7), (double)(windowHeight / 9));
+                diodes.AddExit();
             }
-            if (logicGates.isCursorPointInButton()) {
+            if (logicGates.isCursorPointInButton())
+            {
                 std::cout << "logicGates" << std::endl;
             }
-            if (measurements.isCursorPointInButton()) {
+            if (measurements.isCursorPointInButton())
+            {
                 std::cout << "measurements" << std::endl;
             }
-            if (resistors.isCursorPointInButton()) {
+            if (resistors.isCursorPointInButton())
+            {
                 std::cout << "resistors" << std::endl;
             }
-            if (sources.isCursorPointInButton()) {
+            if (sources.isCursorPointInButton())
+            {
                 std::cout << "sources" << std::endl;
             }
-            if (switches.isCursorPointInButton()) {
+            if (switches.isCursorPointInButton())
+            {
                 std::cout << "switches" << std::endl;
             }
-            if (transistors.isCursorPointInButton()) {
+            if (transistors.isCursorPointInButton())
+            {
                 std::cout << "transistors" << std::endl;
             }
-            if (other.isCursorPointInButton()) {
+            if (other.isCursorPointInButton())
+            {
                 std::cout << "other" << std::endl;
             }
-            if (exit.isCursorPointInButton()) {
+            if (exit.isCursorPointInButton())
+            {
                 std::cout << "exit" << std::endl;
                 ok = 0;
                 closegraph(CURRENT_WINDOW);
@@ -48,13 +73,14 @@ void InfoMenu::WatchClick() {
     }
 }
 
-void InfoMenu::Show() {
+void InfoMenu::Show()
+{
     Helper helper;
 
     DWORD screenWidth = GetSystemMetrics(SM_CXSCREEN);
     DWORD screenHeight = GetSystemMetrics(SM_CYSCREEN);
 
-    initwindow(screenWidth/2, screenHeight/2, "", -3, -3);
+    initwindow(screenWidth, screenHeight, "", -3, -3);
 
     int windowWidth = getwindowwidth();
     int windowHeight = getwindowheight();

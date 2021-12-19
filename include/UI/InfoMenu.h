@@ -6,6 +6,8 @@
 #include <windows.h>
 
 #include "Button.h"
+#include "CapacitorsInfo.h"
+#include "DiodesInfo.h"
 
 class InfoMenu
 {

@@ -1,7 +1,6 @@
 #include "UI/Button.h"
 #include <string>
 
-#define LETTER_SPACE 8
 
 Helper Button_helper;
 
@@ -177,12 +176,8 @@ std::string Button::getTitle()
 
 void Button::Show()
 {
-    int textSpace = title.size() * LETTER_SPACE;
-    char char_array[title.size() + 1];
-    strcpy(char_array, title.c_str());
-
     setlinestyle(0, 0, 3);
     rectangle(position.up_left.x, position.up_left.y, position.down_right.x, position.down_right.y);
     settextstyle(3, 0, 1);
-    outtextxy(position.center.x - textSpace / 2, position.up_left.y + 4, char_array);
+    outtextxy(position.center.x - Button_helper.textSpace(title) / 2, position.up_left.y + 4, strdup(title.c_str()));
 }

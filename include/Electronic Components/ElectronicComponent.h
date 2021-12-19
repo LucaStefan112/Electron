@@ -13,12 +13,11 @@ protected:
 
     //Dimensions of the component:
     double width = 100, height = 100, width_height_ratio = 1;
-    std::string name;
     PositionType positionType = up_left;
 
 public:
     ElectronicComponent(double thisWidth = 100, double thisHeight = 100, std::string thisName = "Electronic Component");
-
+    std::string name;
     //Setters:
     void setPositionUpLeft(Helper::Vector_2D thisPosition);
     void setPositionCenter(Helper::Vector_2D thisPosition);
