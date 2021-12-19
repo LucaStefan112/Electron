@@ -5,7 +5,7 @@
 #include <winbgim.h>
 #include <windows.h>
 
-#include "UI.h"
+#include "UI/UI.h"
 
 class InfoMenu
 {

@@ -65,23 +65,20 @@ void ElectronicComponent::setPositionDownRight(Helper::Vector_2D thisPosition)
 void ElectronicComponent::setWidth(double thisWidth)
 {
     width = thisWidth;
-    position.up_left.x = position.center.x - width / 2;
-    position.down_right.x = position.center.x + width / 2;
-
     switch (positionType)
     {
-    case up_left:
-        position.center.x = position.up_left.x + width / 2;
-        position.down_right.x = position.up_left.x + width;
-    case center:
-        position.up_left.x = position.center.x - width / 2;
-        position.down_right.x = position.center.x + width / 2;
-    case down_right:
-        position.up_left.x = position.down_right.x - width;
-        position.center.x = position.down_right.x - width / 2;
+        case up_left:
+            position.center.x = position.up_left.x + width / 2;
+            position.down_right.x = position.up_left.x + width;
+        case center:
+            position.up_left.x = position.center.x - width / 2;
+            position.down_right.x = position.center.x + width / 2;
+        case down_right:
+            position.up_left.x = position.down_right.x - width;
+            position.center.x = position.down_right.x - width / 2;
     }
 
-    this->ElectronicComponent::setHeight(width / width_height_ratio);
+    height = width / width_height_ratio;
 }
 
 //Setter of the height:
@@ -94,21 +91,21 @@ void ElectronicComponent::setHeight(double thisHeight)
 
     switch (positionType)
     {
-    case up_left:
-        position.center.y = position.up_left.y + height / 2;
-        position.down_right.y = position.up_left.y + height;
-        break;
-    case center:
-        position.up_left.y = position.center.y - height / 2;
-        position.down_right.y = position.center.y + height / 2;
-        break;
-    case down_right:
-        position.up_left.y = position.down_right.y - height;
-        position.center.y = position.down_right.y - height / 2;
-        break;
+        case up_left:
+            position.center.y = position.up_left.y + height / 2;
+            position.down_right.y = position.up_left.y + height;
+            break;
+        case center:
+            position.up_left.y = position.center.y - height / 2;
+            position.down_right.y = position.center.y + height / 2;
+            break;
+        case down_right:
+            position.up_left.y = position.down_right.y - height;
+            position.center.y = position.down_right.y - height / 2;
+            break;
     }
 
-    this->setWidth(height * width_height_ratio);
+    width = height * width_height_ratio;
 }
 
 //Getter of the up_left point:

@@ -1,4 +1,4 @@
-#include "UI/InfoMenu.h"
+#include "UI/Info/InfoMenu.h"
 #include "Helper.h"
 
 #define BUTTON_HEIGHT 30

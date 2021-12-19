@@ -5,7 +5,7 @@
 #include <winbgim.h>
 
 #include "Button.h"
-#include "InfoMenu.h"
+#include "Info/InfoMenu.h"
 
 class MainMenu
 {

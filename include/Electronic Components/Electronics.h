@@ -43,6 +43,7 @@
 #include "Electronic Components/Diodes/Diode_Light_Emitting.h"
 #include "Electronic Components/Diodes/Diode_Constant_Current.h"
 #include "Electronic Components/Diodes/Diode_Schottky.h"
+#include "Electronic Components/Diodes/Diode_Shockley.h"
 #include "Electronic Components/Diodes/Diode_Tunnel.h"
 #include "Electronic Components/Diodes/Diode_Varactor.h"
 #include "Electronic Components/Diodes/Diode_PIN.h"

@@ -1,6 +1,8 @@
 #ifndef BUTTON_H
 #define BUTTON_H
 
+#include "string.h"
+
 #include "Helper.h"
 #include "Enums.h"
 
