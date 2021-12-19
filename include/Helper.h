@@ -1,6 +1,7 @@
 #include <graphics.h>
 #include <string>
 #include <iostream>
+#include "Electronic Components/ElectronicComponent.h"
 
 #ifndef HELPER_H
 #define HELPER_H

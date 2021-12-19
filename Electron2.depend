@@ -5,15 +5,16 @@
 1639062762 source:d:\info\c++\proiecte\electron 2\electron2\src\helper.cpp
 	"Helper.h"
 
-1639065125 d:\info\c++\proiecte\electron 2\electron2\include\helper.h
+1639648455 d:\info\c++\proiecte\electron 2\electron2\include\helper.h
 	<graphics.h>
 	<string>
 	<iostream>
+	"Electronic Components/ElectronicComponent.h"
 
 1639082672 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\electroniccomponent.cpp
 	"Electronic Components/ElectronicComponent.h"
 
-1639082193 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electroniccomponent.h
+1639649076 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electroniccomponent.h
 	"Helper.h"
 
 1639069104 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\diode.h
@@ -543,6 +544,6 @@
 1639514594 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch_dpst.h
 	"ElectronicComponent.h"
 
-1639516533 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_dpst.cpp
+1639517130 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_dpst.cpp
 	"Electronic Components/Switches/Switch_DPST.h"
 
