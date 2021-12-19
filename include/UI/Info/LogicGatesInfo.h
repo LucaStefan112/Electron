@@ -1,11 +1,11 @@
 #ifndef LOGICGATESINFO_H
 #define LOGICGATESINFO_H
 
-#include "UI/InfoScreen.h"
+#include "UI/Screen.h"
 #include "Electronic Components/Electronics.h"
 #include "Helper.h"
 
-class LogicGatesInfo: public InfoScreen
+class LogicGatesInfo: public Screen
 {
     public:
         LogicGatesInfo();

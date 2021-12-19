@@ -1,6 +1,6 @@
-#include "UI/SwitchesInfo.h"
+#include "UI/Info/SwitchesInfo.h"
 
-SwitchesInfo::SwitchesInfo(): InfoScreen()
+SwitchesInfo::SwitchesInfo(): Screen()
 {
     //ctor
 }

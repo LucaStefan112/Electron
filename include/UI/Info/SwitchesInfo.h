@@ -1,11 +1,11 @@
 #ifndef SWITCHESINFO_H
 #define SWITCHESINFO_H
 
-#include "UI/InfoScreen.h"
+#include "UI/Screen.h"
 #include "Electronic Components/Electronics.h"
 #include "Helper.h"
 
-class SwitchesInfo: public InfoScreen
+class SwitchesInfo: public Screen
 {
     public:
         SwitchesInfo();

@@ -1,6 +1,6 @@
-#include "UI/DiodesInfo.h"
+#include "UI/Info/DiodesInfo.h"
 
-DiodesInfo::DiodesInfo(): InfoScreen()
+DiodesInfo::DiodesInfo(): Screen()
 {
     //ctor
 }

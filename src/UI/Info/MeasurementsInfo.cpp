@@ -1,4 +1,4 @@
-#include "UI/MeasurementsInfo.h"
+#include "UI/Info/MeasurementsInfo.h"
 
 MeasurementsInfo::MeasurementsInfo()
 {

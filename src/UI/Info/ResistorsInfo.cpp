@@ -1,6 +1,6 @@
-#include "UI/ResistorsInfo.h"
+#include "UI/Info/ResistorsInfo.h"
 
-ResistorsInfo::ResistorsInfo(): InfoScreen()
+ResistorsInfo::ResistorsInfo(): Screen()
 {
     //ctor
 }

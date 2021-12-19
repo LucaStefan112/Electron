@@ -1,6 +1,6 @@
-#include "UI/OtherInfo.h"
+#include "UI/Info/OtherInfo.h"
 
-OtherInfo::OtherInfo(): InfoScreen()
+OtherInfo::OtherInfo(): Screen()
 {
     //ctor
 }

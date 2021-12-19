@@ -1,11 +1,11 @@
 #ifndef DIODESINFO_H
 #define DIODESINFO_H
 
-#include "UI/InfoScreen.h"
+#include "UI/Screen.h"
 #include "Electronic Components/Electronics.h"
 #include "Helper.h"
 
-class DiodesInfo: public InfoScreen
+class DiodesInfo: public Screen
 {
     public:
         DiodesInfo();

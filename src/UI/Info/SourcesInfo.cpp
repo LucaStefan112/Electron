@@ -1,6 +1,6 @@
-#include "UI/SourcesInfo.h"
+#include "UI/Info/SourcesInfo.h"
 
-SourcesInfo::SourcesInfo(): InfoScreen()
+SourcesInfo::SourcesInfo(): Screen()
 {
     //ctor
 }

@@ -1,6 +1,6 @@
-#include "UI/CapacitorsInfo.h"
+#include "UI/Info/CapacitorsInfo.h"
 
-CapacitorsInfo::CapacitorsInfo(): InfoScreen()
+CapacitorsInfo::CapacitorsInfo(): Screen()
 {
     //ctor
 }

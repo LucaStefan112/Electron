@@ -1,11 +1,11 @@
 #ifndef RESISTORSINFO_H
 #define RESISTORSINFO_H
 
-#include "UI/InfoScreen.h"
+#include "UI/Screen.h"
 #include "Electronic Components/Electronics.h"
 #include "Helper.h"
 
-class ResistorsInfo: public InfoScreen
+class ResistorsInfo: public Screen
 {
     public:
         ResistorsInfo();

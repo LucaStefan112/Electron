@@ -1,11 +1,11 @@
-#include "UI/InfoScreen.h"
+#include "UI/Screen.h"
 
-InfoScreen::InfoScreen()
+Screen::Screen()
 {
     //ctor
 }
 
-void InfoScreen::CreateScreen() {
+void Screen::CreateScreen() {
     DWORD screenWidth = GetSystemMetrics(SM_CXSCREEN);
     DWORD screenHeight = GetSystemMetrics(SM_CYSCREEN);
 
@@ -14,7 +14,7 @@ void InfoScreen::CreateScreen() {
     settextstyle(3, 0, 1);
 }
 
-void InfoScreen::AddExit() {
+void Screen::AddExit() {
     Button exit;
     Helper helper;
 

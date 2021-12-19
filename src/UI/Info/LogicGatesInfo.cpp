@@ -1,4 +1,4 @@
-#include "UI/LogicGatesInfo.h"
+#include "UI/Info/LogicGatesInfo.h"
 
 LogicGatesInfo::LogicGatesInfo()
 {

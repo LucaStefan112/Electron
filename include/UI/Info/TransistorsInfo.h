@@ -1,11 +1,11 @@
 #ifndef TRANSISTORSINFO_H
 #define TRANSISTORSINFO_H
 
-#include "UI/InfoScreen.h"
+#include "UI/Screen.h"
 #include "Electronic Components/Electronics.h"
 #include "Helper.h"
 
-class TransistorsInfo: public InfoScreen
+class TransistorsInfo: public Screen
 {
     public:
         TransistorsInfo();

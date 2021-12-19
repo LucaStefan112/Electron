@@ -1,11 +1,11 @@
 #ifndef OTHERINFO_H
 #define OTHERINFO_H
 
-#include "UI/InfoScreen.h"
+#include "UI/Screen.h"
 #include "Electronic Components/Electronics.h"
 #include "Helper.h"
 
-class OtherInfo: public InfoScreen
+class OtherInfo: public Screen
 {
     public:
         OtherInfo();
