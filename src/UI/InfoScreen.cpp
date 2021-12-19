@@ -10,7 +10,6 @@ void InfoScreen::CreateScreen() {
     DWORD screenHeight = GetSystemMetrics(SM_CYSCREEN);
 
     initwindow(screenWidth, screenHeight, "", -3, -3);
-
     setlinestyle(0, 0, 3);
     settextstyle(3, 0, 1);
 }

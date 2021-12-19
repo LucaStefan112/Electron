@@ -22,49 +22,69 @@ void InfoMenu::WatchClick()
         {
             if (capacitors.isCursorPointInButton())
             {
-                CapacitorsInfo capacitors;
-                capacitors.CreateScreen();
-                capacitors.Show((double)(windowWidth / 7), (double)(windowHeight / 3));
-                capacitors.AddExit();
+                CapacitorsInfo capacitorsInfo;
+                capacitorsInfo.CreateScreen();
+                capacitorsInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 3));
+                capacitorsInfo.AddExit();
             }
             if (diodes.isCursorPointInButton())
             {
-                DiodesInfo diodes;
-                diodes.CreateScreen();
-                diodes.Show((double)(windowWidth / 7), (double)(windowHeight / 9));
-                diodes.AddExit();
+                DiodesInfo diodesInfo;
+                diodesInfo.CreateScreen();
+                diodesInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 9));
+                diodesInfo.AddExit();
             }
             if (logicGates.isCursorPointInButton())
             {
-                std::cout << "logicGates" << std::endl;
+                LogicGatesInfo logicGatesInfo;
+                logicGatesInfo.CreateScreen();
+                logicGatesInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 5));
+                logicGatesInfo.AddExit();
             }
             if (measurements.isCursorPointInButton())
             {
-                std::cout << "measurements" << std::endl;
+                MeasurementsInfo measurementsInfo;
+                measurementsInfo.CreateScreen();
+                measurementsInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 2));
+                measurementsInfo.AddExit();
             }
             if (resistors.isCursorPointInButton())
             {
-                std::cout << "resistors" << std::endl;
+                ResistorsInfo resistorsInfo;
+                resistorsInfo.CreateScreen();
+                resistorsInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 6));
+                resistorsInfo.AddExit();
             }
             if (sources.isCursorPointInButton())
             {
-                std::cout << "sources" << std::endl;
+                SourcesInfo sourcesInfo;
+                sourcesInfo.CreateScreen();
+                sourcesInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 3));
+                sourcesInfo.AddExit();
             }
             if (switches.isCursorPointInButton())
             {
-                std::cout << "switches" << std::endl;
+                SwitchesInfo switchesInfo;
+                switchesInfo.CreateScreen();
+                switchesInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 5));
+                switchesInfo.AddExit();
             }
             if (transistors.isCursorPointInButton())
             {
-                std::cout << "transistors" << std::endl;
+                TransistorsInfo transistorsInfo;
+                transistorsInfo.CreateScreen();
+                transistorsInfo.Show((double)(windowWidth / 8), (double)(windowHeight / 8));
+                transistorsInfo.AddExit();
             }
             if (other.isCursorPointInButton())
             {
-                std::cout << "other" << std::endl;
+                OtherInfo otherInfo;
+                otherInfo.CreateScreen();
+                otherInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 5));
+                otherInfo.AddExit();
             }
             if (exit.isCursorPointInButton())
             {
-                std::cout << "exit" << std::endl;
                 ok = 0;
                 closegraph(CURRENT_WINDOW);
             }

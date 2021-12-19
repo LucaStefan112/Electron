@@ -1,15 +1,14 @@
-#ifndef DIODESINFO_H
-#define DIODESINFO_H
+#ifndef SOURCESINFO_H
+#define SOURCESINFO_H
 
 #include "UI/InfoScreen.h"
 #include "Electronic Components/Electronics.h"
 #include "Helper.h"
 
-class DiodesInfo: public InfoScreen
+class SourcesInfo: public InfoScreen
 {
     public:
-        DiodesInfo();
+        SourcesInfo();
         void Show(double w, double h);
 };
-
-#endif // DIODESINFO_H
+#endif // SOURCESINFO_H

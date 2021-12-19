@@ -1,15 +1,15 @@
-#ifndef DIODESINFO_H
-#define DIODESINFO_H
+#ifndef LOGICGATESINFO_H
+#define LOGICGATESINFO_H
 
 #include "UI/InfoScreen.h"
 #include "Electronic Components/Electronics.h"
 #include "Helper.h"
 
-class DiodesInfo: public InfoScreen
+class LogicGatesInfo: public InfoScreen
 {
     public:
-        DiodesInfo();
+        LogicGatesInfo();
         void Show(double w, double h);
 };
 
-#endif // DIODESINFO_H
+#endif // LOGICGATESINFO_H

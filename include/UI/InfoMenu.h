@@ -5,9 +5,7 @@
 #include <winbgim.h>
 #include <windows.h>
 
-#include "Button.h"
-#include "CapacitorsInfo.h"
-#include "DiodesInfo.h"
+#include "UI.h"
 
 class InfoMenu
 {
