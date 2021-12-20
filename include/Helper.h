@@ -25,6 +25,12 @@ public:
     };
 
     double distanceBetween(Vector_2D a, Vector_2D b);
+
+    Vector_2D rotatePointToReference(Vector_2D a, Vector_2D b, int degrees);
+
+    void rotationalLine(double x1, double y1, double x2, double y2, Vector_2D thisReference, int degrees);
+    void rotationalCircle(double x1, double y1, Vector_2D thisReference, double radius, int degrees);
 };
+
 
 #endif // HELPER_H

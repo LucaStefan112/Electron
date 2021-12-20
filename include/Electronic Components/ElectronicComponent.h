@@ -12,6 +12,7 @@
 #define DEFAULT_COMPONENT_CODE -1
 #define DEFAULT_FLIP_STATE false
 #define DEFAULT_ROTATE_STATE 0
+#define DEFAULT_OUTTERBOX_VALUE false;
 
 class ElectronicComponent{
 protected:
@@ -23,6 +24,7 @@ protected:
     //Dimensions of the component:
     double width = DEFAULT_WIDTH, height = DEFAULT_HEIGHT, width_height_ratio = DEFAULT_WIDTH_HEIGHT_RATIO;
 
+    //Name of the component:
     std::string name = DEFAULT_NAME;
 
     PositionType positionType = up_left;
@@ -34,6 +36,8 @@ protected:
 
     bool flipped = DEFAULT_FLIP_STATE;
     int rotateState = DEFAULT_ROTATE_STATE;
+
+    bool showOutterBox = DEFAULT_OUTTERBOX_VALUE;
 
 public:
     ElectronicComponent(double thisWidth = DEFAULT_WIDTH, double thisHeight = DEFAULT_HEIGHT, std::string thisName = DEFAULT_NAME, int thisNumberOfConnectionPoints = DEFAULT_NUMBER_OF_CONNECTION_POINTS);
@@ -48,6 +52,7 @@ public:
     void setConnectedComponentCodeAtPoint(int thisPoint, int thisComponentCode);
     void flipComponent();
     void rotateComponent(int thisDegree);
+    void setOutterBox(bool thisState);
 
     //Getters:
     Helper::Vector_2D getPositionUpLeft();
@@ -61,7 +66,7 @@ public:
     Helper::ConnectionPoint* getConnectionPoints();
 
     //Updating the position of each connection point:
-    void updateConnectionPointsPosition();
+    virtual void updateConnectionPointsPosition();
 
     //Drawing the component:
     void Show();

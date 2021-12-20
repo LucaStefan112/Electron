@@ -17,8 +17,9 @@ ElectronicComponent::ElectronicComponent(double thisWidth, double thisHeight, st
         width_height_ratio = thisWidth / thisHeight;
         name = thisName;
         numberOfConnectionPoints = thisNumberOfConnectionPoints;
+        setPositionUpLeft(ElectronicComponent_helper.makeVector_2D(0, 0));
 
-        updateConnectionPointsPosition();
+        this->updateConnectionPointsPosition();
     }
 }
 
@@ -35,7 +36,7 @@ void ElectronicComponent::setPositionUpLeft(Helper::Vector_2D thisPosition)
     position.center.y = position.up_left.y + height / 2;
     position.down_right.y = position.up_left.y + height;
 
-    updateConnectionPointsPosition();
+    this->updateConnectionPointsPosition();
 }
 
 //Setter of the center point:
@@ -51,7 +52,7 @@ void ElectronicComponent::setPositionCenter(Helper::Vector_2D thisPosition)
     position.up_left.y = position.center.y - height / 2;
     position.down_right.y = position.center.y + height / 2;
 
-    updateConnectionPointsPosition();
+    this->updateConnectionPointsPosition();
 }
 
 //Setter of the down_right point:
@@ -67,7 +68,7 @@ void ElectronicComponent::setPositionDownRight(Helper::Vector_2D thisPosition)
     position.up_left.y = position.down_right.y - height;
     position.center.y = position.down_right.y - height / 2;
 
-    updateConnectionPointsPosition();
+    this->updateConnectionPointsPosition();
 }
 
 //Setter of the width:
@@ -89,7 +90,7 @@ void ElectronicComponent::setWidth(double thisWidth)
 
     height = width / width_height_ratio;
 
-    updateConnectionPointsPosition();
+    this->updateConnectionPointsPosition();
 }
 
 //Setter of the height:
@@ -118,7 +119,7 @@ void ElectronicComponent::setHeight(double thisHeight)
 
     width = height * width_height_ratio;
 
-    updateConnectionPointsPosition();
+    this->updateConnectionPointsPosition();
 }
 
 //Setter of the component code:
@@ -134,14 +135,22 @@ void ElectronicComponent::setConnectedComponentCodeAtPoint(int thisPoint, int th
         connectionPoints[thisPoint].connectedComponentCode = thisComponentCode;
 }
 
+void ElectronicComponent::setOutterBox(bool thisState){
+    showOutterBox = thisState;
+}
+
 //Flipping the component:
 void ElectronicComponent::flipComponent(){
     flipped = !flipped;
+    rotateState *= -1;
+    this->updateConnectionPointsPosition();
 }
 
 //Rotating the component:
 void ElectronicComponent::rotateComponent(int thisDegree){
     rotateState = thisDegree % 360;
+
+    this->updateConnectionPointsPosition();
 }
 
 //Getter of the up_left point:
@@ -209,24 +218,34 @@ void ElectronicComponent::Show()
 //Passing trough a string all the data about the component:
 std::string ElectronicComponent::toString()
 {
-    std::string text =  std::string(std::string("Type: ") + name + std::string(";\n") +
-                        std::string("Width: ") + std::to_string(width) + std::string(";\n") +
-                        std::string("Height: ") + std::to_string(height) + std::string(";\n") +
-                        std::string("Width / Height ratio: ") + std::to_string(width_height_ratio) + std::string(";\n") +
-                        std::string("Up_Left Coordinates: ") +
-                        std::string("x: ") + std::to_string(position.up_left.x) + std::string(" \ ") +
-                        std::string("y: ") + std::to_string(position.up_left.y) + std::string(";\n") +
-                        std::string("Center Coordinates: ") +
-                        std::string("x: ") + std::to_string(position.center.x) + std::string(" \ ") +
-                        std::string("y: ") + std::to_string(position.center.y) + std::string(";\n") +
-                        std::string("Down_Right Coordinates: ") +
-                        std::string("x: ") + std::to_string(position.down_right.x) + std::string(" \ ") +
-                        std::string("y: ") + std::to_string(position.down_right.y) + std::string(";\n") +
-                        std::string("Number of Connection Points: ") + std::to_string(numberOfConnectionPoints) + std::string(";\n") +
-                        std::string("Connected Components:\n"));
+    std::string text =  std::string(std::string("Type: ") + name + std::string(" | ") +
+                                    std::string("Code: ") + std::to_string(componentCode) + std::string(";\n\n") +
+                                    std::string("Width: ") + std::to_string(width) + std::string(" | ") +
+                                    std::string("Height: ") + std::to_string(height) + std::string(";\n") +
+                                    std::string("Width / Height ratio: ") + std::to_string(width_height_ratio) + std::string(";\n\n") +
+                                    std::string("Up_Left Coordinates: ") +
+                                    std::string("x: ") + std::to_string(position.up_left.x) + std::string(" | ") +
+                                    std::string("y: ") + std::to_string(position.up_left.y) + std::string(";\n") +
+                                    std::string("Center Coordinates: ") +
+                                    std::string("x: ") + std::to_string(position.center.x) + std::string(" | ") +
+                                    std::string("y: ") + std::to_string(position.center.y) + std::string(";\n") +
+                                    std::string("Down_Right Coordinates: ") +
+                                    std::string("x: ") + std::to_string(position.down_right.x) + std::string(" | ") +
+                                    std::string("y: ") + std::to_string(position.down_right.y) + std::string(";\n\n") +
+                                    std::string("Flipped: ") + std::to_string(flipped) + std::string(" | ") +
+                                    std::string("Angle of rotation: ") + std::to_string(rotateState) + std::string(";\n\n") +
+                                    std::string("Number of Connection Points: ") + std::to_string(numberOfConnectionPoints) + std::string(";\n\n") +
+                                    std::string("Connected Components:\n"));
 
-                        for(int i = 0; i < numberOfConnectionPoints; i++)
-                            text += std::string(std::string("Point ") + std::to_string(i) + std::string(": ") + std::to_string(connectionPoints[i].connectedComponentCode) + std::string(";\n"));
+    for(int i = 0; i < numberOfConnectionPoints; i++)
+        text += std::string(std::string("Point ") +
+                std::to_string(i) + std::string(": ") +
+                std::to_string(connectionPoints[i].connectedComponentCode) +
+                std::string(" | Coordinates: ") +
+                std::string("x: ") + std::to_string(connectionPoints[i].position.x) + std::string(" \ ") +
+                std::string("y: ") + std::to_string(connectionPoints[i].position.y) + std::string(";\n"));
+
+    text += std::string("\n====================================================\n\n");
 
     return text;
 }
