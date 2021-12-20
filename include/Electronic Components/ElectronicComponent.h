@@ -66,6 +66,8 @@ public:
 
     //Parsing the component's data to string:
     std::string toString();
+
+    void saveToFile();
 };
 
 
