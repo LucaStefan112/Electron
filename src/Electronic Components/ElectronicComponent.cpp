@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "Electronic Components/ElectronicComponent.h"
 
 Helper ElectronicComponent_helper;
