@@ -134,6 +134,16 @@ void ElectronicComponent::setConnectedComponentCodeAtPoint(int thisPoint, int th
         connectionPoints[thisPoint].connectedComponentCode = thisComponentCode;
 }
 
+//Flipping the component:
+void ElectronicComponent::flipComponent(){
+    flipped = !flipped;
+}
+
+//Rotating the component:
+void ElectronicComponent::rotateComponent(){
+    rotateState++; rotateState %= 4;
+}
+
 //Getter of the up_left point:
 Helper::Vector_2D ElectronicComponent::getPositionUpLeft()
 {

@@ -30,6 +30,9 @@ protected:
     int numberOfConnectionPoints = DEFAULT_NUMBER_OF_CONNECTION_POINTS;
     Helper::ConnectionPoint connectionPoints[MAX_NUMBER_OF_CONNECTION_POINTS];
 
+    bool flipped = false;
+    int rotateState = 0;
+
 public:
     ElectronicComponent(double thisWidth = DEFAULT_WIDTH, double thisHeight = DEFAULT_HEIGHT, std::string thisName = DEFAULT_NAME, int thisNumberOfConnectionPoints = DEFAULT_NUMBER_OF_CONNECTION_POINTS);
 
@@ -41,6 +44,8 @@ public:
     void setHeight(double thisHeight);
     void setComponentCode(int thisComponentCode);
     void setConnectedComponentCodeAtPoint(int thisPoint, int thisComponentCode);
+    void flipComponent();
+    void rotateComponent();
 
     //Getters:
     Helper::Vector_2D getPositionUpLeft();

@@ -10,3 +10,7 @@ Helper::Vector_2D Helper::makeVector_2D(double x, double y){
 int Helper::textSpace(std::string title) {
     return title.size() * LETTER_SPACE;
 }
+
+double Helper::distanceBetween(Vector_2D a, Vector_2D b){
+    return sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y));
+}

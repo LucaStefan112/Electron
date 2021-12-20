@@ -1,20 +1,21 @@
 # depslib dependency file v1.0
-1639929870 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
+1639930104 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
 	"Electronics.h"
 
 1639920773 source:d:\info\c++\proiecte\electron 2\electron2\src\helper.cpp
 	"Helper.h"
 
-1639928957 d:\info\c++\proiecte\electron 2\electron2\include\helper.h
+1640013571 d:\info\c++\proiecte\electron 2\electron2\include\helper.h
 	<graphics.h>
 	<string>
 	<iostream>
+	<math.h>
 	"Electronic Components/ElectronicComponent.h"
 
-1639929047 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\electroniccomponent.cpp
+1640013601 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\electroniccomponent.cpp
 	"Electronic Components/ElectronicComponent.h"
 
-1639928113 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electroniccomponent.h
+1640001676 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electroniccomponent.h
 	"Helper.h"
 	"Enums.h"
 
@@ -464,10 +465,10 @@
 1639930030 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitors\capacitor_trimmer.cpp
 	"Electronic Components/Capacitors/Capacitor_Trimmer.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\capacitors\capacitor_variable.h
+1639930077 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\capacitors\capacitor_variable.h
 	"Electronic Components/ElectronicComponent.h"
 
-1639429671 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitors\capacitor_variable.cpp
+1639930092 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitors\capacitor_variable.cpp
 	"Electronic Components/Capacitors/Capacitor_Variable.h"
 
 1639920773 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\resistors\resistor.h
