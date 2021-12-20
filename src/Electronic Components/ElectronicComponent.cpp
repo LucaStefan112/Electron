@@ -140,8 +140,8 @@ void ElectronicComponent::flipComponent(){
 }
 
 //Rotating the component:
-void ElectronicComponent::rotateComponent(){
-    rotateState++; rotateState %= 4;
+void ElectronicComponent::rotateComponent(int thisDegree){
+    rotateState = thisDegree % 360;
 }
 
 //Getter of the up_left point:

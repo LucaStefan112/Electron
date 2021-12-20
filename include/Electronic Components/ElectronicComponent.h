@@ -10,6 +10,8 @@
 #define DEFAULT_NAME "Electronic Component"
 #define DEFAULT_NUMBER_OF_CONNECTION_POINTS 0
 #define DEFAULT_COMPONENT_CODE -1
+#define DEFAULT_FLIP_STATE false
+#define DEFAULT_ROTATE_STATE 0
 
 class ElectronicComponent{
 protected:
@@ -30,8 +32,8 @@ protected:
     int numberOfConnectionPoints = DEFAULT_NUMBER_OF_CONNECTION_POINTS;
     Helper::ConnectionPoint connectionPoints[MAX_NUMBER_OF_CONNECTION_POINTS];
 
-    bool flipped = false;
-    int rotateState = 0;
+    bool flipped = DEFAULT_FLIP_STATE;
+    int rotateState = DEFAULT_ROTATE_STATE;
 
 public:
     ElectronicComponent(double thisWidth = DEFAULT_WIDTH, double thisHeight = DEFAULT_HEIGHT, std::string thisName = DEFAULT_NAME, int thisNumberOfConnectionPoints = DEFAULT_NUMBER_OF_CONNECTION_POINTS);
@@ -45,7 +47,7 @@ public:
     void setComponentCode(int thisComponentCode);
     void setConnectedComponentCodeAtPoint(int thisPoint, int thisComponentCode);
     void flipComponent();
-    void rotateComponent();
+    void rotateComponent(int thisDegree);
 
     //Getters:
     Helper::Vector_2D getPositionUpLeft();
