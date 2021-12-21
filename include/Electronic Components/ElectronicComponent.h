@@ -13,6 +13,7 @@
 #define DEFAULT_FLIP_STATE false
 #define DEFAULT_ROTATE_STATE 0
 #define DEFAULT_OUTTERBOX_VALUE false;
+#define DEFAULT_CONNECTIONPOINTS_VALUE false;
 
 class ElectronicComponent{
 protected:
@@ -38,6 +39,7 @@ protected:
     int rotateState = DEFAULT_ROTATE_STATE;
 
     bool showOutterBox = DEFAULT_OUTTERBOX_VALUE;
+    bool showConnectionPoints = DEFAULT_CONNECTIONPOINTS_VALUE;
 
 public:
     ElectronicComponent(double thisWidth = DEFAULT_WIDTH, double thisHeight = DEFAULT_HEIGHT, std::string thisName = DEFAULT_NAME, int thisNumberOfConnectionPoints = DEFAULT_NUMBER_OF_CONNECTION_POINTS);
@@ -53,6 +55,8 @@ public:
     void flipComponent();
     void rotateComponent(int thisDegree);
     void setOutterBox(bool thisState);
+    void setConnectionPoints(bool thisState);
+    void showElements(bool modeErase = false);
 
     //Getters:
     Helper::Vector_2D getPositionUpLeft();
@@ -69,7 +73,10 @@ public:
     virtual void updateConnectionPointsPosition();
 
     //Drawing the component:
-    void Show();
+    virtual void Show();
+
+    //Erasing the component:
+    void Erase();
 
     //Parsing the component's data to string:
     std::string toString();

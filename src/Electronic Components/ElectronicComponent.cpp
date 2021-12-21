@@ -4,28 +4,22 @@ Helper ElectronicComponent_helper;
 
 ElectronicComponent::ElectronicComponent(double thisWidth, double thisHeight, std::string thisName, int thisNumberOfConnectionPoints)
 {
+    width = thisWidth;
+    height = thisHeight;
+    width_height_ratio = thisWidth / thisHeight;
+    name = thisName;
+    numberOfConnectionPoints = thisNumberOfConnectionPoints;
+    setPositionUpLeft(ElectronicComponent_helper.makeVector_2D(0, 0));
 
-    if(thisWidth <= 0 || thisHeight <= 0)
-    {
-        std::cout << "Width and height must be greater than 0!";
-        return;
-    }
-    else
-    {
-        width = thisWidth;
-        height = thisHeight;
-        width_height_ratio = thisWidth / thisHeight;
-        name = thisName;
-        numberOfConnectionPoints = thisNumberOfConnectionPoints;
-        setPositionUpLeft(ElectronicComponent_helper.makeVector_2D(0, 0));
-
-        this->updateConnectionPointsPosition();
-    }
+    this->updateConnectionPointsPosition();
+    this->Show();
 }
 
 //Setter of the up_left point:
 void ElectronicComponent::setPositionUpLeft(Helper::Vector_2D thisPosition)
 {
+    Erase();
+
     positionType = up_left;
     //Updating the other reference points:
     position.up_left.x = thisPosition.x;
@@ -37,11 +31,14 @@ void ElectronicComponent::setPositionUpLeft(Helper::Vector_2D thisPosition)
     position.down_right.y = position.up_left.y + height;
 
     this->updateConnectionPointsPosition();
+    this->Show();
 }
 
 //Setter of the center point:
 void ElectronicComponent::setPositionCenter(Helper::Vector_2D thisPosition)
 {
+    Erase();
+
     positionType = center;
     //Updating the other reference points:
     position.center.x = thisPosition.x;
@@ -53,11 +50,14 @@ void ElectronicComponent::setPositionCenter(Helper::Vector_2D thisPosition)
     position.down_right.y = position.center.y + height / 2;
 
     this->updateConnectionPointsPosition();
+    this->Show();
 }
 
 //Setter of the down_right point:
 void ElectronicComponent::setPositionDownRight(Helper::Vector_2D thisPosition)
 {
+    Erase();
+
     positionType = down_right;
     //Updating the other reference points:
     position.down_right.x = thisPosition.x;
@@ -69,57 +69,67 @@ void ElectronicComponent::setPositionDownRight(Helper::Vector_2D thisPosition)
     position.center.y = position.down_right.y - height / 2;
 
     this->updateConnectionPointsPosition();
+    this->Show();
 }
 
 //Setter of the width:
 void ElectronicComponent::setWidth(double thisWidth)
 {
+    Erase();
+
     width = thisWidth;
+    height = width / width_height_ratio;
+
     switch (positionType)
     {
         case up_left:
-            position.center.x = position.up_left.x + width / 2;
-            position.down_right.x = position.up_left.x + width;
+            position.center.x = position.up_left.x + width / 2; position.center.y = position.up_left.y + height / 2;
+            position.down_right.x = position.up_left.x + width; position.down_right.y = position.up_left.x + height;
+        break;
+
         case center:
-            position.up_left.x = position.center.x - width / 2;
-            position.down_right.x = position.center.x + width / 2;
+            position.up_left.x = position.center.x - width / 2; position.up_left.y = position.center.y - height / 2;
+            position.down_right.x = position.center.x + width / 2; position.down_right.y = position.center.y + height / 2;
+        break;
+
         case down_right:
-            position.up_left.x = position.down_right.x - width;
-            position.center.x = position.down_right.x - width / 2;
+            position.up_left.x = position.down_right.x - width; position.up_left.y = position.down_right.y - height;
+            position.center.x = position.down_right.x - width / 2; position.center.y = position.down_right.y - height / 2;
+        break;
     }
 
-    height = width / width_height_ratio;
-
     this->updateConnectionPointsPosition();
+    this->Show();
 }
 
 //Setter of the height:
 void ElectronicComponent::setHeight(double thisHeight)
 {
-    height = thisHeight;
-    position.up_left.y = position.center.y - height / 2;
-    position.down_right.y = position.center.y + height / 2;
+    Erase();
 
+    height = thisHeight;
+    width = height * width_height_ratio;
 
     switch (positionType)
     {
         case up_left:
-            position.center.y = position.up_left.y + height / 2;
-            position.down_right.y = position.up_left.y + height;
-            break;
+            position.center.y = position.up_left.y + height / 2; position.center.x = position.up_left.x + width / 2;
+            position.down_right.y = position.up_left.y + height; position.down_right.x = position.up_left.x + width;
+        break;
+
         case center:
-            position.up_left.y = position.center.y - height / 2;
-            position.down_right.y = position.center.y + height / 2;
-            break;
+            position.up_left.y = position.center.y - height / 2; position.up_left.x = position.center.x - width / 2;
+            position.down_right.y = position.center.y + height / 2; position.down_right.x = position.center.x + width / 2;
+        break;
+
         case down_right:
-            position.up_left.y = position.down_right.y - height;
-            position.center.y = position.down_right.y - height / 2;
-            break;
+            position.up_left.y = position.down_right.y - height; position.up_left.x = position.down_right.x - width;
+            position.center.y = position.down_right.y - height / 2; position.center.x = position.down_right.x - width / 2;
+        break;
     }
 
-    width = height * width_height_ratio;
-
     this->updateConnectionPointsPosition();
+    this->Show();
 }
 
 //Setter of the component code:
@@ -136,21 +146,40 @@ void ElectronicComponent::setConnectedComponentCodeAtPoint(int thisPoint, int th
 }
 
 void ElectronicComponent::setOutterBox(bool thisState){
+    Erase();
+
     showOutterBox = thisState;
+
+    this->Show();
+}
+
+void ElectronicComponent::setConnectionPoints(bool thisState){
+    Erase();
+
+    showConnectionPoints = thisState;
+
+    this->Show();
 }
 
 //Flipping the component:
 void ElectronicComponent::flipComponent(){
+    Erase();
+
     flipped = !flipped;
     rotateState *= -1;
+
     this->updateConnectionPointsPosition();
+    this->Show();
 }
 
 //Rotating the component:
 void ElectronicComponent::rotateComponent(int thisDegree){
+    Erase();
+
     rotateState = thisDegree % 360;
 
     this->updateConnectionPointsPosition();
+    this->Show();
 }
 
 //Getter of the up_left point:
@@ -212,7 +241,66 @@ void ElectronicComponent::updateConnectionPointsPosition(){
 //Drawing the component:
 void ElectronicComponent::Show()
 {
-    bar(position.up_left.x, position.up_left.y, position.down_right.x, position.down_right.y);
+    return;
+}
+
+void ElectronicComponent::showElements(bool modeErase){
+
+    double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
+    double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
+    double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
+
+    if(showOutterBox){
+
+        setcolor(RED);
+
+        if(modeErase)    setcolor(BLACK);
+
+        ElectronicComponent_helper.rotationalLine(
+        up_left_x, up_left_y, down_right_x, up_left_y, getPositionCenter(),
+        rotateState);
+
+        ElectronicComponent_helper.rotationalLine(
+        down_right_x, up_left_y, down_right_x, down_right_y, getPositionCenter(),
+        rotateState);
+
+        ElectronicComponent_helper.rotationalLine(
+        down_right_x, down_right_y, up_left_x, down_right_y, getPositionCenter(),
+        rotateState);
+
+        ElectronicComponent_helper.rotationalLine(
+        up_left_x, down_right_y, up_left_x, up_left_y, getPositionCenter(),
+        rotateState);
+
+        setcolor(WHITE);
+    }
+
+    if(showConnectionPoints){
+
+        setfillstyle(INTERLEAVE_FILL, RED);
+
+        if(modeErase)    {setfillstyle(INTERLEAVE_FILL, BLACK); setcolor(BLACK);}
+
+        for(int i = 0; i < numberOfConnectionPoints; i++){
+            fillellipse(connectionPoints[i].position.x, connectionPoints[i].position.y, height / 10, height / 10);
+        }
+
+        setfillstyle(SOLID_FILL, WHITE);
+        setcolor(WHITE);
+    }
+}
+
+//Erasing the component:
+void ElectronicComponent::Erase()
+{
+    setfillstyle(SOLID_FILL, BLACK);
+    setcolor(BLACK);
+
+    this->Show();
+    showElements(true);
+
+    setcolor(WHITE);
+    setfillstyle(SOLID_FILL, WHITE);
 }
 
 //Passing trough a string all the data about the component:

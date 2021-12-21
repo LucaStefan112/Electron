@@ -41,12 +41,64 @@ void Helper::rotationalLine(double x1, double y1, double x2, double y2, Vector_2
     line(linePosition1.x, linePosition1.y, linePosition2.x, linePosition2.y);
 }
 
-void Helper::rotationalCircle(double x1, double y1, Vector_2D thisReference, double radius, int degrees){
+void Helper::rotationalBar(double x1, double y1, double x2, double y2, Vector_2D thisReference, int degrees){
+
+    Vector_2D barPosition1 = rotatePointToReference(
+        makeVector_2D(x1, y1),
+        thisReference,
+        degrees);
+    Vector_2D barPosition2 = rotatePointToReference(
+        makeVector_2D(x2, y2),
+        thisReference,
+        degrees);
+
+    bar(barPosition1.x, barPosition1.y, barPosition2.x, barPosition2.y);
+}
+
+void Helper::rotationalCircle(double x, double y, Vector_2D thisReference, double radius, int degrees){
 
     Vector_2D circlePosition = rotatePointToReference(
-        makeVector_2D(x1, y1),
+        makeVector_2D(x, y),
         thisReference,
         degrees);
 
     circle(circlePosition.x, circlePosition.y, radius);
+}
+
+void Helper::rotationalEllipse(double x, double y, Vector_2D thisReference, double D1, double D2, double R1, double R2, int degrees, bool thisFlipped){
+
+    Vector_2D ellipsePosition = rotatePointToReference(
+        makeVector_2D(x, y),
+        thisReference,
+        degrees);
+
+    R1 = abs(R1);   R2 = abs(R2);
+
+    R1 = abs(R1 + (R2 - R1) * abs(sin(degrees * PI / 180)));
+    R2 = abs(R2 + (R1 - R2) * abs(sin(degrees * PI / 180)));
+    D1 -= degrees;
+    D2 -= degrees;
+
+    if(thisFlipped){
+        D1 += 180;  D2 += 180;
+    }
+
+    ellipse(ellipsePosition.x, ellipsePosition.y, D1, D2, R1, R2);
+}
+
+void Helper::rotationalFillPoly(int nr, int* arr, Vector_2D thisReference, int degrees){
+
+    int thisArr[2 * nr];
+
+    for(int i = 0; i < nr; i++){
+        Vector_2D pointPosition = rotatePointToReference(
+            makeVector_2D(arr[2 * i], arr[2 * i + 1]),
+            thisReference,
+            degrees);
+
+        thisArr[2 * i] = pointPosition.x;
+        thisArr[2 * i + 1] = pointPosition.y;;
+    }
+
+    fillpoly(nr, thisArr);
 }

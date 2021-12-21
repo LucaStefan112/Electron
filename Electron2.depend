@@ -1,21 +1,21 @@
 # depslib dependency file v1.0
-1640043980 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
+1640126301 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
 	"Electronics.h"
 
-1640039048 source:d:\info\c++\proiecte\electron 2\electron2\src\helper.cpp
+1640127059 source:d:\info\c++\proiecte\electron 2\electron2\src\helper.cpp
 	"Helper.h"
 
-1640031763 d:\info\c++\proiecte\electron 2\electron2\include\helper.h
+1640127054 d:\info\c++\proiecte\electron 2\electron2\include\helper.h
 	<graphics.h>
 	<string>
 	<iostream>
 	<math.h>
 	"Electronic Components/ElectronicComponent.h"
 
-1640043682 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\electroniccomponent.cpp
+1640124477 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\electroniccomponent.cpp
 	"Electronic Components/ElectronicComponent.h"
 
-1640042486 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electroniccomponent.h
+1640124037 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electroniccomponent.h
 	"Helper.h"
 	"Enums.h"
 
@@ -447,28 +447,28 @@
 1639920773 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\diodes\diode_gunn.h
 	"Electronic Components/ElectronicComponent.h"
 
-1640043730 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitors\capacitor_ceramic.cpp
+1640124379 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitors\capacitor_ceramic.cpp
 	"Electronic Components/Capacitors/Capacitor_Ceramic.h"
 
-1639928341 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\capacitors\capacitor_ceramic.h
+1640124503 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\capacitors\capacitor_ceramic.h
 	"Electronic Components/ElectronicComponent.h"
 
-1639929853 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\capacitors\capacitor_electrolytic.h
+1640124776 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\capacitors\capacitor_electrolytic.h
 	"Electronic Components/ElectronicComponent.h"
 
-1640040637 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitors\capacitor_electrolytic.cpp
+1640124796 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitors\capacitor_electrolytic.cpp
 	"Electronic Components/Capacitors/Capacitor_Electrolytic.h"
 
 1639930010 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\capacitors\capacitor_trimmer.h
 	"Electronic Components/ElectronicComponent.h"
 
-1639930030 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitors\capacitor_trimmer.cpp
+1640126552 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitors\capacitor_trimmer.cpp
 	"Electronic Components/Capacitors/Capacitor_Trimmer.h"
 
 1639930077 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\capacitors\capacitor_variable.h
 	"Electronic Components/ElectronicComponent.h"
 
-1639930092 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitors\capacitor_variable.cpp
+1640126628 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitors\capacitor_variable.cpp
 	"Electronic Components/Capacitors/Capacitor_Variable.h"
 
 1639920773 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\resistors\resistor.h

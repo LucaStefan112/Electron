@@ -1,4 +1,5 @@
 #include "Electronic Components/Capacitors/Capacitor_Ceramic.h"
+
 Helper Capacitor_Ceramic_Helper;
 
 Capacitor_Ceramic::Capacitor_Ceramic(): ElectronicComponent(200, 50, "Ceramic Capacitor", 2){}
@@ -40,23 +41,7 @@ void Capacitor_Ceramic::Show(){
         down_right_x - thisHeight / 10, center_y, getPositionCenter(), thisHeight / 10,
         rotateState);
 
-    if(showOutterBox){
-        Capacitor_Ceramic_Helper.rotationalLine(
-        up_left_x, up_left_y, down_right_x, up_left_y, getPositionCenter(),
-        rotateState);
-
-        Capacitor_Ceramic_Helper.rotationalLine(
-        down_right_x, up_left_y, down_right_x, down_right_y, getPositionCenter(),
-        rotateState);
-
-        Capacitor_Ceramic_Helper.rotationalLine(
-        down_right_x, down_right_y, up_left_x, down_right_y, getPositionCenter(),
-        rotateState);
-
-        Capacitor_Ceramic_Helper.rotationalLine(
-        up_left_x, down_right_y, up_left_x, up_left_y, getPositionCenter(),
-        rotateState);
-    }
+    showElements();
 }
 
 //Updating the positions of the connection points:
