@@ -1,10 +1,10 @@
-#include <string>
+#include <vector>
 
-#include "ElectronicComponentsVector.h>
+#include "Data Structures/ElectronicComponentsVector.h"
 
 class Node {
     public:
-    ElectronicComponentsVector component;
+    ElectronicComponentsVector state;
     Node* next;
     Node* prev;
 };
