@@ -1,3 +1,6 @@
+#include <ctime>
+#include <sstream>
+
 #include <stdio.h>
 #include "Electronic Components/ElectronicComponent.h"
 
@@ -21,6 +24,11 @@ ElectronicComponent::ElectronicComponent(double thisWidth, double thisHeight, st
 
         updateConnectionPointsPosition();
     }
+
+    // set componentCode
+    std::stringstream strm;
+    strm << std::time(nullptr);
+    componentCode = strm.str();
 }
 
 //Setter of the up_left point:
@@ -166,7 +174,7 @@ double ElectronicComponent::getHeight()
 }
 
 //Getter of the component code:
-int ElectronicComponent::getComponentCode(){
+std::string ElectronicComponent::getComponentCode(){
 
     return componentCode;
 }

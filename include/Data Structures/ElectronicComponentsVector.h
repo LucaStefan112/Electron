@@ -8,6 +8,6 @@ private:
     std::vector<ElectronicComponent> current;
 public:
     void addComponent(ElectronicComponent componenet);
-    void destroyComponent(std::string component_code);
+    void removeComponent(std::string component_code);
     std::vector<ElectronicComponent> getComponents();
 };
