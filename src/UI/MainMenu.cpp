@@ -12,8 +12,9 @@ void MainMenu::WatchClick() {
     while (ok) {
         if (GetAsyncKeyState(VK_LBUTTON)) {
             if (newProject.isCursorPointInButton()) {
-                // create new project functionality
-                std::cout << "create new project ..." << std::endl;
+                NewProjectMenu newProjectMenu;
+                newProjectMenu.Show();
+                newProjectMenu.WatchClick();
             }
             if (openProject.isCursorPointInButton()) {
                 // open project functionality

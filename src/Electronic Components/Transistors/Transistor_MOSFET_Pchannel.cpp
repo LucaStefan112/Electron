@@ -1,6 +1,6 @@
 #include "Electronic Components/Transistors/Transistor_MOSFET_Pchannel.h"
 
-Transistor_MOSFET_Pchannel::Transistor_MOSFET_Pchannel() : ElectronicComponent(150, 200, "MOSFET P-channel Transistor", 3){}
+Transistor_MOSFET_Pchannel::Transistor_MOSFET_Pchannel() : ElectronicComponent(150, 200, "MOSFET P-channel Transistor", 0){}
 
 //Drawing the component:
 void Transistor_MOSFET_Pchannel::Show(){

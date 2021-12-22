@@ -1,6 +1,6 @@
 #include "Electronic Components/Microphone.h"
 
-Microphone::Microphone() : ElectronicComponent(100, 50, "Microphone", 3){}
+Microphone::Microphone() : ElectronicComponent(100, 50, "Microphone", 0){}
 
 //Drawing the component:
 void Microphone::Show(){

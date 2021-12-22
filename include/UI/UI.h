@@ -9,6 +9,7 @@
 
 //menus
 #include "MainMenu.h"
+#include "NewProjectMenu.h"
 #include "Info/InfoMenu.h"
 
 //info

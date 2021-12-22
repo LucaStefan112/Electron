@@ -1,6 +1,6 @@
 #include "Electronic Components/Logic Gates/XorGate.h"
 
-XorGate::XorGate(): ElectronicComponent(200, 50, "Xor Gate", 3){}
+XorGate::XorGate(): ElectronicComponent(200, 50, "Xor Gate", 0){}
 
 //Drawing the component:
 void XorGate::Show(){
