@@ -553,3 +553,395 @@
 
 1639920773 d:\info\c++\proiecte\electron 2\electron2\include\enums.h
 
+1639957614 source:c:\users\god\documents\electron\src\electronic components\buzzer.cpp
+	"Electronic Components/Buzzer.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\buzzer.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957977 c:\users\god\documents\electron\include\electronic components\electroniccomponent.h
+	"Helper.h"
+	"Enums.h"
+
+1639957614 c:\users\god\documents\electron\include\helper.h
+	<graphics.h>
+	<string>
+	<iostream>
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 c:\users\god\documents\electron\include\enums.h
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\capacitors\capacitor_ceramic.cpp
+	"Electronic Components/Capacitors/Capacitor_Ceramic.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\capacitors\capacitor_ceramic.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\capacitors\capacitor_electrolytic.cpp
+	"Electronic Components/Capacitors/Capacitor_Electrolytic.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\capacitors\capacitor_electrolytic.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\capacitors\capacitor_trimmer.cpp
+	"Electronic Components/Capacitors/Capacitor_Trimmer.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\capacitors\capacitor_trimmer.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\capacitors\capacitor_variable.cpp
+	"Electronic Components/Capacitors/Capacitor_Variable.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\capacitors\capacitor_variable.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\diodes\diode_avalance.cpp
+	"Electronic Components/Diodes/Diode_Avalance.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\diodes\diode_avalance.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\diodes\diode_constant_current.cpp
+	"Electronic Components/Diodes/Diode_Constant_Current.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\diodes\diode_constant_current.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\diodes\diode_gunn.cpp
+	"Electronic Components/Diodes/Diode_Gunn.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\diodes\diode_gunn.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\diodes\diode_junction_pn.cpp
+	"Electronic Components/Diodes/Diode_Junction_PN.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\diodes\diode_junction_pn.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\diodes\diode_laser.cpp
+	"Electronic Components/Diodes/Diode_Laser.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\diodes\diode_laser.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\diodes\diode_light_emitting.cpp
+	"Electronic Components/Diodes/Diode_Light_Emitting.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\diodes\diode_light_emitting.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\diodes\diode_photo.cpp
+	"Electronic Components/Diodes/Diode_Photo.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\diodes\diode_photo.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\diodes\diode_pin.cpp
+	"Electronic Components/Diodes/Diode_PIN.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\diodes\diode_pin.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\diodes\diode_schottky.cpp
+	"Electronic Components/Diodes/Diode_Schottky.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\diodes\diode_schottky.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\diodes\diode_shockley.cpp
+	"Electronic Components/Diodes/Diode_Shockley.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\diodes\diode_shockley.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\diodes\diode_transient_voltage_suppression.cpp
+	"Electronic Components/Diodes/Diode_Transient_Voltage_Suppression.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\diodes\diode_transient_voltage_suppression.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\diodes\diode_tunnel.cpp
+	"Electronic Components/Diodes/Diode_Tunnel.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\diodes\diode_tunnel.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\diodes\diode_varactor.cpp
+	"Electronic Components/Diodes/Diode_Varactor.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\diodes\diode_varactor.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\diodes\diode_zener.cpp
+	"Electronic Components/Diodes/Diode_Zener.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\diodes\diode_zener.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\ground.cpp
+	"Electronic Components/Ground.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\ground.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\inductor.cpp
+	"Electronic Components/Inductor.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\inductor.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\lamp.cpp
+	"Electronic Components/Lamp.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\lamp.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\logic gates\andgate.cpp
+	"Electronic Components/Logic Gates/AndGate.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\logic gates\andgate.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\logic gates\nandgate.cpp
+	"Electronic Components/Logic Gates/NandGate.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\logic gates\nandgate.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\logic gates\norgate.cpp
+	"Electronic Components/Logic Gates/NorGate.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\logic gates\norgate.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\logic gates\notgate.cpp
+	"Electronic Components/Logic Gates/NotGate.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\logic gates\notgate.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639958460 source:c:\users\god\documents\electron\src\electronic components\electroniccomponent.cpp
+	<stdio.h>
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\logic gates\orgate.cpp
+	"Electronic Components/Logic Gates/OrGate.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\logic gates\orgate.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\logic gates\xorgate.cpp
+	"Electronic Components/Logic Gates/XorGate.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\logic gates\xorgate.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\measurements\ammeter.cpp
+	"Electronic Components/Measurements/Ammeter.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\measurements\ammeter.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\measurements\voltmeter.cpp
+	"Electronic Components/Measurements/Voltmeter.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\measurements\voltmeter.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\microphone.cpp
+	"Electronic Components/Microphone.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\microphone.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\motor.cpp
+	"Electronic Components/Motor.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\motor.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\resistors\potentiometer_mobile_contact.cpp
+	"Electronic Components/Resistors/Potentiometer_Mobile_Contact.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\resistors\potentiometer_mobile_contact.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\resistors\resistor.cpp
+	"Electronic Components/Resistors/Resistor.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\resistors\resistor.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\resistors\resistor_mobile_contact.cpp
+	"Electronic Components/Resistors/Resistor_Mobile_Contact.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\resistors\resistor_mobile_contact.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\resistors\resistor_mobile_contact_stop_position.cpp
+	"Electronic Components/Resistors/Resistor_Mobile_Contact_Stop_Position.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\resistors\resistor_mobile_contact_stop_position.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\resistors\resistor_variable_resistance.cpp
+	"Electronic Components/Resistors/Resistor_Variable_Resistance.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\resistors\resistor_variable_resistance.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\sources\battery.cpp
+	"Electronic Components/Sources/Battery.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\sources\battery.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\sources\source_voltage_ac.cpp
+	"Electronic Components/Sources/Source_Voltage_AC.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\sources\source_voltage_ac.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\sources\source_voltage_dc.cpp
+	"Electronic Components/Sources/Source_Voltage_DC.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\sources\source_voltage_dc.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\speaker.cpp
+	"Electronic Components/Speaker.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\speaker.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\switches\switch_closed.cpp
+	"Electronic Components/Switches/Switch_Closed.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\switches\switch_closed.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\switches\switch_dpst.cpp
+	"Electronic Components/Switches/Switch_DPST.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\switches\switch_dpst.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\switches\switch_open.cpp
+	"Electronic Components/Switches/Switch_Open.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\switches\switch_open.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\switches\switch_spdt.cpp
+	"Electronic Components/Switches/Switch_SPDT.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\switches\switch_spdt.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\switches\switch_telegraph.cpp
+	"Electronic Components/Switches/Switch_Telegraph.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\switches\switch_telegraph.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\switches\switch_thermal_magnetic_breaker.cpp
+	"Electronic Components/Switches/Switch_Thermal_Magnetic_Breaker.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\switches\switch_thermal_magnetic_breaker.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\transistors\transistor_bipolar_npn.cpp
+	"Electronic Components/Transistors/Transistor_Bipolar_NPN.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\transistors\transistor_bipolar_npn.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\transistors\transistor_bipolar_pnp.cpp
+	"Electronic Components/Transistors/Transistor_Bipolar_PNP.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\transistors\transistor_bipolar_pnp.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\transistors\transistor_dual_gate_mosfet_nchannel.cpp
+	"Electronic Components/Transistors/Transistor_Dual_Gate_MOSFET_Nchannel.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\transistors\transistor_dual_gate_mosfet_nchannel.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\transistors\transistor_dual_gate_mosfet_pchannel.cpp
+	"Electronic Components/Transistors/Transistor_Dual_Gate_MOSFET_Pchannel.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\transistors\transistor_dual_gate_mosfet_pchannel.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\transistors\transistor_fet_nchannel.cpp
+	"Electronic Components/Transistors/Transistor_FET_Nchannel.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\transistors\transistor_fet_nchannel.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\transistors\transistor_fet_pchannel.cpp
+	"Electronic Components/Transistors/Transistor_FET_Pchannel.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\transistors\transistor_fet_pchannel.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\transistors\transistor_inductive_channel_mosfet_nchannel.cpp
+	"Electronic Components/Transistors/Transistor_Inductive_Channel_MOSFET_Nchannel.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\transistors\transistor_inductive_channel_mosfet_nchannel.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\transistors\transistor_inductive_channel_mosfet_pchannel.cpp
+	"Electronic Components/Transistors/Transistor_Inductive_Channel_MOSFET_Pchannel.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\transistors\transistor_inductive_channel_mosfet_pchannel.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\transistors\transistor_mosfet_nchannel.cpp
+	"Electronic Components/Transistors/Transistor_MOSFET_Nchannel.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\transistors\transistor_mosfet_nchannel.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\transistors\transistor_mosfet_pchannel.cpp
+	"Electronic Components/Transistors/Transistor_MOSFET_Pchannel.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\transistors\transistor_mosfet_pchannel.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\transistors\transistor_single_connection_nchannel.cpp
+	"Electronic Components/Transistors/Transistor_Single_Connection_Nchannel.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\transistors\transistor_single_connection_nchannel.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\electronic components\transistors\transistor_single_connection_pchannel.cpp
+	"Electronic Components/Transistors/Transistor_Single_Connection_Pchannel.h"
+
+1639957614 c:\users\god\documents\electron\include\electronic components\transistors\transistor_single_connection_pchannel.h
+	"Electronic Components/ElectronicComponent.h"
+
+1639957614 source:c:\users\god\documents\electron\src\helper.cpp
+	"Helper.h"
+
+1639957614 source:c:\users\god\documents\electron\src\ui\button.cpp
+	"UI/Button.h"
+	<string>
+
+1639957614 c:\users\god\documents\electron\include\ui\button.h
+	"string.h"
+	"Helper.h"
+	"Enums.h"
+
+1640200196 source:c:\users\god\documents\electron\src\data structures\electroniccomponentsvector.cpp
+	<vector>
+	"ElectronicComponent.h"
+	"Data Structures/ElectronicComponentsVector.h"
+
+1640200031 c:\users\god\documents\electron\include\data structures\electroniccomponentsvector.h
+	<vector>
+	<string>
+	"ElectronicComponent.h"
+
