@@ -964,3 +964,10 @@
 	<string>
 	"ElectronicComponent.h"
 
+1640216612 source:c:\users\god\documents\electron\src\data structures\snapshot.cpp
+	<vector>
+	<string>
+	<algorithm>
+	"ElectronicComponent.h"
+	"Data Structures/Snapshot.h"
+
