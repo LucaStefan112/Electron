@@ -13,4 +13,6 @@ public:
     Node getHead();
 
     void setCurrent(ElectronicComponentsVector state);
+    void setCurrentToPrevious();
+    void setCurrentToNext();
 };

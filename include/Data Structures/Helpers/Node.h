@@ -6,5 +6,5 @@ class Node {
     public:
     ElectronicComponentsVector state;
     Node* next;
-    Node* prev;
+    Node* previous;
 };
