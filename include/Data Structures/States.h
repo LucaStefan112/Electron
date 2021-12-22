@@ -1,4 +1,4 @@
-#include "Data Structures/ElectronicComponentsVector.h"
+#include "Data Structures/Snapshot.h"
 
 #include "Data Structures/Helpers/Node.h"
 
@@ -8,11 +8,11 @@ private:
 public:
     States();
 
-    Node getTail();
-    Node getCurrent();
-    Node getHead();
+    Node* getTail();
+    Node* getCurrent();
+    Node* getHead();
 
-    void setCurrent(ElectronicComponentsVector state);
+    void setCurrent(Snapshot state);
     void setCurrentToPrevious();
     void setCurrentToNext();
 };

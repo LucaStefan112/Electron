@@ -1,10 +1,15 @@
+#ifndef NODE
+#define NODE
+
 #include <vector>
 
-#include "Data Structures/ElectronicComponentsVector.h"
+#include "Data Structures/Snapshot.h"
 
 class Node {
     public:
-    ElectronicComponentsVector state;
+    Snapshot state;
     Node* next;
     Node* previous;
 };
+
+#endif

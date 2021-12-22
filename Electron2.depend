@@ -721,7 +721,9 @@
 1639957614 c:\users\god\documents\electron\include\electronic components\logic gates\notgate.h
 	"Electronic Components/ElectronicComponent.h"
 
-1639958460 source:c:\users\god\documents\electron\src\electronic components\electroniccomponent.cpp
+1640201262 source:c:\users\god\documents\electron\src\electronic components\electroniccomponent.cpp
+	<ctime>
+	<sstream>
 	<stdio.h>
 	"Electronic Components/ElectronicComponent.h"
 
@@ -941,6 +943,23 @@
 	"Data Structures/ElectronicComponentsVector.h"
 
 1640200031 c:\users\god\documents\electron\include\data structures\electroniccomponentsvector.h
+	<vector>
+	<string>
+	"ElectronicComponent.h"
+
+1640214700 source:c:\users\god\documents\electron\src\data structures\state.cpp
+	<vector>
+	<string>
+	<algorithm>
+	"ElectronicComponent.h"
+	"Data Structures/Snapshot.h"
+
+1640214658 c:\users\god\documents\electron\include\data structures\state.h
+	<vector>
+	<string>
+	"ElectronicComponent.h"
+
+1640214848 c:\users\god\documents\electron\include\data structures\snapshot.h
 	<vector>
 	<string>
 	"ElectronicComponent.h"

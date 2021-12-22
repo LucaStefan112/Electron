@@ -1,5 +1,6 @@
-#include "Data Structures/ElectronicComponentsVector.h"
+#include "Data Structures/States.h"
 
+#include "Data Structures/Snapshot.h"
 #include "Data Structures/Helpers/Node.h"
 
 States::States() {
@@ -8,19 +9,19 @@ States::States() {
     current = NULL;
 }
 
-Node States::getHead() {
+Node* States::getHead() {
     return head;
 }
 
-Node States::getCurrent() {
+Node* States::getCurrent() {
     return current;
 }
 
-Node States::getTail() {
+Node* States::getTail() {
     return tail;
 }
 
-void States::setCurrent(ElectronicComponentsVector state) {
+void States::setCurrent(Snapshot state) {
     Node *temporary = new Node();
     temporary->state = state;
     temporary->next = NULL;
