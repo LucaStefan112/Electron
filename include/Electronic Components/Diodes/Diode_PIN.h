@@ -8,6 +8,9 @@ class Diode_PIN : public ElectronicComponent{
 public:
     Diode_PIN();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };

@@ -8,6 +8,9 @@ class Diode_Tunnel : public ElectronicComponent{
 public:
     Diode_Tunnel();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };

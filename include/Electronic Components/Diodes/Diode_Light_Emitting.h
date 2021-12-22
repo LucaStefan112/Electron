@@ -8,6 +8,9 @@ class Diode_Light_Emitting : public ElectronicComponent{
 public:
     Diode_Light_Emitting();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };

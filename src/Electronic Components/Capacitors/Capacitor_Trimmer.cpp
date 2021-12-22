@@ -20,7 +20,7 @@ void Capacitor_Trimmer::Show(){
     double diff = thisHeight / 2;
 
     Capacitor_Trimmer_Helper.rotationalCircle(
-        up_left_x + thisHeight / 10, center_y, getPositionCenter(), thisHeight / 10,
+        up_left_x + thisHeight / 10, center_y, getPositionCenter(), height / 10,
         rotateState);
 
     Capacitor_Trimmer_Helper.rotationalLine(
@@ -48,7 +48,7 @@ void Capacitor_Trimmer::Show(){
         rotateState);
 
     Capacitor_Trimmer_Helper.rotationalCircle(
-        down_right_x - thisHeight / 10, center_y, getPositionCenter(), thisHeight / 10,
+        down_right_x - thisHeight / 10, center_y, getPositionCenter(), height / 10,
         rotateState);
 
     showElements();

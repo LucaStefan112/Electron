@@ -8,6 +8,9 @@ class Diode_Laser : public ElectronicComponent{
 public:
     Diode_Laser();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };

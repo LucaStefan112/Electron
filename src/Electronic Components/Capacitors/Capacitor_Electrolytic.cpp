@@ -18,7 +18,7 @@ void Capacitor_Electrolytic::Show(){
     double thisHeight = (down_right_x - up_left_x) / width_height_ratio;
 
     Capacitor_Electrolytic_Helper.rotationalCircle(
-        up_left_x + thisHeight / 10, center_y, getPositionCenter(), thisHeight / 10,
+        up_left_x + thisHeight / 10, center_y, getPositionCenter(), height / 10,
         rotateState);
 
     Capacitor_Electrolytic_Helper.rotationalLine(
@@ -30,7 +30,7 @@ void Capacitor_Electrolytic::Show(){
         rotateState);
 
     Capacitor_Electrolytic_Helper.rotationalEllipse(
-        center_x + thisHeight / 4 + thisHeight / 5, center_y, getPositionCenter(), 90, 270, thisHeight / 4, thisHeight / 2.1,
+        center_x + thisHeight / 4 + thisHeight / 5, center_y, getPositionCenter(), 90, 270, height / 4, height / 2.1,
         rotateState, flipped);
 
     Capacitor_Electrolytic_Helper.rotationalLine(
@@ -46,7 +46,7 @@ void Capacitor_Electrolytic::Show(){
         rotateState);
 
     Capacitor_Electrolytic_Helper.rotationalCircle(
-        down_right_x - thisHeight / 10, center_y, getPositionCenter(), thisHeight / 10,
+        down_right_x - thisHeight / 10, center_y, getPositionCenter(), height / 10,
         rotateState);
 
     showElements();
