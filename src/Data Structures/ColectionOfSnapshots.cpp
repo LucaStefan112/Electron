@@ -1,27 +1,27 @@
-#include "Data Structures/States.h"
+#include "Data Structures/ColectionOfSnapshots.h"
 
 #include "Data Structures/Snapshot.h"
 #include "Data Structures/Helpers/Node.h"
 
-States::States() {
+ColectionOfSnapshots::ColectionOfSnapshots() {
     head = NULL;
     tail = NULL;
     current = NULL;
 }
 
-Node* States::getHead() {
+Node* ColectionOfSnapshots::getHead() {
     return head;
 }
 
-Node* States::getCurrent() {
+Node* ColectionOfSnapshots::getCurrent() {
     return current;
 }
 
-Node* States::getTail() {
+Node* ColectionOfSnapshots::getTail() {
     return tail;
 }
 
-void States::setCurrent(Snapshot state) {
+void ColectionOfSnapshots::setCurrent(Snapshot state) {
     Node *temporary = new Node();
     temporary->state = state;
     temporary->next = NULL;
@@ -36,13 +36,13 @@ void States::setCurrent(Snapshot state) {
     }
 }
 
-void States::setCurrentToPrevious() {
+void ColectionOfSnapshots::setCurrentToPrevious() {
     if (current->previous != NULL) {
         current = current->previous;
     }
 }
 
-void States::setCurrentToNext() {
+void ColectionOfSnapshots::setCurrentToNext() {
     if (current->next != NULL) {
         current = current->next;
     }

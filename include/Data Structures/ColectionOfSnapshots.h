@@ -2,11 +2,11 @@
 
 #include "Data Structures/Helpers/Node.h"
 
-class States {
+class ColectionOfSnapshots {
 private:
     Node *head, *current, *tail;
 public:
-    States();
+    ColectionOfSnapshots();
 
     Node* getTail();
     Node* getCurrent();
