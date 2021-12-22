@@ -1,6 +1,6 @@
 #include "Electronic Components/Diodes/Diode_Shockley.h"
 
-Diode_Shockley::Diode_Shockley(): ElectronicComponent(200, 50, "Shockley Diode"){}
+Diode_Shockley::Diode_Shockley(): ElectronicComponent(200, 50, "Shockley Diode", 2){}
 
 //Drawing the component:
 void Diode_Shockley::Show(){

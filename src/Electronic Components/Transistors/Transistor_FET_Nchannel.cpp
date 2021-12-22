@@ -1,6 +1,6 @@
 #include "Electronic Components/Transistors/Transistor_FET_Nchannel.h"
 
-Transistor_FET_Nchannel::Transistor_FET_Nchannel() : ElectronicComponent(150, 200, "FET N-channel Transistor"){}
+Transistor_FET_Nchannel::Transistor_FET_Nchannel() : ElectronicComponent(150, 200, "FET N-channel Transistor", 3){}
 
 //Drawing the component:
 void Transistor_FET_Nchannel::Show(){

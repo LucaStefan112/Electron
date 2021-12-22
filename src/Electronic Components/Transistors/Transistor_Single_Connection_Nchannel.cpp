@@ -1,6 +1,6 @@
 #include "Electronic Components/Transistors/Transistor_Single_Connection_Nchannel.h"
 
-Transistor_Single_Connection_Nchannel::Transistor_Single_Connection_Nchannel() : ElectronicComponent(150, 200, "Single Connection N-channel Transistor"){}
+Transistor_Single_Connection_Nchannel::Transistor_Single_Connection_Nchannel() : ElectronicComponent(150, 200, "Single Connection N-channel Transistor", 3){}
 
 //Drawing the component:
 void Transistor_Single_Connection_Nchannel::Show(){

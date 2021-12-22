@@ -1,12 +1,12 @@
 #include "Electronic Components/Speaker.h"
 
-Speaker::Speaker() : ElectronicComponent(200, 100, "Speaker"){}
+Speaker::Speaker() : ElectronicComponent(200, 100, "Speaker", 2){}
 
 //Drawing the component:
 void Speaker::Show(){
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
-    double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
+    double down_right_x = getPositionDownRight().x;
 
     line(center_x - height / 1.5, up_left_y, center_x + height / 1.5, up_left_y);
     line(center_x - height / 1.5, up_left_y, center_x - height / 4, center_y - height / 10);

@@ -1,6 +1,6 @@
 #include "Electronic Components/Logic Gates/AndGate.h"
 
-AndGate::AndGate(): ElectronicComponent(200, 50, "And Gate"){}
+AndGate::AndGate(): ElectronicComponent(200, 50, "And Gate", 3){}
 
 //Drawing the component:
 void AndGate::Show(){

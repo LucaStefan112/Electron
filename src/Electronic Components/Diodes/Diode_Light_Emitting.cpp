@@ -1,6 +1,6 @@
 #include "Electronic Components/Diodes/Diode_Light_Emitting.h"
 
-Diode_Light_Emitting::Diode_Light_Emitting(): ElectronicComponent(200, 100, "Light Emitting Diode"){}
+Diode_Light_Emitting::Diode_Light_Emitting(): ElectronicComponent(200, 100, "Light Emitting Diode", 2){}
 
 //Drawing the component:
 void Diode_Light_Emitting::Show(){

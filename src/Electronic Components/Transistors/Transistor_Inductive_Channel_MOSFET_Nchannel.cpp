@@ -1,6 +1,6 @@
 #include "Electronic Components/Transistors/Transistor_Inductive_Channel_MOSFET_Nchannel.h"
 
-Transistor_Inductive_Channel_MOSFET_Nchannel::Transistor_Inductive_Channel_MOSFET_Nchannel() : ElectronicComponent(150, 200, "MOSFET Inductive Channel N-channel Transistor"){}
+Transistor_Inductive_Channel_MOSFET_Nchannel::Transistor_Inductive_Channel_MOSFET_Nchannel() : ElectronicComponent(150, 200, "MOSFET Inductive Channel N-channel Transistor", 3){}
 
 //Drawing the component:
 void Transistor_Inductive_Channel_MOSFET_Nchannel::Show(){

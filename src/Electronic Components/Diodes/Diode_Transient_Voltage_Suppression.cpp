@@ -1,6 +1,6 @@
 #include "Electronic Components/Diodes/Diode_Transient_Voltage_Suppression.h"
 
-Diode_Transient_Voltage_Suppression::Diode_Transient_Voltage_Suppression(): ElectronicComponent(200, 50, "Transient Voltage Suppression Diode"){}
+Diode_Transient_Voltage_Suppression::Diode_Transient_Voltage_Suppression(): ElectronicComponent(200, 50, "Transient Voltage Suppression Diode", 2){}
 
 //Drawing the component:
 void Diode_Transient_Voltage_Suppression::Show(){

@@ -1,6 +1,6 @@
 #include "Electronic Components/Diodes/Diode_Laser.h"
 
-Diode_Laser::Diode_Laser(): ElectronicComponent(200, 100, "Laser Diode"){}
+Diode_Laser::Diode_Laser(): ElectronicComponent(200, 100, "Laser Diode", 2){}
 
 //Drawing the component:
 void Diode_Laser::Show(){

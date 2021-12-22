@@ -1,6 +1,6 @@
 #include "Electronic Components/Diodes/Diode_Gunn.h"
 
-Diode_Gunn::Diode_Gunn(): ElectronicComponent(200, 50, "Gunn Diode"){}
+Diode_Gunn::Diode_Gunn(): ElectronicComponent(200, 50, "Gunn Diode", 2){}
 
 //Drawing the component:
 void Diode_Gunn::Show(){

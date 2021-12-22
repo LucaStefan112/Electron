@@ -1,6 +1,6 @@
 #include "Electronic Components/Diodes/Diode_PIN.h"
 
-Diode_PIN::Diode_PIN(): ElectronicComponent(200, 50, "PIN Diode"){}
+Diode_PIN::Diode_PIN(): ElectronicComponent(200, 50, "PIN Diode", 2){}
 
 //Drawing the component:
 void Diode_PIN::Show(){

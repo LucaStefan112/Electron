@@ -1,6 +1,6 @@
 #include "Electronic Components/Logic Gates/NotGate.h"
 
-NotGate::NotGate(): ElectronicComponent(200, 50, "Not Gate"){}
+NotGate::NotGate(): ElectronicComponent(200, 50, "Not Gate", 2){}
 
 //Drawing the component:
 void NotGate::Show(){

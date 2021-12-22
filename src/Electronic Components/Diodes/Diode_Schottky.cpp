@@ -1,6 +1,6 @@
 #include "Electronic Components/Diodes/Diode_Schottky.h"
 
-Diode_Schottky::Diode_Schottky(): ElectronicComponent(200, 50, "Schottky Diode"){}
+Diode_Schottky::Diode_Schottky(): ElectronicComponent(200, 50, "Schottky Diode", 2){}
 
 //Drawing the component:
 void Diode_Schottky::Show(){

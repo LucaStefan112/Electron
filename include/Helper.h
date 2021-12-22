@@ -2,7 +2,6 @@
 #include <string>
 #include <iostream>
 #include <math.h>
-#include "Electronic Components/ElectronicComponent.h"
 
 #ifndef HELPER_H
 #define HELPER_H

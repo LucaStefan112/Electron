@@ -1,6 +1,6 @@
 #include "Electronic Components/Switches/Switch_Thermal_Magnetic_Breaker.h"
 
-Switch_Thermal_Magnetic_Breaker::Switch_Thermal_Magnetic_Breaker(): ElectronicComponent(200, 50, "Thermal Magnetic Breaker Switch"){}
+Switch_Thermal_Magnetic_Breaker::Switch_Thermal_Magnetic_Breaker(): ElectronicComponent(200, 50, "Thermal Magnetic Breaker Switch", 2){}
 
 //Drawing the component:
 void Switch_Thermal_Magnetic_Breaker::Show(){

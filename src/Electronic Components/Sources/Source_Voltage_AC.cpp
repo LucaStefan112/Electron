@@ -1,14 +1,12 @@
 #include "Electronic Components/Sources/Source_Voltage_AC.h"
 
-Source_Voltage_AC::Source_Voltage_AC() : ElectronicComponent(200, 50, "AC Voltage Source"){}
+Source_Voltage_AC::Source_Voltage_AC() : ElectronicComponent(200, 50, "AC Voltage Source", 2){}
 
 //Drawing the component:
 void Source_Voltage_AC::Show(){
-    double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
+    double up_left_x = getPositionUpLeft().x;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
-    double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
-    double sin30 = 0.5, cos30 = 0.86602540378;
-    double offSet = height / 5;
+    double down_right_x = getPositionDownRight().x;
 
     circle(up_left_x + height / 10, center_y, height / 10);
     line(up_left_x + height / 5, center_y, center_x - height / 2, center_y);

@@ -1,6 +1,6 @@
 #include "Electronic Components/Switches/Switch_Open.h"
 
-Switch_Open::Switch_Open(): ElectronicComponent(200, 50, "Open Switch"){}
+Switch_Open::Switch_Open(): ElectronicComponent(200, 50, "Open Switch", 2){}
 
 //Drawing the component:
 void Switch_Open::Show(){
