@@ -1,6 +1,6 @@
 #include "Electronic Components/Speaker.h"
 
-Speaker::Speaker() : ElectronicComponent(200, 100, "Speaker"){}
+Speaker::Speaker() : ElectronicComponent(200, 100, "Speaker", 0){}
 
 //Drawing the component:
 void Speaker::Show(){

@@ -1,6 +1,6 @@
 #include "Electronic Components/Transistors/Transistor_Bipolar_PNP.h"
 
-Transistor_Bipolar_PNP::Transistor_Bipolar_PNP() : ElectronicComponent(150, 200, "Bipolar PNP Transistor"){}
+Transistor_Bipolar_PNP::Transistor_Bipolar_PNP() : ElectronicComponent(150, 200, "Bipolar PNP Transistor", 0){}
 
 //Drawing the component:
 void Transistor_Bipolar_PNP::Show(){

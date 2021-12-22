@@ -1,6 +1,6 @@
 #include "Electronic Components/Switches/Switch_Telegraph.h"
 
-Switch_Telegraph::Switch_Telegraph(): ElectronicComponent(200, 50, "Telegraph Switch"){}
+Switch_Telegraph::Switch_Telegraph(): ElectronicComponent(200, 50, "Telegraph Switch", 0){}
 
 //Drawing the component:
 void Switch_Telegraph::Show(){

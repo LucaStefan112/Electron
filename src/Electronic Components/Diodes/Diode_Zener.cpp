@@ -1,6 +1,6 @@
 #include "Electronic Components/Diodes/Diode_Zener.h"
 
-Diode_Zener::Diode_Zener(): ElectronicComponent(200, 50, "Zener Diode"){}
+Diode_Zener::Diode_Zener(): ElectronicComponent(200, 50, "Zener Diode", 0){}
 
 //Drawing the component:
 void Diode_Zener::Show(){

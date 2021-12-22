@@ -1,6 +1,6 @@
 #include "Electronic Components/Transistors/Transistor_MOSFET_Nchannel.h"
 
-Transistor_MOSFET_Nchannel::Transistor_MOSFET_Nchannel() : ElectronicComponent(150, 200, "MOSFET N-channel Transistor"){}
+Transistor_MOSFET_Nchannel::Transistor_MOSFET_Nchannel() : ElectronicComponent(150, 200, "MOSFET N-channel Transistor", 0){}
 
 //Drawing the component:
 void Transistor_MOSFET_Nchannel::Show(){

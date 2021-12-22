@@ -1,6 +1,6 @@
 #include "Electronic Components/Buzzer.h"
 
-Buzzer::Buzzer() : ElectronicComponent(100, 100, "Buzzer"){}
+Buzzer::Buzzer() : ElectronicComponent(100, 100, "Buzzer", 0){}
 
 //Drawing the component:
 void Buzzer::Show(){

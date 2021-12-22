@@ -1,6 +1,6 @@
 #include "Electronic Components/Motor.h"
 
-Motor::Motor(): ElectronicComponent(200, 50, "Motor"){}
+Motor::Motor(): ElectronicComponent(200, 50, "Motor", 0){}
 
 //Drawing the component:
 void Motor::Show(){

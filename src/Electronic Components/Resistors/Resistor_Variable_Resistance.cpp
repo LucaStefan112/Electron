@@ -1,6 +1,6 @@
 #include "Electronic Components/Resistors/Resistor_Variable_Resistance.h"
 
-Resistor_Variable_Resistance::Resistor_Variable_Resistance(): ElectronicComponent(200, 50, "Variable Resistance Resistor"){}
+Resistor_Variable_Resistance::Resistor_Variable_Resistance(): ElectronicComponent(200, 50, "Variable Resistance Resistor", 0){}
 
 //Drawing the component:
 void Resistor_Variable_Resistance::Show(){

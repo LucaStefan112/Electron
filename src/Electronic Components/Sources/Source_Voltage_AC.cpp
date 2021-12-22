@@ -1,6 +1,6 @@
 #include "Electronic Components/Sources/Source_Voltage_AC.h"
 
-Source_Voltage_AC::Source_Voltage_AC() : ElectronicComponent(200, 50, "AC Voltage Source"){}
+Source_Voltage_AC::Source_Voltage_AC() : ElectronicComponent(200, 50, "AC Voltage Source", 0){}
 
 //Drawing the component:
 void Source_Voltage_AC::Show(){

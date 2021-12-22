@@ -1,6 +1,6 @@
 #include "Electronic Components/Switches/Switch_Closed.h"
 
-Switch_Closed::Switch_Closed(): ElectronicComponent(200, 50, "Closed Switch"){}
+Switch_Closed::Switch_Closed(): ElectronicComponent(200, 50, "Closed Switch", 0){}
 
 //Drawing the component:
 void Switch_Closed::Show(){

@@ -1,6 +1,6 @@
 #include "Electronic Components/Resistors/Resistor.h"
 
-Resistor::Resistor(): ElectronicComponent(200, 50, "Resistor"){}
+Resistor::Resistor(): ElectronicComponent(200, 50, "Resistor", 0){}
 
 //Drawing the component:
 void Resistor::Show(){

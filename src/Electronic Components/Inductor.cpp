@@ -1,6 +1,6 @@
 #include "Electronic Components/Inductor.h"
 
-Inductor::Inductor() : ElectronicComponent(200, 50, "Inductor"){}
+Inductor::Inductor() : ElectronicComponent(200, 50, "Inductor", 0){}
 
 //Drawing the component:
 void Inductor::Show(){

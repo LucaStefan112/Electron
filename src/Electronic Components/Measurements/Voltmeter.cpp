@@ -1,6 +1,6 @@
 #include "Electronic Components/Measurements/Voltmeter.h"
 
-Voltmeter::Voltmeter(): ElectronicComponent(200, 50, "Voltmeter"){}
+Voltmeter::Voltmeter(): ElectronicComponent(200, 50, "Voltmeter", 0){}
 
 //Drawing the component:
 void Voltmeter::Show(){

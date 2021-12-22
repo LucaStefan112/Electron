@@ -1,6 +1,6 @@
 #include "Electronic Components/Transistors/Transistor_Dual_Gate_MOSFET_Pchannel.h"
 
-Transistor_Dual_Gate_MOSFET_Pchannel::Transistor_Dual_Gate_MOSFET_Pchannel() : ElectronicComponent(150, 200, "Dual Gate MOSFET P-channel Transistor"){}
+Transistor_Dual_Gate_MOSFET_Pchannel::Transistor_Dual_Gate_MOSFET_Pchannel() : ElectronicComponent(150, 200, "Dual Gate MOSFET P-channel Transistor", 0){}
 
 //Drawing the component:
 void Transistor_Dual_Gate_MOSFET_Pchannel::Show(){

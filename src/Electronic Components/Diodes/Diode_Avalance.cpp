@@ -1,6 +1,6 @@
 #include "Electronic Components/Diodes/Diode_Avalance.h"
 
-Diode_Avalance::Diode_Avalance(): ElectronicComponent(200, 50, "Avalance Diode"){}
+Diode_Avalance::Diode_Avalance(): ElectronicComponent(200, 50, "Avalance Diode", 0){}
 
 //Drawing the component:
 void Diode_Avalance::Show(){

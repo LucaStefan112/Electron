@@ -1,6 +1,6 @@
 #include "Electronic Components/Resistors/Resistor_Mobile_Contact_Stop_Position.h"
 
-Resistor_Mobile_Contact_Stop_Position::Resistor_Mobile_Contact_Stop_Position(): ElectronicComponent(200, 50, "Mobile Contact and Stop Position Resistor"){}
+Resistor_Mobile_Contact_Stop_Position::Resistor_Mobile_Contact_Stop_Position(): ElectronicComponent(200, 50, "Mobile Contact and Stop Position Resistor", 0){}
 
 //Drawing the component:
 void Resistor_Mobile_Contact_Stop_Position::Show(){

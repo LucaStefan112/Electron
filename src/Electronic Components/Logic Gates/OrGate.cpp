@@ -1,6 +1,6 @@
 #include "Electronic Components/Logic Gates/OrGate.h"
 
-OrGate::OrGate(): ElectronicComponent(200, 50, "Or Gate"){}
+OrGate::OrGate(): ElectronicComponent(200, 50, "Or Gate", 0){}
 
 //Drawing the component:
 void OrGate::Show(){

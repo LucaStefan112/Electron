@@ -1,6 +1,6 @@
 #include "Electronic Components/Transistors/Transistor_Dual_Gate_MOSFET_Nchannel.h"
 
-Transistor_Dual_Gate_MOSFET_Nchannel::Transistor_Dual_Gate_MOSFET_Nchannel() : ElectronicComponent(150, 200, "Dual Gate MOSFET N-channel Transistor"){}
+Transistor_Dual_Gate_MOSFET_Nchannel::Transistor_Dual_Gate_MOSFET_Nchannel() : ElectronicComponent(150, 200, "Dual Gate MOSFET N-channel Transistor", 0){}
 
 //Drawing the component:
 void Transistor_Dual_Gate_MOSFET_Nchannel::Show(){

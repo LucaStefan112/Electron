@@ -1,6 +1,6 @@
 #include "Electronic Components/Diodes/Diode_Junction_PN.h"
 
-Diode_Junction_PN::Diode_Junction_PN(): ElectronicComponent(200, 50, "PN Junction Diode"){}
+Diode_Junction_PN::Diode_Junction_PN(): ElectronicComponent(200, 50, "PN Junction Diode", 0){}
 
 //Drawing the component:
 void Diode_Junction_PN::Show(){

@@ -1,6 +1,6 @@
 #include "Electronic Components/Transistors/Transistor_FET_Pchannel.h"
 
-Transistor_FET_Pchannel::Transistor_FET_Pchannel() : ElectronicComponent(150, 200, "FET P-channel Transistor"){}
+Transistor_FET_Pchannel::Transistor_FET_Pchannel() : ElectronicComponent(150, 200, "FET P-channel Transistor", 0){}
 
 //Drawing the component:
 void Transistor_FET_Pchannel::Show(){

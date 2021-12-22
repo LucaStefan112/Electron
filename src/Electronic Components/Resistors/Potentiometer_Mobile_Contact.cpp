@@ -1,6 +1,6 @@
 #include "Electronic Components/Resistors/Potentiometer_Mobile_Contact.h"
 
-Potentiometer_Mobile_Contact::Potentiometer_Mobile_Contact(): ElectronicComponent(200, 50, "Mobile Contact Potentiometer"){}
+Potentiometer_Mobile_Contact::Potentiometer_Mobile_Contact(): ElectronicComponent(200, 50, "Mobile Contact Potentiometer", 0){}
 
 //Drawing the component:
 void Potentiometer_Mobile_Contact::Show(){

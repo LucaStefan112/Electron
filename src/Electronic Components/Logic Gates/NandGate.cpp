@@ -1,6 +1,6 @@
 #include "Electronic Components/Logic Gates/NandGate.h"
 
-NandGate::NandGate(): ElectronicComponent(200, 50, "Nand Gate"){}
+NandGate::NandGate(): ElectronicComponent(200, 50, "Nand Gate", 0){}
 
 //Drawing the component:
 void NandGate::Show(){

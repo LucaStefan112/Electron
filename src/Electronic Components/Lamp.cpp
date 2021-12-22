@@ -1,6 +1,6 @@
 #include "Electronic Components/Lamp.h"
 
-Lamp::Lamp() : ElectronicComponent(200, 50, "Lamp"){}
+Lamp::Lamp() : ElectronicComponent(200, 50, "Lamp", 0){}
 
 //Drawing the component:
 void Lamp::Show(){

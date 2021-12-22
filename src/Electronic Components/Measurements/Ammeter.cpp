@@ -1,6 +1,6 @@
 #include "Electronic Components/Measurements/Ammeter.h"
 
-Ammeter::Ammeter() : ElectronicComponent(200, 50, "Ammeter"){}
+Ammeter::Ammeter() : ElectronicComponent(200, 50, "Ammeter", 0){}
 
 //Drawing the component:
 void Ammeter::Show(){
