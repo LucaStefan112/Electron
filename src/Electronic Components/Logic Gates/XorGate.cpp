@@ -1,12 +1,13 @@
 #include "Electronic Components/Logic Gates/XorGate.h"
 
-XorGate::XorGate(): ElectronicComponent(200, 50, "Xor Gate", 0){}
+XorGate::XorGate(): ElectronicComponent(200, 50, "Xor Gate", 3){}
 
 //Drawing the component:
 void XorGate::Show(){
-    double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
+    double up_left_x = getPositionUpLeft().x;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
-    double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
+    double down_right_x = getPositionDownRight().x;
+
     circle(up_left_x + height / 10, center_y - height / 4, height / 10);
     line(up_left_x + height / 5, center_y - height / 4, center_x - height / 2, center_y - height / 4);
     circle(up_left_x + height / 10, center_y + height / 4, height / 10);

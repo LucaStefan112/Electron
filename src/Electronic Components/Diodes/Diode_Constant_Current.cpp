@@ -1,6 +1,6 @@
 #include "Electronic Components/Diodes/Diode_Constant_Current.h"
 
-Diode_Constant_Current::Diode_Constant_Current(): ElectronicComponent(200, 50, "Constant Current Diode", 0){}
+Diode_Constant_Current::Diode_Constant_Current(): ElectronicComponent(200, 50, "Constant Current Diode", 2){}
 
 //Drawing the component:
 void Diode_Constant_Current::Show(){

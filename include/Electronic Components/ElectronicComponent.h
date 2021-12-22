@@ -25,9 +25,6 @@ protected:
     //Dimensions of the component:
     double width = DEFAULT_WIDTH, height = DEFAULT_HEIGHT, width_height_ratio = DEFAULT_WIDTH_HEIGHT_RATIO;
 
-    //Name of the component:
-    std::string name = DEFAULT_NAME;
-
     PositionType positionType = up_left;
 
     int componentCode = DEFAULT_COMPONENT_CODE;
@@ -42,6 +39,9 @@ protected:
     bool showConnectionPoints = DEFAULT_CONNECTIONPOINTS_VALUE;
 
 public:
+    //Name of the component:
+    std::string name = DEFAULT_NAME;
+
     ElectronicComponent(double thisWidth = DEFAULT_WIDTH, double thisHeight = DEFAULT_HEIGHT, std::string thisName = DEFAULT_NAME, int thisNumberOfConnectionPoints = DEFAULT_NUMBER_OF_CONNECTION_POINTS);
 
     //Setters:

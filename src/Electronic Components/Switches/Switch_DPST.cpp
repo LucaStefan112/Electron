@@ -1,6 +1,6 @@
 #include "Electronic Components/Switches/Switch_DPST.h"
 
-Switch_DPST::Switch_DPST(): ElectronicComponent(200, 100, "DPST Switch", 0){}
+Switch_DPST::Switch_DPST(): ElectronicComponent(200, 100, "DPST Switch", 2){}
 
 //Drawing the component:
 void Switch_DPST::Show(){

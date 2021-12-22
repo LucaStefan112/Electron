@@ -1,6 +1,6 @@
 #include "Electronic Components/Switches/Switch_SPDT.h"
 
-Switch_SPDT::Switch_SPDT(): ElectronicComponent(200, 50, "SPDT Switch", 0){}
+Switch_SPDT::Switch_SPDT(): ElectronicComponent(200, 50, "SPDT Switch", 2){}
 
 //Drawing the component:
 void Switch_SPDT::Show(){

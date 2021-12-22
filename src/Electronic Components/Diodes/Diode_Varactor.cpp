@@ -1,6 +1,6 @@
 #include "Electronic Components/Diodes/Diode_Varactor.h"
 
-Diode_Varactor::Diode_Varactor(): ElectronicComponent(200, 50, "Varactor Diode", 0){}
+Diode_Varactor::Diode_Varactor(): ElectronicComponent(200, 50, "Varactor Diode", 2){}
 
 //Drawing the component:
 void Diode_Varactor::Show(){

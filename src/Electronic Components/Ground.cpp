@@ -1,6 +1,6 @@
 #include "Electronic Components/Ground.h"
 
-Ground::Ground(): ElectronicComponent(50, 50, "Ground", 0){}
+Ground::Ground(): ElectronicComponent(50, 50, "Ground", 1){}
 
 //Drawing the component:
 void Ground::Show(){

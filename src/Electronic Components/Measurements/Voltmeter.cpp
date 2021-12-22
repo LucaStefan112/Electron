@@ -1,12 +1,12 @@
 #include "Electronic Components/Measurements/Voltmeter.h"
 
-Voltmeter::Voltmeter(): ElectronicComponent(200, 50, "Voltmeter", 0){}
+Voltmeter::Voltmeter(): ElectronicComponent(200, 50, "Voltmeter", 2){}
 
 //Drawing the component:
 void Voltmeter::Show(){
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
-    double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
+    double down_right_x = getPositionDownRight().x;
     double sin30 = 0.5, cos30 = 0.86602540378;
     double offSet = height / 5;
 

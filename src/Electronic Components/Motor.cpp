@@ -1,12 +1,12 @@
 #include "Electronic Components/Motor.h"
 
-Motor::Motor(): ElectronicComponent(200, 50, "Motor", 0){}
+Motor::Motor(): ElectronicComponent(200, 50, "Motor", 3){}
 
 //Drawing the component:
 void Motor::Show(){
-    double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
+    double up_left_x = getPositionUpLeft().x;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
-    double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
+    double down_right_x = getPositionDownRight().x;
 
     circle(up_left_x + height / 10, center_y, height / 10);
     line(up_left_x + height / 5, center_y, center_x - height / 2, center_y);

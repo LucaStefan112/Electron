@@ -1,6 +1,6 @@
 #include "Electronic Components/Diodes/Diode_Tunnel.h"
 
-Diode_Tunnel::Diode_Tunnel(): ElectronicComponent(200, 50, "Tunnel Diode", 0){}
+Diode_Tunnel::Diode_Tunnel(): ElectronicComponent(200, 50, "Tunnel Diode", 2){}
 
 //Drawing the component:
 void Diode_Tunnel::Show(){

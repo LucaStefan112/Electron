@@ -1,6 +1,6 @@
 #include "Electronic Components/Logic Gates/NorGate.h"
 
-NorGate::NorGate(): ElectronicComponent(200, 50, "Nor Gate", 0){}
+NorGate::NorGate(): ElectronicComponent(200, 50, "Nor Gate", 3){}
 
 //Drawing the component:
 void NorGate::Show(){

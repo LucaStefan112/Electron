@@ -1,6 +1,6 @@
 #include "Electronic Components/Sources/Battery.h"
 
-Battery::Battery(): ElectronicComponent(200, 50, "Battery", 0){}
+Battery::Battery(): ElectronicComponent(200, 50, "Battery", 2){}
 
 //Drawing the component:
 void Battery::Show(){

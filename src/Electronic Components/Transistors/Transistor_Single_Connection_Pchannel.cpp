@@ -1,6 +1,6 @@
 #include "Electronic Components/Transistors/Transistor_Single_Connection_Pchannel.h"
 
-Transistor_Single_Connection_Pchannel::Transistor_Single_Connection_Pchannel() : ElectronicComponent(150, 200, "Single Connection P-channel Transistor", 0){}
+Transistor_Single_Connection_Pchannel::Transistor_Single_Connection_Pchannel() : ElectronicComponent(150, 200, "Single Connection P-channel Transistor", 3){}
 
 //Drawing the component:
 void Transistor_Single_Connection_Pchannel::Show(){
