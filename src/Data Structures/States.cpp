@@ -3,19 +3,24 @@
 #include "Data Structures/Helpers/Node.h"
 
 States::States() {
-    current->prev = NULL;
-    current->next = NULL;
+    head = NULL;
+    tail = NULL;
+    current = NULL;
 }
 
 Node States::getHead() {
     return head;
 }
 
+Node States::getCurrent() {
+    return current;
+}
+
 Node States::getTail() {
     return tail;
 }
 
-States::addState(ElectronicComponentsVector state) {
+States::setCurrent(ElectronicComponentsVector state) {
     Node *temporary = new Node();
     temporary->state = state;
     temporary->next = NULL;

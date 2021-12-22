@@ -4,11 +4,13 @@
 
 class States {
 private:
-    Node *head, *tail;
+    Node *head, *current, *tail;
 public:
     States();
 
     Node getTail();
+    Node getCurrent();
     Node getHead();
-    void addState(ElectronicComponentsVector state);
+
+    void setCurrent(ElectronicComponentsVector state);
 };
