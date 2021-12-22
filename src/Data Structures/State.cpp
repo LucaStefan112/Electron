@@ -3,18 +3,18 @@
 #include <algorithm>
 
 #include "ElectronicComponent.h"
-#include "Data Structures/ElectronicComponentsVector.h"
+#include "Data Structures/State.h"
 
-void ElectronicComponentsVector::addComponent(ElectronicComponent component) {
+void State::addComponent(ElectronicComponent component) {
     current.push_back(component);
 }
 
-void ElectronicComponentsVector::removeComponent(std::string component_code) {
+void State::removeComponent(std::string component_code) {
     current.erase(std::remove_if(current.begin(),
                                  current.end(),
                                  [component_code](ElectronicComponent component){ return component_code == component.getComponentCode(); }));
 }
 
-std::vector<ElectronicComponent> ElectronicComponentsVector::getComponents() {
+std::vector<ElectronicComponent> State::getComponents() {
     return current;
 }

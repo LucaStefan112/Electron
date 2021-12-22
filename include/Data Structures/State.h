@@ -3,7 +3,7 @@
 
 #include "ElectronicComponent.h"
 
-class ElectronicComponentsVector {
+class State {
 private:
     std::vector<ElectronicComponent> current;
 public:
