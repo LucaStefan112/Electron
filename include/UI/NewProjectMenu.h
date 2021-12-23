@@ -11,7 +11,7 @@
 class NewProjectMenu: public Screen
 {
     protected:
-        Button capacitors, diodes, logicGates, measurements, resistors, sources, switches, transistors, other, exit;
+        Button save, capacitors, diodes, logicGates, measurements, resistors, sources, switches, transistors, other, exit;
     public:
         NewProjectMenu();
         void Show();
