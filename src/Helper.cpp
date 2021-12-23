@@ -17,6 +17,8 @@ double Helper::distanceBetween(Vector_2D a, Vector_2D b){
 
 Helper::Vector_2D Helper::rotatePointToReference(Vector_2D b, Vector_2D a, int degrees){
 
+    if(a.x == b.x && a.y == b.y)  return a;
+
     double defaultAngle = asin(abs(a.y - b.y) / distanceBetween(a, b)) * 180 / PI;
 
     if(a.x < b.x && a.y > b.y)  defaultAngle = 180 - defaultAngle;
@@ -72,15 +74,35 @@ void Helper::rotationalEllipse(double x, double y, Vector_2D thisReference, doub
         thisReference,
         degrees);
 
-    R1 = abs(R1);   R2 = abs(R2);
-
-    R1 = abs(R1 + (R2 - R1) * abs(sin(degrees * PI / 180)));
-    R2 = abs(R2 + (R1 - R2) * abs(sin(degrees * PI / 180)));
-    D1 -= degrees;
-    D2 -= degrees;
+    if(R1 != R2){
+        R1 = abs(R1);   R2 = abs(R2);
+        R1 = abs(R1 + (R2 - R1) * abs(sin(degrees * PI / 180)));
+        R2 = abs(R2 + (R1 - R2) * abs(sin(degrees * PI / 180)));
+    }
 
     if(thisFlipped){
-        D1 += 180;  D2 += 180;
+        D1 += degrees;
+        D2 += degrees;
+    }
+    else{
+        D1 -= degrees;
+        D2 -= degrees;
+    }
+
+    while(D1 < 0)   D1 += 360;
+    while(D1 > 360)   D1 -= 360;
+
+    while(D2 < 0)   D2 += 360;
+    while(D2 > 360)   D2 -= 360;
+
+    if(thisFlipped){
+        if(0 <= D1 && D1 <= 180) D1 = 180 - D1;
+        else if(180 <= D1 && D1 <= 360) D1 = 540 - D1;
+
+        if(0 <= D2 && D2 <= 180) D2 = 180 - D2;
+        else if(180 <= D2 && D2 <= 360) D2 = 540 - D2;
+
+        std::swap(D1, D2);
     }
 
     ellipse(ellipsePosition.x, ellipsePosition.y, D1, D2, R1, R2);
@@ -101,4 +123,39 @@ void Helper::rotationalFillPoly(int nr, int* arr, Vector_2D thisReference, int d
     }
 
     fillpoly(nr, thisArr);
+}
+
+void Helper::rotationalArc(double x, double y, Vector_2D thisReference, double D1, double D2, double R, int degrees, bool thisFlipped){
+
+    Vector_2D arcPosition = rotatePointToReference(
+        makeVector_2D(x, y),
+        thisReference,
+        degrees);
+
+    if(thisFlipped){
+        D1 += degrees;
+        D2 += degrees;
+    }
+    else{
+        D1 -= degrees;
+        D2 -= degrees;
+    }
+
+    while(D1 < 0)   D1 += 360;
+    while(D1 > 360)   D1 -= 360;
+
+    while(D2 < 0)   D2 += 360;
+    while(D2 > 360)   D2 -= 360;
+
+    if(thisFlipped){
+        if(0 <= D1 && D1 <= 180) D1 = 180 - D1;
+        else if(180 <= D1 && D1 <= 360) D1 = 540 - D1;
+
+        if(0 <= D2 && D2 <= 180) D2 = 180 - D2;
+        else if(180 <= D2 && D2 <= 360) D2 = 540 - D2;
+
+        std::swap(D1, D2);
+    }
+
+    arc(arcPosition.x, arcPosition.y, D1, D2, R);
 }

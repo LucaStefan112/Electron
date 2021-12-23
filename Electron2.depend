@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1640188035 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
+1640261187 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
 	"Electronics.h"
 
-1640127059 source:d:\info\c++\proiecte\electron 2\electron2\src\helper.cpp
+1640258988 source:d:\info\c++\proiecte\electron 2\electron2\src\helper.cpp
 	"Helper.h"
 
-1640169905 d:\info\c++\proiecte\electron 2\electron2\include\helper.h
+1640256238 d:\info\c++\proiecte\electron 2\electron2\include\helper.h
 	<graphics.h>
 	<string>
 	<iostream>
@@ -212,22 +212,22 @@
 1639084746 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\xorgate.cpp
 	"Electronic Components/XorGate.h"
 
-1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\notgate.h
+1640259359 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\notgate.h
 	"Electronic Components/ElectronicComponent.h"
 
-1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\andgate.h
+1640249969 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\andgate.h
 	"Electronic Components/ElectronicComponent.h"
 
-1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\nandgate.h
+1640251187 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\nandgate.h
 	"Electronic Components/ElectronicComponent.h"
 
-1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\orgate.h
+1640259726 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\orgate.h
 	"Electronic Components/ElectronicComponent.h"
 
-1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\norgate.h
+1640254442 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\norgate.h
 	"Electronic Components/ElectronicComponent.h"
 
-1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\xorgate.h
+1640260012 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\logic gates\xorgate.h
 	"Electronic Components/ElectronicComponent.h"
 
 1639139279 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_bipolarnpn.h
@@ -242,22 +242,22 @@
 1639144034 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_bipolarpnp.cpp
 	"Electronic Components/Transistors/Transistor_BipolarPNP.h"
 
-1640177436 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\logic gates\andgate.cpp
+1640260350 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\logic gates\andgate.cpp
 	"Electronic Components/Logic Gates/AndGate.h"
 
-1640177441 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\logic gates\nandgate.cpp
+1640251526 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\logic gates\nandgate.cpp
 	"Electronic Components/Logic Gates/NandGate.h"
 
-1640177446 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\logic gates\norgate.cpp
+1640259250 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\logic gates\norgate.cpp
 	"Electronic Components/Logic Gates/NorGate.h"
 
-1640169905 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\logic gates\notgate.cpp
+1640259673 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\logic gates\notgate.cpp
 	"Electronic Components/Logic Gates/NotGate.h"
 
-1640177451 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\logic gates\orgate.cpp
+1640259931 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\logic gates\orgate.cpp
 	"Electronic Components/Logic Gates/OrGate.h"
 
-1640177456 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\logic gates\xorgate.cpp
+1640260292 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\logic gates\xorgate.cpp
 	"Electronic Components/Logic Gates/XorGate.h"
 
 1640177548 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_bipolar_npn.cpp
@@ -380,7 +380,7 @@
 1640181127 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\diodes\diode_junction_pn.cpp
 	"Electronic Components/Diodes/Diode_Junction_PN.h"
 
-1640177419 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\diodes\diode_zener.cpp
+1640188189 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\diodes\diode_zener.cpp
 	"Electronic Components/Diodes/Diode_Zener.h"
 
 1640188069 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\diodes\diode_zener.h
@@ -467,7 +467,7 @@
 1640124776 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\capacitors\capacitor_electrolytic.h
 	"Electronic Components/ElectronicComponent.h"
 
-1640179830 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitors\capacitor_electrolytic.cpp
+1640260951 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\capacitors\capacitor_electrolytic.cpp
 	"Electronic Components/Capacitors/Capacitor_Electrolytic.h"
 
 1639930010 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\capacitors\capacitor_trimmer.h

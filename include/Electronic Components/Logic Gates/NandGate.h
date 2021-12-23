@@ -8,6 +8,9 @@ class NandGate : public ElectronicComponent{
 public:
     NandGate();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };
