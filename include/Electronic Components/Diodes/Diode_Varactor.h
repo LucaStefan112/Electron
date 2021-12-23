@@ -8,6 +8,9 @@ class Diode_Varactor : public ElectronicComponent{
 public:
     Diode_Varactor();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };

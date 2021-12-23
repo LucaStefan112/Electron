@@ -18,7 +18,7 @@ void Capacitor_Ceramic::Show(){
     double thisHeight = (down_right_x - up_left_x) / width_height_ratio;
 
     Capacitor_Ceramic_Helper.rotationalCircle(
-        up_left_x + thisHeight / 10, center_y, getPositionCenter(), thisHeight / 10,
+        up_left_x + thisHeight / 10, center_y, getPositionCenter(), height / 10,
         rotateState);
 
     Capacitor_Ceramic_Helper.rotationalLine(
@@ -38,7 +38,7 @@ void Capacitor_Ceramic::Show(){
         rotateState);
 
     Capacitor_Ceramic_Helper.rotationalCircle(
-        down_right_x - thisHeight / 10, center_y, getPositionCenter(), thisHeight / 10,
+        down_right_x - thisHeight / 10, center_y, getPositionCenter(), height / 10,
         rotateState);
 
     showElements();

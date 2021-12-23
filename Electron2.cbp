@@ -109,8 +109,22 @@
 		<Unit filename="include/Electronic Components/Transistors/Transistor_MOSFET_Pchannel.h" />
 		<Unit filename="include/Electronic Components/Transistors/Transistor_Single_Connection_Nchannel.h" />
 		<Unit filename="include/Electronic Components/Transistors/Transistor_Single_Connection_Pchannel.h" />
+		<Unit filename="include/Enums.h" />
 		<Unit filename="include/Helper.h" />
 		<Unit filename="include/UI/Button.h" />
+		<Unit filename="include/UI/InfoMenu.h" />
+		<Unit filename="include/UI/Info/CapacitorsInfo.h" />
+		<Unit filename="include/UI/Info/DiodesInfo.h" />
+		<Unit filename="include/UI/Info/InfoMenu.h" />
+		<Unit filename="include/UI/Info/LogicGatesInfo.h" />
+		<Unit filename="include/UI/Info/MeasurementsInfo.h" />
+		<Unit filename="include/UI/Info/OtherInfo.h" />
+		<Unit filename="include/UI/Info/ResistorsInfo.h" />
+		<Unit filename="include/UI/Info/SourcesInfo.h" />
+		<Unit filename="include/UI/Info/SwitchesInfo.h" />
+		<Unit filename="include/UI/Info/TransistorsInfo.h" />
+		<Unit filename="include/UI/MainMenu.h" />
+		<Unit filename="include/UI/Screen.h" />
 		<Unit filename="include/UI/UI.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Electronic Components/Buzzer.cpp" />
@@ -175,6 +189,18 @@
 		<Unit filename="src/Electronic Components/Transistors/Transistor_Single_Connection_Pchannel.cpp" />
 		<Unit filename="src/Helper.cpp" />
 		<Unit filename="src/UI/Button.cpp" />
+		<Unit filename="src/UI/Info/CapacitorsInfo.cpp" />
+		<Unit filename="src/UI/Info/DiodesInfo.cpp" />
+		<Unit filename="src/UI/Info/InfoMenu.cpp" />
+		<Unit filename="src/UI/Info/LogicGatesInfo.cpp" />
+		<Unit filename="src/UI/Info/MeasurementsInfo.cpp" />
+		<Unit filename="src/UI/Info/OtherInfo.cpp" />
+		<Unit filename="src/UI/Info/ResistorsInfo.cpp" />
+		<Unit filename="src/UI/Info/SourcesInfo.cpp" />
+		<Unit filename="src/UI/Info/SwitchesInfo.cpp" />
+		<Unit filename="src/UI/Info/TransistorsInfo.cpp" />
+		<Unit filename="src/UI/MainMenu.cpp" />
+		<Unit filename="src/UI/Screen.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

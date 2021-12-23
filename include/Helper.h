@@ -33,6 +33,8 @@ public:
     void rotationalCircle(double x, double y, Vector_2D thisReference, double radius, int degrees);
     void rotationalEllipse(double x, double y, Vector_2D thisReference, double D1, double D2, double R1, double R2, int degrees, bool thisFlipped);
     void rotationalFillPoly(int nr, int* arr, Vector_2D thisReference, int degrees);
+    void rotationalArc(double x, double y, Vector_2D thisReference, double D1, double D2, double R, int degrees, bool thisFlipped);
+
 };
 
 

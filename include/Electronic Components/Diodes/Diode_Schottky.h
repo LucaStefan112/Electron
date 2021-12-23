@@ -8,6 +8,9 @@ class Diode_Schottky : public ElectronicComponent{
 public:
     Diode_Schottky();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };

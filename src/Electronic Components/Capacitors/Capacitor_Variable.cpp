@@ -20,7 +20,7 @@ void Capacitor_Variable::Show(){
     double diff = thisHeight / 2, sup = thisHeight / 7;
 
     Capacitor_Variable_Helper.rotationalCircle(
-        up_left_x + thisHeight / 10, center_y, getPositionCenter(), thisHeight / 10,
+        up_left_x + thisHeight / 10, center_y, getPositionCenter(), height / 10,
         rotateState);
 
     Capacitor_Variable_Helper.rotationalLine(
@@ -51,7 +51,7 @@ void Capacitor_Variable::Show(){
         rotateState);
 
     Capacitor_Variable_Helper.rotationalCircle(
-        down_right_x - thisHeight / 10, center_y, getPositionCenter(), thisHeight / 10,
+        down_right_x - thisHeight / 10, center_y, getPositionCenter(), height / 10,
         rotateState);
 
     showElements();

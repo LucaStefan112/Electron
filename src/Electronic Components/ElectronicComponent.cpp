@@ -282,7 +282,7 @@ void ElectronicComponent::showElements(bool modeErase){
         if(modeErase)    {setfillstyle(INTERLEAVE_FILL, BLACK); setcolor(BLACK);}
 
         for(int i = 0; i < numberOfConnectionPoints; i++){
-            fillellipse(connectionPoints[i].position.x, connectionPoints[i].position.y, height / 10, height / 10);
+            fillellipse(connectionPoints[i].position.x, connectionPoints[i].position.y, height / 10 / (4 / width_height_ratio), height / 10 / (4 / width_height_ratio));
         }
 
         setfillstyle(SOLID_FILL, WHITE);
