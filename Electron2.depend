@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1640261187 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
+1640305079 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
 	"Electronics.h"
 
 1640258988 source:d:\info\c++\proiecte\electron 2\electron2\src\helper.cpp
@@ -512,16 +512,16 @@
 1640177479 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\resistors\potentiometer_mobile_contact.cpp
 	"Electronic Components/Resistors/Potentiometer_Mobile_Contact.h"
 
-1640177462 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\measurements\ammeter.cpp
+1640304900 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\measurements\ammeter.cpp
 	"Electronic Components/Measurements/Ammeter.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\measurements\ammeter.h
+1640304454 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\measurements\ammeter.h
 	"Electronic Components/ElectronicComponent.h"
 
 1640177471 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\measurements\voltmeter.cpp
 	"Electronic Components/Measurements/Voltmeter.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\measurements\voltmeter.h
+1640304959 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\measurements\voltmeter.h
 	"Electronic Components/ElectronicComponent.h"
 
 1639069354 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch.h
