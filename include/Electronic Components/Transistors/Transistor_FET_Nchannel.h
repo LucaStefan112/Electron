@@ -8,6 +8,9 @@ class Transistor_FET_Nchannel : public ElectronicComponent{
 public:
     Transistor_FET_Nchannel();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };

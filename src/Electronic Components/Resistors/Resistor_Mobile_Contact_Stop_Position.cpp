@@ -49,8 +49,15 @@ void Resistor_Mobile_Contact_Stop_Position::Show(){
         center_x - thisHeight + 5 * thisHeight / 3, up_left_y + height / 4, center_x + thisHeight, center_y, getPositionCenter(),
         rotateState);
 
-    Resistor_Mobile_Contact_Stop_Position_Helper.rotationalBar(
-        center_x + thisHeight, center_y + height / 4, center_x + 11 *  thisHeight / 10, center_y - height / 4, getPositionCenter(),
+    int points1[] = {
+        int(center_x + thisHeight), int(center_y + height / 4),
+        int(center_x + 11 *  thisHeight / 10), int(center_y + height / 4),
+        int(center_x + 11 *  thisHeight / 10), int(center_y - height / 4),
+        int(center_x + thisHeight), int(center_y - height / 4),
+    };
+
+    Resistor_Mobile_Contact_Stop_Position_Helper.rotationalFillPoly(
+        4, points1, getPositionCenter(),
         rotateState);
 
     Resistor_Mobile_Contact_Stop_Position_Helper.rotationalLine(

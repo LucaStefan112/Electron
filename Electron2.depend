@@ -1,17 +1,17 @@
 # depslib dependency file v1.0
-1640345796 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
+1640368218 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
 	"Electronics.h"
 
-1640258988 source:d:\info\c++\proiecte\electron 2\electron2\src\helper.cpp
+1640356028 source:d:\info\c++\proiecte\electron 2\electron2\src\helper.cpp
 	"Helper.h"
 
-1640256238 d:\info\c++\proiecte\electron 2\electron2\include\helper.h
+1640356036 d:\info\c++\proiecte\electron 2\electron2\include\helper.h
 	<graphics.h>
 	<string>
 	<iostream>
 	<math.h>
 
-1640181881 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\electroniccomponent.cpp
+1640356688 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\electroniccomponent.cpp
 	"Electronic Components/ElectronicComponent.h"
 
 1640181855 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electroniccomponent.h
@@ -260,76 +260,76 @@
 1640260292 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\logic gates\xorgate.cpp
 	"Electronic Components/Logic Gates/XorGate.h"
 
-1640177548 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_bipolar_npn.cpp
+1640361437 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_bipolar_npn.cpp
 	"Electronic Components/Transistors/Transistor_Bipolar_NPN.h"
 
-1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_bipolar_npn.h
+1640353195 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_bipolar_npn.h
 	"Electronic Components/ElectronicComponent.h"
 
-1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_bipolar_pnp.h
+1640358020 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_bipolar_pnp.h
 	"Electronic Components/ElectronicComponent.h"
 
-1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_fet_nchannel.h
+1640361075 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_fet_nchannel.h
 	"Electronic Components/ElectronicComponent.h"
 
-1640177552 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_bipolar_pnp.cpp
+1640360592 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_bipolar_pnp.cpp
 	"Electronic Components/Transistors/Transistor_Bipolar_PNP.h"
 
-1640177564 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_fet_nchannel.cpp
+1640361949 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_fet_nchannel.cpp
 	"Electronic Components/Transistors/Transistor_FET_Nchannel.h"
 
-1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_fet_pchannel.h
+1640361991 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_fet_pchannel.h
 	"Electronic Components/ElectronicComponent.h"
 
-1640177568 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_fet_pchannel.cpp
+1640362170 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_fet_pchannel.cpp
 	"Electronic Components/Transistors/Transistor_FET_Pchannel.h"
 
-1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_mosfet_nchannel.h
+1640364795 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_mosfet_nchannel.h
 	"Electronic Components/ElectronicComponent.h"
 
-1640177585 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_mosfet_nchannel.cpp
+1640365661 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_mosfet_nchannel.cpp
 	"Electronic Components/Transistors/Transistor_MOSFET_Nchannel.h"
 
-1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_mosfet_pchannel.h
+1640365730 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_mosfet_pchannel.h
 	"Electronic Components/ElectronicComponent.h"
 
-1640177589 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_mosfet_pchannel.cpp
+1640365843 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_mosfet_pchannel.cpp
 	"Electronic Components/Transistors/Transistor_MOSFET_Pchannel.h"
 
-1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_dual_gate_mosfet_nchannel.h
+1640358488 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_dual_gate_mosfet_nchannel.h
 	"Electronic Components/ElectronicComponent.h"
 
-1640177556 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_dual_gate_mosfet_nchannel.cpp
+1640360557 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_dual_gate_mosfet_nchannel.cpp
 	"Electronic Components/Transistors/Transistor_Dual_Gate_MOSFET_Nchannel.h"
 
-1640177560 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_dual_gate_mosfet_pchannel.cpp
+1640360998 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_dual_gate_mosfet_pchannel.cpp
 	"Electronic Components/Transistors/Transistor_Dual_Gate_MOSFET_Pchannel.h"
 
-1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_dual_gate_mosfet_pchannel.h
+1640360783 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_dual_gate_mosfet_pchannel.h
 	"Electronic Components/ElectronicComponent.h"
 
-1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_inductive_channel_mosfet_nchannel.h
+1640362212 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_inductive_channel_mosfet_nchannel.h
 	"Electronic Components/ElectronicComponent.h"
 
-1640177575 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_inductive_channel_mosfet_nchannel.cpp
+1640363596 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_inductive_channel_mosfet_nchannel.cpp
 	"Electronic Components/Transistors/Transistor_Inductive_Channel_MOSFET_Nchannel.h"
 
-1640177580 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_inductive_channel_mosfet_pchannel.cpp
+1640363769 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_inductive_channel_mosfet_pchannel.cpp
 	"Electronic Components/Transistors/Transistor_Inductive_Channel_MOSFET_Pchannel.h"
 
-1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_inductive_channel_mosfet_pchannel.h
+1640363638 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_inductive_channel_mosfet_pchannel.h
 	"Electronic Components/ElectronicComponent.h"
 
-1640177593 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_single_connection_nchannel.cpp
+1640368329 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_single_connection_nchannel.cpp
 	"Electronic Components/Transistors/Transistor_Single_Connection_Nchannel.h"
 
-1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_single_connection_nchannel.h
+1640365924 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_single_connection_nchannel.h
 	"Electronic Components/ElectronicComponent.h"
 
-1639311186 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_single_connection_pchannel.h
+1640368372 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\transistors\transistor_single_connection_pchannel.h
 	"Electronic Components/ElectronicComponent.h"
 
-1640177596 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_single_connection_pchannel.cpp
+1640368482 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\transistors\transistor_single_connection_pchannel.cpp
 	"Electronic Components/Transistors/Transistor_Single_Connection_Pchannel.h"
 
 1640310260 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\sources\source_voltage_dc.h
@@ -503,7 +503,7 @@
 1640306516 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\resistors\resistor_mobile_contact_stop_position.h
 	"Electronic Components/ElectronicComponent.h"
 
-1640306676 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\resistors\resistor_mobile_contact_stop_position.cpp
+1640357772 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\resistors\resistor_mobile_contact_stop_position.cpp
 	"Electronic Components/Resistors/Resistor_Mobile_Contact_Stop_Position.h"
 
 1640305482 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\resistors\potentiometer_mobile_contact.h
@@ -542,7 +542,7 @@
 1640345814 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch_thermal_magnetic_breaker.h
 	"Electronic Components/ElectronicComponent.h"
 
-1640177543 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_thermal_magnetic_breaker.cpp
+1640346045 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_thermal_magnetic_breaker.cpp
 	"Electronic Components/Switches/Switch_Thermal_Magnetic_Breaker.h"
 
 1640345499 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch_telegraph.h

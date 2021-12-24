@@ -282,7 +282,17 @@ void ElectronicComponent::showElements(bool modeErase){
         if(modeErase)    {setfillstyle(INTERLEAVE_FILL, BLACK); setcolor(BLACK);}
 
         for(int i = 0; i < numberOfConnectionPoints; i++){
-            fillellipse(connectionPoints[i].position.x, connectionPoints[i].position.y, height / 10 / (4 / width_height_ratio), height / 10 / (4 / width_height_ratio));
+            if(width_height_ratio == 4)
+                fillellipse(connectionPoints[i].position.x, connectionPoints[i].position.y, height / 10, height / 10);
+
+            else if(width_height_ratio == 2)
+                fillellipse(connectionPoints[i].position.x, connectionPoints[i].position.y, height / 20, height / 20);
+
+            else if(width_height_ratio == 1)
+                fillellipse(connectionPoints[i].position.x, connectionPoints[i].position.y, height / 20, height / 20);
+
+            else if(width_height_ratio == 0.75)
+                fillellipse(connectionPoints[i].position.x, connectionPoints[i].position.y, height / 30, height / 30);
         }
 
         setfillstyle(SOLID_FILL, WHITE);
