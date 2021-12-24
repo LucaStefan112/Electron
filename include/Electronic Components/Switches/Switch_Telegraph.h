@@ -8,6 +8,9 @@ class Switch_Telegraph : public ElectronicComponent{
 public:
     Switch_Telegraph();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1640310368 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
+1640345796 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
 	"Electronics.h"
 
 1640258988 source:d:\info\c++\proiecte\electron 2\electron2\src\helper.cpp
@@ -335,7 +335,7 @@
 1640310260 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\sources\source_voltage_dc.h
 	"Electronic Components/ElectronicComponent.h"
 
-1640310434 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\sources\source_voltage_dc.cpp
+1640310772 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\sources\source_voltage_dc.cpp
 	"Electronic Components/Sources/Source_Voltage_DC.h"
 
 1639920773 d:\info\c++\proiecte\electron 2\electron2\include\ui\ui.h
@@ -527,40 +527,40 @@
 1639069354 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch.h
 	"Electronic Components/ElectronicComponent.h"
 
-1640177531 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_open.cpp
+1640344815 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_open.cpp
 	"Electronic Components/Switches/Switch_Open.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch_open.h
+1640344572 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch_open.h
 	"Electronic Components/ElectronicComponent.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch_closed.h
+1640342727 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch_closed.h
 	"Electronic Components/ElectronicComponent.h"
 
-1640177522 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_closed.cpp
+1640342999 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_closed.cpp
 	"Electronic Components/Switches/Switch_Closed.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch_thermal_magnetic_breaker.h
+1640345814 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch_thermal_magnetic_breaker.h
 	"Electronic Components/ElectronicComponent.h"
 
 1640177543 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_thermal_magnetic_breaker.cpp
 	"Electronic Components/Switches/Switch_Thermal_Magnetic_Breaker.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch_telegraph.h
+1640345499 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch_telegraph.h
 	"Electronic Components/ElectronicComponent.h"
 
-1640177539 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_telegraph.cpp
+1640345768 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_telegraph.cpp
 	"Electronic Components/Switches/Switch_Telegraph.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch_spdt.h
+1640344955 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch_spdt.h
 	"Electronic Components/ElectronicComponent.h"
 
-1640177535 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_spdt.cpp
+1640345436 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_spdt.cpp
 	"Electronic Components/Switches/Switch_SPDT.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch_dpst.h
+1640343033 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\switches\switch_dpst.h
 	"Electronic Components/ElectronicComponent.h"
 
-1640177527 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_dpst.cpp
+1640344497 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_dpst.cpp
 	"Electronic Components/Switches/Switch_DPST.h"
 
 1639920773 d:\info\c++\proiecte\electron 2\electron2\include\enums.h
