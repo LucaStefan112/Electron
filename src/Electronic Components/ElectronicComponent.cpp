@@ -293,6 +293,8 @@ void ElectronicComponent::showElements(bool modeErase){
 
             else if(width_height_ratio == 0.75)
                 fillellipse(connectionPoints[i].position.x, connectionPoints[i].position.y, height / 30, height / 30);
+            else if(width_height_ratio == 0.75)
+                fillellipse(connectionPoints[i].position.x, connectionPoints[i].position.y, height / 30, height / 30);
         }
 
         setfillstyle(SOLID_FILL, WHITE);

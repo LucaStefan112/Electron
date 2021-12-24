@@ -8,6 +8,9 @@ class Speaker : public ElectronicComponent{
 public:
     Speaker();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };

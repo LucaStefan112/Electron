@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1640368218 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
+1640371110 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
 	"Electronics.h"
 
 1640356028 source:d:\info\c++\proiecte\electron 2\electron2\src\helper.cpp
@@ -11,7 +11,7 @@
 	<iostream>
 	<math.h>
 
-1640356688 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\electroniccomponent.cpp
+1640370597 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\electroniccomponent.cpp
 	"Electronic Components/ElectronicComponent.h"
 
 1640181855 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electroniccomponent.h
@@ -122,10 +122,10 @@
 1639082266 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\voltmeter.cpp
 	"Electronic Components/Voltmeter.h"
 
-1640177424 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\ground.cpp
+1640369444 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\ground.cpp
 	"Electronic Components/Ground.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\ground.h
+1640369026 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\ground.h
 	"Electronic Components/ElectronicComponent.h"
 
 1639082241 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\rezistor.cpp
@@ -149,40 +149,40 @@
 1639082250 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\source.cpp
 	"Electronic Components/Source.h"
 
-1640177414 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\inductor.cpp
+1640369838 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\inductor.cpp
 	"Electronic Components/Inductor.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\inductor.h
+1640369473 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\inductor.h
 	"Electronic Components/ElectronicComponent.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\buzzer.h
+1640368647 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\buzzer.h
 	"Electronic Components/ElectronicComponent.h"
 
-1640177329 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\buzzer.cpp
+1640368988 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\buzzer.cpp
 	"Electronic Components/Buzzer.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\lamp.h
+1640369866 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\lamp.h
 	"Electronic Components/ElectronicComponent.h"
 
-1640177431 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\lamp.cpp
+1640370106 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\lamp.cpp
 	"Electronic Components/Lamp.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\speaker.h
+1640371091 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\speaker.h
 	"Electronic Components/ElectronicComponent.h"
 
-1640177518 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\speaker.cpp
+1640379887 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\speaker.cpp
 	"Electronic Components/Speaker.h"
 
-1640177466 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\microphone.cpp
+1640370774 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\microphone.cpp
 	"Electronic Components/Microphone.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\microphone.h
+1640370146 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\microphone.h
 	"Electronic Components/ElectronicComponent.h"
 
-1640177475 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\motor.cpp
+1640371068 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\motor.cpp
 	"Electronic Components/Motor.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\motor.h
+1640370888 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\motor.h
 	"Electronic Components/ElectronicComponent.h"
 
 1639083014 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\andgate.cpp
