@@ -7,4 +7,12 @@ enum PositionType {
     down_right
 };
 
+enum ComponentType {
+    _none,
+    _capacitorCeramic,
+    _capacitorElectrolyt,
+    _capacitorTrimmer,
+    _capacitorVariable
+};
+
 #endif // ENUMS_H

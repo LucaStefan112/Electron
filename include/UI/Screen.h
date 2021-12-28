@@ -9,7 +9,6 @@ class Screen
     public:
         Screen();
         void CreateScreen();
-        void AddExit();
 };
 
 #endif // Screen_H

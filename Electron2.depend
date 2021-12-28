@@ -581,47 +581,47 @@
 	"UI/UI.h"
 
 1639920773 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\capacitorsinfo.h
-	"UI/Screen.h"
+	"UI/UI.h"
 	"Electronic Components/Electronics.h"
 	"Helper.h"
 
 1639920773 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\diodesinfo.h
-	"UI/Screen.h"
+	"UI/UI.h"
 	"Electronic Components/Electronics.h"
 	"Helper.h"
 
 1639920773 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\logicgatesinfo.h
-	"UI/Screen.h"
+	"UI/UI.h"
 	"Electronic Components/Electronics.h"
 	"Helper.h"
 
 1639920773 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\measurementsinfo.h
-	"UI/Screen.h"
+	"UI/UI.h"
 	"Electronic Components/Electronics.h"
 	"Helper.h"
 
 1639920773 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\resistorsinfo.h
-	"UI/Screen.h"
+	"UI/UI.h"
 	"Electronic Components/Electronics.h"
 	"Helper.h"
 
 1639920773 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\sourcesinfo.h
-	"UI/Screen.h"
+	"UI/UI.h"
 	"Electronic Components/Electronics.h"
 	"Helper.h"
 
 1639920773 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\switchesinfo.h
-	"UI/Screen.h"
+	"UI/UI.h"
 	"Electronic Components/Electronics.h"
 	"Helper.h"
 
 1639920773 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\transistorsinfo.h
-	"UI/Screen.h"
+	"UI/UI.h"
 	"Electronic Components/Electronics.h"
 	"Helper.h"
 
 1639920773 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\otherinfo.h
-	"UI/Screen.h"
+	"UI/UI.h"
 	"Electronic Components/Electronics.h"
 	"Helper.h"
 
@@ -661,5 +661,5 @@
 	"Helper.h"
 
 1639920773 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\screen.cpp
-	"UI/Screen.h"
+	"UI/UI.h"
 

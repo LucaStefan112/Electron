@@ -2,7 +2,7 @@
 
 #define BUTTON_HEIGHT 25
 
-NewProjectMenu::NewProjectMenu(): Screen()
+NewProjectMenu::NewProjectMenu()
 {
     //ctor
 }
@@ -15,77 +15,110 @@ void NewProjectMenu::WatchClick()
     int windowWidth = getwindowwidth();
     int windowHeight = getwindowheight();
 
+    int cType = _none;
+
+    clearmouseclick(WM_LBUTTONDOWN);
     while (ok)
     {
-        if (GetAsyncKeyState(VK_LBUTTON))
+        if (ismouseclick(WM_LBUTTONDOWN))
         {
+            if (save.isCursorPointInButton())
+            {
+                std::cout << "saving data ..." << std::endl;
+            }
             if (capacitors.isCursorPointInButton())
             {
+                std::cout << "capacitors" << std::endl;
                 CapacitorsInfo capacitorsInfo;
                 capacitorsInfo.CreateScreen();
                 capacitorsInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 3));
-                capacitorsInfo.AddExit();
+                cType = capacitorsInfo.WatchClick();
             }
             if (diodes.isCursorPointInButton())
             {
                 DiodesInfo diodesInfo;
                 diodesInfo.CreateScreen();
                 diodesInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 9));
-                diodesInfo.AddExit();
             }
             if (logicGates.isCursorPointInButton())
             {
                 LogicGatesInfo logicGatesInfo;
                 logicGatesInfo.CreateScreen();
                 logicGatesInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 5));
-                logicGatesInfo.AddExit();
             }
             if (measurements.isCursorPointInButton())
             {
                 MeasurementsInfo measurementsInfo;
                 measurementsInfo.CreateScreen();
                 measurementsInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 2));
-                measurementsInfo.AddExit();
             }
             if (resistors.isCursorPointInButton())
             {
                 ResistorsInfo resistorsInfo;
                 resistorsInfo.CreateScreen();
                 resistorsInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 6));
-                resistorsInfo.AddExit();
             }
             if (sources.isCursorPointInButton())
             {
                 SourcesInfo sourcesInfo;
                 sourcesInfo.CreateScreen();
                 sourcesInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 3));
-                sourcesInfo.AddExit();
             }
             if (switches.isCursorPointInButton())
             {
                 SwitchesInfo switchesInfo;
                 switchesInfo.CreateScreen();
                 switchesInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 5));
-                switchesInfo.AddExit();
             }
             if (transistors.isCursorPointInButton())
             {
                 TransistorsInfo transistorsInfo;
                 transistorsInfo.CreateScreen();
                 transistorsInfo.Show((double)(windowWidth / 8), (double)(windowHeight / 8));
-                transistorsInfo.AddExit();
             }
             if (other.isCursorPointInButton())
             {
                 OtherInfo otherInfo;
                 otherInfo.CreateScreen();
                 otherInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 5));
-                otherInfo.AddExit();
             }
             if (exit.isCursorPointInButton())
             {
                 ok = 0;
                 closegraph(CURRENT_WINDOW);
+            }
+
+            POINT cursorPoint;
+            GetCursorPos(&cursorPoint);
+
+            if (cType == _capacitorCeramic)
+            {
+                Capacitor_Ceramic cc;
+                cc.setWidth(100);
+                cc.setPositionCenter(helper.makeVector_2D(cursorPoint.x, cursorPoint.y));
+                cc.Show();
+            }
+
+            if (cType == _capacitorElectrolyt)
+            {
+                Capacitor_Electrolytic ce;
+                ce.setWidth(100);
+                ce.setPositionCenter(helper.makeVector_2D(cursorPoint.x, cursorPoint.y));
+                ce.Show();
+            }
+            if (cType == _capacitorTrimmer)
+            {
+                Capacitor_Trimmer ct;
+                ct.setWidth(100);
+                ct.setPositionCenter(helper.makeVector_2D(cursorPoint.x, cursorPoint.y));
+                ct.Show();
+            }
+            if (cType == _capacitorVariable)
+            {
+                Capacitor_Variable cv;
+                cv.setWidth(100);
+                cv.setPositionCenter(helper.makeVector_2D(cursorPoint.x, cursorPoint.y));
+                cv.Show();
             }
         }
         delay(200);
@@ -96,10 +129,19 @@ void NewProjectMenu::Show()
 {
     Helper helper;
 
+    DWORD screenWidth = GetSystemMetrics(SM_CXSCREEN);
+    DWORD screenHeight = GetSystemMetrics(SM_CYSCREEN);
+
+    initwindow(screenWidth/2, screenHeight/2, "", -3, -3);
+
     int windowWidth = getwindowwidth();
     double BUTTON_WIDTH = (windowWidth - 75) / 10;
 
-    this->CreateScreen();
+    exit.setPositionUpLeft(helper.makeVector_2D(0, 0));
+    exit.setWidth(75);
+    exit.setHeight(BUTTON_HEIGHT);
+    exit.setTitle("Exit");
+    exit.Show();
 
     save.setPositionUpLeft(helper.makeVector_2D(75, 0));
     save.setWidth(BUTTON_WIDTH);
@@ -160,6 +202,4 @@ void NewProjectMenu::Show()
     other.setHeight(BUTTON_HEIGHT);
     other.setTitle("Other");
     other.Show();
-
-    this->AddExit();
 }

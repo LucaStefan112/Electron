@@ -24,13 +24,7 @@ protected:
 
     //Dimensions of the component:
     double width = DEFAULT_WIDTH, height = DEFAULT_HEIGHT, width_height_ratio = DEFAULT_WIDTH_HEIGHT_RATIO;
-<<<<<<< HEAD
-=======
 
-    PositionType positionType = up_left;
->>>>>>> e59392f90ace2ad632971addad046aced749f98c
-
-    int componentCode = DEFAULT_COMPONENT_CODE;
 
     int numberOfConnectionPoints = DEFAULT_NUMBER_OF_CONNECTION_POINTS;
     Helper::ConnectionPoint connectionPoints[MAX_NUMBER_OF_CONNECTION_POINTS];
@@ -42,14 +36,12 @@ protected:
     bool showConnectionPoints = DEFAULT_CONNECTIONPOINTS_VALUE;
 
 public:
-    //Name of the component:
-    std::string name = DEFAULT_NAME;
-
     ElectronicComponent(double thisWidth = DEFAULT_WIDTH, double thisHeight = DEFAULT_HEIGHT, std::string thisName = DEFAULT_NAME, int thisNumberOfConnectionPoints = DEFAULT_NUMBER_OF_CONNECTION_POINTS);
 
     //Name of the component:
     std::string name = DEFAULT_NAME;
     PositionType positionType = up_left;
+    int componentCode = DEFAULT_COMPONENT_CODE;
 
     //Setters:
     void setPositionUpLeft(Helper::Vector_2D thisPosition);
@@ -75,6 +67,8 @@ public:
     int getNumberOfConnectionPoints();
     int getCodeOfConnectedComponentAtPoint(int thisPoint);
     Helper::ConnectionPoint* getConnectionPoints();
+
+    bool isCursorPointInButton();
 
     //Updating the position of each connection point:
     virtual void updateConnectionPointsPosition();

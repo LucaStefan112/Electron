@@ -37,8 +37,8 @@ void Button::setPositionUpLeft(Helper::Vector_2D thisPosition)
 //Setter of the center point:
 void Button::setPositionCenter(Helper::Vector_2D thisPosition)
 {
-    std::cout << height << std::endl;
     positionType = center;
+
     //Updating the other reference points:
     position.center.x = thisPosition.x;
     position.up_left.x = thisPosition.x - width / 2;
@@ -53,6 +53,7 @@ void Button::setPositionCenter(Helper::Vector_2D thisPosition)
 void Button::setPositionDownRight(Helper::Vector_2D thisPosition)
 {
     positionType = down_right;
+
     //Updating the other reference points:
     position.down_right.x = thisPosition.x;
     position.up_left.x = position.down_right.x - width;
@@ -75,15 +76,15 @@ void Button::setWidth(double thisWidth)
     width = thisWidth;
     switch (positionType)
     {
-    case up_left:
-        position.center.x = position.up_left.x + width / 2;
-        position.down_right.x = position.up_left.x + width;
-    case center:
-        position.up_left.x = position.center.x - width / 2;
-        position.down_right.x = position.center.x + width / 2;
-    case down_right:
-        position.up_left.x = position.down_right.x - width;
-        position.center.x = position.down_right.x - width / 2;
+        case up_left:
+            position.center.x = position.up_left.x + width / 2;
+            position.down_right.x = position.up_left.x + width;
+        case center:
+            position.up_left.x = position.center.x - width / 2;
+            position.down_right.x = position.center.x + width / 2;
+        case down_right:
+            position.up_left.x = position.down_right.x - width;
+            position.center.x = position.down_right.x - width / 2;
     }
 }
 
@@ -93,18 +94,18 @@ void Button::setHeight(double thisHeight)
     height = thisHeight;
     switch (positionType)
     {
-    case up_left:
-        position.center.y = position.up_left.y + height / 2;
-        position.down_right.y = position.up_left.y + height;
-        break;
-    case center:
-        position.up_left.y = position.center.y - height / 2;
-        position.down_right.y = position.center.y + height / 2;
-        break;
-    case down_right:
-        position.up_left.y = position.down_right.y - height;
-        position.center.y = position.down_right.y - height / 2;
-        break;
+        case up_left:
+            position.center.y = position.up_left.y + height / 2;
+            position.down_right.y = position.up_left.y + height;
+            break;
+        case center:
+            position.up_left.y = position.center.y - height / 2;
+            position.down_right.y = position.center.y + height / 2;
+            break;
+        case down_right:
+            position.up_left.y = position.down_right.y - height;
+            position.center.y = position.down_right.y - height / 2;
+            break;
     }
 }
 
@@ -142,10 +143,6 @@ bool Button::isCursorPointInButton()
 {
     POINT cursorPoint;
     GetCursorPos(&cursorPoint);
-
-    std::cout << cursorPoint.x << " " << cursorPoint.y << std::endl;
-    std::cout << position.up_left.x << " " << position.up_left.y << std::endl;
-    std::cout << position.down_right.x << " " << position.down_right.y << std::endl;
 
     if (cursorPoint.x < position.up_left.x)
     {

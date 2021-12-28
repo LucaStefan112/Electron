@@ -5,10 +5,12 @@
 #include <winbgim.h>
 #include <windows.h>
 
+#include "Electronic Components/Electronics.h"
 #include "UI/UI.h"
 #include "Helper.h"
+#include "Enums.h"
 
-class NewProjectMenu: public Screen
+class NewProjectMenu
 {
     protected:
         Button save, capacitors, diodes, logicGates, measurements, resistors, sources, switches, transistors, other, exit;

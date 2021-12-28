@@ -9,8 +9,11 @@ MainMenu::MainMenu()
 
 void MainMenu::WatchClick() {
     int ok = 1;
-    while (ok) {
-        if (GetAsyncKeyState(VK_LBUTTON)) {
+
+    clearmouseclick(WM_LBUTTONDOWN);
+    while (ok)
+    {
+        if (ismouseclick(WM_LBUTTONDOWN)) {
             if (newProject.isCursorPointInButton()) {
                 NewProjectMenu newProjectMenu;
                 newProjectMenu.Show();
