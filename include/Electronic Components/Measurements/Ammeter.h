@@ -5,8 +5,17 @@
 
 class Ammeter : public ElectronicComponent{
 
+private:
+    double current = 0;
+
 public:
     Ammeter();
+
+    //Setters:
+    void setCurrent(double thisCurrent);
+
+    //Getters:
+    double getCurrent();
 
     //Updating the position of each connection point:
     void updateConnectionPointsPosition();

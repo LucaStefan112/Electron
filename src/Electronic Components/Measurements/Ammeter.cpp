@@ -75,3 +75,11 @@ void Ammeter::updateConnectionPointsPosition(){
         getPositionCenter(),
         rotateState);
 }
+
+void Ammeter::setCurrent(double thisCurrent){
+    current = thisCurrent;
+}
+
+double Ammeter::getCurrent(){
+    return current;
+}

@@ -5,8 +5,18 @@
 
 class Capacitor_Variable : public ElectronicComponent{
 
+private:
+    double capacitance = 0;
+
 public:
     Capacitor_Variable();
+
+    //Setters:
+    void setCapacitance(double thisCapacitance);
+
+    //Getters:
+    double getCapacitance();
+
 
     //Updating the position of each connection point:
     void updateConnectionPointsPosition();

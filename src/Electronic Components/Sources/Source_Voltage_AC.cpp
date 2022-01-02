@@ -75,3 +75,19 @@ void Source_Voltage_AC::updateConnectionPointsPosition(){
         getPositionCenter(),
         rotateState);
 }
+
+void Source_Voltage_AC::setVolts(double thisVolts){
+    volts = thisVolts;
+}
+
+void Source_Voltage_AC::setAmpers(double thisAmpers){
+    ampers = thisAmpers;
+}
+
+double Source_Voltage_AC::getVolts(){
+    return volts;
+}
+
+double Source_Voltage_AC::getAmpers(){
+    return ampers;
+}
