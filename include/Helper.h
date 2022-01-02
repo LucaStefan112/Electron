@@ -2,8 +2,6 @@
 #include <string>
 #include <iostream>
 #include <math.h>
-#include <windows.h>
-#include <future>
 #include "Electronic Components/ElectronicComponent.h"
 
 #ifndef HELPER_H
