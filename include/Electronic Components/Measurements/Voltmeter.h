@@ -8,6 +8,9 @@ class Voltmeter : public ElectronicComponent{
 public:
     Voltmeter();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };

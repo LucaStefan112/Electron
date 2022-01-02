@@ -10,8 +10,10 @@ void SourcesInfo::Show(double w, double h)
     Helper helper;
     DWORD screenWidth = GetSystemMetrics(SM_CXSCREEN);
     DWORD screenHeight = GetSystemMetrics(SM_CYSCREEN);
-    int wc = initwindow(screenWidth/2, screenHeight/2, "", -3, -3);
+
+    int wc = initwindow(screenWidth, screenHeight, "", -3, -3);
     this->window_code = wc;
+
     setlinestyle(0, 0, 3);
     settextstyle(3, 0, 1);
 
@@ -40,11 +42,10 @@ int SourcesInfo::WatchClick()
 
     Helper helper;
 
-    clearmouseclick(WM_LBUTTONDOWN);
     int cType = _none;
     while (ok)
     {
-        if (ismouseclick(WM_LBUTTONDOWN))
+        if (GetAsyncKeyState(VK_LBUTTON))
         {
             if (sourceAC.isCursorPointInButton())
             {
@@ -70,7 +71,7 @@ int SourcesInfo::WatchClick()
         delay(200);
     }
 
-   //closegraph(this->window_code);
+    closegraph(this->window_code);
     return cType;
 }
 
@@ -81,10 +82,9 @@ void SourcesInfo::WatchExit()
 
     Helper helper;
 
-    clearmouseclick(WM_LBUTTONDOWN);
     while (ok)
     {
-        if (ismouseclick(WM_LBUTTONDOWN) && exit.isCursorPointInButton())
+        if (GetAsyncKeyState(VK_LBUTTON) && exit.isCursorPointInButton())
         {
             ok = 0;
         }

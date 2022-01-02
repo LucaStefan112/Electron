@@ -11,10 +11,9 @@ void MainMenu::WatchClick()
 {
     int ok = 1;
 
-    clearmouseclick(WM_LBUTTONDOWN);
     while (ok)
     {
-        if (ismouseclick(WM_LBUTTONDOWN))
+        if (GetAsyncKeyState(VK_LBUTTON))
         {
             if (newProject.isCursorPointInButton())
             {
@@ -50,7 +49,7 @@ void MainMenu::Show()
     DWORD screenWidth = GetSystemMetrics(SM_CXSCREEN);
     DWORD screenHeight = GetSystemMetrics(SM_CYSCREEN);
 
-    int wc = initwindow(screenWidth/2, screenHeight/2, "", -3, -3);
+    int wc = initwindow(screenWidth, screenHeight, "", -3, -3);
     this->window_code = wc;
     int windowWidth = getwindowwidth();
     int windowHeight = getwindowheight();

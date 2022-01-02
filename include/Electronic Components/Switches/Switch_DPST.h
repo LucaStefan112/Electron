@@ -8,6 +8,9 @@ class Switch_DPST : public ElectronicComponent{
 public:
     Switch_DPST();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };

@@ -14,11 +14,9 @@ void InfoMenu::WatchClick()
     int windowWidth = getwindowwidth();
     int windowHeight = getwindowheight();
 
-    clearmouseclick(WM_LBUTTONDOWN);
-    std ::cout << CURRENT_WINDOW << " " << this->window_code << std ::endl;
     while (ok)
     {
-        if (ismouseclick(WM_LBUTTONDOWN))
+        if (GetAsyncKeyState(VK_LBUTTON))
         {
             if (capacitors.isCursorPointInButton())
             {
@@ -92,7 +90,7 @@ void InfoMenu::Show()
     DWORD screenWidth = GetSystemMetrics(SM_CXSCREEN);
     DWORD screenHeight = GetSystemMetrics(SM_CYSCREEN);
 
-    int wc = initwindow(screenWidth/2, screenHeight/2, "", -3, -3);
+    int wc = initwindow(screenWidth, screenHeight, "", -3, -3);
     this->window_code = wc;
     int windowWidth = getwindowwidth();
     int windowHeight = getwindowheight();

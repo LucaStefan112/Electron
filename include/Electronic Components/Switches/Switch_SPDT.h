@@ -8,6 +8,9 @@ class Switch_SPDT : public ElectronicComponent{
 public:
     Switch_SPDT();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };

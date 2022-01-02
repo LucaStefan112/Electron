@@ -11,7 +11,7 @@ void SwitchesInfo::Show(double w, double h)
     DWORD screenWidth = GetSystemMetrics(SM_CXSCREEN);
     DWORD screenHeight = GetSystemMetrics(SM_CYSCREEN);
 
-    int wc = initwindow(screenWidth/2, screenHeight/2, "", -3, -3);
+    int wc = initwindow(screenWidth, screenHeight, "", -3, -3);
     this->window_code = wc;
     setlinestyle(0, 0, 3);
     settextstyle(3, 0, 1);
@@ -22,9 +22,9 @@ void SwitchesInfo::Show(double w, double h)
     exit.setTitle("Exit");
     exit.Show();
 
-    switchInfo.setWidth(w / 2);
-    switchInfo.setPositionUpLeft(helper.makeVector_2D(w, h));
-    outtextxy(2 * w, h, strdup(switchInfo.name.c_str()));
+    switchClosed.setWidth(w / 2);
+    switchClosed.setPositionUpLeft(helper.makeVector_2D(w, h));
+    outtextxy(2 * w, h, strdup(switchClosed.name.c_str()));
 
     switchSPDT.setWidth(w / 2);
     switchSPDT.setPositionUpLeft(helper.makeVector_2D(w * 4, h));
@@ -53,15 +53,14 @@ int SwitchesInfo::WatchClick()
 
     Helper helper;
 
-    clearmouseclick(WM_LBUTTONDOWN);
     int cType = _none;
     while (ok)
     {
-        if (ismouseclick(WM_LBUTTONDOWN))
+        if (GetAsyncKeyState(VK_LBUTTON))
         {
-            if (switchInfo.isCursorPointInButton())
+            if (switchClosed.isCursorPointInButton())
             {
-                cType = _switchInfo;
+                cType = _switchClosed;
                 ok = 0;
             }
             else if (switchSPDT.isCursorPointInButton())
@@ -98,7 +97,7 @@ int SwitchesInfo::WatchClick()
         delay(200);
     }
 
-    //closegraph(this->window_code);
+    closegraph(this->window_code);
     return cType;
 }
 
@@ -109,10 +108,9 @@ void SwitchesInfo::WatchExit()
 
     Helper helper;
 
-    clearmouseclick(WM_LBUTTONDOWN);
     while (ok)
     {
-        if (ismouseclick(WM_LBUTTONDOWN) && exit.isCursorPointInButton())
+        if (GetAsyncKeyState(VK_LBUTTON) && exit.isCursorPointInButton())
         {
             ok = 0;
         }

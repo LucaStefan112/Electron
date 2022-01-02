@@ -9,9 +9,9 @@ class SwitchesInfo
 {
     public:
         SwitchesInfo();
-        
+
         Button exit;
-        Switch_Closed switchInfo;
+        Switch_Closed switchClosed;
         Switch_SPDT switchSPDT;
         Switch_Open switchOpen;
         Switch_DPST switchDPST;

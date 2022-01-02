@@ -8,6 +8,9 @@ class Resistor_Mobile_Contact : public ElectronicComponent{
 public:
     Resistor_Mobile_Contact();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };

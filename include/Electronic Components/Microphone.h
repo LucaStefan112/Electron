@@ -8,6 +8,9 @@ class Microphone : public ElectronicComponent{
 public:
     Microphone();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };

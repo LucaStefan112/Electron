@@ -50,7 +50,7 @@ enum ComponentType {
     _sourceAC,
     _sourceDC,
     _battery,
-    _switchInfo,
+    _switchClosed,
     _switchSPDT,
     _switchOpen,
     _switchDPST,

@@ -8,6 +8,9 @@ class Transistor_Dual_Gate_MOSFET_Pchannel : public ElectronicComponent{
 public:
     Transistor_Dual_Gate_MOSFET_Pchannel();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };

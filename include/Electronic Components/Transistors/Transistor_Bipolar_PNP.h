@@ -8,6 +8,9 @@ class Transistor_Bipolar_PNP : public ElectronicComponent{
 public:
     Transistor_Bipolar_PNP();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };
