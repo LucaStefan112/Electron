@@ -40,8 +40,6 @@ int SourcesInfo::WatchClick()
 {
     int ok = 1;
 
-    Helper helper;
-
     int cType = _none;
     while (ok)
     {
@@ -77,10 +75,7 @@ int SourcesInfo::WatchClick()
 
 void SourcesInfo::WatchExit()
 {
-
     int ok = 1;
-
-    Helper helper;
 
     while (ok)
     {

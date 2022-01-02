@@ -51,8 +51,6 @@ int SwitchesInfo::WatchClick()
 {
     int ok = 1;
 
-    Helper helper;
-
     int cType = _none;
     while (ok)
     {
@@ -103,10 +101,7 @@ int SwitchesInfo::WatchClick()
 
 void SwitchesInfo::WatchExit()
 {
-
     int ok = 1;
-
-    Helper helper;
 
     while (ok)
     {

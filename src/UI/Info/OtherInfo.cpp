@@ -55,8 +55,6 @@ int OtherInfo::WatchClick()
 {
     int ok = 1;
 
-    Helper helper;
-
     int cType = _none;
     while (ok)
     {
@@ -114,8 +112,6 @@ void OtherInfo::WatchExit()
 {
 
     int ok = 1;
-
-    Helper helper;
 
     while (ok)
     {
