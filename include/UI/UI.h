@@ -4,11 +4,9 @@
 //Header for including all UI components headers:
 #include "Button.h"
 
-
-#include "Screen.h"
-
 //menus
 #include "MainMenu.h"
+#include "NewProjectMenu.h"
 #include "Info/InfoMenu.h"
 
 //info

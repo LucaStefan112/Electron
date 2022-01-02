@@ -315,6 +315,33 @@ void ElectronicComponent::Erase()
     setfillstyle(SOLID_FILL, WHITE);
 }
 
+bool ElectronicComponent::isCursorPointInButton()
+{
+    POINT cursorPoint;
+    GetCursorPos(&cursorPoint);
+
+    if (cursorPoint.x < position.up_left.x)
+    {
+        return false;
+    }
+
+    if (cursorPoint.x > position.down_right.x)
+    {
+        return false;
+    }
+
+    if (cursorPoint.y < position.up_left.y)
+    {
+        return false;
+    }
+    if (cursorPoint.y > position.down_right.y)
+    {
+        return false;
+    }
+    return true;
+
+}
+
 //Passing trough a string all the data about the component:
 std::string ElectronicComponent::toString()
 {

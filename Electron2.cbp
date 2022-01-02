@@ -124,7 +124,7 @@
 		<Unit filename="include/UI/Info/SwitchesInfo.h" />
 		<Unit filename="include/UI/Info/TransistorsInfo.h" />
 		<Unit filename="include/UI/MainMenu.h" />
-		<Unit filename="include/UI/Screen.h" />
+		<Unit filename="include/UI/UI.h" />
 		<Unit filename="include/UI/UI.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Electronic Components/Buzzer.cpp" />

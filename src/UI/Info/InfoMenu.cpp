@@ -11,8 +11,6 @@ void InfoMenu::WatchClick()
 {
     int ok = 1;
 
-    Helper helper;
-
     int windowWidth = getwindowwidth();
     int windowHeight = getwindowheight();
 
@@ -23,74 +21,66 @@ void InfoMenu::WatchClick()
             if (capacitors.isCursorPointInButton())
             {
                 CapacitorsInfo capacitorsInfo;
-                capacitorsInfo.CreateScreen();
                 capacitorsInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 3));
-                capacitorsInfo.AddExit();
+                capacitorsInfo.WatchExit();
             }
-            if (diodes.isCursorPointInButton())
+            else if (diodes.isCursorPointInButton())
             {
                 DiodesInfo diodesInfo;
-                diodesInfo.CreateScreen();
                 diodesInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 9));
-                diodesInfo.AddExit();
+                diodesInfo.WatchExit();
             }
-            if (logicGates.isCursorPointInButton())
+            else if (logicGates.isCursorPointInButton())
             {
                 LogicGatesInfo logicGatesInfo;
-                logicGatesInfo.CreateScreen();
                 logicGatesInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 5));
-                logicGatesInfo.AddExit();
+                logicGatesInfo.WatchExit();
             }
-            if (measurements.isCursorPointInButton())
+            else if (measurements.isCursorPointInButton())
             {
                 MeasurementsInfo measurementsInfo;
-                measurementsInfo.CreateScreen();
                 measurementsInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 2));
-                measurementsInfo.AddExit();
+                measurementsInfo.WatchExit();
             }
-            if (resistors.isCursorPointInButton())
+            else if (resistors.isCursorPointInButton())
             {
                 ResistorsInfo resistorsInfo;
-                resistorsInfo.CreateScreen();
                 resistorsInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 6));
-                resistorsInfo.AddExit();
+                resistorsInfo.WatchExit();
             }
-            if (sources.isCursorPointInButton())
+            else if (sources.isCursorPointInButton())
             {
                 SourcesInfo sourcesInfo;
-                sourcesInfo.CreateScreen();
                 sourcesInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 3));
-                sourcesInfo.AddExit();
+                sourcesInfo.WatchExit();
             }
-            if (switches.isCursorPointInButton())
+            else if (switches.isCursorPointInButton())
             {
                 SwitchesInfo switchesInfo;
-                switchesInfo.CreateScreen();
                 switchesInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 5));
-                switchesInfo.AddExit();
+                switchesInfo.WatchExit();
             }
-            if (transistors.isCursorPointInButton())
+            else if (transistors.isCursorPointInButton())
             {
                 TransistorsInfo transistorsInfo;
-                transistorsInfo.CreateScreen();
                 transistorsInfo.Show((double)(windowWidth / 8), (double)(windowHeight / 8));
-                transistorsInfo.AddExit();
+                transistorsInfo.WatchExit();
             }
-            if (other.isCursorPointInButton())
+            else if (other.isCursorPointInButton())
             {
                 OtherInfo otherInfo;
-                otherInfo.CreateScreen();
                 otherInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 5));
-                otherInfo.AddExit();
+                otherInfo.WatchExit();
             }
-            if (exit.isCursorPointInButton())
+            else if (exit.isCursorPointInButton())
             {
                 ok = 0;
-                closegraph(CURRENT_WINDOW);
             }
         }
         delay(200);
     }
+    delay(200);
+    closegraph(this->window_code);
 }
 
 void InfoMenu::Show()
@@ -100,8 +90,8 @@ void InfoMenu::Show()
     DWORD screenWidth = GetSystemMetrics(SM_CXSCREEN);
     DWORD screenHeight = GetSystemMetrics(SM_CYSCREEN);
 
-    initwindow(screenWidth, screenHeight, "", -3, -3);
-
+    int wc = initwindow(screenWidth, screenHeight, "", -3, -3);
+    this->window_code = wc;
     int windowWidth = getwindowwidth();
     int windowHeight = getwindowheight();
 
