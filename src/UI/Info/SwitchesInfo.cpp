@@ -1,46 +1,122 @@
 #include "UI/Info/SwitchesInfo.h"
 
-SwitchesInfo::SwitchesInfo(): Screen()
+SwitchesInfo::SwitchesInfo()
 {
     //ctor
 }
 
-void SwitchesInfo::Show(double w, double h) {
-        Helper helper;
+void SwitchesInfo::Show(double w, double h)
+{
+    Helper helper;
+    DWORD screenWidth = GetSystemMetrics(SM_CXSCREEN);
+    DWORD screenHeight = GetSystemMetrics(SM_CYSCREEN);
 
-        exit.setPositionUpLeft(helper.makeVector_2D(0, 0));
-        exit.setWidth(75);
-        exit.setHeight(25);
-        exit.setTitle("Exit");
-        exit.Show();
+    int wc = initwindow(screenWidth/2, screenHeight/2, "", -3, -3);
+    this->window_code = wc;
+    setlinestyle(0, 0, 3);
+    settextstyle(3, 0, 1);
 
-        Switch_Closed switchInfo;
-        switchInfo.setWidth(w / 2);
-        switchInfo.setPositionUpLeft(helper.makeVector_2D(w,h));
-        outtextxy(2 * w, h, strdup(switchInfo.name.c_str()));
+    exit.setPositionUpLeft(helper.makeVector_2D(0, 0));
+    exit.setWidth(75);
+    exit.setHeight(25);
+    exit.setTitle("Exit");
+    exit.Show();
 
-        Switch_SPDT switchSPDT;
-        switchSPDT.setWidth(w / 2);
-        switchSPDT.setPositionUpLeft(helper.makeVector_2D(w * 4,h));
-        outtextxy(5 * w, h, strdup(switchSPDT.name.c_str()));
+    switchInfo.setWidth(w / 2);
+    switchInfo.setPositionUpLeft(helper.makeVector_2D(w, h));
+    outtextxy(2 * w, h, strdup(switchInfo.name.c_str()));
 
-        Switch_Open switchOpen;
-        switchOpen.setWidth(w / 2);
-        switchOpen.setPositionUpLeft(helper.makeVector_2D(w,h*2));
-        outtextxy(2 * w, 2 * h, strdup(switchOpen.name.c_str()));
+    switchSPDT.setWidth(w / 2);
+    switchSPDT.setPositionUpLeft(helper.makeVector_2D(w * 4, h));
+    outtextxy(5 * w, h, strdup(switchSPDT.name.c_str()));
 
-        Switch_DPST switchDPST;
-        switchDPST.setWidth(w / 2);
-        switchDPST.setPositionUpLeft(helper.makeVector_2D(w * 4,h * 2));
-        outtextxy(5 * w, 2 * h, strdup(switchDPST.name.c_str()));
+    switchOpen.setWidth(w / 2);
+    switchOpen.setPositionUpLeft(helper.makeVector_2D(w, h * 2));
+    outtextxy(2 * w, 2 * h, strdup(switchOpen.name.c_str()));
 
-        Switch_Telegraph switchTelegraph;
-        switchTelegraph.setWidth(w / 2);
-        switchTelegraph.setPositionUpLeft(helper.makeVector_2D(w,h*3));
-        outtextxy(2 * w, 3 * h, strdup(switchTelegraph.name.c_str()));
+    switchDPST.setWidth(w / 2);
+    switchDPST.setPositionUpLeft(helper.makeVector_2D(w * 4, h * 2));
+    outtextxy(5 * w, 2 * h, strdup(switchDPST.name.c_str()));
 
-        Switch_Thermal_Magnetic_Breaker switchThermal;
-        switchThermal.setWidth(w / 2);
-        switchThermal.setPositionUpLeft(helper.makeVector_2D(w * 4,h * 3));
-        outtextxy(5 * w, 3 * h, strdup(switchThermal.name.c_str()));
+    switchTelegraph.setWidth(w / 2);
+    switchTelegraph.setPositionUpLeft(helper.makeVector_2D(w, h * 3));
+    outtextxy(2 * w, 3 * h, strdup(switchTelegraph.name.c_str()));
+
+    switchThermal.setWidth(w / 2);
+    switchThermal.setPositionUpLeft(helper.makeVector_2D(w * 4, h * 3));
+    outtextxy(5 * w, 3 * h, strdup(switchThermal.name.c_str()));
+}
+
+int SwitchesInfo::WatchClick()
+{
+    int ok = 1;
+
+    Helper helper;
+
+    clearmouseclick(WM_LBUTTONDOWN);
+    int cType = _none;
+    while (ok)
+    {
+        if (ismouseclick(WM_LBUTTONDOWN))
+        {
+            if (switchInfo.isCursorPointInButton())
+            {
+                cType = _switchInfo;
+                ok = 0;
+            }
+            else if (switchSPDT.isCursorPointInButton())
+            {
+                cType = _switchSPDT;
+                ok = 0;
+            }
+            else if (switchOpen.isCursorPointInButton())
+            {
+                cType = _switchOpen;
+                ok = 0;
+            }
+            else if (switchDPST.isCursorPointInButton())
+            {
+                cType = _switchDPST;
+                ok = 0;
+            }
+            else if (switchTelegraph.isCursorPointInButton())
+            {
+                cType = _switchTelegraph;
+                ok = 0;
+            }
+            else if (switchThermal.isCursorPointInButton())
+            {
+                cType = _switchThermal;
+                ok = 0;
+            }
+            else if (exit.isCursorPointInButton())
+            {
+                cType = _none;
+                ok = 0;
+            }
+        }
+        delay(200);
+    }
+
+    //closegraph(this->window_code);
+    return cType;
+}
+
+void SwitchesInfo::WatchExit()
+{
+
+    int ok = 1;
+
+    Helper helper;
+
+    clearmouseclick(WM_LBUTTONDOWN);
+    while (ok)
+    {
+        if (ismouseclick(WM_LBUTTONDOWN) && exit.isCursorPointInButton())
+        {
+            ok = 0;
+        }
+        delay(200);
+    }
+    closegraph(this->window_code);
 }

@@ -15,6 +15,7 @@ class NewProjectMenu
     protected:
         Button save, capacitors, diodes, logicGates, measurements, resistors, sources, switches, transistors, other, exit;
     public:
+        int window_code;
         NewProjectMenu();
         void Show();
         void WatchClick();

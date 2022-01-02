@@ -2,6 +2,8 @@
 #include <string>
 #include <iostream>
 #include <math.h>
+#include <windows.h>
+#include <future>
 #include "Electronic Components/ElectronicComponent.h"
 
 #ifndef HELPER_H
@@ -34,7 +36,6 @@ public:
     void rotationalEllipse(double x, double y, Vector_2D thisReference, double D1, double D2, double R1, double R2, int degrees, bool thisFlipped);
     void rotationalFillPoly(int nr, int* arr, Vector_2D thisReference, int degrees);
     void rotationalArc(double x, double y, Vector_2D thisReference, double D1, double D2, double R, int degrees, bool thisFlipped);
-
 };
 
 

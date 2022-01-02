@@ -5,14 +5,19 @@
 #include "Electronic Components/Electronics.h"
 #include "Helper.h"
 
-class MeasurementsInfo: public Screen
+class MeasurementsInfo
 {
     public:
         MeasurementsInfo();
         
         Button exit;
+        Ammeter ammeter;
+        Voltmeter voltmeter;
+
+        int window_code;
         void Show(double w, double h);
-        void WatchClick();
+        int WatchClick();
+        void WatchExit();
 };
 
 

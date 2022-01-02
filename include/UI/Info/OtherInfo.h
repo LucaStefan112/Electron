@@ -5,14 +5,24 @@
 #include "Electronic Components/Electronics.h"
 #include "Helper.h"
 
-class OtherInfo: public Screen
+class OtherInfo
 {
     public:
         OtherInfo();
         
         Button exit;
+        Buzzer buzzer;
+        Ground ground;
+        Inductor inductor;
+        Lamp lamp;
+        Microphone microphone;
+        Motor motor;
+        Speaker speaker;
+
+        int window_code;
         void Show(double w, double h);
-        void WatchClick();
+        int WatchClick();
+        void WatchExit();
 };
 
 #endif // OTHERINFO_H

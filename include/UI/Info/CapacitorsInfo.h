@@ -6,7 +6,7 @@
 #include "Helper.h"
 #include "Enums.h"
 
-class CapacitorsInfo: public Screen
+class CapacitorsInfo
 {
     public:
         CapacitorsInfo();
@@ -17,8 +17,11 @@ class CapacitorsInfo: public Screen
         Capacitor_Trimmer capacitorTrimmer;
         Capacitor_Variable capacitorVariable;
 
+        int window_code;
+
         void Show(double w, double h);
         int WatchClick();
+        void WatchExit();
 };
 
 #endif // CAPACITORSINFO_H

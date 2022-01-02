@@ -5,14 +5,23 @@
 #include "Electronic Components/Electronics.h"
 #include "Helper.h"
 
-class ResistorsInfo: public Screen
+class ResistorsInfo
 {
     public:
         ResistorsInfo();
         
         Button exit;
+
+        Potentiometer_Mobile_Contact potentiometer;
+        Resistor_Mobile_Contact_Stop_Position resistorMobileStop;
+        Resistor_Mobile_Contact resistorMobile;
+        Resistor_Variable_Resistance resistorVariableResistance;
+        Resistor resistor;
+
+        int window_code;
         void Show(double w, double h);
-        void WatchClick();
+        int WatchClick();
+        void WatchExit();
 };
 
 #endif // RESISTORSINFO_H
