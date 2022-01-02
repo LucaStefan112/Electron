@@ -96,3 +96,11 @@ void Resistor_Variable_Resistance::updateConnectionPointsPosition(){
         getPositionCenter(),
         rotateState);
 }
+
+void Resistor_Variable_Resistance::setResistance(double thisResistance){
+    resistance = thisResistance;
+}
+
+double Resistor_Variable_Resistance::getResistance(){
+    return resistance;
+}

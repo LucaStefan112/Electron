@@ -104,3 +104,11 @@ void Potentiometer_Mobile_Contact::updateConnectionPointsPosition(){
         getPositionCenter(),
         rotateState);
 }
+
+void Potentiometer_Mobile_Contact::setResistance(double thisResistance){
+    resistance = thisResistance;
+}
+
+double Potentiometer_Mobile_Contact::getResistance(){
+    return resistance;
+}

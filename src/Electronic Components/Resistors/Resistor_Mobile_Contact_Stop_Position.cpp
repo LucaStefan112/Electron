@@ -102,3 +102,11 @@ void Resistor_Mobile_Contact_Stop_Position::updateConnectionPointsPosition(){
         getPositionCenter(),
         rotateState);
 }
+
+void Resistor_Mobile_Contact_Stop_Position::setResistance(double thisResistance){
+    resistance = thisResistance;
+}
+
+double Resistor_Mobile_Contact_Stop_Position::getResistance(){
+    return resistance;
+}

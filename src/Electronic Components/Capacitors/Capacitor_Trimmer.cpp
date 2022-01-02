@@ -78,3 +78,11 @@ void Capacitor_Trimmer::updateConnectionPointsPosition(){
         getPositionCenter(),
         rotateState);
 }
+
+void Capacitor_Trimmer::setCapacitance(double thisCapacitance){
+    capacitance = thisCapacitance;
+}
+
+double Capacitor_Trimmer::getCapacitance(){
+    return capacitance;
+}

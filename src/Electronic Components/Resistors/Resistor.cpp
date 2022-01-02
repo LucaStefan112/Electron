@@ -83,3 +83,11 @@ void Resistor::updateConnectionPointsPosition(){
         getPositionCenter(),
         rotateState);
 }
+
+void Resistor::setResistance(double thisResistance){
+    resistance = thisResistance;
+}
+
+double Resistor::getResistance(){
+    return resistance;
+}

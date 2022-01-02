@@ -76,3 +76,11 @@ void Capacitor_Electrolytic::updateConnectionPointsPosition(){
         getPositionCenter(),
         rotateState);
 }
+
+void Capacitor_Electrolytic::setCapacitance(double thisCapacitance){
+    capacitance = thisCapacitance;
+}
+
+double Capacitor_Electrolytic::getCapacitance(){
+    return capacitance;
+}
