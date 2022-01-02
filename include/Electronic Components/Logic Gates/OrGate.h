@@ -8,6 +8,9 @@ class OrGate : public ElectronicComponent{
 public:
     OrGate();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };

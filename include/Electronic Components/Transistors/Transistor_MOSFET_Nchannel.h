@@ -8,6 +8,9 @@ class Transistor_MOSFET_Nchannel : public ElectronicComponent{
 public:
     Transistor_MOSFET_Nchannel();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };

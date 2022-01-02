@@ -1,5 +1,7 @@
 #include "Electronic Components/Capacitors/Capacitor_Ceramic.h"
 
+Helper Capacitor_Ceramic_Helper;
+
 Capacitor_Ceramic::Capacitor_Ceramic(): ElectronicComponent(200, 50, "Ceramic Capacitor", 2){}
 
 //Drawing the component:
@@ -8,12 +10,38 @@ void Capacitor_Ceramic::Show(){
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    circle(up_left_x + height / 10, center_y, height / 10);
-    line(up_left_x + height / 5, center_y, center_x - height / 4, center_y);
-    line(center_x - height / 4, up_left_y, center_x - height / 4, down_right_y);
-    line(center_x + height / 4, up_left_y, center_x + height / 4, down_right_y);
-    line(center_x + height / 4, center_y, down_right_x - height / 5, center_y);
-    circle(down_right_x - height / 10, center_y, height / 10);
+    if(flipped){
+        up_left_x = getPositionDownRight().x;
+        down_right_x = getPositionUpLeft().x;
+    }
+
+    double thisHeight = (down_right_x - up_left_x) / width_height_ratio;
+
+    Capacitor_Ceramic_Helper.rotationalCircle(
+        up_left_x + thisHeight / 10, center_y, getPositionCenter(), height / 10,
+        rotateState);
+
+    Capacitor_Ceramic_Helper.rotationalLine(
+        up_left_x + thisHeight / 5, center_y, center_x - thisHeight / 4, center_y, getPositionCenter(),
+        rotateState);
+
+    Capacitor_Ceramic_Helper.rotationalLine(
+        center_x - thisHeight / 4, up_left_y, center_x - thisHeight / 4, down_right_y, getPositionCenter(),
+        rotateState);
+
+    Capacitor_Ceramic_Helper.rotationalLine(
+        center_x + thisHeight / 4, up_left_y, center_x + thisHeight / 4, down_right_y, getPositionCenter(),
+        rotateState);
+
+    Capacitor_Ceramic_Helper.rotationalLine(
+        center_x + thisHeight / 4, center_y, down_right_x - thisHeight / 5, center_y, getPositionCenter(),
+        rotateState);
+
+    Capacitor_Ceramic_Helper.rotationalCircle(
+        down_right_x - thisHeight / 10, center_y, getPositionCenter(), height / 10,
+        rotateState);
+
+    showElements();
 }
 
 //Updating the positions of the connection points:
@@ -23,9 +51,20 @@ void Capacitor_Ceramic::updateConnectionPointsPosition(){
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    connectionPoints[0].position.x = up_left_x + height / 10;
-    connectionPoints[0].position.y = center_y;
+    if(flipped){
+        up_left_x = getPositionDownRight().x;
+        down_right_x = getPositionUpLeft().x;
+    }
 
-    connectionPoints[1].position.x = down_right_x - height / 10;
-    connectionPoints[1].position.y = center_y;
+    double thisHeight = (down_right_x - up_left_x) / width_height_ratio;
+
+    connectionPoints[0].position = Capacitor_Ceramic_Helper.rotatePointToReference(
+        Capacitor_Ceramic_Helper.makeVector_2D(up_left_x + thisHeight / 10, center_y),
+        getPositionCenter(),
+        rotateState);
+
+    connectionPoints[1].position = Capacitor_Ceramic_Helper.rotatePointToReference(
+        Capacitor_Ceramic_Helper.makeVector_2D(down_right_x - thisHeight / 10, center_y),
+        getPositionCenter(),
+        rotateState);
 }

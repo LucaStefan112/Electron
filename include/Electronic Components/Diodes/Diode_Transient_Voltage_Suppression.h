@@ -8,6 +8,9 @@ class Diode_Transient_Voltage_Suppression : public ElectronicComponent{
 public:
     Diode_Transient_Voltage_Suppression();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };

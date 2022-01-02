@@ -8,6 +8,9 @@ class Switch_Closed : public ElectronicComponent{
 public:
     Switch_Closed();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };

@@ -20,7 +20,6 @@ void MainMenu::WatchClick() {
                 std::cout << "open project ..." << std::endl;
             }
             if (info.isCursorPointInButton()) {
-                std::cout << "info" << std::endl;
                 InfoMenu infoMenu;
                 infoMenu.Show();
                 infoMenu.WatchClick();

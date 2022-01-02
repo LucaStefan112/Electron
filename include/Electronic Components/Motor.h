@@ -8,6 +8,9 @@ class Motor : public ElectronicComponent{
 public:
     Motor();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };

@@ -8,6 +8,9 @@ class Inductor : public ElectronicComponent{
 public:
     Inductor();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };

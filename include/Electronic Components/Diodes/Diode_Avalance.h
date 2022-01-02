@@ -8,6 +8,9 @@ class Diode_Avalance : public ElectronicComponent{
 public:
     Diode_Avalance();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };

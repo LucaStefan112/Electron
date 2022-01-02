@@ -8,6 +8,9 @@ class Resistor_Variable_Resistance : public ElectronicComponent{
 public:
     Resistor_Variable_Resistance();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };

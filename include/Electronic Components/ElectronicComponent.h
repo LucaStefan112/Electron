@@ -10,6 +10,10 @@
 #define DEFAULT_NAME "Electronic Component"
 #define DEFAULT_NUMBER_OF_CONNECTION_POINTS 0
 #define DEFAULT_COMPONENT_CODE "0"
+#define DEFAULT_FLIP_STATE false
+#define DEFAULT_ROTATE_STATE 0
+#define DEFAULT_OUTTERBOX_VALUE false;
+#define DEFAULT_CONNECTIONPOINTS_VALUE false;
 
 class ElectronicComponent{
 protected:
@@ -21,8 +25,6 @@ protected:
     //Dimensions of the component:
     double width = DEFAULT_WIDTH, height = DEFAULT_HEIGHT, width_height_ratio = DEFAULT_WIDTH_HEIGHT_RATIO;
 
-    std::string name = DEFAULT_NAME;
-
     PositionType positionType = up_left;
 
     std::string componentCode = DEFAULT_COMPONENT_CODE;
@@ -30,7 +32,16 @@ protected:
     int numberOfConnectionPoints = DEFAULT_NUMBER_OF_CONNECTION_POINTS;
     Helper::ConnectionPoint connectionPoints[MAX_NUMBER_OF_CONNECTION_POINTS];
 
+    bool flipped = DEFAULT_FLIP_STATE;
+    int rotateState = DEFAULT_ROTATE_STATE;
+
+    bool showOutterBox = DEFAULT_OUTTERBOX_VALUE;
+    bool showConnectionPoints = DEFAULT_CONNECTIONPOINTS_VALUE;
+
 public:
+    //Name of the component:
+    std::string name = DEFAULT_NAME;
+
     ElectronicComponent(double thisWidth = DEFAULT_WIDTH, double thisHeight = DEFAULT_HEIGHT, std::string thisName = DEFAULT_NAME, int thisNumberOfConnectionPoints = DEFAULT_NUMBER_OF_CONNECTION_POINTS);
 
     //Setters:
@@ -41,6 +52,11 @@ public:
     void setHeight(double thisHeight);
     void setComponentCode(int thisComponentCode);
     void setConnectedComponentCodeAtPoint(int thisPoint, int thisComponentCode);
+    void flipComponent();
+    void rotateComponent(int thisDegree);
+    void setOutterBox(bool thisState);
+    void setConnectionPoints(bool thisState);
+    void showElements(bool modeErase = false);
 
     //Getters:
     Helper::Vector_2D getPositionUpLeft();
@@ -54,10 +70,13 @@ public:
     Helper::ConnectionPoint* getConnectionPoints();
 
     //Updating the position of each connection point:
-    void updateConnectionPointsPosition();
+    virtual void updateConnectionPointsPosition();
 
     //Drawing the component:
-    void Show();
+    virtual void Show();
+
+    //Erasing the component:
+    void Erase();
 
     //Parsing the component's data to string:
     std::string toString();

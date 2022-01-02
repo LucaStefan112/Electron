@@ -8,6 +8,9 @@ class Potentiometer_Mobile_Contact : public ElectronicComponent{
 public:
     Potentiometer_Mobile_Contact();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };

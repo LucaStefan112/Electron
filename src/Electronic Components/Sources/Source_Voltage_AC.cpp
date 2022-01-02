@@ -1,25 +1,77 @@
 #include "Electronic Components/Sources/Source_Voltage_AC.h"
 
-Source_Voltage_AC::Source_Voltage_AC() : ElectronicComponent(200, 50, "AC Voltage Source"){}
+Helper Source_Voltage_AC_Helper;
+
+Source_Voltage_AC::Source_Voltage_AC() : ElectronicComponent(200, 50, "AC Voltage Source", 2){}
 
 //Drawing the component:
 void Source_Voltage_AC::Show(){
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
-    double sin30 = 0.5, cos30 = 0.86602540378;
-    double offSet = height / 5;
 
-    circle(up_left_x + height / 10, center_y, height / 10);
-    line(up_left_x + height / 5, center_y, center_x - height / 2, center_y);
+    if(flipped){
+        up_left_x = getPositionDownRight().x;
+        down_right_x = getPositionUpLeft().x;
+    }
 
-    circle(center_x, center_y, height / 2);
+    double thisHeight = (down_right_x - up_left_x) / width_height_ratio;
 
-    ellipse(center_x - height / 5, center_y - height / 15, 30, 180, height / 7, height / 10);
-    ellipse(center_x + height / 5, center_y + height / 15, 210, 360, height / 7, height / 10);
-    line(center_x - height / 4.5 + height / 7, center_y - height / 9, center_x + height / 4.5 - height / 7, center_y + height / 9);
+    Source_Voltage_AC_Helper.rotationalCircle(
+        up_left_x + thisHeight / 10, center_y, getPositionCenter(), height / 10,
+        rotateState);
 
+    Source_Voltage_AC_Helper.rotationalLine(
+        up_left_x + thisHeight / 5, center_y, center_x - thisHeight / 2, center_y, getPositionCenter(),
+        rotateState);
 
-    line(center_x + height / 2, center_y, down_right_x - height / 5, center_y);
-    circle(down_right_x - height / 10, center_y, height / 10);
+    Source_Voltage_AC_Helper.rotationalCircle(
+        center_x, center_y, getPositionCenter(), height / 2,
+        rotateState);
+
+    Source_Voltage_AC_Helper.rotationalArc(
+        center_x - thisHeight / 4.7, center_y - height / 15, getPositionCenter(), 30, 160, height / 7,
+        rotateState, flipped);
+
+    Source_Voltage_AC_Helper.rotationalArc(
+        center_x + thisHeight / 4.7, center_y + height / 15, getPositionCenter(), 210, 340, height / 7,
+        rotateState, flipped);
+
+    Source_Voltage_AC_Helper.rotationalLine(
+        center_x - thisHeight / 13 - thisHeight / 20, center_y - height / 9 - height / 20, center_x + thisHeight / 13 + thisHeight / 20, center_y + height / 9 + height / 20, getPositionCenter(),
+        rotateState);
+
+    Source_Voltage_AC_Helper.rotationalLine(
+        center_x + thisHeight / 2, center_y, down_right_x - thisHeight / 5, center_y, getPositionCenter(),
+        rotateState);
+
+    Source_Voltage_AC_Helper.rotationalCircle(
+        down_right_x - thisHeight / 10, center_y, getPositionCenter(), height / 10,
+        rotateState);
+
+    showElements();
+}
+
+void Source_Voltage_AC::updateConnectionPointsPosition(){
+
+    double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
+    double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
+    double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
+
+    if(flipped){
+        up_left_x = getPositionDownRight().x;
+        down_right_x = getPositionUpLeft().x;
+    }
+
+    double thisHeight = (down_right_x - up_left_x) / width_height_ratio;
+
+    connectionPoints[0].position = Source_Voltage_AC_Helper.rotatePointToReference(
+        Source_Voltage_AC_Helper.makeVector_2D(up_left_x + thisHeight / 10, center_y),
+        getPositionCenter(),
+        rotateState);
+
+    connectionPoints[1].position = Source_Voltage_AC_Helper.rotatePointToReference(
+        Source_Voltage_AC_Helper.makeVector_2D(down_right_x - thisHeight / 10, center_y),
+        getPositionCenter(),
+        rotateState);
 }

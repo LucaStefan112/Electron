@@ -8,6 +8,9 @@ class Source_Voltage_AC : public ElectronicComponent{
 public:
     Source_Voltage_AC();
 
+    //Updating the position of each connection point:
+    void updateConnectionPointsPosition();
+
     //Drawing the component:
     void Show();
 };
