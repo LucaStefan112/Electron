@@ -1,20 +1,27 @@
 # depslib dependency file v1.0
-1641129294 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
-	"Electronics.h"
-
-1640356028 source:d:\info\c++\proiecte\electron 2\electron2\src\helper.cpp
+1641283211 source:d:\info\c++\proiecte\electron 2\electron2\main.cpp
+	<iostream>
+	<graphics.h>
+	<winbgim.h>
+	<windows.h>
+	"Electronic Components/Electronics.h"
+	"UI/UI.h"
 	"Helper.h"
 
-1640356036 d:\info\c++\proiecte\electron 2\electron2\include\helper.h
+1641151290 source:d:\info\c++\proiecte\electron 2\electron2\src\helper.cpp
+	"Helper.h"
+
+1641151290 d:\info\c++\proiecte\electron 2\electron2\include\helper.h
 	<graphics.h>
 	<string>
 	<iostream>
 	<math.h>
-
-1640370597 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\electroniccomponent.cpp
 	"Electronic Components/ElectronicComponent.h"
 
-1640181855 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electroniccomponent.h
+1641151290 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\electroniccomponent.cpp
+	"Electronic Components/ElectronicComponent.h"
+
+1641151290 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electroniccomponent.h
 	"Helper.h"
 	"Enums.h"
 
@@ -335,13 +342,13 @@
 1641129967 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\sources\source_voltage_dc.h
 	"Electronic Components/ElectronicComponent.h"
 
-1640310772 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\sources\source_voltage_dc.cpp
+1641130158 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\sources\source_voltage_dc.cpp
 	"Electronic Components/Sources/Source_Voltage_DC.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\ui\ui.h
+1641151290 d:\info\c++\proiecte\electron 2\electron2\include\ui\ui.h
 	"Button.h"
-	"Screen.h"
 	"MainMenu.h"
+	"NewProjectMenu.h"
 	"Info/InfoMenu.h"
 	"Info/CapacitorsInfo.h"
 	"Info/DiodesInfo.h"
@@ -358,14 +365,14 @@
 	"Helper.h"
 	"Enums.h"
 
-1639920773 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\button.cpp
+1641151290 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\button.cpp
 	"UI/Button.h"
 	<string>
 
 1641129962 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\sources\source_voltage_ac.h
 	"Electronic Components/ElectronicComponent.h"
 
-1640310220 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\sources\source_voltage_ac.cpp
+1641130152 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\sources\source_voltage_ac.cpp
 	"Electronic Components/Sources/Source_Voltage_AC.h"
 
 1641129924 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\sources\battery.h
@@ -563,103 +570,114 @@
 1640344497 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\switches\switch_dpst.cpp
 	"Electronic Components/Switches/Switch_DPST.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\enums.h
+1641151290 d:\info\c++\proiecte\electron 2\electron2\include\enums.h
 
 1639920773 d:\info\c++\proiecte\electron 2\electron2\include\ui\screen.h
 	"Button.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\ui\mainmenu.h
+1641151290 d:\info\c++\proiecte\electron 2\electron2\include\ui\mainmenu.h
 	<graphics.h>
 	<winbgim.h>
 	"Button.h"
+	"NewProjectMenu.h"
 	"Info/InfoMenu.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\infomenu.h
+1641151290 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\infomenu.h
 	<graphics.h>
 	<winbgim.h>
 	<windows.h>
 	"UI/UI.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\capacitorsinfo.h
+1641151290 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\capacitorsinfo.h
+	"UI/UI.h"
+	"Electronic Components/Electronics.h"
+	"Helper.h"
+	"Enums.h"
+
+1641151290 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\diodesinfo.h
 	"UI/UI.h"
 	"Electronic Components/Electronics.h"
 	"Helper.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\diodesinfo.h
+1641151290 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\logicgatesinfo.h
 	"UI/UI.h"
 	"Electronic Components/Electronics.h"
 	"Helper.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\logicgatesinfo.h
+1641151290 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\measurementsinfo.h
 	"UI/UI.h"
 	"Electronic Components/Electronics.h"
 	"Helper.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\measurementsinfo.h
+1641151290 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\resistorsinfo.h
 	"UI/UI.h"
 	"Electronic Components/Electronics.h"
 	"Helper.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\resistorsinfo.h
+1641151290 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\sourcesinfo.h
 	"UI/UI.h"
 	"Electronic Components/Electronics.h"
 	"Helper.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\sourcesinfo.h
+1641151290 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\switchesinfo.h
 	"UI/UI.h"
 	"Electronic Components/Electronics.h"
 	"Helper.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\switchesinfo.h
+1641151290 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\transistorsinfo.h
 	"UI/UI.h"
 	"Electronic Components/Electronics.h"
 	"Helper.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\transistorsinfo.h
+1641151290 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\otherinfo.h
 	"UI/UI.h"
 	"Electronic Components/Electronics.h"
 	"Helper.h"
 
-1639920773 d:\info\c++\proiecte\electron 2\electron2\include\ui\info\otherinfo.h
-	"UI/UI.h"
-	"Electronic Components/Electronics.h"
-	"Helper.h"
-
-1639920773 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\info\infomenu.cpp
+1641151290 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\info\infomenu.cpp
 	"UI/Info/InfoMenu.h"
 	"Helper.h"
 
-1639920773 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\info\capacitorsinfo.cpp
+1641151290 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\info\capacitorsinfo.cpp
 	"UI/Info/CapacitorsInfo.h"
 
-1639920773 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\info\diodesinfo.cpp
+1641151290 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\info\diodesinfo.cpp
 	"UI/Info/DiodesInfo.h"
 
-1639920773 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\info\logicgatesinfo.cpp
+1641151290 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\info\logicgatesinfo.cpp
 	"UI/Info/LogicGatesInfo.h"
 
-1639920773 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\info\measurementsinfo.cpp
+1641151290 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\info\measurementsinfo.cpp
 	"UI/Info/MeasurementsInfo.h"
 
-1639920773 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\info\otherinfo.cpp
+1641151290 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\info\otherinfo.cpp
 	"UI/Info/OtherInfo.h"
 
-1639920773 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\info\resistorsinfo.cpp
+1641151290 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\info\resistorsinfo.cpp
 	"UI/Info/ResistorsInfo.h"
 
-1639920773 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\info\sourcesinfo.cpp
+1641151290 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\info\sourcesinfo.cpp
 	"UI/Info/SourcesInfo.h"
 
-1639920773 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\info\switchesinfo.cpp
+1641151290 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\info\switchesinfo.cpp
 	"UI/Info/SwitchesInfo.h"
 
-1639920773 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\info\transistorsinfo.cpp
+1641151290 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\info\transistorsinfo.cpp
 	"UI/Info/TransistorsInfo.h"
 
-1640169905 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\mainmenu.cpp
+1641151290 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\mainmenu.cpp
 	"UI/MainMenu.h"
 	"Helper.h"
 
 1639920773 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\screen.cpp
 	"UI/UI.h"
+
+1641151290 d:\info\c++\proiecte\electron 2\electron2\include\ui\newprojectmenu.h
+	<graphics.h>
+	<winbgim.h>
+	<windows.h>
+	"Electronic Components/Electronics.h"
+	"UI/UI.h"
+	"Helper.h"
+	"Enums.h"
 
