@@ -73,7 +73,7 @@ int SourcesInfo::WatchClick()
     return cType;
 }
 
-void SourcesInfo::WatchExit()
+int SourcesInfo::WatchExit()
 {
     int ok = 1;
 
@@ -86,4 +86,5 @@ void SourcesInfo::WatchExit()
         delay(200);
     }
     closegraph(this->window_code);
+    return 1;
 }

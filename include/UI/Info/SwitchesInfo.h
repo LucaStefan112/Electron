@@ -22,7 +22,7 @@ class SwitchesInfo
         int window_code;
         void Show(double w, double h);
         int WatchClick();
-        void WatchExit();
+        int WatchExit();
 };
 
 #endif // SWITCHESINFO_H

@@ -99,7 +99,7 @@ int SwitchesInfo::WatchClick()
     return cType;
 }
 
-void SwitchesInfo::WatchExit()
+int SwitchesInfo::WatchExit()
 {
     int ok = 1;
 
@@ -112,4 +112,5 @@ void SwitchesInfo::WatchExit()
         delay(200);
     }
     closegraph(this->window_code);
+    return 1;
 }

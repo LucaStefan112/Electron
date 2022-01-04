@@ -10,6 +10,7 @@ InfoMenu::InfoMenu()
 void InfoMenu::WatchClick()
 {
     int ok = 1;
+    int screenActive = 1;
 
     int windowWidth = getwindowwidth();
     int windowHeight = getwindowheight();
@@ -20,61 +21,81 @@ void InfoMenu::WatchClick()
         {
             if (capacitors.isCursorPointInButton())
             {
+                screenActive = 0;
                 CapacitorsInfo capacitorsInfo;
                 capacitorsInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 3));
-                capacitorsInfo.WatchExit();
+                screenActive = capacitorsInfo.WatchExit();
             }
             else if (diodes.isCursorPointInButton())
             {
+                screenActive = 0;
                 DiodesInfo diodesInfo;
                 diodesInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 9));
-                diodesInfo.WatchExit();
+                screenActive = diodesInfo.WatchExit();
             }
             else if (logicGates.isCursorPointInButton())
             {
+                screenActive = 0;
                 LogicGatesInfo logicGatesInfo;
                 logicGatesInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 5));
-                logicGatesInfo.WatchExit();
+
+                screenActive = logicGatesInfo.WatchExit();
             }
             else if (measurements.isCursorPointInButton())
             {
+                screenActive = 0;
                 MeasurementsInfo measurementsInfo;
                 measurementsInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 2));
-                measurementsInfo.WatchExit();
+
+                screenActive = measurementsInfo.WatchExit();
             }
             else if (resistors.isCursorPointInButton())
             {
+                screenActive = 0;
                 ResistorsInfo resistorsInfo;
                 resistorsInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 6));
-                resistorsInfo.WatchExit();
+
+                screenActive = resistorsInfo.WatchExit();
             }
             else if (sources.isCursorPointInButton())
             {
+                screenActive = 0;
                 SourcesInfo sourcesInfo;
                 sourcesInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 3));
-                sourcesInfo.WatchExit();
+
+                screenActive = sourcesInfo.WatchExit();
             }
             else if (switches.isCursorPointInButton())
             {
+                screenActive = 0;
                 SwitchesInfo switchesInfo;
                 switchesInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 5));
-                switchesInfo.WatchExit();
+
+                screenActive = switchesInfo.WatchExit();
             }
             else if (transistors.isCursorPointInButton())
             {
+                screenActive = 0;
                 TransistorsInfo transistorsInfo;
                 transistorsInfo.Show((double)(windowWidth / 8), (double)(windowHeight / 8));
-                transistorsInfo.WatchExit();
+
+                screenActive = transistorsInfo.WatchExit();
             }
             else if (other.isCursorPointInButton())
             {
+                screenActive = 0;
                 OtherInfo otherInfo;
                 otherInfo.Show((double)(windowWidth / 7), (double)(windowHeight / 5));
-                otherInfo.WatchExit();
+
+                screenActive = otherInfo.WatchExit();
             }
             else if (exit.isCursorPointInButton())
             {
                 ok = 0;
+                screenActive = 0;
+            }
+            if (screenActive) {
+                setcurrentwindow(this->window_code);
             }
         }
         delay(200);

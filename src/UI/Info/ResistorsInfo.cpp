@@ -91,7 +91,7 @@ int ResistorsInfo::WatchClick()
     return cType;
 }
 
-void ResistorsInfo::WatchExit()
+int ResistorsInfo::WatchExit()
 {
 
     int ok = 1;
@@ -107,4 +107,5 @@ void ResistorsInfo::WatchExit()
         delay(200);
     }
     closegraph(this->window_code);
+    return 1;
 }
