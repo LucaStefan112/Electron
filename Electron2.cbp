@@ -48,8 +48,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Data Structures/ColectionOfSnapshots.h" />
 		<Unit filename="include/Data Structures/ElectronicComponentsVector.h" />
 		<Unit filename="include/Data Structures/Helpers/Node.h" />
+		<Unit filename="include/Data Structures/Snapshot.h" />
 		<Unit filename="include/Electronic Components/Buzzer.h" />
 		<Unit filename="include/Electronic Components/Capacitors/Capacitor_Ceramic.h" />
 		<Unit filename="include/Electronic Components/Capacitors/Capacitor_Electrolytic.h" />
@@ -126,9 +128,11 @@
 		<Unit filename="include/UI/Info/SwitchesInfo.h" />
 		<Unit filename="include/UI/Info/TransistorsInfo.h" />
 		<Unit filename="include/UI/MainMenu.h" />
-		<Unit filename="include/UI/UI.h" />
+		<Unit filename="include/UI/NewProjectMenu.h" />
 		<Unit filename="include/UI/UI.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Data Structures/ColectionOfSnapshots.cpp" />
+		<Unit filename="src/Data Structures/Snapshot.cpp" />
 		<Unit filename="src/Electronic Components/Buzzer.cpp" />
 		<Unit filename="src/Electronic Components/Capacitors/Capacitor_Ceramic.cpp" />
 		<Unit filename="src/Electronic Components/Capacitors/Capacitor_Electrolytic.cpp" />
@@ -202,6 +206,7 @@
 		<Unit filename="src/UI/Info/SwitchesInfo.cpp" />
 		<Unit filename="src/UI/Info/TransistorsInfo.cpp" />
 		<Unit filename="src/UI/MainMenu.cpp" />
+		<Unit filename="src/UI/NewProjectMenu.cpp" />
 		<Unit filename="src/UI/Screen.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
