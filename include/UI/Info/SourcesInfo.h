@@ -18,6 +18,6 @@ class SourcesInfo
         int window_code;
         void Show(double w, double h);
         int WatchClick();
-        void WatchExit();
+        int WatchExit();
 };
 #endif // SOURCESINFO_H

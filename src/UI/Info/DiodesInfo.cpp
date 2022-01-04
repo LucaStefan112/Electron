@@ -175,7 +175,7 @@ int DiodesInfo::WatchClick()
     return cType;
 }
 
-void DiodesInfo::WatchExit()
+int DiodesInfo::WatchExit()
 {
 
     int ok = 1;
@@ -191,4 +191,5 @@ void DiodesInfo::WatchExit()
         delay(200);
     }
     closegraph(this->window_code);
+    return 1;
 }

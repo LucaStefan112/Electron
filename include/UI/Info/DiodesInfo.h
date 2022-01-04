@@ -30,7 +30,7 @@ class DiodesInfo
 
         void Show(double w, double h);
         int WatchClick();
-        void WatchExit();
+        int WatchExit();
 };
 
 #endif // DIODESINFO_H

@@ -108,7 +108,7 @@ int OtherInfo::WatchClick()
     return cType;
 }
 
-void OtherInfo::WatchExit()
+int OtherInfo::WatchExit()
 {
 
     int ok = 1;
@@ -122,4 +122,5 @@ void OtherInfo::WatchExit()
         delay(200);
     }
     closegraph(this->window_code);
+    return 1;
 }

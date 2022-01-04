@@ -64,7 +64,7 @@ int MeasurementsInfo::WatchClick()
     return cType;
 }
 
-void MeasurementsInfo::WatchExit()
+int MeasurementsInfo::WatchExit()
 {
 
     int ok = 1;
@@ -78,4 +78,5 @@ void MeasurementsInfo::WatchExit()
         delay(200);
     }
     closegraph(this->window_code);
+    return 1;
 }
