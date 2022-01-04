@@ -85,7 +85,7 @@ int CapacitorsInfo::WatchClick()
     return cType;
 }
 
-void CapacitorsInfo::WatchExit()
+int CapacitorsInfo::WatchExit()
 {
 
     int ok = 1;
@@ -101,4 +101,5 @@ void CapacitorsInfo::WatchExit()
         delay(200);
     }
     closegraph(this->window_code);
+    return 1;
 }

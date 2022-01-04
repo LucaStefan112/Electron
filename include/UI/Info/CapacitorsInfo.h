@@ -21,7 +21,7 @@ class CapacitorsInfo
 
         void Show(double w, double h);
         int WatchClick();
-        void WatchExit();
+        int WatchExit();
 };
 
 #endif // CAPACITORSINFO_H

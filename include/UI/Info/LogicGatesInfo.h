@@ -22,7 +22,7 @@ class LogicGatesInfo
 
         void Show(double w, double h);
         int WatchClick();
-        void WatchExit();
+        int WatchExit();
 };
 
 #endif // LOGICGATESINFO_H

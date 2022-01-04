@@ -157,7 +157,7 @@ int TransistorsInfo::WatchClick()
     return cType;
 }
 
-void TransistorsInfo::WatchExit()
+int TransistorsInfo::WatchExit()
 {
 
     int ok = 1;
@@ -173,4 +173,5 @@ void TransistorsInfo::WatchExit()
         delay(200);
     }
     closegraph(this->window_code);
+    return 1;
 }

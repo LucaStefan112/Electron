@@ -102,7 +102,7 @@ int LogicGatesInfo::WatchClick()
     return cType;
 }
 
-void LogicGatesInfo::WatchExit()
+int LogicGatesInfo::WatchExit()
 {
 
     int ok = 1;
@@ -118,4 +118,5 @@ void LogicGatesInfo::WatchExit()
         delay(200);
     }
     closegraph(this->window_code);
+    return 1;
 }
