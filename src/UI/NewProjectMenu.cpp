@@ -23,8 +23,18 @@ void NewProjectMenu::WatchClick()
         {
             if (save.isCursorPointInButton())
             {
-                std::cout << "saving data ..." << std::endl;
-                completeSnapshots.saveToFile("file.txt");
+
+                nameFileMenu.Show();
+                int code = nameFileMenu.ListenEvents();
+                setcurrentwindow(this->window_code);
+
+                /*
+                if (code) {
+                    std::cout << "saving data ..." << std::endl;
+                    completeSnapshots.saveToFile("file.txt");
+                }
+                */
+
             }
             else if (capacitors.isCursorPointInButton())
             {

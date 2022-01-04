@@ -20,4 +20,6 @@
 #include "Info/TransistorsInfo.h"
 #include "Info/OtherInfo.h"
 
+#include "NameFile.h"
+
 #endif // UI_H

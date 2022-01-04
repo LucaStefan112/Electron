@@ -10,6 +10,7 @@
 #include "Data Structures/ColectionOfSnapshots.h"
 #include "Data Structures/Snapshot.h"
 
+#include "UI.h"
 #include "Helper.h"
 #include "Enums.h"
 
@@ -22,6 +23,8 @@ class NewProjectMenu
 
         ColectionOfSnapshots completeSnapshots;
         Snapshot currentSnapshot;
+
+        NameFile nameFileMenu;
 
         int window_code;
         std::string filepath;

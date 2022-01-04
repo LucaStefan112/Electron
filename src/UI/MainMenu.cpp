@@ -26,7 +26,7 @@ void MainMenu::WatchClick()
                 // open project functionality
                 std::cout << "open project ..." << std::endl;
 
-                importedSnapshot.importFromFile("file.txt");
+                //importedSnapshot.importFromFile("file.txt");
             }
             else if (info.isCursorPointInButton())
             {
