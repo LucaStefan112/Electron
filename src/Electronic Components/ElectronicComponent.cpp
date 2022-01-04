@@ -1,3 +1,7 @@
+#include <ctime>
+#include <sstream>
+
+#include <stdio.h>
 #include "Electronic Components/ElectronicComponent.h"
 
 Helper ElectronicComponent_helper;
@@ -10,6 +14,27 @@ ElectronicComponent::ElectronicComponent(double thisWidth, double thisHeight, st
     name = thisName;
     numberOfConnectionPoints = thisNumberOfConnectionPoints;
     setPositionUpLeft(ElectronicComponent_helper.makeVector_2D(0, 0));
+
+    if(thisWidth <= 0 || thisHeight <= 0)
+    {
+        std::cout << "Width and height must be greater than 0!";
+        return;
+    }
+    else
+    {
+        width = thisWidth;
+        height = thisHeight;
+        width_height_ratio = thisWidth / thisHeight;
+        name = thisName;
+        numberOfConnectionPoints = thisNumberOfConnectionPoints;
+
+        updateConnectionPointsPosition();
+    }
+
+    // set componentCode
+    std::stringstream strm;
+    strm << std::time(nullptr);
+    componentCode = strm.str();
 
     this->updateConnectionPointsPosition();
     this->Show();
@@ -213,7 +238,7 @@ double ElectronicComponent::getHeight()
 }
 
 //Getter of the component code:
-int ElectronicComponent::getComponentCode(){
+std::string ElectronicComponent::getComponentCode(){
 
     return componentCode;
 }

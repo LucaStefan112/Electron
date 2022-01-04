@@ -48,6 +48,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Data Structures/ElectronicComponentsVector.h" />
+		<Unit filename="include/Data Structures/Helpers/Node.h" />
 		<Unit filename="include/Electronic Components/Buzzer.h" />
 		<Unit filename="include/Electronic Components/Capacitors/Capacitor_Ceramic.h" />
 		<Unit filename="include/Electronic Components/Capacitors/Capacitor_Electrolytic.h" />
