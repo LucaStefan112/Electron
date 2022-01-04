@@ -1,7 +1,7 @@
-#include "Data Structures/Snapshot.h"
-
 #include <string>
+#include <fstream>
 
+#include "Data Structures/Snapshot.h"
 #include "Data Structures/Helpers/Node.h"
 
 class ColectionOfSnapshots {
