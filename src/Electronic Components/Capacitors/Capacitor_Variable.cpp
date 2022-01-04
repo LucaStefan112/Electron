@@ -81,3 +81,11 @@ void Capacitor_Variable::updateConnectionPointsPosition(){
         getPositionCenter(),
         rotateState);
 }
+
+void Capacitor_Variable::setCapacitance(double thisCapacitance){
+    capacitance = thisCapacitance;
+}
+
+double Capacitor_Variable::getCapacitance(){
+    return capacitance;
+}

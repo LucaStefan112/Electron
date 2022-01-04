@@ -91,3 +91,11 @@ void Resistor_Mobile_Contact::updateConnectionPointsPosition(){
         getPositionCenter(),
         rotateState);
 }
+
+void Resistor_Mobile_Contact::setResistance(double thisResistance){
+    resistance = thisResistance;
+}
+
+double Resistor_Mobile_Contact::getResistance(){
+    return resistance;
+}

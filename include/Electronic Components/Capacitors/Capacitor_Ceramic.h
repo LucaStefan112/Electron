@@ -5,8 +5,17 @@
 
 class Capacitor_Ceramic : public ElectronicComponent{
 
+private:
+    double capacitance = 0;
+
 public:
     Capacitor_Ceramic();
+
+    //Setters:
+    void setCapacitance(double thisCapacitance);
+
+    //Getters:
+    double getCapacitance();
 
     //Updating the position of each connection point:
     void updateConnectionPointsPosition();

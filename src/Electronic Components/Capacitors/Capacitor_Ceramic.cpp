@@ -68,3 +68,11 @@ void Capacitor_Ceramic::updateConnectionPointsPosition(){
         getPositionCenter(),
         rotateState);
 }
+
+void Capacitor_Ceramic::setCapacitance(double thisCapacitance){
+    capacitance = thisCapacitance;
+}
+
+double Capacitor_Ceramic::getCapacitance(){
+    return capacitance;
+}

@@ -7,35 +7,50 @@ MainMenu::MainMenu()
 {
 }
 
-void MainMenu::WatchClick() {
+void MainMenu::WatchClick()
+{
     int ok = 1;
-    while (ok) {
-        if (GetAsyncKeyState(VK_LBUTTON)) {
-            if (newProject.isCursorPointInButton()) {
-                // create new project functionality
-                std::cout << "create new project ..." << std::endl;
+
+    while (ok)
+    {
+        if (GetAsyncKeyState(VK_LBUTTON))
+        {
+            if (newProject.isCursorPointInButton())
+            {
+                NewProjectMenu newProjectMenu;
+                newProjectMenu.Show();
+                newProjectMenu.WatchClick();
             }
-            if (openProject.isCursorPointInButton()) {
+            else if (openProject.isCursorPointInButton())
+            {
                 // open project functionality
                 std::cout << "open project ..." << std::endl;
             }
-            if (info.isCursorPointInButton()) {
+            else if (info.isCursorPointInButton())
+            {
                 InfoMenu infoMenu;
                 infoMenu.Show();
                 infoMenu.WatchClick();
             }
-            if (exit.isCursorPointInButton()) {
+            else if (exit.isCursorPointInButton())
+            {
                 ok = 0;
-                closegraph(CURRENT_WINDOW);
             }
         }
         delay(200);
     }
+    closegraph(this->window_code);
 }
 
-void MainMenu::Show() {
+void MainMenu::Show()
+{
     Helper helper;
 
+    DWORD screenWidth = GetSystemMetrics(SM_CXSCREEN);
+    DWORD screenHeight = GetSystemMetrics(SM_CYSCREEN);
+
+    int wc = initwindow(screenWidth, screenHeight, "", -3, -3);
+    this->window_code = wc;
     int windowWidth = getwindowwidth();
     int windowHeight = getwindowheight();
 

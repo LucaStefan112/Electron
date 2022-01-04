@@ -5,6 +5,7 @@
 #include <winbgim.h>
 
 #include "Button.h"
+#include "NewProjectMenu.h"
 #include "Info/InfoMenu.h"
 
 class MainMenu
@@ -13,6 +14,7 @@ class MainMenu
         Button newProject, openProject, info, exit;
     public:
         MainMenu();
+        int window_code;
         void Show();
         void WatchClick();
 };

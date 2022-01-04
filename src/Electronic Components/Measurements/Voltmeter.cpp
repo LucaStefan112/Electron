@@ -71,3 +71,11 @@ void Voltmeter::updateConnectionPointsPosition(){
         getPositionCenter(),
         rotateState);
 }
+
+void Voltmeter::setVoltage(double thisVoltage){
+    voltage = thisVoltage;
+}
+
+double Voltmeter::getVoltage(){
+    return voltage;
+}

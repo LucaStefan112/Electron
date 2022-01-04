@@ -87,3 +87,19 @@ void Battery::updateConnectionPointsPosition(){
         getPositionCenter(),
         rotateState);
 }
+
+void Battery::setVolts(double thisVolts){
+    volts = thisVolts;
+}
+
+void Battery::setAmpers(double thisAmpers){
+    ampers = thisAmpers;
+}
+
+double Battery::getVolts(){
+    return volts;
+}
+
+double Battery::getAmpers(){
+    return ampers;
+}
