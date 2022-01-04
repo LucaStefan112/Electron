@@ -21,7 +21,7 @@
 1641151290 source:d:\info\c++\proiecte\electron 2\electron2\src\electronic components\electroniccomponent.cpp
 	"Electronic Components/ElectronicComponent.h"
 
-1641151290 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electroniccomponent.h
+1641283794 d:\info\c++\proiecte\electron 2\electron2\include\electronic components\electroniccomponent.h
 	"Helper.h"
 	"Enums.h"
 
@@ -680,4 +680,7 @@
 	"UI/UI.h"
 	"Helper.h"
 	"Enums.h"
+
+1641151290 source:d:\info\c++\proiecte\electron 2\electron2\src\ui\newprojectmenu.cpp
+	"UI/NewProjectMenu.h"
 

@@ -9,7 +9,7 @@
 #define DEFAULT_WIDTH_HEIGHT_RATIO 1
 #define DEFAULT_NAME "Electronic Component"
 #define DEFAULT_NUMBER_OF_CONNECTION_POINTS 0
-#define DEFAULT_COMPONENT_CODE -1
+#define DEFAULT_COMPONENT_CODE "0"
 #define DEFAULT_FLIP_STATE false
 #define DEFAULT_ROTATE_STATE 0
 #define DEFAULT_OUTTERBOX_VALUE false;
@@ -25,6 +25,9 @@ protected:
     //Dimensions of the component:
     double width = DEFAULT_WIDTH, height = DEFAULT_HEIGHT, width_height_ratio = DEFAULT_WIDTH_HEIGHT_RATIO;
 
+    PositionType positionType = up_left;
+
+    std::string componentCode = DEFAULT_COMPONENT_CODE;
 
     int numberOfConnectionPoints = DEFAULT_NUMBER_OF_CONNECTION_POINTS;
     Helper::ConnectionPoint connectionPoints[MAX_NUMBER_OF_CONNECTION_POINTS];
@@ -63,7 +66,7 @@ public:
     Helper::Vector_2D getPositionDownRight();
     double getWidth();
     double getHeight();
-    int getComponentCode();
+    std::string getComponentCode();
     int getNumberOfConnectionPoints();
     int getCodeOfConnectedComponentAtPoint(int thisPoint);
     Helper::ConnectionPoint* getConnectionPoints();
@@ -82,7 +85,7 @@ public:
     //Parsing the component's data to string:
     std::string toString();
 
-    void saveToFile();
+    void saveToFile(char *filename);
 };
 
 
