@@ -2,7 +2,7 @@
 #include <string>
 #include <algorithm>
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 #include "Data Structures/Snapshot.h"
 
 void Snapshot::addComponent(ElectronicComponent component) {

@@ -272,7 +272,6 @@ void ElectronicComponent::Show()
 void ElectronicComponent::showElements(bool modeErase){
 
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
-    double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
     if(showOutterBox){
@@ -370,8 +369,8 @@ bool ElectronicComponent::isCursorPointInButton()
 //Passing trough a string all the data about the component:
 std::string ElectronicComponent::toString()
 {
-    std::string text =  std::string(std::string("Type: ") + name + std::string(" | ") +
-                                    std::string("Code: ") + std::to_string(componentCode) + std::string(";\n\n") +
+    std::string text =  std::string(std::string("Type: ") + name + std::string(" | ")+
+                                    std::string("Code: ") + componentCode + std::string(";\n\n") +
                                     std::string("Width: ") + std::to_string(width) + std::string(" | ") +
                                     std::string("Height: ") + std::to_string(height) + std::string(";\n") +
                                     std::string("Width / Height ratio: ") + std::to_string(width_height_ratio) + std::string(";\n\n") +

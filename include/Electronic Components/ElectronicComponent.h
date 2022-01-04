@@ -1,8 +1,11 @@
 #ifndef ELECTRONICCOMPONENT_H_INCLUDED
 #define ELECTRONICCOMPONENT_H_INCLUDED
 
+#include <string>
+#include <sstream>
 #include "Helper.h"
 #include "Enums.h"
+
 #define MAX_NUMBER_OF_CONNECTION_POINTS 5
 #define DEFAULT_WIDTH 100
 #define DEFAULT_HEIGHT 100
@@ -25,10 +28,6 @@ protected:
     //Dimensions of the component:
     double width = DEFAULT_WIDTH, height = DEFAULT_HEIGHT, width_height_ratio = DEFAULT_WIDTH_HEIGHT_RATIO;
 
-    PositionType positionType = up_left;
-
-    std::string componentCode = DEFAULT_COMPONENT_CODE;
-
     int numberOfConnectionPoints = DEFAULT_NUMBER_OF_CONNECTION_POINTS;
     Helper::ConnectionPoint connectionPoints[MAX_NUMBER_OF_CONNECTION_POINTS];
 
@@ -44,7 +43,7 @@ public:
     //Name of the component:
     std::string name = DEFAULT_NAME;
     PositionType positionType = up_left;
-    int componentCode = DEFAULT_COMPONENT_CODE;
+    std::string componentCode = DEFAULT_COMPONENT_CODE;
 
     //Setters:
     void setPositionUpLeft(Helper::Vector_2D thisPosition);
