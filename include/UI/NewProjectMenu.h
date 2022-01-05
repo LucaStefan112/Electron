@@ -7,6 +7,10 @@
 
 #include "Electronic Components/Electronics.h"
 #include "UI/UI.h"
+#include "Data Structures/ColectionOfSnapshots.h"
+#include "Data Structures/Snapshot.h"
+
+#include "UI.h"
 #include "Helper.h"
 #include "Enums.h"
 
@@ -15,8 +19,16 @@ class NewProjectMenu
     protected:
         Button save, capacitors, diodes, logicGates, measurements, resistors, sources, switches, transistors, other, exit;
     public:
-        int window_code;
         NewProjectMenu();
+
+        ColectionOfSnapshots completeSnapshots;
+        Snapshot currentSnapshot;
+
+        NameFile nameFileMenu;
+
+        int window_code;
+        std::string filepath;
+
         void Show();
         void WatchClick();
 };

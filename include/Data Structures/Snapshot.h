@@ -4,7 +4,7 @@
 #include <vector>
 #include <string>
 
-#include "ElectronicComponent.h"
+#include "Electronic Components/ElectronicComponent.h"
 
 class Snapshot {
 private:

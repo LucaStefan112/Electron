@@ -1,8 +1,4 @@
 #include "Data Structures/ColectionOfSnapshots.h"
-
-#include <string>
-#include <fstream>
-
 #include "Data Structures/Snapshot.h"
 #include "Data Structures/Helpers/Node.h"
 
@@ -75,4 +71,8 @@ void ColectionOfSnapshots::importFromFile(std::string filepath) {
     inputFile.close();
 
     setCurrent(temporary);
+}
+
+void ColectionOfSnapshots::toString() {
+
 }
