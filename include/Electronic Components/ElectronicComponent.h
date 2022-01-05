@@ -71,7 +71,7 @@ public:
     Helper::ConnectionPoint* getConnectionPoints();
 
     bool isCursorPointInButton();
-
+    bool isSelected();
     //Updating the position of each connection point:
     virtual void updateConnectionPointsPosition();
 
