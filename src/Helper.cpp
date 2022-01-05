@@ -181,12 +181,21 @@ void Helper::rotationalArc(double x, double y, Vector_2D thisReference, double D
     arc(arcPosition.x, arcPosition.y, D1, D2, R);
 }
 
-void Helper::rotationalOuttextxy(double x, double y, Vector_2D thisReference, char* text, int degrees){
+void Helper::rotationalOuttextxy(double x, double y, Vector_2D thisReference, char* text, int degrees)
+{
 
     Vector_2D textPosition = rotatePointToReference(
-        makeVector_2D(x, y),
-        thisReference,
-        degrees);
+                                 makeVector_2D(x, y),
+                                 thisReference,
+                                 degrees);
 
     outtextxy(textPosition.x, textPosition.y, text);
+}
+
+void Helper::drawWire(Helper::Vector_2D v1, Helper::Vector_2D v2, colors COLOR)
+{
+    setcolor(COLOR);
+    line(v1.x,v1.y,(v1.x+v2.x)/2,v1.y);
+    line((v1.x+v2.x)/2,v1.y,(v1.x+v2.x)/2,v2.y);
+    line((v1.x+v2.x)/2,v2.y,v2.x,v2.y);
 }

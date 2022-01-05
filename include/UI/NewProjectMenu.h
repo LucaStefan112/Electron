@@ -25,7 +25,7 @@ class NewProjectMenu
         ColectionOfSnapshots completeSnapshots;
         Snapshot currentSnapshot;
 
-        NameFile nameFileMenu;
+       // NameFile nameFileMenu;
 
         bool isComponentSelected;
         ElectronicComponent selectedComponent;
