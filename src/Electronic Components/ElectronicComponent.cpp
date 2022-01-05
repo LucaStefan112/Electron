@@ -365,6 +365,11 @@ bool ElectronicComponent::isCursorPointInButton()
     return true;
 }
 
+bool ElectronicComponent::isSelected()
+{
+    return showOutterBox;
+}
+
 //Passing trough a string all the data about the component:
 std::string ElectronicComponent::toString()
 {
