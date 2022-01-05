@@ -1,7 +1,8 @@
 .git
+obj/
 bin/
 main.cpp
-.layout
-.depend
-.cbp
-.vscode
+*.layout
+*.depend
+*.cbp
+*.vscode
