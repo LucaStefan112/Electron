@@ -37,7 +37,7 @@ void CompopnentsList::addComponent(std::string typeOfComponent){
     else if(typeOfComponent == std::string("Transient Voltage Suppression Diode")) componentsList[i] = new Diode_Transient_Voltage_Suppression;
     else if(typeOfComponent == std::string("Tunnel Diode")) componentsList[i] = new Diode_Tunnel;
     else if(typeOfComponent == std::string("Varactor Diode")) componentsList[i] = new Diode_Varactor;
-    else if(typeOfComponent == std::string("Shockley Zener")) componentsList[i] = new Diode_Zener;
+    else if(typeOfComponent == std::string("Zener Diode")) componentsList[i] = new Diode_Zener;
     else if(typeOfComponent == std::string("And Gate")) componentsList[i] = new AndGate;
     else if(typeOfComponent == std::string("Nand Gate")) componentsList[i] = new NandGate;
     else if(typeOfComponent == std::string("Nor Gate")) componentsList[i] = new NorGate;
@@ -58,7 +58,7 @@ void CompopnentsList::addComponent(std::string typeOfComponent){
     else if(typeOfComponent == std::string("DPST Switch")) componentsList[i] = new Switch_DPST;
     else if(typeOfComponent == std::string("Open Switch")) componentsList[i] = new Switch_Open;
     else if(typeOfComponent == std::string("SPDT Switch")) componentsList[i] = new Switch_SPDT;
-    else if(typeOfComponent == std::string("Closed Telegraph")) componentsList[i] = new Switch_Telegraph;
+    else if(typeOfComponent == std::string("Telegraph Switch")) componentsList[i] = new Switch_Telegraph;
     else if(typeOfComponent == std::string("Thermal Magnetic Breaker Switch")) componentsList[i] = new Switch_Thermal_Magnetic_Breaker;
     else if(typeOfComponent == std::string("Bipolar NPN Transistor")) componentsList[i] = new Transistor_Bipolar_NPN;
     else if(typeOfComponent == std::string("Bipolar PNP Transistor")) componentsList[i] = new Transistor_Bipolar_PNP;
@@ -79,6 +79,7 @@ void CompopnentsList::addComponent(std::string typeOfComponent){
     else if(typeOfComponent == std::string("Microphone")) componentsList[i] = new Microphone;
     else if(typeOfComponent == std::string("Motor")) componentsList[i] = new Motor;
     else if(typeOfComponent == std::string("Speaker")) componentsList[i] = new Speaker;
+    else return;
 
     componentsList[i]->setOutterBox(true);
 }
