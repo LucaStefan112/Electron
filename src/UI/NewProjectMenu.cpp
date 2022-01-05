@@ -31,7 +31,6 @@ void NewProjectMenu::WatchClick()
                 bgiout << code << " " << nameFileMenu.filename << std :: endl;
                 outstreamxy(windowWidth / 5, windowHeight / 4);
 
-                //text.txy
                 bool hasExtension = strchr(nameFileMenu.filename.c_str(), '.');
 
                 if (code) {
@@ -433,6 +432,14 @@ void NewProjectMenu::WatchClick()
                 }
                 completeSnapshots.setCurrent(currentSnapshot);
                 cType = _none;
+            } else if (cType == _none) {
+                POINT cursorPoint;
+                GetCursorPos(&cursorPoint);
+                setcurrentwindow(this->window_code);
+
+                Helper::Vector_2D pos = helper.makeVector_2D(cursorPoint.x, cursorPoint.y);
+
+                std :: cout << pos.x << " " << pos.y << std :: endl;
             }
         }
         delay(500);
