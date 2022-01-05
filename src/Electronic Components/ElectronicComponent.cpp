@@ -363,7 +363,6 @@ bool ElectronicComponent::isCursorPointInButton()
         return false;
     }
     return true;
-
 }
 
 //Passing trough a string all the data about the component:
