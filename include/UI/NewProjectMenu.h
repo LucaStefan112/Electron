@@ -20,6 +20,7 @@ class NewProjectMenu
 
         Button save, capacitors, diodes, logicGates, measurements, resistors, sources, switches, transistors, other, exit;
         Button rotate_l, rotate_r, flip_h, flip_v;
+        Button inc, dec;
 
         ColectionOfSnapshots completeSnapshots;
         Snapshot currentSnapshot;
@@ -35,7 +36,6 @@ class NewProjectMenu
         //boundaries
         double rl,rt,rr,rb;
 
-        //Capacitor_Ceramic ccer;
 
         void Show();
         void WatchClick();

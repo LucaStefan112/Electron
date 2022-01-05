@@ -17,6 +17,7 @@ void NewProjectMenu::WatchClick()
     int windowHeight = getwindowheight();
 
     int cType = _none;
+    isComponentSelected = false;
 
     while (ok)
     {
@@ -147,11 +148,16 @@ void NewProjectMenu::WatchClick()
                     cc.setWidth(COMPONENT_SIZE);
                     cc.setPositionCenter(pos);
 
+                    //if (selectedComponent) {
                     selectedComponent.setOutterBox(false);
+                    //}
+
                     cc.setOutterBox(true);
 
                     currentSnapshot.addComponent(cc);
                     selectedComponent = cc;
+
+                    // std::cout << &cc << " " << selectedComponent->toString() << std::endl;
                     isComponentSelected = true;
                 }
                 else if (cType == _capacitorElectrolyt)
@@ -160,7 +166,10 @@ void NewProjectMenu::WatchClick()
                     ce.setWidth(COMPONENT_SIZE);
                     ce.setPositionCenter(pos);
 
+                    // if (selectedComponent) {
                     selectedComponent.setOutterBox(false);
+                    // }
+
                     ce.setOutterBox(true);
 
                     currentSnapshot.addComponent(ce);
@@ -173,11 +182,14 @@ void NewProjectMenu::WatchClick()
                     ct.setWidth(COMPONENT_SIZE);
                     ct.setPositionCenter(pos);
 
-                    selectedComponent.setOutterBox(false);
+                    // if (selectedComponent) {
+                    //     selectedComponent -> setOutterBox(false);
+                    // }
+
                     ct.setOutterBox(true);
 
                     currentSnapshot.addComponent(ct);
-                    selectedComponent = ct;
+                    // selectedComponent = &ct;
                     isComponentSelected = true;
                 }
                 else if (cType == _capacitorVariable)
@@ -186,11 +198,16 @@ void NewProjectMenu::WatchClick()
                     cv.setWidth(COMPONENT_SIZE);
                     cv.setPositionCenter(pos);
 
-                    selectedComponent.setOutterBox(false);
+                    // if (selectedComponent) {
+                    //     selectedComponent -> setOutterBox(false);
+                    // }
+
                     cv.setOutterBox(true);
 
                     currentSnapshot.addComponent(cv);
-                    selectedComponent = cv;
+                    //selectedComponent = &cv;
+
+                    std::cout << &cv;
                     isComponentSelected = true;
                 }
                 else if (cType == _diodeAvalance)
@@ -593,33 +610,32 @@ void NewProjectMenu::WatchClick()
                 std :: cout << pos.x << " " << pos.y << std :: endl;
             }
 
-            // if (isComponentSelected) {
-                 if (flip_h.isCursorPointInButton())
-                {
-                   // selectedComponent.flipComponent();
-                   //ccer.flipComponent();
-                }
-                 if (flip_v.isCursorPointInButton())
-                {
-                    //selectedComponent.rotateComponent(180);
-                    //delay(300);
-                    //selectedComponent.flipComponent();
-
-                    //diodeA.rotateComponent(180);
-                    //delay(300);
-                    //ccer.flipComponent();
-                }
-                 if (rotate_l.isCursorPointInButton())
-                {
-                    //selectedComponent.rotateComponent(345);
-                   // ccer.rotateComponent(345);
-                }
-                 if (rotate_r.isCursorPointInButton())
-                {
-                    //selectedComponent.rotateComponent(15);
-                   // ccer.rotateComponent(15);
-                }
-            // }
+            if (flip_h.isCursorPointInButton())
+            {
+                selectedComponent.flipComponent();
+            }
+            if (flip_v.isCursorPointInButton())
+            {
+                selectedComponent.rotateComponent(180);
+                delay(300);
+                selectedComponent.flipComponent();
+            }
+            if (rotate_l.isCursorPointInButton())
+            {
+                selectedComponent.rotateComponent(345);
+            }
+            if (rotate_r.isCursorPointInButton())
+            {
+                selectedComponent.rotateComponent(15);
+            }
+            if (inc.isCursorPointInButton())
+            {
+                selectedComponent.setWidth(selectedComponent.getWidth() + 5);
+            }
+            if (dec.isCursorPointInButton())
+            {
+                selectedComponent.setWidth(selectedComponent.getWidth() - 5);
+            }
 
 
         }
@@ -644,12 +660,9 @@ void NewProjectMenu::Show()
     double BUTTON_WIDTH = (windowWidth - 50) / 10;
 
     this->rl = BUTTON_WIDTH * 2,  this->rt = BUTTON_HEIGHT * 3,
-    this->rr = windowWidth - BUTTON_WIDTH * 2, this->rb = windowHeight - 3 * BUTTON_HEIGHT;
+          this->rr = windowWidth - BUTTON_WIDTH * 2, this->rb = windowHeight - 3 * BUTTON_HEIGHT;
 
-    rectangle(this->rl,  this->rt, this->rr, this->rb);
-
-    //ccer.setWidth(COMPONENT_SIZE);
-    //ccer.setPositionCenter(helper.makeVector_2D(400, 300));
+    rectangle(this->rl, this->rt, this->rr, this->rb);
 
     exit.setPositionUpLeft(helper.makeVector_2D(0, 0));
     exit.setWidth(75);
@@ -742,4 +755,16 @@ void NewProjectMenu::Show()
     flip_v.setHeight(r);
     flip_v.setTitle("F<->");
     flip_v.ShowCircleMode();
+
+    inc.setPositionCenter(helper.makeVector_2D(this->rl - 3*r, this->rb - 5*r));
+    inc.setWidth(r);
+    inc.setHeight(r);
+    inc.setTitle("+");
+    inc.ShowCircleMode();
+
+    dec.setPositionCenter(helper.makeVector_2D(this->rl - 6*r, this->rb - 5*r));
+    dec.setWidth(r);
+    dec.setHeight(r);
+    dec.setTitle("-");
+    dec.ShowCircleMode();
 }
