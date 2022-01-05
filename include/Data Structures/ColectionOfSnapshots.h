@@ -22,4 +22,5 @@ public:
 
     void saveToFile(std::string filepath);
     void importFromFile(std::string filepath);
+    void toString();
 };

@@ -28,12 +28,15 @@ void NewProjectMenu::WatchClick()
                 int code = nameFileMenu.ListenEvents();
                 setcurrentwindow(this->window_code);
 
-                /*
+                bgiout << code << " " << nameFileMenu.filename << std :: endl;
+                outstreamxy(windowWidth / 5, windowHeight / 4);
+
+                //text.txy
+                bool hasExtension = strchr(nameFileMenu.filename.c_str(), '.');
+
                 if (code) {
-                    std::cout << "saving data ..." << std::endl;
-                    completeSnapshots.saveToFile("file.txt");
+                    completeSnapshots.saveToFile(hasExtension ? nameFileMenu.filename : (nameFileMenu.filename + ".txt"));
                 }
-                */
 
             }
             else if (capacitors.isCursorPointInButton())

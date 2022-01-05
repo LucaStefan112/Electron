@@ -72,3 +72,7 @@ void ColectionOfSnapshots::importFromFile(std::string filepath) {
 
     setCurrent(temporary);
 }
+
+void ColectionOfSnapshots::toString() {
+
+}
