@@ -1,6 +1,7 @@
 #include "UI/NewProjectMenu.h"
 
 #define BUTTON_HEIGHT 25
+#define COMPONENT_SIZE 100
 
 NewProjectMenu::NewProjectMenu()
 {
@@ -33,7 +34,8 @@ void NewProjectMenu::WatchClick()
 
                 bool hasExtension = strchr(nameFileMenu.filename.c_str(), '.');
 
-                if (code) {
+                if (code)
+                {
                     completeSnapshots.saveToFile(hasExtension ? nameFileMenu.filename : (nameFileMenu.filename + ".txt"));
                 }
 
@@ -129,310 +131,459 @@ void NewProjectMenu::WatchClick()
                 POINT cursorPoint;
                 GetCursorPos(&cursorPoint);
                 setcurrentwindow(this->window_code);
-
                 Helper::Vector_2D pos = helper.makeVector_2D(cursorPoint.x, cursorPoint.y);
 
-                if (cType == _capacitorCeramic) {
+                bool isNotBounded = (cursorPoint.x - COMPONENT_SIZE/2) < this->rl ||
+                                    (cursorPoint.y - COMPONENT_SIZE/2) < this->rt ||
+                                    (cursorPoint.x + COMPONENT_SIZE/2) > this->rr ||
+                                    (cursorPoint.y + COMPONENT_SIZE/2) > this->rb;
+                if (isNotBounded)
+                {
+                    cType = _none;
+                }
+                if (cType == _capacitorCeramic)
+                {
                     Capacitor_Ceramic cc;
-                    cc.setWidth(100);
+                    cc.setWidth(COMPONENT_SIZE);
                     cc.setPositionCenter(pos);
 
+                    selectedComponent.setOutterBox(false);
+                    cc.setOutterBox(true);
+
                     currentSnapshot.addComponent(cc);
-                } else if (cType == _capacitorElectrolyt) {
+                    selectedComponent = cc;
+                    isComponentSelected = true;
+                }
+                else if (cType == _capacitorElectrolyt)
+                {
                     Capacitor_Electrolytic ce;
-                    ce.setWidth(100);
+                    ce.setWidth(COMPONENT_SIZE);
                     ce.setPositionCenter(pos);
 
+                    selectedComponent.setOutterBox(false);
+                    ce.setOutterBox(true);
+
                     currentSnapshot.addComponent(ce);
-                } else if (cType == _capacitorTrimmer) {
+                    selectedComponent = ce;
+                    isComponentSelected = true;
+                }
+                else if (cType == _capacitorTrimmer)
+                {
                     Capacitor_Trimmer ct;
-                    ct.setWidth(100);
+                    ct.setWidth(COMPONENT_SIZE);
                     ct.setPositionCenter(pos);
+
+                    selectedComponent.setOutterBox(false);
+                    ct.setOutterBox(true);
+
                     currentSnapshot.addComponent(ct);
-                } else if (cType == _capacitorVariable) {
+                    selectedComponent = ct;
+                    isComponentSelected = true;
+                }
+                else if (cType == _capacitorVariable)
+                {
                     Capacitor_Variable cv;
-                    cv.setWidth(100);
+                    cv.setWidth(COMPONENT_SIZE);
                     cv.setPositionCenter(pos);
+
+                    selectedComponent.setOutterBox(false);
+                    cv.setOutterBox(true);
+
                     currentSnapshot.addComponent(cv);
-                } else if (cType == _diodeAvalance) {
+                    selectedComponent = cv;
+                    isComponentSelected = true;
+                }
+                else if (cType == _diodeAvalance)
+                {
                     Diode_Avalance da;
-                    da.setWidth(100);
+                    da.setWidth(COMPONENT_SIZE);
                     da.setPositionCenter(pos);
                     currentSnapshot.addComponent(da);
-                } else if (cType == _diodeConstantCurrent) {
+                }
+                else if (cType == _diodeConstantCurrent)
+                {
                     Diode_Constant_Current dcc;
-                    dcc.setWidth(100);
+                    dcc.setWidth(COMPONENT_SIZE);
                     dcc.setPositionCenter(pos);
                     currentSnapshot.addComponent(dcc);
-                } else if (cType == _diodeGunn) {
+                }
+                else if (cType == _diodeGunn)
+                {
                     Diode_Gunn dg;
-                    dg.setWidth(100);
+                    dg.setWidth(COMPONENT_SIZE);
                     dg.setPositionCenter(pos);
                     currentSnapshot.addComponent(dg);
-                } else if (cType == _diodeJunction) {
+                }
+                else if (cType == _diodeJunction)
+                {
                     Diode_Junction_PN dj;
-                    dj.setWidth(100);
+                    dj.setWidth(COMPONENT_SIZE);
                     dj.setPositionCenter(pos);
                     currentSnapshot.addComponent(dj);
-                } else if (cType == _diodeLaser) {
+                }
+                else if (cType == _diodeLaser)
+                {
                     Diode_Laser dl;
-                    dl.setWidth(100);
+                    dl.setWidth(COMPONENT_SIZE);
                     dl.setPositionCenter(pos);
                     currentSnapshot.addComponent(dl);
-                } else if (cType == _diodeLightEmitting) {
+                }
+                else if (cType == _diodeLightEmitting)
+                {
                     Diode_Light_Emitting dle;
-                    dle.setWidth(100);
+                    dle.setWidth(COMPONENT_SIZE);
                     dle.setPositionCenter(pos);
                     currentSnapshot.addComponent(dle);
-                } else if (cType == _diodePhoto) {
+                }
+                else if (cType == _diodePhoto)
+                {
                     Diode_Photo dph;
-                    dph.setWidth(100);
+                    dph.setWidth(COMPONENT_SIZE);
                     dph.setPositionCenter(pos);
                     currentSnapshot.addComponent(dph);
-                } else if (cType == _diodePin) {
+                }
+                else if (cType == _diodePin)
+                {
                     Diode_PIN dpi;
-                    dpi.setWidth(100);
+                    dpi.setWidth(COMPONENT_SIZE);
                     dpi.setPositionCenter(pos);
                     currentSnapshot.addComponent(dpi);
-                } else if (cType == _diodeSchottky) {
+                }
+                else if (cType == _diodeSchottky)
+                {
                     Diode_Schottky dsc;
-                    dsc.setWidth(100);
+                    dsc.setWidth(COMPONENT_SIZE);
                     dsc.setPositionCenter(pos);
                     currentSnapshot.addComponent(dsc);
-                } else if (cType == _diodeShockley) {
+                }
+                else if (cType == _diodeShockley)
+                {
                     Diode_Shockley dsh;
-                    dsh.setWidth(100);
+                    dsh.setWidth(COMPONENT_SIZE);
                     dsh.setPositionCenter(pos);
                     currentSnapshot.addComponent(dsh);
-                } else if (cType == _diodeVoltage) {
+                }
+                else if (cType == _diodeVoltage)
+                {
                     Diode_Transient_Voltage_Suppression dvo;
-                    dvo.setWidth(100);
+                    dvo.setWidth(COMPONENT_SIZE);
                     dvo.setPositionCenter(pos);
                     currentSnapshot.addComponent(dvo);
-                } else if (cType == _diodeTunnel) {
+                }
+                else if (cType == _diodeTunnel)
+                {
                     Diode_Tunnel dt;
-                    dt.setWidth(100);
+                    dt.setWidth(COMPONENT_SIZE);
                     dt.setPositionCenter(pos);
                     currentSnapshot.addComponent(dt);
-                } else if (cType == _diodeVaractor) {
+                }
+                else if (cType == _diodeVaractor)
+                {
                     Diode_Varactor dv;
-                    dv.setWidth(100);
+                    dv.setWidth(COMPONENT_SIZE);
                     dv.setPositionCenter(pos);
                     currentSnapshot.addComponent(dv);
-                } else if (cType == _diodeZener) {
+                }
+                else if (cType == _diodeZener)
+                {
                     Diode_Zener dz;
-                    dz.setWidth(100);
+                    dz.setWidth(COMPONENT_SIZE);
                     dz.setPositionCenter(pos);
                     currentSnapshot.addComponent(dz);
-                } else if (cType == _andGate) {
+                }
+                else if (cType == _andGate)
+                {
                     AndGate ag;
-                    ag.setWidth(100);
+                    ag.setWidth(COMPONENT_SIZE);
                     ag.setPositionCenter(pos);
                     currentSnapshot.addComponent(ag);
-                } else if (cType == _nandGate) {
+                }
+                else if (cType == _nandGate)
+                {
                     NandGate nag;
-                    nag.setWidth(100);
+                    nag.setWidth(COMPONENT_SIZE);
                     nag.setPositionCenter(pos);
                     currentSnapshot.addComponent(nag);
-                } else if (cType == _norGate) {
+                }
+                else if (cType == _norGate)
+                {
                     NorGate norg;
-                    norg.setWidth(100);
+                    norg.setWidth(COMPONENT_SIZE);
                     norg.setPositionCenter(pos);
                     currentSnapshot.addComponent(norg);
-                } else if (cType == _notGate) {
+                }
+                else if (cType == _notGate)
+                {
                     NotGate notg;
-                    notg.setWidth(100);
+                    notg.setWidth(COMPONENT_SIZE);
                     notg.setPositionCenter(pos);
                     currentSnapshot.addComponent(notg);
-                } else if (cType == _orGate) {
+                }
+                else if (cType == _orGate)
+                {
                     OrGate og;
-                    og.setWidth(100);
+                    og.setWidth(COMPONENT_SIZE);
                     og.setPositionCenter(pos);
                     currentSnapshot.addComponent(og);
-                } else if (cType == _xorGate) {
+                }
+                else if (cType == _xorGate)
+                {
                     XorGate xg;
-                    xg.setWidth(100);
+                    xg.setWidth(COMPONENT_SIZE);
                     xg.setPositionCenter(pos);
                     currentSnapshot.addComponent(xg);
-                } else if (cType == _ammeter) {
+                }
+                else if (cType == _ammeter)
+                {
                     Ammeter a;
-                    a.setWidth(100);
+                    a.setWidth(COMPONENT_SIZE);
                     a.setPositionCenter(pos);
                     currentSnapshot.addComponent(a);
-                } else if (cType == _voltmeter) {
+                }
+                else if (cType == _voltmeter)
+                {
                     Voltmeter v;
-                    v.setWidth(100);
+                    v.setWidth(COMPONENT_SIZE);
                     v.setPositionCenter(pos);
                     currentSnapshot.addComponent(v);
-                } else if (cType == _buzzer) {
+                }
+                else if (cType == _buzzer)
+                {
                     Buzzer b;
-                    b.setWidth(100);
+                    b.setWidth(COMPONENT_SIZE);
                     b.setPositionCenter(pos);
                     currentSnapshot.addComponent(b);
-                } else if (cType == _ground) {
+                }
+                else if (cType == _ground)
+                {
                     Ground g;
-                    g.setWidth(100);
+                    g.setWidth(COMPONENT_SIZE);
                     g.setPositionCenter(pos);
                     currentSnapshot.addComponent(g);
-                } else if (cType == _inductor) {
+                }
+                else if (cType == _inductor)
+                {
                     Inductor i;
-                    i.setWidth(100);
+                    i.setWidth(COMPONENT_SIZE);
                     i.setPositionCenter(pos);
                     currentSnapshot.addComponent(i);
-                } else if (cType == _lamp) {
+                }
+                else if (cType == _lamp)
+                {
                     Lamp l;
-                    l.setWidth(100);
+                    l.setWidth(COMPONENT_SIZE);
                     l.setPositionCenter(pos);
                     currentSnapshot.addComponent(l);
-                } else if (cType == _microphone) {
+                }
+                else if (cType == _microphone)
+                {
                     Microphone mi;
-                    mi.setWidth(100);
+                    mi.setWidth(COMPONENT_SIZE);
                     mi.setPositionCenter(pos);
                     currentSnapshot.addComponent(mi);
-                } else if (cType == _motor) {
+                }
+                else if (cType == _motor)
+                {
                     Motor mo;
-                    mo.setWidth(100);
+                    mo.setWidth(COMPONENT_SIZE);
                     mo.setPositionCenter(pos);
                     currentSnapshot.addComponent(mo);
-                } else if (cType == _speaker) {
+                }
+                else if (cType == _speaker)
+                {
                     Speaker s;
-                    s.setWidth(100);
+                    s.setWidth(COMPONENT_SIZE);
                     s.setPositionCenter(pos);
                     currentSnapshot.addComponent(s);
-                } else if (cType == _potentiometer) {
+                }
+                else if (cType == _potentiometer)
+                {
                     Potentiometer_Mobile_Contact pmc;
-                    pmc.setWidth(100);
+                    pmc.setWidth(COMPONENT_SIZE);
                     pmc.setPositionCenter(pos);
                     currentSnapshot.addComponent(pmc);
-                } else if (cType == _resistorMobileStop) {
+                }
+                else if (cType == _resistorMobileStop)
+                {
                     Resistor_Mobile_Contact_Stop_Position rms;
-                    rms.setWidth(100);
+                    rms.setWidth(COMPONENT_SIZE);
                     rms.setPositionCenter(pos);
                     currentSnapshot.addComponent(rms);
-                } else if (cType == _resistorMobile) {
+                }
+                else if (cType == _resistorMobile)
+                {
                     Resistor_Mobile_Contact rm;
-                    rm.setWidth(100);
+                    rm.setWidth(COMPONENT_SIZE);
                     rm.setPositionCenter(pos);
                     currentSnapshot.addComponent(rm);
-                } else if (cType == _resistorVariableResistance) {
+                }
+                else if (cType == _resistorVariableResistance)
+                {
                     Resistor_Variable_Resistance rvr;
-                    rvr.setWidth(100);
+                    rvr.setWidth(COMPONENT_SIZE);
                     rvr.setPositionCenter(pos);
                     currentSnapshot.addComponent(rvr);
-                } else if (cType == _resistor) {
+                }
+                else if (cType == _resistor)
+                {
                     Resistor r;
-                    r.setWidth(100);
+                    r.setWidth(COMPONENT_SIZE);
                     r.setPositionCenter(pos);
                     currentSnapshot.addComponent(r);
-                } else if (cType == _sourceAC) {
+                }
+                else if (cType == _sourceAC)
+                {
                     Source_Voltage_AC sac;
-                    sac.setWidth(100);
+                    sac.setWidth(COMPONENT_SIZE);
                     sac.setPositionCenter(pos);
                     currentSnapshot.addComponent(sac);
-                } else if (cType == _sourceDC) {
+                }
+                else if (cType == _sourceDC)
+                {
                     Source_Voltage_DC sdc;
-                    sdc.setWidth(100);
+                    sdc.setWidth(COMPONENT_SIZE);
                     sdc.setPositionCenter(pos);
                     currentSnapshot.addComponent(sdc);
-                } else if (cType == _battery) {
+                }
+                else if (cType == _battery)
+                {
                     Battery bat;
-                    bat.setWidth(100);
+                    bat.setWidth(COMPONENT_SIZE);
                     bat.setPositionCenter(pos);
                     currentSnapshot.addComponent(bat);
-                } else if (cType == _switchClosed) {
+                }
+                else if (cType == _switchClosed)
+                {
                     Switch_Closed sc;
-                    sc.setWidth(100);
+                    sc.setWidth(COMPONENT_SIZE);
                     sc.setPositionCenter(pos);
                     currentSnapshot.addComponent(sc);
-                } else if (cType == _switchSPDT) {
+                }
+                else if (cType == _switchSPDT)
+                {
                     Switch_SPDT sspdt;
-                    sspdt.setWidth(100);
+                    sspdt.setWidth(COMPONENT_SIZE);
                     sspdt.setPositionCenter(pos);
                     currentSnapshot.addComponent(sspdt);
-                } else if (cType == _switchOpen) {
+                }
+                else if (cType == _switchOpen)
+                {
                     Switch_Open so;
-                    so.setWidth(100);
+                    so.setWidth(COMPONENT_SIZE);
                     so.setPositionCenter(pos);
                     currentSnapshot.addComponent(so);
-                } else if (cType == _switchDPST) {
+                }
+                else if (cType == _switchDPST)
+                {
                     Switch_DPST sdpst;
-                    sdpst.setWidth(100);
+                    sdpst.setWidth(COMPONENT_SIZE);
                     sdpst.setPositionCenter(pos);
                     currentSnapshot.addComponent(sdpst);
-                } else if (cType == _switchTelegraph) {
+                }
+                else if (cType == _switchTelegraph)
+                {
                     Switch_Telegraph st;
-                    st.setWidth(100);
+                    st.setWidth(COMPONENT_SIZE);
                     st.setPositionCenter(pos);
                     currentSnapshot.addComponent(st);
-                } else if (cType == _switchThermal) {
+                }
+                else if (cType == _switchThermal)
+                {
                     Switch_Thermal_Magnetic_Breaker stmb;
-                    stmb.setWidth(100);
+                    stmb.setWidth(COMPONENT_SIZE);
                     stmb.setPositionCenter(pos);
                     currentSnapshot.addComponent(stmb);
-                } else if (cType == _transistorBipolarNPN) {
+                }
+                else if (cType == _transistorBipolarNPN)
+                {
                     Transistor_Bipolar_NPN tbn;
-                    tbn.setWidth(100);
+                    tbn.setWidth(COMPONENT_SIZE);
                     tbn.setPositionCenter(pos);
                     currentSnapshot.addComponent(tbn);
-                } else if (cType == _transistorBipolarPNP) {
+                }
+                else if (cType == _transistorBipolarPNP)
+                {
                     Transistor_Bipolar_PNP tbp;
-                    tbp.setWidth(100);
+                    tbp.setWidth(COMPONENT_SIZE);
                     tbp.setPositionCenter(pos);
                     currentSnapshot.addComponent(tbp);
-                } else if (cType == _transistorDualN) {
+                }
+                else if (cType == _transistorDualN)
+                {
                     Transistor_Dual_Gate_MOSFET_Nchannel tdn;
-                    tdn.setWidth(100);
+                    tdn.setWidth(COMPONENT_SIZE);
                     tdn.setPositionCenter(pos);
                     currentSnapshot.addComponent(tdn);
-                } else if (cType == _transistorDualP) {
+                }
+                else if (cType == _transistorDualP)
+                {
                     Transistor_Dual_Gate_MOSFET_Pchannel tdp;
-                    tdp.setWidth(100);
+                    tdp.setWidth(COMPONENT_SIZE);
                     tdp.setPositionCenter(pos);
                     currentSnapshot.addComponent(tdp);
-                } else if (cType == _transistorFETN) {
+                }
+                else if (cType == _transistorFETN)
+                {
                     Transistor_FET_Nchannel tfn;
-                    tfn.setWidth(100);
+                    tfn.setWidth(COMPONENT_SIZE);
                     tfn.setPositionCenter(pos);
                     currentSnapshot.addComponent(tfn);
-                } else if (cType == _transistorFETP) {
+                }
+                else if (cType == _transistorFETP)
+                {
                     Transistor_FET_Pchannel tfp;
-                    tfp.setWidth(100);
+                    tfp.setWidth(COMPONENT_SIZE);
                     tfp.setPositionCenter(pos);
                     currentSnapshot.addComponent(tfp);
-                } else if (cType == _transistorInductiveN) {
+                }
+                else if (cType == _transistorInductiveN)
+                {
                     Transistor_Inductive_Channel_MOSFET_Nchannel tim;
-                    tim.setWidth(100);
+                    tim.setWidth(COMPONENT_SIZE);
                     tim.setPositionCenter(pos);
                     currentSnapshot.addComponent(tim);
-                } else if (cType == _transistorInductiveP) {
+                }
+                else if (cType == _transistorInductiveP)
+                {
                     Transistor_Inductive_Channel_MOSFET_Pchannel tip;
-                    tip.setWidth(100);
+                    tip.setWidth(COMPONENT_SIZE);
                     tip.setPositionCenter(pos);
                     currentSnapshot.addComponent(tip);
-                } else if (cType == _transistorMOSFETN) {
+                }
+                else if (cType == _transistorMOSFETN)
+                {
                     Transistor_MOSFET_Nchannel tmn;
-                    tmn.setWidth(100);
+                    tmn.setWidth(COMPONENT_SIZE);
                     tmn.setPositionCenter(pos);
                     currentSnapshot.addComponent(tmn);
-                } else if (cType == _transistorMOSFETP) {
+                }
+                else if (cType == _transistorMOSFETP)
+                {
                     Transistor_MOSFET_Pchannel tmp;
-                    tmp.setWidth(100);
+                    tmp.setWidth(COMPONENT_SIZE);
                     tmp.setPositionCenter(pos);
                     currentSnapshot.addComponent(tmp);
-                } else if (cType == _transistorSingleN) {
+                }
+                else if (cType == _transistorSingleN)
+                {
                     Transistor_Single_Connection_Nchannel tsn;
-                    tsn.setWidth(100);
+                    tsn.setWidth(COMPONENT_SIZE);
                     tsn.setPositionCenter(pos);
                     currentSnapshot.addComponent(tsn);
-                } else if (cType == _transistorSingleP) {
+                }
+                else if (cType == _transistorSingleP)
+                {
                     Transistor_Single_Connection_Pchannel tsp;
-                    tsp.setWidth(100);
+                    tsp.setWidth(COMPONENT_SIZE);
                     tsp.setPositionCenter(pos);
                     currentSnapshot.addComponent(tsp);
                 }
-                completeSnapshots.setCurrent(currentSnapshot);
+                //completeSnapshots.setCurrent(currentSnapshot);
                 cType = _none;
-            } else if (cType == _none) {
+            }
+            else if (cType == _none)
+            {
+                //will move the component
                 POINT cursorPoint;
                 GetCursorPos(&cursorPoint);
                 setcurrentwindow(this->window_code);
@@ -441,6 +592,36 @@ void NewProjectMenu::WatchClick()
 
                 std :: cout << pos.x << " " << pos.y << std :: endl;
             }
+
+            // if (isComponentSelected) {
+                 if (flip_h.isCursorPointInButton())
+                {
+                   // selectedComponent.flipComponent();
+                   //ccer.flipComponent();
+                }
+                 if (flip_v.isCursorPointInButton())
+                {
+                    //selectedComponent.rotateComponent(180);
+                    //delay(300);
+                    //selectedComponent.flipComponent();
+
+                    //diodeA.rotateComponent(180);
+                    //delay(300);
+                    //ccer.flipComponent();
+                }
+                 if (rotate_l.isCursorPointInButton())
+                {
+                    //selectedComponent.rotateComponent(345);
+                   // ccer.rotateComponent(345);
+                }
+                 if (rotate_r.isCursorPointInButton())
+                {
+                    //selectedComponent.rotateComponent(15);
+                   // ccer.rotateComponent(15);
+                }
+            // }
+
+
         }
         delay(500);
     }
@@ -460,7 +641,15 @@ void NewProjectMenu::Show()
 
     int windowWidth = getwindowwidth();
     int windowHeight = getwindowheight();
-    double BUTTON_WIDTH = (windowWidth - 75) / 10;
+    double BUTTON_WIDTH = (windowWidth - 50) / 10;
+
+    this->rl = BUTTON_WIDTH * 2,  this->rt = BUTTON_HEIGHT * 3,
+    this->rr = windowWidth - BUTTON_WIDTH * 2, this->rb = windowHeight - 3 * BUTTON_HEIGHT;
+
+    rectangle(this->rl,  this->rt, this->rr, this->rb);
+
+    //ccer.setWidth(COMPONENT_SIZE);
+    //ccer.setPositionCenter(helper.makeVector_2D(400, 300));
 
     exit.setPositionUpLeft(helper.makeVector_2D(0, 0));
     exit.setWidth(75);
@@ -527,4 +716,30 @@ void NewProjectMenu::Show()
     other.setHeight(BUTTON_HEIGHT);
     other.setTitle("Other");
     other.Show();
+
+    double r = 25;
+
+    rotate_l.setPositionCenter(helper.makeVector_2D(this->rr + 3*r, this->rb - 5*r));
+    rotate_l.setWidth(r);
+    rotate_l.setHeight(r);
+    rotate_l.setTitle("R<-");
+    rotate_l.ShowCircleMode();
+
+    rotate_r.setPositionCenter(helper.makeVector_2D(this->rr + 6*r, this->rb - 5*r));
+    rotate_r.setWidth(r);
+    rotate_r.setHeight(r);
+    rotate_r.setTitle("R->");
+    rotate_r.ShowCircleMode();
+
+    flip_h.setPositionCenter(helper.makeVector_2D(this->rr + 3*r, this->rb - r));
+    flip_h.setWidth(r);
+    flip_h.setHeight(r);
+    flip_h.setTitle("F<|>");
+    flip_h.ShowCircleMode();
+
+    flip_v.setPositionCenter(helper.makeVector_2D(this->rr + 6*r, this->rb -r));
+    flip_v.setWidth(r);
+    flip_v.setHeight(r);
+    flip_v.setTitle("F<->");
+    flip_v.ShowCircleMode();
 }

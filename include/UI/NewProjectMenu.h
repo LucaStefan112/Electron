@@ -15,18 +15,27 @@
 
 class NewProjectMenu
 {
-    protected:
-        Button save, capacitors, diodes, logicGates, measurements, resistors, sources, switches, transistors, other, exit;
     public:
         NewProjectMenu();
+
+        Button save, capacitors, diodes, logicGates, measurements, resistors, sources, switches, transistors, other, exit;
+        Button rotate_l, rotate_r, flip_h, flip_v;
 
         ColectionOfSnapshots completeSnapshots;
         Snapshot currentSnapshot;
 
         NameFile nameFileMenu;
 
+        bool isComponentSelected;
+        ElectronicComponent selectedComponent;
+
+
         int window_code;
         std::string filepath;
+        //boundaries
+        double rl,rt,rr,rb;
+
+        //Capacitor_Ceramic ccer;
 
         void Show();
         void WatchClick();

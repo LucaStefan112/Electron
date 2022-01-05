@@ -15,11 +15,12 @@ protected:
         }position;
         PositionType positionType = up_left;
         //Dimensions of the component:
-        double width = 100, height = 50;
         std::string title;
 
     public:
         Button(double thisWidth = 100, double thisHeight = 50, std::string thisTitle = "Button");
+
+        double width = 100, height = 50;
 
         //Setters:
         void setPositionUpLeft(Helper::Vector_2D thisPosition);
@@ -41,6 +42,7 @@ protected:
 
         //Show the component:
         void Show();
+        void ShowCircleMode();
 
         //Parsing the component's data to string:
 };
