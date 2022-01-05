@@ -1,7 +1,7 @@
 .git
-electron.cbp
-main.cpp
 bin
-electron.depend
-electron.layout
-*.layout
+main.cpp
+.layout
+.depend
+.cbp
+.vscode
