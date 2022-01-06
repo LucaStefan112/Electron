@@ -128,6 +128,7 @@
 		<Unit filename="include/UI/Info/SwitchesInfo.h" />
 		<Unit filename="include/UI/Info/TransistorsInfo.h" />
 		<Unit filename="include/UI/MainMenu.h" />
+		<Unit filename="include/UI/NameFile.h" />
 		<Unit filename="include/UI/NewProjectMenu.h" />
 		<Unit filename="include/UI/UI.h" />
 		<Unit filename="main.cpp" />
@@ -206,6 +207,7 @@
 		<Unit filename="src/UI/Info/SwitchesInfo.cpp" />
 		<Unit filename="src/UI/Info/TransistorsInfo.cpp" />
 		<Unit filename="src/UI/MainMenu.cpp" />
+		<Unit filename="src/UI/NameFile.cpp" />
 		<Unit filename="src/UI/NewProjectMenu.cpp" />
 		<Unit filename="src/UI/Screen.cpp" />
 		<Extensions>

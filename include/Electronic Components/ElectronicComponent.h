@@ -51,7 +51,7 @@ public:
     void setPositionDownRight(Helper::Vector_2D thisPosition);
     void setWidth(double thisWidth);
     void setHeight(double thisHeight);
-    void setComponentCode(int thisComponentCode);
+    void setComponentCode(std::string thisComponentCode);
     void setConnectedComponentCodeAtPoint(int thisPoint, int thisComponentCode);
     void flipComponent();
     void rotateComponent(int thisDegree);

@@ -34,7 +34,7 @@ void NewProjectMenu::WatchClick()
                 bool hasExtension = strchr(nameFileMenu.filename.c_str(), '.');
 
                 if (code) {
-                    completeSnapshots.saveToFile(hasExtension ? nameFileMenu.filename : (nameFileMenu.filename + ".txt"));
+                    //currentSnapshot.saveToFile(hasExtension ? nameFileMenu.filename : (nameFileMenu.filename + ".txt"));
                 }
 
             }
@@ -131,7 +131,7 @@ void NewProjectMenu::WatchClick()
                 setcurrentwindow(this->window_code);
 
                 Helper::Vector_2D pos = helper.makeVector_2D(cursorPoint.x, cursorPoint.y);
-
+/*
                 if (cType == _capacitorCeramic) {
                     Capacitor_Ceramic cc;
                     cc.setWidth(100);
@@ -429,7 +429,7 @@ void NewProjectMenu::WatchClick()
                     tsp.setWidth(100);
                     tsp.setPositionCenter(pos);
                     currentSnapshot.addComponent(tsp);
-                }
+                } */
                 completeSnapshots.setCurrent(currentSnapshot);
                 cType = _none;
             } else if (cType == _none) {

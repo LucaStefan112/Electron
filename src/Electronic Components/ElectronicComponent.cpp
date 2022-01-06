@@ -158,9 +158,8 @@ void ElectronicComponent::setHeight(double thisHeight)
 }
 
 //Setter of the component code:
-void ElectronicComponent::setComponentCode(int thisComponentCode){
-    if(thisComponentCode >= 0)
-        componentCode = thisComponentCode;
+void ElectronicComponent::setComponentCode(std::string thisComponentCode){
+    componentCode = thisComponentCode;
 }
 
 //Setter of the code of the connected component at a given index:
