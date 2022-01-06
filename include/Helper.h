@@ -8,8 +8,8 @@
 #define HELPER_H
 
 #define DEFAULT_CONNECTED_COMPONENT -2
-#define DEFAULT_X -1000
-#define DEFAULT_Y -1000
+#define DEFAULT_X 0
+#define DEFAULT_Y 0
 #define PI 3.14159265
 
 class Helper{

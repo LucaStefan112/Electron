@@ -1,7 +1,7 @@
 #ifndef COMPOPNENTSLIST_H
 #define COMPOPNENTSLIST_H
 
-#include "ElectronicComponent.h"
+#include "ELectronic Components/ElectronicComponent.h"
 
 class CompopnentsList{
     private:

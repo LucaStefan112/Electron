@@ -13,7 +13,7 @@ ElectronicComponent::ElectronicComponent(double thisWidth, double thisHeight, st
     width_height_ratio = thisWidth / thisHeight;
     name = thisName;
     numberOfConnectionPoints = thisNumberOfConnectionPoints;
-    setPositionUpLeft(ElectronicComponent_helper.makeVector_2D(0, 0));
+    setPositionUpLeft(ElectronicComponent_helper.makeVector_2D(-1000, -1000));
 
     if(thisWidth <= 0 || thisHeight <= 0)
     {
