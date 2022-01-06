@@ -28,7 +28,7 @@ class NewProjectMenu
 
         //NameFile nameFileMenu;
 
-        bool isComponentSelected;
+        bool iscurrentSnapshotelected;
         ElectronicComponent selectedComponent;
         CompopnentsList components;
 

@@ -13,7 +13,7 @@ ElectronicComponent::ElectronicComponent(double thisWidth, double thisHeight, st
     width_height_ratio = thisWidth / thisHeight;
     name = thisName;
     numberOfConnectionPoints = thisNumberOfConnectionPoints;
-    setPositionUpLeft(ElectronicComponent_helper.makeVector_2D(-1000, -1000));
+    setPositionUpLeft(ElectronicComponent_helper.makeVector_2D(0, 0));
 
     if(thisWidth <= 0 || thisHeight <= 0)
     {
@@ -401,7 +401,7 @@ std::string ElectronicComponent::toString()
                 std::to_string(i) + std::string(": ") +
                 std::to_string(connectionPoints[i].connectedComponentCode) +
                 std::string(" | Coordinates: ") +
-                std::string("x: ") + std::to_string(connectionPoints[i].position.x) + std::string(" | ") +
+                std::string("x: ") + std::to_string(connectionPoints[i].position.x) + std::string(" \ ") +
                 std::string("y: ") + std::to_string(connectionPoints[i].position.y) + std::string(";\n"));
 
     text += std::string("\n====================================================\n\n");

@@ -52,6 +52,8 @@ int LogicGatesInfo::WatchClick()
 {
     int ok = 1;
 
+    Helper helper;
+
     int cType = _none;
     while (ok)
     {
@@ -104,6 +106,8 @@ int LogicGatesInfo::WatchExit()
 {
 
     int ok = 1;
+
+    Helper helper;
 
     while (ok)
     {
