@@ -4,6 +4,7 @@
 #include <string>
 #include <map>
 
+#include "Enums.h"
 #include "Electronic Components/ElectronicComponent.h"
 #include "Electronic Components/Electronics.h"
 
@@ -15,10 +16,13 @@ public:
     Snapshot();
     void addComponent(int cType);
     void removeComponent(std::string component_code);
+    int getComponentsNumber();
     ElectronicComponent* *getComponents();
     ElectronicComponent* getComponent(std::string componentCode);
     std::string getClicked(int mouse_x, int mouse_y);
     ElectronicComponent* getSelectedComponent();
+
+    static int nameToCtype(std::string name);
 
     void saveToFile(std::string filepath);
     void importFromFile(std::string filepath);

@@ -9,7 +9,6 @@
 #include "UI/UI.h"
 #include "Data Structures/ColectionOfSnapshots.h"
 #include "Data Structures/Snapshot.h"
-#include "Data Structures/CompopnentsList.h"
 
 #include "Helper.h"
 #include "Enums.h"
@@ -30,7 +29,6 @@ class NewProjectMenu
 
         bool iscurrentSnapshotelected;
         ElectronicComponent selectedComponent;
-        CompopnentsList components;
 
 
         int window_code;

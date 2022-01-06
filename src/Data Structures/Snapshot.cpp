@@ -86,12 +86,24 @@ ElectronicComponent* *Snapshot::getComponents() {
     return current;
 }
 
+int Snapshot::getComponentsNumber() {
+    return sizeOfCurrent;
+}
+
 ElectronicComponent* Snapshot::getComponent(std::string componentCode) {
     for (int i = 0; i < sizeOfCurrent; i++) {
         if (current[i]->componentCode == componentCode) {
             return current[i];
         }
     }
+
+    return NULL;
+}
+
+ElectronicComponent* Snapshot::getSelectedComponent(){
+    for(int i = 0; i < 100; i++)
+        if(current[i]->isSelected())
+            return current[i];
 
     return NULL;
 }
@@ -111,11 +123,104 @@ void Snapshot::removeComponent(std::string component_code) {
     }
 }
 
+void Snapshot::saveToFile(std::string filepath) {
+    std::ofstream fout(filepath);
+    fout << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+    fout << "<ElectronicComponents>\n";
+    for (int i = 0; i < sizeOfCurrent; i++) {
+        fout << "  <ElectronicComponent>\n";
+        fout << "    <Name>" << current[i]->name << "</Name>\n";
+        fout << "    <Ctype>" << Snapshot::nameToCtype(current[i]->name) << "</Ctype>\n";
+        fout << "    <ComponentCode>" << current[i]->getComponentCode() << "</ComponentCode>\n";
+        fout << "    <PositionType>" << current[i]->positionType << "</PositionType>\n";
+        fout << "    <PositionUpLeft>\n";
+        fout << "      <x>" << current[i]->getPositionUpLeft().x << "</x>\n";
+        fout << "      <y>" << current[i]->getPositionUpLeft().y << "</y>\n";
+        fout << "    </PositionUpLeft>\n";
+        fout << "    <PositionCenter>\n";
+        fout << "      <x>" << current[i]->getPositionCenter().x << "</x>\n";
+        fout << "      <y>" << current[i]->getPositionCenter().y << "</y>\n";
+        fout << "    </PositionCenter>\n";
+        fout << "    <PositionDownRight>\n";
+        fout << "      <x>" << current[i]->getPositionDownRight().x << "</x>\n";
+        fout << "      <y>" << current[i]->getPositionDownRight().y << "</y>\n";
+        fout << "    </PositionDownRight>\n";
+        fout << "    <Width>" << current[i]->getWidth() << "</Width>\n";
+        fout << "    <Height>" << current[i]->getHeight() << "</Height>\n";
+        fout << "    <NumberOfConnectionPoints>" << current[i]->getNumberOfConnectionPoints() << "<NumberOfConnectionPoints>\n";
+        // todo connections
+        fout << "    <RotationState>" << current[i]->getRotationState() << "<RotationState>\n";
+        fout << "    <CursorPointInButton>" << current[i]->isCursorPointInButton() << "<CursorPointInButton>\n";
+        fout << "    <Selected>" << current[i]->isSelected() << "<Selected>\n";
+        fout << "  </ElectronicComponent>\n";
+    }
+    fout << "</ElectronicComponents>";
 
-ElectronicComponent* Snapshot::getSelectedComponent(){
-    for(int i = 0; i < 100; i++)
-        if(current[i]->isSelected())
-            return current[i];
+    fout.close();
+}
 
-    return NULL;
+int Snapshot::nameToCtype(std::string name) {
+    std::map<std::string, int> mapping = {
+        {"Ceramic Capacitor", _capacitorCeramic},
+        {"Electrolytic Capacitor", _capacitorElectrolyt},
+        {"Trimmer Capacitor", _capacitorTrimmer},
+        {"Variable Capacitor", _capacitorVariable},
+        {"Avalance Diode", _diodeAvalance},
+        {"Constant Current Diode", _diodeConstantCurrent},
+        {"Gunn Diode", _diodeGunn},
+        {"PN Junction Diode", _diodeJunction},
+        {"Laser Diode", _diodeLaser},
+        {"Light Emitting Diode", _diodeLightEmitting},
+        {"Photo Diode", _diodePhoto},
+        {"PIN Diode", _diodePin},
+        {"Schottky Diode", _diodeSchottky},
+        {"Shockley Diode", _diodeShockley},
+        {"Transient Voltage Suppression Diode", _diodeVoltage},
+        {"Tunnel Diode", _diodeTunnel},
+        {"Varactor Diode", _diodeVaractor},
+        {"Zener Diode", _diodeZener},
+        {"And Gate", _andGate},
+        {"Nand Gate", _nandGate},
+        {"Nor Gate", _norGate},
+        {"Not Gate", _notGate},
+        {"Or Gate", _orGate},
+        {"Xor Gate", _xorGate},
+        {"Ammeter", _ammeter},
+        {"Voltmeter", _voltmeter},
+        {"Mobile Contact Potentiometer", _potentiometer},
+        {"Resistor", _resistor},
+        {"Mobile Contact Resistor", _resistorMobile},
+        {"Mobile Contact and Stop Position Resistor", _resistorMobileStop},
+        {"Variable Resistance Resistor", _resistorVariableResistance},
+        {"Battery", _battery},
+        {"AC Voltage Source", _sourceAC},
+        {"DC Voltage Source", _sourceDC},
+        {"Closed Switch", _switchClosed},
+        {"DPST Switch", _switchDPST},
+        {"Open Switch", _switchOpen},
+        {"SPDT Switch", _switchSPDT},
+        {"Telegraph Switch", _switchTelegraph},
+        {"Thermal Magnetic Breaker Switch", _switchThermal},
+        {"Bipolar NPN Transistor", _transistorBipolarNPN},
+        {"Bipolar PNP Transistor", _transistorBipolarPNP},
+        {"Dual Gate MOSFET N-channel Transistor", _transistorMOSFETN},
+        {"Dual Gate MOSFET P-channel Transistor", _transistorMOSFETP},
+        {"FET N-channel Transistor", _transistorFETN},
+        {"FET P-channel Transistor", _transistorFETP},
+        {"MOSFET Inductive Channel N-channel Transistor", _transistorInductiveN},
+        {"MOSFET Inductive Channel P-channel Transistor", _transistorInductiveP},
+        {"MOSFET N-channel Transistor", _transistorMOSFETN},
+        {"MOSFET P-channel Transistor", _transistorMOSFETP},
+        {"Single Connection N-channel Transistor", _transistorSingleN},
+        {"Single Connection P-channel Transistor", _transistorSingleP},
+        {"Buzzer", _buzzer},
+        {"Ground", _ground},
+        {"Inductor", _inductor},
+        {"Lamp", _lamp},
+        {"Microphone", _microphone},
+        {"Motor", _motor},
+        {"Speaker", _speaker}
+    };
+
+    return mapping[name];
 }

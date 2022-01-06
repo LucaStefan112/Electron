@@ -26,21 +26,7 @@ void NewProjectMenu::WatchClick()
             std :: cout << "click " << std :: endl;
             if (save.isCursorPointInButton())
             {
-
-                //nameFileMenu.Show();
-                //int code = nameFileMenu.ListenEvents();
-                //setcurrentwindow(this->window_code);
-
-                //bgiout << code << " " << nameFileMenu.filename << std :: endl;
-                //outstreamxy(windowWidth / 5, windowHeight / 4);
-
-                //bool hasExtension = strchr(nameFileMenu.filename.c_str(), '.');
-
-                //if (code)
-                //{
-                //    completeSnapshots.saveToFile(hasExtension ? nameFileMenu.filename : (nameFileMenu.filename + ".txt"));
-                //}
-
+                currentSnapshot.saveToFile("text.xml");
             }
             else if (capacitors.isCursorPointInButton())
             {
