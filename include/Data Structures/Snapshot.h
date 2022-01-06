@@ -23,6 +23,7 @@ public:
     ElectronicComponent* getSelectedComponent();
 
     static int nameToCtype(std::string name);
+    static std::string removeSubString(std::string str, std::string subStr);
 
     void saveToFile(std::string filepath);
     void importFromFile(std::string filepath);

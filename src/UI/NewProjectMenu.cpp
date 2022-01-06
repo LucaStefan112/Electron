@@ -1,11 +1,12 @@
 #include "UI/NewProjectMenu.h"
+#include "Data Structures/Snapshot.h"
 
 #define BUTTON_HEIGHT 25
 #define COMPONENT_SIZE 100
 
 NewProjectMenu::NewProjectMenu()
 {
-    //ctor
+
 }
 
 void NewProjectMenu::WatchClick()
@@ -312,3 +313,4 @@ void NewProjectMenu::Show()
     dec.setTitle("-");
     dec.ShowCircleMode();
 }
+

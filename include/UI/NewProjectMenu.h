@@ -36,7 +36,6 @@ class NewProjectMenu
         //boundaries
         double rl,rt,rr,rb;
 
-
         void Show();
         void WatchClick();
 };

@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <fstream>
 #include <iostream>
+#include <sstream>
 
 #include "Electronic Components/ElectronicComponent.h"
 #include "Data Structures/Snapshot.h"
@@ -126,37 +127,140 @@ void Snapshot::removeComponent(std::string component_code) {
 void Snapshot::saveToFile(std::string filepath) {
     std::ofstream fout(filepath);
     fout << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
-    fout << "<ElectronicComponents>\n";
     for (int i = 0; i < sizeOfCurrent; i++) {
-        fout << "  <ElectronicComponent>\n";
-        fout << "    <Name>" << current[i]->name << "</Name>\n";
-        fout << "    <Ctype>" << Snapshot::nameToCtype(current[i]->name) << "</Ctype>\n";
-        fout << "    <ComponentCode>" << current[i]->getComponentCode() << "</ComponentCode>\n";
-        fout << "    <PositionType>" << current[i]->positionType << "</PositionType>\n";
-        fout << "    <PositionUpLeft>\n";
-        fout << "      <x>" << current[i]->getPositionUpLeft().x << "</x>\n";
-        fout << "      <y>" << current[i]->getPositionUpLeft().y << "</y>\n";
-        fout << "    </PositionUpLeft>\n";
-        fout << "    <PositionCenter>\n";
-        fout << "      <x>" << current[i]->getPositionCenter().x << "</x>\n";
-        fout << "      <y>" << current[i]->getPositionCenter().y << "</y>\n";
-        fout << "    </PositionCenter>\n";
-        fout << "    <PositionDownRight>\n";
-        fout << "      <x>" << current[i]->getPositionDownRight().x << "</x>\n";
-        fout << "      <y>" << current[i]->getPositionDownRight().y << "</y>\n";
-        fout << "    </PositionDownRight>\n";
-        fout << "    <Width>" << current[i]->getWidth() << "</Width>\n";
-        fout << "    <Height>" << current[i]->getHeight() << "</Height>\n";
-        fout << "    <NumberOfConnectionPoints>" << current[i]->getNumberOfConnectionPoints() << "<NumberOfConnectionPoints>\n";
+        fout << "<ElectronicComponent>\n";
+        fout << "  <Name>" << current[i]->name << "</Name>\n";
+        fout << "  <Ctype>" << Snapshot::nameToCtype(current[i]->name) << "</Ctype>\n";
+        fout << "  <ComponentCode>" << current[i]->getComponentCode() << "</ComponentCode>\n";
+        fout << "  <PositionType>" << current[i]->positionType << "</PositionType>\n";
+        fout << "  <PositionUpLeft>\n";
+        fout << "    <x>" << current[i]->getPositionUpLeft().x << "</x>\n";
+        fout << "    <y>" << current[i]->getPositionUpLeft().y << "</y>\n";
+        fout << "  </PositionUpLeft>\n";
+        fout << "  <PositionCenter>\n";
+        fout << "    <x>" << current[i]->getPositionCenter().x << "</x>\n";
+        fout << "    <y>" << current[i]->getPositionCenter().y << "</y>\n";
+        fout << "  </PositionCenter>\n";
+        fout << "  <PositionDownRight>\n";
+        fout << "    <x>" << current[i]->getPositionDownRight().x << "</x>\n";
+        fout << "    <y>" << current[i]->getPositionDownRight().y << "</y>\n";
+        fout << "  </PositionDownRight>\n";
+        fout << "  <Width>" << current[i]->getWidth() << "</Width>\n";
+        fout << "  <Height>" << current[i]->getHeight() << "</Height>\n";
+        fout << "  <NumberOfConnectionPoints>" << current[i]->getNumberOfConnectionPoints() << "</NumberOfConnectionPoints>\n";
         // todo connections
-        fout << "    <RotationState>" << current[i]->getRotationState() << "<RotationState>\n";
-        fout << "    <CursorPointInButton>" << current[i]->isCursorPointInButton() << "<CursorPointInButton>\n";
-        fout << "    <Selected>" << current[i]->isSelected() << "<Selected>\n";
-        fout << "  </ElectronicComponent>\n";
+        fout << "  <RotationState>" << current[i]->getRotationState() << "</RotationState>\n";
+        fout << "  <Flipped>" << current[i]->flipped << "</Flipped>\n";
+        fout << "  <CursorPointInButton>" << current[i]->isCursorPointInButton() << "</CursorPointInButton>\n";
+        fout << "  <Selected>" << current[i]->isSelected() << "</Selected>\n";
+        fout << " </ElectronicComponent>\n";
     }
-    fout << "</ElectronicComponents>";
 
     fout.close();
+}
+
+void Snapshot::importFromFile(std::string filepath) {
+    Helper helper;
+    std::ifstream fin(filepath);
+    std::string temp_str, temp_x, temp_y, junk;
+    int temp_int;
+    double temp_double, x, y;
+
+    getline(fin, junk); // <?xml version="1.0" encoding="UTF-8"?>
+    getline(fin, junk); // <ElectronicComponent>
+
+    while (!fin.eof()) {
+        std::cout << "help\n";
+        getline(fin, junk); // <Name></Name>
+
+        getline(fin, temp_str); // <Ctype></Ctype>
+        temp_str = Snapshot::removeSubString(Snapshot::removeSubString(temp_str, "<Ctype>"), "</Ctype>");
+        std::stringstream Ctype(temp_str);
+        Ctype >> temp_int;
+        addComponent(temp_int);
+
+        getline(fin, temp_str); // <ComponentCode></ComponentCode>
+        temp_str = Snapshot::removeSubString(Snapshot::removeSubString(temp_str, "<ComponentCode>"), "</ComponentCode>");
+        current[sizeOfCurrent - 1]->setComponentCode(temp_str);
+
+        getline(fin, temp_str); // <PositionType></PositionType>
+        temp_str = Snapshot::removeSubString(Snapshot::removeSubString(temp_str, "<PositionType>"), "</PositionType>");
+        std::stringstream PositionType(temp_str);
+        PositionType >> temp_int;
+        current[sizeOfCurrent - 1]->positionType = temp_int == 0 ? up_left : temp_int == 1 ? center : down_right;
+
+        getline(fin, junk); // <PositionUpLeft>
+        getline(fin, temp_x); // <x></x>
+        temp_x = Snapshot::removeSubString(Snapshot::removeSubString(temp_x, "<x>"), "</x>");
+        getline(fin, temp_y); // <y></y>
+        temp_y = Snapshot::removeSubString(Snapshot::removeSubString(temp_y, "<y>"), "</y>");
+        std::stringstream PositionUpLeftX(temp_x), PositionUpLeftY(temp_y);
+        PositionUpLeftX >> x; PositionUpLeftY >> y;
+        current[sizeOfCurrent - 1]->setPositionUpLeft(helper.makeVector_2D(x, y));
+        getline(fin, junk); // </PositionUpLeft>
+
+        getline(fin, junk); // <PositionCenter>
+        getline(fin, temp_x); // <x></x>
+        temp_x = Snapshot::removeSubString(Snapshot::removeSubString(temp_x, "<x>"), "</x>");
+        getline(fin, temp_y); // <y></y>
+        temp_y = Snapshot::removeSubString(Snapshot::removeSubString(temp_y, "<y>"), "</y>");
+        std::stringstream PositionCenterX(temp_x), PositionCenterY(temp_y);
+        PositionCenterX >> x; PositionCenterY >> y;
+        current[sizeOfCurrent - 1]->setPositionCenter(helper.makeVector_2D(x, y));
+        getline(fin, junk); // </PositionCenter>
+
+        getline(fin, junk); // <PositionDownRight>
+        getline(fin, temp_x); // <x></x>
+        temp_x = Snapshot::removeSubString(Snapshot::removeSubString(temp_x, "<x>"), "</x>");
+        getline(fin, temp_y); // <y></y>
+        temp_y = Snapshot::removeSubString(Snapshot::removeSubString(temp_y, "<y>"), "</y>");
+        std::stringstream PositionDownRightX(temp_x), PositionDownRightY(temp_y);
+        PositionDownRightX >> x; PositionDownRightY >> y;
+        current[sizeOfCurrent - 1]->setPositionDownRight(helper.makeVector_2D(x, y));
+        getline(fin, junk); // </PositionDownRight>
+
+        getline(fin, temp_str); // <Width></Width>
+        temp_str = Snapshot::removeSubString(Snapshot::removeSubString(temp_str, "<Width>"), "</Width>");
+        std::stringstream Width(temp_str);
+        Width >> temp_double;
+        current[sizeOfCurrent - 1]->setWidth(temp_double);
+
+        getline(fin, temp_str); // <Height></Height>
+        temp_str = Snapshot::removeSubString(Snapshot::removeSubString(temp_str, "<Height>"), "</Height>");
+        std::stringstream Height(temp_str);
+        Height >> temp_double;
+        current[sizeOfCurrent - 1]->setHeight(temp_double);
+
+        getline(fin, junk); // <NumberOfConnectionPoints></NumberOfConnectionPoints>
+
+        getline(fin, temp_str); // <RotationState></RotationState>
+        temp_str = Snapshot::removeSubString(Snapshot::removeSubString(temp_str, "<RotationState>"), "</RotationState>");
+        std::stringstream RotationState(temp_str);
+        RotationState >> temp_int;
+        current[sizeOfCurrent - 1]->rotateComponent(temp_int);
+
+        getline(fin, temp_str); // <Flipped></Flipped>
+        temp_str = Snapshot::removeSubString(Snapshot::removeSubString(temp_str, "<Flipped>"), "</Flipped>");
+        std::stringstream Flipped(temp_str);
+        Flipped >> temp_int;
+        current[sizeOfCurrent - 1]->flipped = temp_int;
+        if (temp_int == 1) current[sizeOfCurrent - 1]->flipComponent();
+
+        getline(fin, junk); // <CursorPointInButton></CursorPointInButton>
+
+
+        getline(fin, temp_str); // <Selected></Selected>
+        temp_str = Snapshot::removeSubString(Snapshot::removeSubString(temp_str, "<Selected>"), "</Selected>");
+        std::stringstream Selected(temp_str);
+        Selected >> temp_int;
+        // TODO when click on element is available
+        // current[sizeOfCurrent - 1]->setOutterBox(temp_int);
+
+        getline(fin, junk); // </ElectronicComponent>
+        getline(fin, junk); // </ElectronicComponent>
+
+        delay(200);
+    }
 }
 
 int Snapshot::nameToCtype(std::string name) {
@@ -223,4 +327,14 @@ int Snapshot::nameToCtype(std::string name) {
     };
 
     return mapping[name];
+}
+
+std::string Snapshot::removeSubString(std::string str, std::string subStr) {
+    std::string::size_type i = str.find(subStr);
+
+    if (i != std::string::npos) {
+       str.erase(i, subStr.length());
+    }
+
+    return str;
 }
