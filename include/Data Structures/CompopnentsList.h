@@ -13,7 +13,7 @@ class CompopnentsList{
         CompopnentsList();
 
         int getNumberOfComponents();
-        void addComponent(std::string typeOfComponent);
+        void addComponent(int componentCode);
         void removeComponent(std::string thisComponentCode);
         ElectronicComponent* getSelectedComponent();
 };

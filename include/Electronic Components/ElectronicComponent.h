@@ -69,6 +69,7 @@ public:
     int getNumberOfConnectionPoints();
     int getCodeOfConnectedComponentAtPoint(int thisPoint);
     Helper::ConnectionPoint* getConnectionPoints();
+    int getRotationState();
 
     bool isCursorPointInButton();
     bool isSelected();
