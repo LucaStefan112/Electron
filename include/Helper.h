@@ -35,6 +35,8 @@ public:
     void rotationalFillPoly(int nr, int* arr, Vector_2D thisReference, int degrees);
     void rotationalArc(double x, double y, Vector_2D thisReference, double D1, double D2, double R, int degrees, bool thisFlipped);
     void rotationalOuttextxy(double x, double y, Vector_2D thisReference, char* text, int degrees);
+
+    void drawWire(Vector_2D v1, Vector_2D v2, colors COLOR);
 };
 
 

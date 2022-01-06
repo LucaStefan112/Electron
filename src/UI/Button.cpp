@@ -178,3 +178,12 @@ void Button::Show()
     settextstyle(3, 0, 1);
     outtextxy(position.center.x - Button_helper.textSpace(title) / 2, position.up_left.y + 4, strdup(title.c_str()));
 }
+
+void Button::ShowCircleMode()
+{
+    double dimension = (this->width > this->height) ? this->width : this->height;
+    setlinestyle(0, 0, 3);
+    circle(position.center.x, position.center.y, dimension);
+    settextstyle(3, 0, 1);
+    outtextxy(position.center.x, position.center.y, strdup(title.c_str()));
+}

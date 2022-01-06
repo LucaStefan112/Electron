@@ -1,7 +1,6 @@
 #ifndef NAMEFILE_H
 #define NAMEFILE_H
 
-#include "UI/Button.h"
 #include "Helper.h"
 
 class NameFile
@@ -9,7 +8,6 @@ class NameFile
     public:
         NameFile();
 
-        Button save, cancel;
         std::string filename;
         int window_code;
 

@@ -187,7 +187,7 @@ void ElectronicComponent::setConnectionPoints(bool thisState){
 
 //Flipping the component:
 void ElectronicComponent::flipComponent(){
-    Erase();
+    this->Erase();
 
     flipped = !flipped;
     rotateState *= -1;
@@ -362,6 +362,16 @@ bool ElectronicComponent::isCursorPointInButton()
         return false;
     }
     return true;
+}
+
+bool ElectronicComponent::isSelected()
+{
+    return showOutterBox;
+}
+
+int ElectronicComponent::getRotationState()
+{
+    return rotateState;
 }
 
 //Passing trough a string all the data about the component:
