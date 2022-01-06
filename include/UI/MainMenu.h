@@ -7,7 +7,7 @@
 #include "Button.h"
 #include "NewProjectMenu.h"
 #include "Info/InfoMenu.h"
-//#include "Data Structures/ColectionOfSnapshots.h"
+#include "Data Structures/Snapshot.h"
 
 class MainMenu
 {
@@ -16,7 +16,7 @@ class MainMenu
     public:
         MainMenu();
 
-        //ColectionOfSnapshots importedSnapshot;
+        Snapshot importedSnapshot;
 
         int window_code;
         void Show();
