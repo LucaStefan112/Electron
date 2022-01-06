@@ -85,8 +85,6 @@ int DiodesInfo::WatchClick()
 {
     int ok = 1;
 
-    Helper helper;
-
     int cType = _none;
     while (ok)
     {
@@ -179,8 +177,6 @@ int DiodesInfo::WatchExit()
 {
 
     int ok = 1;
-
-    Helper helper;
 
     while (ok)
     {

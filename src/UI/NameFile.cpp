@@ -6,7 +6,6 @@ NameFile::NameFile()
 }
 
 void NameFile::Show() {
-    Helper helper;
     DWORD screenWidth = GetSystemMetrics(SM_CXSCREEN);
     DWORD screenHeight = GetSystemMetrics(SM_CYSCREEN);
 
@@ -15,9 +14,6 @@ void NameFile::Show() {
 
     int windowWidth = getwindowwidth();
     int windowHeight = getwindowheight();
-
-    int textw = windowWidth / 5;
-    int texth = windowHeight / 4;
 
     bgiout << "Please insert the complete name of the file that will be saved." <<std :: endl;
     bgiout << "(Example: 'circuit1.txt')" <<std :: endl;

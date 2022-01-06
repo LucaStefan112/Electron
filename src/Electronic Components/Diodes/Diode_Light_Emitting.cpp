@@ -79,9 +79,9 @@ void Diode_Light_Emitting::Show(){
 }
 
 void Diode_Light_Emitting::updateConnectionPointsPosition(){
-    double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
-    double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
-    double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
+    double up_left_x = getPositionUpLeft().x;
+    double center_y = getPositionCenter().y;
+    double down_right_x = getPositionDownRight().x;
 
     if(flipped){
         up_left_x = getPositionDownRight().x;
@@ -90,7 +90,6 @@ void Diode_Light_Emitting::updateConnectionPointsPosition(){
 
     double thisHeight = (down_right_x - up_left_x) / width_height_ratio;
 
-    double up_left_yz = up_left_y + height / 4;
     double center_yz = center_y + height / 8;
 
     connectionPoints[0].position = Diode_Light_Emitting_Helper.rotatePointToReference(

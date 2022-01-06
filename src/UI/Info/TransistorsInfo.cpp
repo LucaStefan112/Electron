@@ -77,8 +77,6 @@ int TransistorsInfo::WatchClick()
 {
     int ok = 1;
 
-    Helper helper;
-
     int cType = _none;
     while (ok)
     {
@@ -161,8 +159,6 @@ int TransistorsInfo::WatchExit()
 {
 
     int ok = 1;
-
-    Helper helper;
 
     while (ok)
     {
