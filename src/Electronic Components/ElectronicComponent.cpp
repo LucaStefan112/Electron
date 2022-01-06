@@ -402,7 +402,7 @@ std::string ElectronicComponent::toString()
                 std::to_string(i) + std::string(": ") +
                 std::to_string(connectionPoints[i].connectedComponentCode) +
                 std::string(" | Coordinates: ") +
-                std::string("x: ") + std::to_string(connectionPoints[i].position.x) + std::string(" \ ") +
+                std::string("x: ") + std::to_string(connectionPoints[i].position.x) + std::string(" | ") +
                 std::string("y: ") + std::to_string(connectionPoints[i].position.y) + std::string(";\n"));
 
     text += std::string("\n====================================================\n\n");

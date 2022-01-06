@@ -8,7 +8,7 @@ Switch_Thermal_Magnetic_Breaker::Switch_Thermal_Magnetic_Breaker(): ElectronicCo
 void Switch_Thermal_Magnetic_Breaker::Show(){
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
-    double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
+    double down_right_x = getPositionDownRight().x;
 
     if(flipped){
         up_left_x = getPositionDownRight().x;
@@ -64,9 +64,9 @@ void Switch_Thermal_Magnetic_Breaker::Show(){
 
 void Switch_Thermal_Magnetic_Breaker::updateConnectionPointsPosition(){
 
-    double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
-    double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
-    double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
+    double up_left_x = getPositionUpLeft().x;
+    double center_y = getPositionCenter().y;
+    double down_right_x = getPositionDownRight().x;
 
     if(flipped){
         up_left_x = getPositionDownRight().x;
