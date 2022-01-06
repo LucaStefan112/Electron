@@ -9,24 +9,35 @@
 #include "UI/UI.h"
 #include "Data Structures/ColectionOfSnapshots.h"
 #include "Data Structures/Snapshot.h"
+#include "Data Structures/CompopnentsList.h"
 
 #include "Helper.h"
 #include "Enums.h"
 
 class NewProjectMenu
 {
-    protected:
-        Button save, capacitors, diodes, logicGates, measurements, resistors, sources, switches, transistors, other, exit;
     public:
         NewProjectMenu();
+
+        Button save, capacitors, diodes, logicGates, measurements, resistors, sources, switches, transistors, other, exit;
+        Button rotate_l, rotate_r, flip_h, flip_v;
+        Button inc, dec;
 
         ColectionOfSnapshots completeSnapshots;
         Snapshot currentSnapshot;
 
-        NameFile nameFileMenu;
+        //NameFile nameFileMenu;
+
+        bool isComponentSelected;
+        ElectronicComponent selectedComponent;
+        CompopnentsList components;
+
 
         int window_code;
         std::string filepath;
+        //boundaries
+        double rl,rt,rr,rb;
+
 
         void Show();
         void WatchClick();
