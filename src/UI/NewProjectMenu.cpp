@@ -21,7 +21,7 @@ void NewProjectMenu::WatchClick()
 
     while (ok)
     {
-        if (GetAsyncKeyState(VK_LBUTTON))
+        if (GetAsyncKeyState(VK_LBUTTON) && !GetAsyncKeyState(VK_LCONTROL))
         {
             std :: cout << "click " << std :: endl;
             if (save.isCursorPointInButton())
@@ -133,7 +133,6 @@ void NewProjectMenu::WatchClick()
                 POINT cursorPoint;
                 GetCursorPos(&cursorPoint);
                 setcurrentwindow(this->window_code);
-                Helper::Vector_2D pos = helper.makeVector_2D(cursorPoint.x, cursorPoint.y);
 
                 bool isNotBounded = (cursorPoint.x - COMPONENT_SIZE/2) < this->rl ||
                                     (cursorPoint.y - COMPONENT_SIZE/2) < this->rt ||
@@ -197,6 +196,8 @@ void NewProjectMenu::WatchClick()
             }
 
 
+        } else if (GetAsyncKeyState(VK_LBUTTON) && GetAsyncKeyState(VK_LCONTROL)) {
+            std :: cout << "move component" << std :: endl;
         }
         delay(500);
     }
