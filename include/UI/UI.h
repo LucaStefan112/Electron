@@ -3,6 +3,7 @@
 
 //Header for including all UI components headers:
 #include "Button.h"
+#include "NameFile.h"
 
 //menus
 #include "MainMenu.h"
@@ -20,6 +21,5 @@
 #include "Info/TransistorsInfo.h"
 #include "Info/OtherInfo.h"
 
-#include "NameFile.h"
 
 #endif // UI_H

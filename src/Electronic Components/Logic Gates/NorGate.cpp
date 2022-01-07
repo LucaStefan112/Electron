@@ -6,9 +6,9 @@ NorGate::NorGate(): ElectronicComponent(200, 50, "Nor Gate", 3){}
 
 //Drawing the component:
 void NorGate::Show(){
-    double up_left_x = getPositionUpLeft().x;
+    double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
-    double down_right_x = getPositionDownRight().x;
+    double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
     if(flipped){
         up_left_x = getPositionDownRight().x;
@@ -62,9 +62,9 @@ void NorGate::Show(){
 
 void NorGate::updateConnectionPointsPosition(){
 
-    double up_left_x = getPositionUpLeft().x;
-    double center_y = getPositionCenter().y;
-    double down_right_x = getPositionDownRight().x;
+    double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
+    double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
+    double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
     if(flipped){
         up_left_x = getPositionDownRight().x;

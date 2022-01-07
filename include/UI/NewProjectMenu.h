@@ -9,7 +9,6 @@
 #include "UI/UI.h"
 #include "Data Structures/ColectionOfSnapshots.h"
 #include "Data Structures/Snapshot.h"
-#include "Data Structures/CompopnentsList.h"
 
 #include "Helper.h"
 #include "Enums.h"
@@ -26,18 +25,16 @@ class NewProjectMenu
         ColectionOfSnapshots completeSnapshots;
         Snapshot currentSnapshot;
 
-        //NameFile nameFileMenu;
+        NameFile nameFileMenu;
 
-        bool isComponentSelected;
+        bool iscurrentSnapshotelected;
         ElectronicComponent selectedComponent;
-        CompopnentsList components;
 
 
         int window_code;
         std::string filepath;
         //boundaries
         double rl,rt,rr,rb;
-
 
         void Show();
         void WatchClick();

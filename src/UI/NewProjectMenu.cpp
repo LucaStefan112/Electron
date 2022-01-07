@@ -1,11 +1,13 @@
 #include "UI/NewProjectMenu.h"
+#include "Data Structures/Snapshot.h"
 
+                #include <iostream>
 #define BUTTON_HEIGHT 25
 #define COMPONENT_SIZE 100
 
 NewProjectMenu::NewProjectMenu()
 {
-    //ctor
+
 }
 
 void NewProjectMenu::WatchClick()
@@ -17,7 +19,7 @@ void NewProjectMenu::WatchClick()
     int windowHeight = getwindowheight();
 
     int cType = _none;
-    isComponentSelected = false;
+    iscurrentSnapshotelected = false;
 
     while (ok)
     {
@@ -26,21 +28,19 @@ void NewProjectMenu::WatchClick()
             std :: cout << "click " << std :: endl;
             if (save.isCursorPointInButton())
             {
+                //currentSnapshot.saveToFile("text.xml");
 
-                //nameFileMenu.Show();
-                //int code = nameFileMenu.ListenEvents();
-                //setcurrentwindow(this->window_code);
+                nameFileMenu.Show();
+                int code = nameFileMenu.ListenEvents();
+                setcurrentwindow(this->window_code);
 
-                //bgiout << code << " " << nameFileMenu.filename << std :: endl;
-                //outstreamxy(windowWidth / 5, windowHeight / 4);
+                bgiout << code << " " << nameFileMenu.filename << std :: endl;
+                outstreamxy(windowWidth / 5, windowHeight / 4);
 
-                //bool hasExtension = strchr(nameFileMenu.filename.c_str(), '.');
-
-                //if (code)
-                //{
-                //    completeSnapshots.saveToFile(hasExtension ? nameFileMenu.filename : (nameFileMenu.filename + ".txt"));
-                //}
-
+                if (code)
+                {
+                    currentSnapshot.saveToFile(nameFileMenu.filename + ".xml");
+                }
             }
             else if (capacitors.isCursorPointInButton())
             {
@@ -125,6 +125,7 @@ void NewProjectMenu::WatchClick()
             }
             else if (exit.isCursorPointInButton())
             {
+                currentSnapshot.reset();
                 ok = 0;
             }
             else if (cType != _none)
@@ -140,48 +141,48 @@ void NewProjectMenu::WatchClick()
                                     (cursorPoint.y + COMPONENT_SIZE/2) > this->rb;
                 if (!isNotBounded)
                 {
-                    components.addComponent(cType);
-                    // std::cout << components.getNumberOfComponents() << " " << components.getSelectedComponent()->toString() << std :: endl;
+                    currentSnapshot.addComponent(cType);
+                    // std::cout << currentSnapshot.getNumberOfcurrentSnapshot() << " " << currentSnapshot.getSelectedComponent()->toString() << std :: endl;
 
-                    if (components.getSelectedComponent())
+                    if (currentSnapshot.getSelectedComponent())
                     {
-                        components.getSelectedComponent()->setWidth(COMPONENT_SIZE);
-                        components.getSelectedComponent()->setPositionCenter(helper.makeVector_2D(cursorPoint.x, cursorPoint.y));
+                        currentSnapshot.getSelectedComponent()->setWidth(COMPONENT_SIZE);
+                        currentSnapshot.getSelectedComponent()->setPositionCenter(helper.makeVector_2D(cursorPoint.x, cursorPoint.y));
                     }
                 }
 
                 cType = _none;
             }
-            else if (flip_h.isCursorPointInButton() && components.getSelectedComponent())
+            else if (flip_h.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
                 //selectedComponent.flipComponent();
-                components.getSelectedComponent()->flipComponent();
+                currentSnapshot.getSelectedComponent()->flipComponent();
             }
-            else if (flip_v.isCursorPointInButton() && components.getSelectedComponent())
+            else if (flip_v.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
                 /* selectedComponent.rotateComponent(180);
                  delay(300);
                  selectedComponent.flipComponent();
                  */
-                components.getSelectedComponent()->rotateComponent(components.getSelectedComponent()->getRotationState() + 180);
+                currentSnapshot.getSelectedComponent()->rotateComponent(currentSnapshot.getSelectedComponent()->getRotationState() + 180);
                 delay(300);
-                components.getSelectedComponent()->flipComponent();
+                currentSnapshot.getSelectedComponent()->flipComponent();
             }
-            else if (rotate_l.isCursorPointInButton() && components.getSelectedComponent())
+            else if (rotate_l.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
-                components.getSelectedComponent()->rotateComponent(components.getSelectedComponent()->getRotationState() - 15);
+                currentSnapshot.getSelectedComponent()->rotateComponent(currentSnapshot.getSelectedComponent()->getRotationState() - 15);
             }
-            else if (rotate_r.isCursorPointInButton() && components.getSelectedComponent())
+            else if (rotate_r.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
-                components.getSelectedComponent()->rotateComponent(components.getSelectedComponent()->getRotationState() + 15);
+                currentSnapshot.getSelectedComponent()->rotateComponent(currentSnapshot.getSelectedComponent()->getRotationState() + 15);
             }
-            else if (inc.isCursorPointInButton() && components.getSelectedComponent())
+            else if (inc.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
-                components.getSelectedComponent()->setWidth(components.getSelectedComponent()->getWidth() + 15);
+                currentSnapshot.getSelectedComponent()->setWidth(currentSnapshot.getSelectedComponent()->getWidth() + 15);
             }
-            else if (dec.isCursorPointInButton() && components.getSelectedComponent())
+            else if (dec.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
-                components.getSelectedComponent()->setWidth(components.getSelectedComponent()->getWidth() - 15);
+                currentSnapshot.getSelectedComponent()->setWidth(currentSnapshot.getSelectedComponent()->getWidth() - 15);
             }
             else if (cType == _none)
             {
@@ -199,8 +200,19 @@ void NewProjectMenu::WatchClick()
         } else if (GetAsyncKeyState(VK_LBUTTON) && GetAsyncKeyState(VK_LCONTROL)) {
             std :: cout << "move component" << std :: endl;
         }
+        if (GetAsyncKeyState(VK_RBUTTON)) {std::cout << "trydelete\n";
+            auto components = currentSnapshot.getComponents();
+            for (int i = 0; i < currentSnapshot.getComponentsNumber(); i++) {
+                if (mousex() > components[i]->getPositionUpLeft().x && mousex() < components[i]->getPositionDownRight().x &&
+                    mousey() > components[i]->getPositionUpLeft().y && mousey() < components[i]->getPositionDownRight().y) {
+                        std::cout << "delete\n";
+                        currentSnapshot.removeComponent(components[i]->getComponentCode());
+                    }
+            }
+        }
         delay(500);
     }
+
     closegraph(this->window_code);
 }
 
@@ -327,3 +339,4 @@ void NewProjectMenu::Show()
     dec.setTitle("-");
     dec.ShowCircleMode();
 }
+

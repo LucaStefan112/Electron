@@ -158,9 +158,8 @@ void ElectronicComponent::setHeight(double thisHeight)
 }
 
 //Setter of the component code:
-void ElectronicComponent::setComponentCode(int thisComponentCode){
-    if(thisComponentCode >= 0)
-        componentCode = thisComponentCode;
+void ElectronicComponent::setComponentCode(std::string thisComponentCode){
+    componentCode = thisComponentCode;
 }
 
 //Setter of the code of the connected component at a given index:
@@ -278,23 +277,50 @@ void ElectronicComponent::showElements(bool modeErase){
 
         setcolor(RED);
 
-        if(modeErase)    setcolor(BLACK);
+        if(modeErase) {
+            setcolor(BLACK);
 
-        ElectronicComponent_helper.rotationalLine(
-        up_left_x, up_left_y, down_right_x, up_left_y, getPositionCenter(),
-        rotateState);
+            for (int i = 0; i < 4; i++) {
+                ElectronicComponent_helper.rotationalLine(
+                up_left_x - i, up_left_y - i, down_right_x + i, up_left_y - i, getPositionCenter(),
+                rotateState);
+            }
 
-        ElectronicComponent_helper.rotationalLine(
-        down_right_x, up_left_y, down_right_x, down_right_y, getPositionCenter(),
-        rotateState);
+            for (int i = 0; i < 4; i++) {
+                ElectronicComponent_helper.rotationalLine(
+                down_right_x + i, up_left_y - i, down_right_x + i, down_right_y + i, getPositionCenter(),
+                rotateState);
+            }
 
-        ElectronicComponent_helper.rotationalLine(
-        down_right_x, down_right_y, up_left_x, down_right_y, getPositionCenter(),
-        rotateState);
+            for (int i = 0; i < 4; i++) {
+                ElectronicComponent_helper.rotationalLine(
+                down_right_x + i, down_right_y + i, up_left_x - i, down_right_y + i, getPositionCenter(),
+                rotateState);
+            }
 
-        ElectronicComponent_helper.rotationalLine(
-        up_left_x, down_right_y, up_left_x, up_left_y, getPositionCenter(),
-        rotateState);
+            for (int i = 0; i < 4; i++) {
+                ElectronicComponent_helper.rotationalLine(
+                up_left_x - i, down_right_y + i, up_left_x - i, up_left_y - i, getPositionCenter(),
+                rotateState);
+            }
+        }
+        else {
+            ElectronicComponent_helper.rotationalLine(
+            up_left_x, up_left_y, down_right_x, up_left_y, getPositionCenter(),
+            rotateState);
+
+            ElectronicComponent_helper.rotationalLine(
+            down_right_x, up_left_y, down_right_x, down_right_y, getPositionCenter(),
+            rotateState);
+
+            ElectronicComponent_helper.rotationalLine(
+            down_right_x, down_right_y, up_left_x, down_right_y, getPositionCenter(),
+            rotateState);
+
+            ElectronicComponent_helper.rotationalLine(
+            up_left_x, down_right_y, up_left_x, up_left_y, getPositionCenter(),
+            rotateState);
+        }
 
         setcolor(WHITE);
     }
@@ -402,7 +428,7 @@ std::string ElectronicComponent::toString()
                 std::to_string(i) + std::string(": ") +
                 std::to_string(connectionPoints[i].connectedComponentCode) +
                 std::string(" | Coordinates: ") +
-                std::string("x: ") + std::to_string(connectionPoints[i].position.x) + std::string(" | ") +
+                std::string("x: ") + std::to_string(connectionPoints[i].position.x) + std::string(" \ ") +
                 std::string("y: ") + std::to_string(connectionPoints[i].position.y) + std::string(";\n"));
 
     text += std::string("\n====================================================\n\n");

@@ -1,5 +1,6 @@
 #include "UI/MainMenu.h"
 #include "Helper.h"
+#include "Data Structures/Snapshot.h"
 
 #define BUTTON_HEIGHT 30
 
@@ -26,7 +27,11 @@ void MainMenu::WatchClick()
                 // open project functionality
                 std::cout << "open project ..." << std::endl;
 
-                //importedSnapshot.importFromFile("file.txt");
+                NewProjectMenu newProjectMenu;
+                newProjectMenu.Show();
+                newProjectMenu.filepath = "test.xml";
+                newProjectMenu.currentSnapshot.importFromFile(newProjectMenu.filepath);
+                newProjectMenu.WatchClick();
             }
             else if (info.isCursorPointInButton())
             {

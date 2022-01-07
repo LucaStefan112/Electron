@@ -79,8 +79,8 @@ void Potentiometer_Mobile_Contact::Show(){
 void Potentiometer_Mobile_Contact::updateConnectionPointsPosition(){
 
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
-    double center_y = getPositionCenter().y;
-    double down_right_x = getPositionDownRight().x;
+    double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
+    double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
     if(flipped){
         up_left_x = getPositionDownRight().x;

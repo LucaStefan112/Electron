@@ -88,9 +88,9 @@ void Diode_Laser::Show(){
 }
 
 void Diode_Laser::updateConnectionPointsPosition(){
-    double up_left_x = getPositionUpLeft().x;
-    double center_y = getPositionCenter().y;
-    double down_right_x = getPositionDownRight().x;
+    double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
+    double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
+    double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
     if(flipped){
         up_left_x = getPositionDownRight().x;
@@ -99,6 +99,7 @@ void Diode_Laser::updateConnectionPointsPosition(){
 
     double thisHeight = (down_right_x - up_left_x) / width_height_ratio;
 
+    double up_left_yz = up_left_y + height / 4;
     double center_yz = center_y + height / 8;
 
     connectionPoints[0].position = Diode_Laser_Helper.rotatePointToReference(

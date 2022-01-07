@@ -106,7 +106,7 @@ void Transistor_MOSFET_Nchannel::Show(){
 
 void Transistor_MOSFET_Nchannel::updateConnectionPointsPosition(){
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
-    double center_y = getPositionCenter().y;
+    double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
     if(flipped){
