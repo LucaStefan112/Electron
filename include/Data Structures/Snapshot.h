@@ -16,6 +16,8 @@ public:
     Snapshot();
     void addComponent(int cType);
     void removeComponent(std::string component_code);
+    void reset();
+
     int getComponentsNumber();
     ElectronicComponent* *getComponents();
     ElectronicComponent* getComponent(std::string componentCode);

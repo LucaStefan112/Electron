@@ -27,11 +27,10 @@ void MainMenu::WatchClick()
                 // open project functionality
                 std::cout << "open project ..." << std::endl;
 
-
                 NewProjectMenu newProjectMenu;
                 newProjectMenu.Show();
-                Snapshot snapshot;
-                snapshot.importFromFile("text.xml");
+                newProjectMenu.filepath = "test.xml";
+                newProjectMenu.currentSnapshot.importFromFile(newProjectMenu.filepath);
                 newProjectMenu.WatchClick();
             }
             else if (info.isCursorPointInButton())

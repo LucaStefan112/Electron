@@ -1,6 +1,7 @@
 #include "UI/NewProjectMenu.h"
 #include "Data Structures/Snapshot.h"
 
+                #include <iostream>
 #define BUTTON_HEIGHT 25
 #define COMPONENT_SIZE 100
 
@@ -27,7 +28,19 @@ void NewProjectMenu::WatchClick()
             std :: cout << "click " << std :: endl;
             if (save.isCursorPointInButton())
             {
-                currentSnapshot.saveToFile("text.xml");
+                //currentSnapshot.saveToFile("text.xml");
+
+                nameFileMenu.Show();
+                int code = nameFileMenu.ListenEvents();
+                setcurrentwindow(this->window_code);
+
+                bgiout << code << " " << nameFileMenu.filename << std :: endl;
+                outstreamxy(windowWidth / 5, windowHeight / 4);
+
+                if (code)
+                {
+                    currentSnapshot.saveToFile(nameFileMenu.filename + ".xml");
+                }
             }
             else if (capacitors.isCursorPointInButton())
             {
@@ -112,6 +125,7 @@ void NewProjectMenu::WatchClick()
             }
             else if (exit.isCursorPointInButton())
             {
+                currentSnapshot.reset();
                 ok = 0;
             }
             else if (cType != _none)
@@ -185,8 +199,19 @@ void NewProjectMenu::WatchClick()
 
 
         }
+        if (GetAsyncKeyState(VK_RBUTTON)) {std::cout << "trydelete\n";
+            auto components = currentSnapshot.getComponents();
+            for (int i = 0; i < currentSnapshot.getComponentsNumber(); i++) {
+                if (mousex() > components[i]->getPositionUpLeft().x && mousex() < components[i]->getPositionDownRight().x &&
+                    mousey() > components[i]->getPositionUpLeft().y && mousey() < components[i]->getPositionDownRight().y) {
+                        std::cout << "delete\n";
+                        currentSnapshot.removeComponent(components[i]->getComponentCode());
+                    }
+            }
+        }
         delay(500);
     }
+
     closegraph(this->window_code);
 }
 

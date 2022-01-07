@@ -13,7 +13,7 @@ ElectronicComponent::ElectronicComponent(double thisWidth, double thisHeight, st
     width_height_ratio = thisWidth / thisHeight;
     name = thisName;
     numberOfConnectionPoints = thisNumberOfConnectionPoints;
-    setPositionUpLeft(ElectronicComponent_helper.makeVector_2D(0, 0));
+    setPositionUpLeft(ElectronicComponent_helper.makeVector_2D(-1000, -1000));
 
     if(thisWidth <= 0 || thisHeight <= 0)
     {
@@ -277,23 +277,50 @@ void ElectronicComponent::showElements(bool modeErase){
 
         setcolor(RED);
 
-        if(modeErase)    setcolor(BLACK);
+        if(modeErase) {
+            setcolor(BLACK);
 
-        ElectronicComponent_helper.rotationalLine(
-        up_left_x, up_left_y, down_right_x, up_left_y, getPositionCenter(),
-        rotateState);
+            for (int i = 0; i < 4; i++) {
+                ElectronicComponent_helper.rotationalLine(
+                up_left_x - i, up_left_y - i, down_right_x + i, up_left_y - i, getPositionCenter(),
+                rotateState);
+            }
 
-        ElectronicComponent_helper.rotationalLine(
-        down_right_x, up_left_y, down_right_x, down_right_y, getPositionCenter(),
-        rotateState);
+            for (int i = 0; i < 4; i++) {
+                ElectronicComponent_helper.rotationalLine(
+                down_right_x + i, up_left_y - i, down_right_x + i, down_right_y + i, getPositionCenter(),
+                rotateState);
+            }
 
-        ElectronicComponent_helper.rotationalLine(
-        down_right_x, down_right_y, up_left_x, down_right_y, getPositionCenter(),
-        rotateState);
+            for (int i = 0; i < 4; i++) {
+                ElectronicComponent_helper.rotationalLine(
+                down_right_x + i, down_right_y + i, up_left_x - i, down_right_y + i, getPositionCenter(),
+                rotateState);
+            }
 
-        ElectronicComponent_helper.rotationalLine(
-        up_left_x, down_right_y, up_left_x, up_left_y, getPositionCenter(),
-        rotateState);
+            for (int i = 0; i < 4; i++) {
+                ElectronicComponent_helper.rotationalLine(
+                up_left_x - i, down_right_y + i, up_left_x - i, up_left_y - i, getPositionCenter(),
+                rotateState);
+            }
+        }
+        else {
+            ElectronicComponent_helper.rotationalLine(
+            up_left_x, up_left_y, down_right_x, up_left_y, getPositionCenter(),
+            rotateState);
+
+            ElectronicComponent_helper.rotationalLine(
+            down_right_x, up_left_y, down_right_x, down_right_y, getPositionCenter(),
+            rotateState);
+
+            ElectronicComponent_helper.rotationalLine(
+            down_right_x, down_right_y, up_left_x, down_right_y, getPositionCenter(),
+            rotateState);
+
+            ElectronicComponent_helper.rotationalLine(
+            up_left_x, down_right_y, up_left_x, up_left_y, getPositionCenter(),
+            rotateState);
+        }
 
         setcolor(WHITE);
     }

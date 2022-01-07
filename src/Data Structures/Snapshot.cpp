@@ -112,16 +112,21 @@ ElectronicComponent* Snapshot::getSelectedComponent(){
 void Snapshot::removeComponent(std::string component_code) {
     for (int i = 0; i < sizeOfCurrent; i++) {
         if (current[i]->componentCode == component_code) {
-            delete current[i];
-            current[i] = NULL;
+            current[i]->Erase();
+            for (int j = i; j < sizeOfCurrent - 1; j++)
+                current[j] = current[j + 1];
             sizeOfCurrent--;
             break;
         }
     }
+}
 
+void Snapshot::reset() {
     for (int i = 0; i < sizeOfCurrent; i++) {
-        std::cout << current[i]->componentCode;
+        current[i] = NULL;
     }
+
+    sizeOfCurrent = 0;
 }
 
 void Snapshot::saveToFile(std::string filepath) {
@@ -178,6 +183,7 @@ void Snapshot::importFromFile(std::string filepath) {
         std::stringstream Ctype(temp_str);
         Ctype >> temp_int;
         addComponent(temp_int);
+        current[sizeOfCurrent - 1]->setOutterBox(temp_int);
 
         getline(fin, temp_str); // <ComponentCode></ComponentCode>
         temp_str = Snapshot::removeSubString(Snapshot::removeSubString(temp_str, "<ComponentCode>"), "</ComponentCode>");
@@ -247,7 +253,6 @@ void Snapshot::importFromFile(std::string filepath) {
         if (temp_int == 1) current[sizeOfCurrent - 1]->flipComponent();
 
         getline(fin, junk); // <CursorPointInButton></CursorPointInButton>
-
 
         getline(fin, temp_str); // <Selected></Selected>
         temp_str = Snapshot::removeSubString(Snapshot::removeSubString(temp_str, "<Selected>"), "</Selected>");
