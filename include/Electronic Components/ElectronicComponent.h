@@ -62,7 +62,7 @@ public:
     void setWidth(double thisWidth);
     void setHeight(double thisHeight);
     void setComponentCode(std::string thisComponentCode);
-    void setConnectedComponentCodeAtPoint(int thisPoint, int thisComponentCode);
+    void setConnectedComponentCodeAtPoint(int thisPoint, std::string thisComponentCode);
     void flipComponent();
     void rotateComponent(int thisDegree);
     void setOutterBox(bool thisState);
@@ -77,7 +77,7 @@ public:
     double getHeight();
     std::string getComponentCode();
     int getNumberOfConnectionPoints();
-    int getCodeOfConnectedComponentAtPoint(int thisPoint);
+    std::string getCodeOfConnectedComponentAtPoint(int thisPoint);
     Helper::ConnectionPoint* getConnectionPoints();
     int getRotationState();
 

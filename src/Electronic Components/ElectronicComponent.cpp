@@ -163,9 +163,9 @@ void ElectronicComponent::setComponentCode(std::string thisComponentCode){
 }
 
 //Setter of the code of the connected component at a given index:
-void ElectronicComponent::setConnectedComponentCodeAtPoint(int thisPoint, int thisComponentCode){
+void ElectronicComponent::setConnectedComponentCodeAtPoint(int thisPoint, std::string thisComponentCode){
 
-    if(0 <= thisPoint && thisPoint < numberOfConnectionPoints && thisComponentCode >= 0)
+    if(0 <= thisPoint && thisPoint < numberOfConnectionPoints)
         connectionPoints[thisPoint].connectedComponentCode = thisComponentCode;
 }
 
@@ -248,7 +248,7 @@ int ElectronicComponent::getNumberOfConnectionPoints(){
     return numberOfConnectionPoints;
 }
 
-int ElectronicComponent::getCodeOfConnectedComponentAtPoint(int thisPoint){
+std::string ElectronicComponent::getCodeOfConnectedComponentAtPoint(int thisPoint){
 
     return connectionPoints[thisPoint].connectedComponentCode;
 }
@@ -434,7 +434,7 @@ std::string ElectronicComponent::toString()
     for(int i = 0; i < numberOfConnectionPoints; i++)
         text += std::string(std::string("Point ") +
                 std::to_string(i) + std::string(": ") +
-                std::to_string(connectionPoints[i].connectedComponentCode) +
+                connectionPoints[i].connectedComponentCode +
                 std::string(" | Coordinates: ") +
                 std::string("x: ") + std::to_string(connectionPoints[i].position.x) + std::string(" \ ") +
                 std::string("y: ") + std::to_string(connectionPoints[i].position.y) + std::string(";\n"));

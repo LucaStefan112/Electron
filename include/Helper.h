@@ -7,7 +7,7 @@
 #ifndef HELPER_H
 #define HELPER_H
 
-#define DEFAULT_CONNECTED_COMPONENT -2
+#define DEFAULT_CONNECTED_COMPONENT "-2"
 #define DEFAULT_X 0
 #define DEFAULT_Y 0
 #define PI 3.14159265
@@ -20,7 +20,7 @@ public:
     int textSpace(std::string text);
 
     struct ConnectionPoint{
-        int connectedComponentCode = DEFAULT_CONNECTED_COMPONENT;
+        std::string connectedComponentCode = DEFAULT_CONNECTED_COMPONENT;
         Vector_2D position;
     };
 
