@@ -1,6 +1,7 @@
 #ifndef NEWPROJECTMENU_H
 #define NEWPROJECTMENU_H
 
+#include <iostream>
 #include <graphics.h>
 #include <winbgim.h>
 #include <windows.h>

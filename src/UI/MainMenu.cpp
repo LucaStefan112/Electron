@@ -21,23 +21,23 @@ void MainMenu::WatchClick()
                 NewProjectMenu newProjectMenu;
                 newProjectMenu.Show();
                 newProjectMenu.WatchClick();
+                setcurrentwindow(this->window_code);
             }
             else if (openProject.isCursorPointInButton())
             {
-                // open project functionality
-                std::cout << "open project ..." << std::endl;
-
                 NewProjectMenu newProjectMenu;
                 newProjectMenu.Show();
                 newProjectMenu.filepath = "test.xml";
                 newProjectMenu.currentSnapshot.importFromFile(newProjectMenu.filepath);
                 newProjectMenu.WatchClick();
+                setcurrentwindow(this->window_code);
             }
             else if (info.isCursorPointInButton())
             {
                 InfoMenu infoMenu;
                 infoMenu.Show();
                 infoMenu.WatchClick();
+                setcurrentwindow(this->window_code);
             }
             else if (exit.isCursorPointInButton())
             {

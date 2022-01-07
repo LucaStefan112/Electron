@@ -1,7 +1,6 @@
 #include "UI/NewProjectMenu.h"
 #include "Data Structures/Snapshot.h"
 
-                #include <iostream>
 #define BUTTON_HEIGHT 25
 #define COMPONENT_SIZE 100
 
@@ -155,15 +154,10 @@ void NewProjectMenu::WatchClick()
             }
             else if (flip_h.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
-                //selectedComponent.flipComponent();
                 currentSnapshot.getSelectedComponent()->flipComponent();
             }
             else if (flip_v.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
-                /* selectedComponent.rotateComponent(180);
-                 delay(300);
-                 selectedComponent.flipComponent();
-                 */
                 currentSnapshot.getSelectedComponent()->rotateComponent(currentSnapshot.getSelectedComponent()->getRotationState() + 180);
                 delay(300);
                 currentSnapshot.getSelectedComponent()->flipComponent();
@@ -184,30 +178,23 @@ void NewProjectMenu::WatchClick()
             {
                 currentSnapshot.getSelectedComponent()->setWidth(currentSnapshot.getSelectedComponent()->getWidth() - 15);
             }
-            else if (cType == _none)
-            {
-                //will move the component
-                // POINT cursorPoint;
-                // GetCursorPos(&cursorPoint);
-                // setcurrentwindow(this->window_code);
-
-                // Helper::Vector_2D pos = helper.makeVector_2D(cursorPoint.x, cursorPoint.y);
-
-                // std :: cout << pos.x << " " << pos.y << std :: endl;
-            }
-
-
-        } else if (GetAsyncKeyState(VK_LBUTTON) && GetAsyncKeyState(VK_LCONTROL)) {
+        }
+        else if (GetAsyncKeyState(VK_LBUTTON) && GetAsyncKeyState(VK_LCONTROL))
+        {
             std :: cout << "move component" << std :: endl;
         }
-        if (GetAsyncKeyState(VK_RBUTTON)) {std::cout << "trydelete\n";
+        else if (GetAsyncKeyState(VK_RBUTTON))
+        {
+            std::cout << "trydelete\n";
             auto components = currentSnapshot.getComponents();
-            for (int i = 0; i < currentSnapshot.getComponentsNumber(); i++) {
-                if (mousex() > components[i]->getPositionUpLeft().x && mousex() < components[i]->getPositionDownRight().x &&
-                    mousey() > components[i]->getPositionUpLeft().y && mousey() < components[i]->getPositionDownRight().y) {
-                        std::cout << "delete\n";
-                        currentSnapshot.removeComponent(components[i]->getComponentCode());
-                    }
+            for (int i = 0; i < currentSnapshot.getComponentsNumber(); i++)
+            {
+
+                if (components[i]->isCursorPointInButton())
+                {
+                    std::cout << "delete\n";
+                    currentSnapshot.removeComponent(components[i]->getComponentCode());
+                }
             }
         }
         delay(500);

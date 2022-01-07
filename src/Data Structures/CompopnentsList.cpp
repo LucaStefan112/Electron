@@ -62,8 +62,8 @@ void CompopnentsList::addComponent(int cType){
     else if(cType == _switchThermal) componentsList[i] = new Switch_Thermal_Magnetic_Breaker;
     else if(cType == _transistorBipolarNPN) componentsList[i] = new Transistor_Bipolar_NPN;
     else if(cType == _transistorBipolarPNP) componentsList[i] = new Transistor_Bipolar_PNP;
-    else if(cType == _transistorMOSFETN) componentsList[i] = new Transistor_Dual_Gate_MOSFET_Nchannel;
-    else if(cType == _transistorMOSFETP) componentsList[i] = new Transistor_Dual_Gate_MOSFET_Pchannel;
+    else if(cType == _transistorDualN) componentsList[i] = new Transistor_Dual_Gate_MOSFET_Nchannel;
+    else if(cType == _transistorDualP) componentsList[i] = new Transistor_Dual_Gate_MOSFET_Pchannel;
     else if(cType == _transistorFETN) componentsList[i] = new Transistor_FET_Nchannel;
     else if(cType == _transistorFETP) componentsList[i] = new Transistor_FET_Pchannel;
     else if(cType == _transistorInductiveN) componentsList[i] = new Transistor_Inductive_Channel_MOSFET_Nchannel;
