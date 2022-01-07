@@ -4,6 +4,8 @@
 #define BUTTON_HEIGHT 25
 #define COMPONENT_SIZE 100
 
+extern Snapshot currentSnapshot;
+
 NewProjectMenu::NewProjectMenu()
 {
 

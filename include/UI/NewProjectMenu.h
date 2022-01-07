@@ -14,6 +14,8 @@
 #include "Helper.h"
 #include "Enums.h"
 
+extern Snapshot currentSnapshot;
+
 class NewProjectMenu
 {
     public:

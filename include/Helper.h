@@ -2,12 +2,15 @@
 #include <string>
 #include <iostream>
 #include <math.h>
+
 #include "Electronic Components/ElectronicComponent.h"
+//#include "Data Structures/Snapshot.h"
 
 #ifndef HELPER_H
 #define HELPER_H
 
 #define DEFAULT_CONNECTED_COMPONENT "-2"
+#define DEFAULT_CONNECTED_INDEX -1
 #define DEFAULT_X 0
 #define DEFAULT_Y 0
 #define PI 3.14159265
@@ -22,6 +25,7 @@ public:
     struct ConnectionPoint{
         std::string connectedComponentCode = DEFAULT_CONNECTED_COMPONENT;
         Vector_2D position;
+        int connectedIndex = DEFAULT_CONNECTED_INDEX;
     };
 
     double distanceBetween(Vector_2D a, Vector_2D b);

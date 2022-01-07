@@ -409,6 +409,14 @@ int ElectronicComponent::getRotationState()
     return rotateState;
 }
 
+void ElectronicComponent::drawConnectionLines(){
+    /*
+    for(int i = 0; i < numberOfConnectionPoints; i++){
+        if(connectionPoints[i].connectedComponentCode != "-2")
+            ElectronicComponent_helper.drawWire(connectionPoints[i].position, currentSnapshot.getComponent(connectionPoints[i].connectedComponentCode).connectionPoints[connectionPoints[i].connectedIndex].position);
+    }*/
+}
+
 //Passing trough a string all the data about the component:
 std::string ElectronicComponent::toString()
 {

@@ -92,6 +92,9 @@ public:
     //Erasing the component:
     void Erase();
 
+    //Draw lines to connected components:
+    void drawConnectionLines();
+
     //Parsing the component's data to string:
     std::string toString();
 
