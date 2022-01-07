@@ -31,14 +31,24 @@ protected:
     int numberOfConnectionPoints = DEFAULT_NUMBER_OF_CONNECTION_POINTS;
     Helper::ConnectionPoint connectionPoints[MAX_NUMBER_OF_CONNECTION_POINTS];
 
+    /* TODO getters and setters
     bool flipped = DEFAULT_FLIP_STATE;
     int rotateState = DEFAULT_ROTATE_STATE;
 
     bool showOutterBox = DEFAULT_OUTTERBOX_VALUE;
     bool showConnectionPoints = DEFAULT_CONNECTIONPOINTS_VALUE;
+    ENDTODO */
 
 public:
     ElectronicComponent(double thisWidth = DEFAULT_WIDTH, double thisHeight = DEFAULT_HEIGHT, std::string thisName = DEFAULT_NAME, int thisNumberOfConnectionPoints = DEFAULT_NUMBER_OF_CONNECTION_POINTS);
+
+    /* TODO getters and setters */
+    bool flipped = DEFAULT_FLIP_STATE;
+    int rotateState = DEFAULT_ROTATE_STATE;
+
+    bool showOutterBox = DEFAULT_OUTTERBOX_VALUE;
+    bool showConnectionPoints = DEFAULT_CONNECTIONPOINTS_VALUE;
+    /* ENDTODO  */
 
     //Name of the component:
     std::string name = DEFAULT_NAME;
@@ -51,7 +61,7 @@ public:
     void setPositionDownRight(Helper::Vector_2D thisPosition);
     void setWidth(double thisWidth);
     void setHeight(double thisHeight);
-    void setComponentCode(int thisComponentCode);
+    void setComponentCode(std::string thisComponentCode);
     void setConnectedComponentCodeAtPoint(int thisPoint, int thisComponentCode);
     void flipComponent();
     void rotateComponent(int thisDegree);

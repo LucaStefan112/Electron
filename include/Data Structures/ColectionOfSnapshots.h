@@ -1,5 +1,4 @@
 #include <string>
-#include <fstream>
 
 #include "Data Structures/Snapshot.h"
 #include "Data Structures/Helpers/Node.h"
@@ -19,8 +18,4 @@ public:
     void setCurrent(Snapshot state);
     void setCurrentToPrevious();
     void setCurrentToNext();
-
-    void saveToFile(std::string filepath);
-    void importFromFile(std::string filepath);
-    void toString();
 };

@@ -6,9 +6,9 @@ Source_Voltage_AC::Source_Voltage_AC() : ElectronicComponent(200, 50, "AC Voltag
 
 //Drawing the component:
 void Source_Voltage_AC::Show(){
-    double up_left_x = getPositionUpLeft().x;
+    double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
-    double down_right_x = getPositionDownRight().x;
+    double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
     if(flipped){
         up_left_x = getPositionDownRight().x;
@@ -54,9 +54,9 @@ void Source_Voltage_AC::Show(){
 
 void Source_Voltage_AC::updateConnectionPointsPosition(){
 
-    double up_left_x = getPositionUpLeft().x;
-    double center_y = getPositionCenter().y;
-    double down_right_x = getPositionDownRight().x;
+    double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
+    double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
+    double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
     if(flipped){
         up_left_x = getPositionDownRight().x;
