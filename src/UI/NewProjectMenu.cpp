@@ -4,10 +4,36 @@
 #define BUTTON_HEIGHT 25
 #define COMPONENT_SIZE 100
 
-extern Snapshot currentSnapshot;
+Helper NewProjectMenu_helper;
 
 NewProjectMenu::NewProjectMenu()
 {
+
+}
+
+void NewProjectMenu::drawWiresForComponent(std::string thisComponentCode){
+
+    ElectronicComponent** currentComponents = currentSnapshot.getComponents();
+
+    int index = 0;
+
+    while(currentComponents[index] -> componentCode != thisComponentCode && index < 100)  index++;
+
+    ElectronicComponent* currentComponent = currentComponents[index];
+
+    for(int i = 0; i < currentComponent -> getNumberOfConnectionPoints(); i++){
+
+        if(currentComponent -> getConnectionPoints()[i].connectedIndex != -1){
+
+            std::string connectedComponentCode = currentComponent -> getConnectionPoints()[i].connectedComponentCode;
+            int connectedIndex = currentComponent -> getConnectionPoints()[i].connectedIndex;
+
+            NewProjectMenu_helper.drawWire(
+                currentComponent -> getConnectionPoints()[i].position,
+                currentSnapshot.getComponent(connectedComponentCode) -> getConnectionPoints()[connectedIndex].position,
+                WHITE);
+            }
+    }
 
 }
 
@@ -157,28 +183,43 @@ void NewProjectMenu::WatchClick()
             else if (flip_h.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
                 currentSnapshot.getSelectedComponent()->flipComponent();
+
+                drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode);
+
+                delay(300);
             }
             else if (flip_v.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
-                currentSnapshot.getSelectedComponent()->rotateComponent(currentSnapshot.getSelectedComponent()->getRotationState() + 180);
-                delay(300);
                 currentSnapshot.getSelectedComponent()->flipComponent();
+                currentSnapshot.getSelectedComponent()->rotateComponent(currentSnapshot.getSelectedComponent()->getRotationState() + 180);
+
+                drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode);
+
+                delay(300);
             }
             else if (rotate_l.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
                 currentSnapshot.getSelectedComponent()->rotateComponent(currentSnapshot.getSelectedComponent()->getRotationState() - 15);
+
+                drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode);
             }
             else if (rotate_r.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
                 currentSnapshot.getSelectedComponent()->rotateComponent(currentSnapshot.getSelectedComponent()->getRotationState() + 15);
+
+                drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode);
             }
             else if (inc.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
                 currentSnapshot.getSelectedComponent()->setWidth(currentSnapshot.getSelectedComponent()->getWidth() + 15);
+
+                drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode);
             }
             else if (dec.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
                 currentSnapshot.getSelectedComponent()->setWidth(currentSnapshot.getSelectedComponent()->getWidth() - 15);
+
+                drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode);
             }
         }
         else if (GetAsyncKeyState(VK_LBUTTON) && GetAsyncKeyState(VK_LCONTROL))
@@ -199,7 +240,7 @@ void NewProjectMenu::WatchClick()
                 }
             }
         }
-        delay(500);
+        delay(50);
     }
 
     closegraph(this->window_code);
@@ -328,4 +369,3 @@ void NewProjectMenu::Show()
     dec.setTitle("-");
     dec.ShowCircleMode();
 }
-

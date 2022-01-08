@@ -14,8 +14,6 @@
 #include "Helper.h"
 #include "Enums.h"
 
-extern Snapshot currentSnapshot;
-
 class NewProjectMenu
 {
     public:
@@ -33,7 +31,6 @@ class NewProjectMenu
         bool iscurrentSnapshotelected;
         ElectronicComponent selectedComponent;
 
-
         int window_code;
         std::string filepath;
         //boundaries
@@ -41,6 +38,8 @@ class NewProjectMenu
 
         void Show();
         void WatchClick();
+
+        void drawWiresForComponent(std::string thisComponentCode);
 };
 
 #endif // NEWPROJECTMENU_H
