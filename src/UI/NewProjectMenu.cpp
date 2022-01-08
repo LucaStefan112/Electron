@@ -3,38 +3,41 @@
 
 #define BUTTON_HEIGHT 25
 #define COMPONENT_SIZE 100
+#define BORDER_SPACE 10
 
 Helper NewProjectMenu_helper;
 
 NewProjectMenu::NewProjectMenu()
 {
-
 }
 
-void NewProjectMenu::drawWiresForComponent(std::string thisComponentCode){
+void NewProjectMenu::drawWiresForComponent(std::string thisComponentCode)
+{
 
-    ElectronicComponent** currentComponents = currentSnapshot.getComponents();
+    ElectronicComponent **currentComponents = currentSnapshot.getComponents();
 
     int index = 0;
 
-    while(currentComponents[index] -> componentCode != thisComponentCode && index < 100)  index++;
+    while (currentComponents[index]->componentCode != thisComponentCode && index < 100)
+        index++;
 
-    ElectronicComponent* currentComponent = currentComponents[index];
+    ElectronicComponent *currentComponent = currentComponents[index];
 
-    for(int i = 0; i < currentComponent -> getNumberOfConnectionPoints(); i++){
+    for (int i = 0; i < currentComponent->getNumberOfConnectionPoints(); i++)
+    {
 
-        if(currentComponent -> getConnectionPoints()[i].connectedIndex != -1){
+        if (currentComponent->getConnectionPoints()[i].connectedIndex != -1)
+        {
 
-            std::string connectedComponentCode = currentComponent -> getConnectionPoints()[i].connectedComponentCode;
-            int connectedIndex = currentComponent -> getConnectionPoints()[i].connectedIndex;
+            std::string connectedComponentCode = currentComponent->getConnectionPoints()[i].connectedComponentCode;
+            int connectedIndex = currentComponent->getConnectionPoints()[i].connectedIndex;
 
             NewProjectMenu_helper.drawWire(
-                currentComponent -> getConnectionPoints()[i].position,
-                currentSnapshot.getComponent(connectedComponentCode) -> getConnectionPoints()[connectedIndex].position,
+                currentComponent->getConnectionPoints()[i].position,
+                currentSnapshot.getComponent(connectedComponentCode)->getConnectionPoints()[connectedIndex].position,
                 WHITE);
-            }
+        }
     }
-
 }
 
 void NewProjectMenu::WatchClick()
@@ -52,7 +55,7 @@ void NewProjectMenu::WatchClick()
     {
         if (GetAsyncKeyState(VK_LBUTTON) && !GetAsyncKeyState(VK_LCONTROL))
         {
-            std :: cout << "click " << std :: endl;
+            std ::cout << "click " << std ::endl;
             if (save.isCursorPointInButton())
             {
                 //currentSnapshot.saveToFile("text.xml");
@@ -61,7 +64,7 @@ void NewProjectMenu::WatchClick()
                 int code = nameFileMenu.ListenEvents();
                 setcurrentwindow(this->window_code);
 
-                bgiout << code << " " << nameFileMenu.filename << std :: endl;
+                bgiout << code << " " << nameFileMenu.filename << std ::endl;
                 outstreamxy(windowWidth / 5, windowHeight / 4);
 
                 if (code)
@@ -162,10 +165,10 @@ void NewProjectMenu::WatchClick()
                 GetCursorPos(&cursorPoint);
                 setcurrentwindow(this->window_code);
 
-                bool isNotBounded = (cursorPoint.x - COMPONENT_SIZE/2) < this->rl ||
-                                    (cursorPoint.y - COMPONENT_SIZE/2) < this->rt ||
-                                    (cursorPoint.x + COMPONENT_SIZE/2) > this->rr ||
-                                    (cursorPoint.y + COMPONENT_SIZE/2) > this->rb;
+                bool isNotBounded = (cursorPoint.x - COMPONENT_SIZE / 2) < this->rl ||
+                                    (cursorPoint.y - COMPONENT_SIZE / 2) < this->rt ||
+                                    (cursorPoint.x + COMPONENT_SIZE / 2) > this->rr ||
+                                    (cursorPoint.y + COMPONENT_SIZE / 2) > this->rb;
                 if (!isNotBounded)
                 {
                     currentSnapshot.addComponent(cType);
@@ -180,7 +183,13 @@ void NewProjectMenu::WatchClick()
 
                 cType = _none;
             }
-            else if (flip_h.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
+            
+            // if (cType == _none && currentSnapshot.getSelectedComponent() && !currentSnapshot.getSelectedComponent() -> isCursorPointInButton())
+            // {
+            //     currentSnapshot.getSelectedComponent()->setOutterBox(false);
+            // }
+
+            if (flip_h.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
                 currentSnapshot.getSelectedComponent()->flipComponent();
 
@@ -188,7 +197,8 @@ void NewProjectMenu::WatchClick()
 
                 delay(300);
             }
-            else if (flip_v.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
+
+            if (flip_v.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
                 currentSnapshot.getSelectedComponent()->flipComponent();
                 currentSnapshot.getSelectedComponent()->rotateComponent(currentSnapshot.getSelectedComponent()->getRotationState() + 180);
@@ -197,25 +207,29 @@ void NewProjectMenu::WatchClick()
 
                 delay(300);
             }
-            else if (rotate_l.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
+
+            if (rotate_l.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
                 currentSnapshot.getSelectedComponent()->rotateComponent(currentSnapshot.getSelectedComponent()->getRotationState() - 15);
 
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode);
             }
-            else if (rotate_r.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
+
+            if (rotate_r.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
                 currentSnapshot.getSelectedComponent()->rotateComponent(currentSnapshot.getSelectedComponent()->getRotationState() + 15);
 
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode);
             }
-            else if (inc.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
+
+            if (inc.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
                 currentSnapshot.getSelectedComponent()->setWidth(currentSnapshot.getSelectedComponent()->getWidth() + 15);
 
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode);
             }
-            else if (dec.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
+
+            if (dec.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
                 currentSnapshot.getSelectedComponent()->setWidth(currentSnapshot.getSelectedComponent()->getWidth() - 15);
 
@@ -224,7 +238,42 @@ void NewProjectMenu::WatchClick()
         }
         else if (GetAsyncKeyState(VK_LBUTTON) && GetAsyncKeyState(VK_LCONTROL))
         {
-            std :: cout << "move component" << std :: endl;
+            std ::cout << "move component" << std ::endl;
+            ElectronicComponent **components = currentSnapshot.getComponents();
+            for (int i = 0; i < currentSnapshot.getComponentsNumber(); i++)
+            {
+                setcurrentwindow(this->window_code);
+
+                if (components[i]->isSelected())
+                {
+                    POINT cursorPoint;
+                    GetCursorPos(&cursorPoint);
+
+                    double x_point = cursorPoint.x;
+                    double y_point = cursorPoint.y;
+
+                    //keep the component in boundaries
+                    if (x_point - components[i]->getWidth() / 2 < this->rl + BORDER_SPACE)
+                    {
+                        x_point = this->rl + BORDER_SPACE + components[i]->getWidth() / 2;
+                    }
+                    else if (x_point + components[i]->getWidth() / 2 > this->rr - BORDER_SPACE)
+                    {
+                        x_point = this->rr - BORDER_SPACE - components[i]->getWidth() / 2;
+                    }
+
+                    if (y_point - components[i]->getHeight() / 2 < this->rt + BORDER_SPACE)
+                    {
+                        y_point = this->rt + BORDER_SPACE + components[i]->getHeight() / 2;
+                    }
+                    else if (y_point + components[i]->getHeight() / 2 > this->rb - BORDER_SPACE)
+                    {
+                        y_point = this->rb - BORDER_SPACE - components[i]->getHeight() / 2;
+                    }
+
+                    components[i]->setPositionCenter(helper.makeVector_2D(x_point, y_point));
+                }
+            }
         }
         else if (GetAsyncKeyState(VK_RBUTTON))
         {
@@ -260,8 +309,8 @@ void NewProjectMenu::Show()
     int windowHeight = getwindowheight();
     double BUTTON_WIDTH = (windowWidth - 50) / 10;
 
-    this->rl = BUTTON_WIDTH * 2,  this->rt = BUTTON_HEIGHT * 3,
-          this->rr = windowWidth - BUTTON_WIDTH * 2, this->rb = windowHeight - 3 * BUTTON_HEIGHT;
+    this->rl = BUTTON_WIDTH * 2, this->rt = BUTTON_HEIGHT * 3,
+    this->rr = windowWidth - BUTTON_WIDTH * 2, this->rb = windowHeight - 3 * BUTTON_HEIGHT;
 
     rectangle(this->rl, this->rt, this->rr, this->rb);
 
@@ -333,37 +382,37 @@ void NewProjectMenu::Show()
 
     double r = 25;
 
-    rotate_l.setPositionCenter(helper.makeVector_2D(this->rr + 3*r, this->rb - 5*r));
+    rotate_l.setPositionCenter(helper.makeVector_2D(this->rr + 3 * r, this->rb - 5 * r));
     rotate_l.setWidth(r);
     rotate_l.setHeight(r);
     rotate_l.setTitle("R<-");
     rotate_l.ShowCircleMode();
 
-    rotate_r.setPositionCenter(helper.makeVector_2D(this->rr + 6*r, this->rb - 5*r));
+    rotate_r.setPositionCenter(helper.makeVector_2D(this->rr + 6 * r, this->rb - 5 * r));
     rotate_r.setWidth(r);
     rotate_r.setHeight(r);
     rotate_r.setTitle("R->");
     rotate_r.ShowCircleMode();
 
-    flip_h.setPositionCenter(helper.makeVector_2D(this->rr + 3*r, this->rb - r));
+    flip_h.setPositionCenter(helper.makeVector_2D(this->rr + 3 * r, this->rb - r));
     flip_h.setWidth(r);
     flip_h.setHeight(r);
     flip_h.setTitle("F<|>");
     flip_h.ShowCircleMode();
 
-    flip_v.setPositionCenter(helper.makeVector_2D(this->rr + 6*r, this->rb -r));
+    flip_v.setPositionCenter(helper.makeVector_2D(this->rr + 6 * r, this->rb - r));
     flip_v.setWidth(r);
     flip_v.setHeight(r);
     flip_v.setTitle("F<->");
     flip_v.ShowCircleMode();
 
-    inc.setPositionCenter(helper.makeVector_2D(this->rl - 3*r, this->rb - 5*r));
+    inc.setPositionCenter(helper.makeVector_2D(this->rl - 3 * r, this->rb - 5 * r));
     inc.setWidth(r);
     inc.setHeight(r);
     inc.setTitle("+");
     inc.ShowCircleMode();
 
-    dec.setPositionCenter(helper.makeVector_2D(this->rl - 6*r, this->rb - 5*r));
+    dec.setPositionCenter(helper.makeVector_2D(this->rl - 6 * r, this->rb - 5 * r));
     dec.setWidth(r);
     dec.setHeight(r);
     dec.setTitle("-");
