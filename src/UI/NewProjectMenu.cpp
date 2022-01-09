@@ -37,7 +37,6 @@ void NewProjectMenu::drawWiresForComponent(std::string thisComponentCode, bool e
         }
         else if (currentComponent->getConnectionPoints()[i].connectedComponentCode == "cursor")
         {
-            std::cout << currentComponent->getConnectionPoints()[i].connectedComponentCode << '\n';
             POINT cursorPoint;
             GetCursorPos(&cursorPoint);
             setcurrentwindow(this->window_code);
@@ -79,7 +78,6 @@ void NewProjectMenu::WatchClick()
 
         if (GetAsyncKeyState(VK_LBUTTON) && !GetAsyncKeyState(VK_LCONTROL))
         {
-            std ::cout << "click " << std ::endl;
             if (save.isCursorPointInButton())
             {
                 //currentSnapshot.saveToFile("text.xml");
@@ -207,11 +205,6 @@ void NewProjectMenu::WatchClick()
                 cType = _none;
             }
 
-            // if (cType == _none && currentSnapshot.getSelectedComponent() && !currentSnapshot.getSelectedComponent() -> isCursorPointInButton())
-            // {
-            //     currentSnapshot.getSelectedComponent()->setOutterBox(false);
-            // }
-
             if (flip_h.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode, true);
@@ -278,6 +271,10 @@ void NewProjectMenu::WatchClick()
                 GetCursorPos(&cursorPoint);
                 setcurrentwindow(this->window_code);
 
+                bool cursorOnTable = (this->rl < cursorPoint.x && cursorPoint.x < this->rr && this->rt < cursorPoint.y && cursorPoint.y < this->rb);
+
+                std::cout << cursorPoint.x << ' ' << cursorPoint.y << '\n';
+
                 Helper::Vector_2D cursor = NewProjectMenu_helper.makeVector_2D(cursorPoint.x, cursorPoint.y);
 
                 ElectronicComponent **components = currentSnapshot.getComponents();
@@ -305,7 +302,9 @@ void NewProjectMenu::WatchClick()
                     currentComponent->setOutterBox(false);
                     components[isInComponent]->setOutterBox(true);
                 }
-                else if (!wiring && currentComponent && isInComponent == -1)
+
+                //Deselecting a component:
+                else if (!wiring && currentComponent && isInComponent == -1 && cursorOnTable)
                 {
                     currentComponent->setOutterBox(false);
                 }
@@ -343,6 +342,7 @@ void NewProjectMenu::WatchClick()
                         }
                 }
 
+                //Wiring two components:
                 else if (wiring && isInComponent != -1)
                 {
                     for (int i = 0; i < components[isInComponent]->getNumberOfConnectionPoints(); i++)
@@ -372,41 +372,42 @@ void NewProjectMenu::WatchClick()
         }
         else if (GetAsyncKeyState(VK_LBUTTON) && GetAsyncKeyState(VK_LCONTROL))
         {
-            std ::cout << "move component" << std ::endl;
-            ElectronicComponent **components = currentSnapshot.getComponents();
-            for (int i = 0; i < currentSnapshot.getComponentsNumber(); i++)
-            {
+
+            ElectronicComponent *currentComponent = currentSnapshot.getSelectedComponent();
+
+            if(currentComponent){
                 setcurrentwindow(this->window_code);
 
-                if (components[i]->isSelected())
+                drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode, true);
+
+                POINT cursorPoint;
+                GetCursorPos(&cursorPoint);
+
+                double x_point = cursorPoint.x;
+                double y_point = cursorPoint.y;
+
+                //keep the component in boundaries
+                if (x_point - currentComponent->getWidth() / 2 < this->rl + BORDER_SPACE)
                 {
-                    POINT cursorPoint;
-                    GetCursorPos(&cursorPoint);
-
-                    double x_point = cursorPoint.x;
-                    double y_point = cursorPoint.y;
-
-                    //keep the component in boundaries
-                    if (x_point - components[i]->getWidth() / 2 < this->rl + BORDER_SPACE)
-                    {
-                        x_point = this->rl + BORDER_SPACE + components[i]->getWidth() / 2;
-                    }
-                    else if (x_point + components[i]->getWidth() / 2 > this->rr - BORDER_SPACE)
-                    {
-                        x_point = this->rr - BORDER_SPACE - components[i]->getWidth() / 2;
-                    }
-
-                    if (y_point - components[i]->getHeight() / 2 < this->rt + BORDER_SPACE)
-                    {
-                        y_point = this->rt + BORDER_SPACE + components[i]->getHeight() / 2;
-                    }
-                    else if (y_point + components[i]->getHeight() / 2 > this->rb - BORDER_SPACE)
-                    {
-                        y_point = this->rb - BORDER_SPACE - components[i]->getHeight() / 2;
-                    }
-
-                    components[i]->setPositionCenter(helper.makeVector_2D(x_point, y_point));
+                    x_point = this->rl + BORDER_SPACE + currentComponent->getWidth() / 2;
                 }
+                else if (x_point + currentComponent->getWidth() / 2 > this->rr - BORDER_SPACE)
+                {
+                    x_point = this->rr - BORDER_SPACE - currentComponent->getWidth() / 2;
+                }
+
+                if (y_point - currentComponent->getHeight() / 2 < this->rt + BORDER_SPACE)
+                {
+                    y_point = this->rt + BORDER_SPACE + currentComponent->getHeight() / 2;
+                }
+                else if (y_point + currentComponent->getHeight() / 2 > this->rb - BORDER_SPACE)
+                {
+                    y_point = this->rb - BORDER_SPACE - currentComponent->getHeight() / 2;
+                }
+
+                    currentComponent->setPositionCenter(helper.makeVector_2D(x_point, y_point));
+
+                drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode);
             }
         }
         else if (GetAsyncKeyState(VK_LBUTTON) && GetAsyncKeyState(VK_LSHIFT))
