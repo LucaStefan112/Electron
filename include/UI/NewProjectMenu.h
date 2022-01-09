@@ -36,10 +36,13 @@ class NewProjectMenu
         //boundaries
         double rl,rt,rr,rb;
 
+        bool wiring = false;
+        double lastCursorX = -1, lastCursorY = -1;
+
         void Show();
         void WatchClick();
 
-        void drawWiresForComponent(std::string thisComponentCode);
+        void drawWiresForComponent(std::string thisComponentCode, bool eraseMode);
 };
 
 #endif // NEWPROJECTMENU_H

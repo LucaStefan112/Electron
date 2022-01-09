@@ -103,8 +103,9 @@ ElectronicComponent* Snapshot::getComponent(std::string componentCode) {
 
 ElectronicComponent* Snapshot::getSelectedComponent(){
     for(int i = 0; i < 100; i++)
-        if(current[i]->isSelected())
-            return current[i];
+        if(current[i])
+            if(current[i]->isSelected())
+                return current[i];
 
     return NULL;
 }
@@ -113,6 +114,8 @@ void Snapshot::removeComponent(std::string component_code) {
     for (int i = 0; i < sizeOfCurrent; i++) {
         if (current[i]->componentCode == component_code) {
             current[i]->Erase();
+            delete current[i];
+            current[i] = NULL;
             for (int j = i; j < sizeOfCurrent - 1; j++)
                 current[j] = current[j + 1];
             sizeOfCurrent--;
