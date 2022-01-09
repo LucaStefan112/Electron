@@ -13,19 +13,15 @@ NewProjectMenu::NewProjectMenu()
 
 void NewProjectMenu::drawWiresForComponent(std::string thisComponentCode, bool eraseMode = false){
 
-    ElectronicComponent** currentComponents = currentSnapshot.getComponents();
+    ElectronicComponent* currentComponent = currentSnapshot.getComponent(thisComponentCode);
 
-    int index = 0;
+    if(!currentComponent)   return;
 
     auto colorMode = (eraseMode) ? BLACK : WHITE;
 
-    while(currentComponents[index] -> componentCode != thisComponentCode && index < 100)  index++;
-
-    ElectronicComponent* currentComponent = currentComponents[index];
-
     for(int i = 0; i < currentComponent -> getNumberOfConnectionPoints(); i++){
 
-        if(currentComponent -> getConnectionPoints()[i].connectedIndex != -1){
+        if(currentComponent -> getConnectionPoints()[i].connectedComponentCode != "cursor" && currentComponent -> getConnectionPoints()[i].connectedComponentCode != "-2"){
 
             std::string connectedComponentCode = currentComponent -> getConnectionPoints()[i].connectedComponentCode;
             int connectedIndex = currentComponent -> getConnectionPoints()[i].connectedIndex;
@@ -36,6 +32,7 @@ void NewProjectMenu::drawWiresForComponent(std::string thisComponentCode, bool e
                 colorMode);
         }
         else if(currentComponent -> getConnectionPoints()[i].connectedComponentCode == "cursor"){
+            std::cout << currentComponent -> getConnectionPoints()[i].connectedComponentCode << '\n';
             POINT cursorPoint;
             GetCursorPos(&cursorPoint);
             setcurrentwindow(this->window_code);
@@ -264,84 +261,80 @@ void NewProjectMenu::WatchClick()
                 GetCursorPos(&cursorPoint);
                 setcurrentwindow(this->window_code);
 
-                wiring = false;
-                auto components = currentSnapshot.getComponents();
+                Helper::Vector_2D cursor = NewProjectMenu_helper.makeVector_2D(cursorPoint.x, cursorPoint.y);
+
+                ElectronicComponent** components = currentSnapshot.getComponents();
+                ElectronicComponent* currentComponent = currentSnapshot.getSelectedComponent();
                 int isInComponent = -1;
 
+                //Getting the index of the clicked component:
                 for (int i = 0; i < currentSnapshot.getComponentsNumber(); i++)
                     if(components[i])
                         if (components[i]->isCursorPointInButton()){
                             isInComponent = i;  break;
                         }
 
-                if(isInComponent == -1 && currentSnapshot.getSelectedComponent()){
-                    for(int i = 0; i < currentSnapshot.getSelectedComponent()->getNumberOfConnectionPoints(); i++)
-                        if(currentSnapshot.getSelectedComponent()->getConnectionPoints()[i].connectedComponentCode == "cursor"){
-
-                            NewProjectMenu_helper.drawWire(
-                                currentSnapshot.getSelectedComponent()->getConnectionPoints()[i].position,
-                                NewProjectMenu_helper.makeVector_2D(lastCursorX, lastCursorY),
-                                BLACK);
-
-                            currentSnapshot.getSelectedComponent()->getConnectionPoints()[i].connectedComponentCode = "-2";
-
-                            break;
-                        }
-                    currentSnapshot.getSelectedComponent()->setOutterBox(false);
+                //Selecting a component:
+                if(!wiring && !currentComponent && isInComponent != -1){
+                    components[isInComponent]->setOutterBox(true);
                 }
-                else if(isInComponent != -1){
-                    if(!currentSnapshot.getSelectedComponent())
-                        components[isInComponent]->setOutterBox(true);
 
-                    else if(components[isInComponent]->getComponentCode() == currentSnapshot.getSelectedComponent()->getComponentCode() && wiring){
-                        for(int i = 0; i < currentSnapshot.getSelectedComponent()->getNumberOfConnectionPoints(); i++)
-                        if(currentSnapshot.getSelectedComponent()->getConnectionPoints()[i].connectedComponentCode == "cursor"){
+                //Selecting another component:
+                else if(!wiring && currentComponent && isInComponent != -1){
+                    currentComponent->setOutterBox(false);
+                    components[isInComponent]->setOutterBox(true);
+                }
+                else if(!wiring && currentComponent && isInComponent == -1){
+                    currentComponent->setOutterBox(false);
+                }
 
-                            NewProjectMenu_helper.drawWire(
-                                currentSnapshot.getSelectedComponent()->getConnectionPoints()[i].position,
-                                NewProjectMenu_helper.makeVector_2D(lastCursorX, lastCursorY),
-                                BLACK);
+                //Starting wiring from a connection point of a component:
+                if(!wiring && isInComponent != -1)
+                    for(int i = 0; i < components[isInComponent]->getNumberOfConnectionPoints(); i++){
+                        Helper::Vector_2D point = components[isInComponent]->getConnectionPoints()[i].position;
 
-                            currentSnapshot.getSelectedComponent()->getConnectionPoints()[i].connectedComponentCode = "-2";
-
+                        if(NewProjectMenu_helper.distanceBetween(cursor, point) < components[isInComponent]->getHeight() / 7){
+                            wiring = true;
+                            components[isInComponent]->setConnectedComponentCodeAtPoint(i, "cursor");
                             break;
                         }
                     }
-                    else if(components[isInComponent]->getComponentCode() != currentSnapshot.getSelectedComponent()->getComponentCode() && !wiring){
-                        currentSnapshot.getSelectedComponent()->setOutterBox(false);
-                        components[isInComponent]->setOutterBox(true);
-                    }
-                    else{
-                        for(int j = 0; j < components[isInComponent]->getNumberOfConnectionPoints(); j++){
 
-                            Helper::Vector_2D point = components[isInComponent]->getConnectionPoints()[j].position;
-                            Helper::Vector_2D cursor = NewProjectMenu_helper.makeVector_2D(cursorPoint.x, cursorPoint.y);
+                //Ending wiring for a point by clicking outside any component:
+                else if(wiring && isInComponent == -1){
+                    for(int i = 0; i < currentComponent->getNumberOfConnectionPoints(); i++)
+                        if(currentComponent->getConnectionPoints()[i].connectedComponentCode == "cursor"){
+                            wiring = false;
+                            currentComponent->getConnectionPoints()[i].connectedComponentCode = "-2";
 
-                            if(NewProjectMenu_helper.distanceBetween(point, cursor) < components[isInComponent]->getHeight() / 10 && !wiring){
-                                components[isInComponent]->setConnectedComponentCodeAtPoint(j, "cursor");
+                            NewProjectMenu_helper.drawWire(
+                                currentComponent->getConnectionPoints()[i].position,
+                                NewProjectMenu_helper.makeVector_2D(lastCursorX, lastCursorY),
+                                BLACK);
 
-                                wiring = true;
-                            }
-                            else if(NewProjectMenu_helper.distanceBetween(point, cursor) < components[isInComponent]->getHeight() / 10 && wiring){
+                            lastCursorX = lastCursorY = -1;
+                            break;
+                        }
+                }
 
-                                int aIndex = -1;
+                else if(wiring && isInComponent != -1){
+                    for(int i = 0; i < components[isInComponent]->getNumberOfConnectionPoints(); i++){
+                        Helper::Vector_2D point = components[isInComponent]->getConnectionPoints()[i].position;
 
-                                for(int k = 0; k < currentSnapshot.getSelectedComponent()->getNumberOfConnectionPoints(); k++)
-                                    if(currentSnapshot.getSelectedComponent()->getConnectionPoints()[k].connectedComponentCode == "cursor"){
-                                        aIndex = k; break;
-                                    }
+                        if(NewProjectMenu_helper.distanceBetween(cursor, point) < components[isInComponent]->getHeight() / 7){
+                            wiring = false;
 
-                                components[isInComponent]->setConnectedComponentCodeAtPoint(j, currentSnapshot.getSelectedComponent()->getComponentCode());
-                                currentSnapshot.getSelectedComponent()->setConnectedComponentCodeAtPoint(aIndex, components[isInComponent]->getComponentCode());
+                            int index = 0;
 
-                                components[isInComponent]->getConnectionPoints()[j].connectedIndex = aIndex;
-                                currentSnapshot.getSelectedComponent()->getConnectionPoints()[aIndex].connectedIndex = j;
+                            while(currentComponent->getConnectionPoints()[index].connectedComponentCode != "cursor")    index++;
 
-                                drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode);
+                            components[isInComponent]->getConnectionPoints()[i].connectedComponentCode = currentComponent->getComponentCode();
+                            components[isInComponent]->getConnectionPoints()[i].connectedIndex = index;
 
-                                currentSnapshot.getSelectedComponent()->setOutterBox(false);
-                                wiring = false;
-                            }
+                            currentComponent->getConnectionPoints()[index].connectedComponentCode = components[isInComponent]->getComponentCode();
+                            currentComponent->getConnectionPoints()[index].connectedIndex = i;
+
+                            break;
                         }
                     }
                 }
