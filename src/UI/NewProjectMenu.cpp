@@ -3,36 +3,41 @@
 
 #define BUTTON_HEIGHT 25
 #define COMPONENT_SIZE 100
+#define BORDER_SPACE 10
 
 Helper NewProjectMenu_helper;
 
 NewProjectMenu::NewProjectMenu()
 {
-
 }
 
-void NewProjectMenu::drawWiresForComponent(std::string thisComponentCode, bool eraseMode = false){
+void NewProjectMenu::drawWiresForComponent(std::string thisComponentCode, bool eraseMode = false)
+{
 
-    ElectronicComponent* currentComponent = currentSnapshot.getComponent(thisComponentCode);
+    ElectronicComponent *currentComponent = currentSnapshot.getComponent(thisComponentCode);
 
-    if(!currentComponent)   return;
+    if (!currentComponent)
+        return;
 
     auto colorMode = (eraseMode) ? BLACK : WHITE;
 
-    for(int i = 0; i < currentComponent -> getNumberOfConnectionPoints(); i++){
+    for (int i = 0; i < currentComponent->getNumberOfConnectionPoints(); i++)
+    {
 
-        if(currentComponent -> getConnectionPoints()[i].connectedComponentCode != "cursor" && currentComponent -> getConnectionPoints()[i].connectedComponentCode != "-2"){
+        if (currentComponent->getConnectionPoints()[i].connectedComponentCode != "cursor" && currentComponent->getConnectionPoints()[i].connectedComponentCode != "-2")
+        {
 
-            std::string connectedComponentCode = currentComponent -> getConnectionPoints()[i].connectedComponentCode;
-            int connectedIndex = currentComponent -> getConnectionPoints()[i].connectedIndex;
+            std::string connectedComponentCode = currentComponent->getConnectionPoints()[i].connectedComponentCode;
+            int connectedIndex = currentComponent->getConnectionPoints()[i].connectedIndex;
 
             NewProjectMenu_helper.drawWire(
-                currentComponent -> getConnectionPoints()[i].position,
-                currentSnapshot.getComponent(connectedComponentCode) -> getConnectionPoints()[connectedIndex].position,
+                currentComponent->getConnectionPoints()[i].position,
+                currentSnapshot.getComponent(connectedComponentCode)->getConnectionPoints()[connectedIndex].position,
                 colorMode);
         }
-        else if(currentComponent -> getConnectionPoints()[i].connectedComponentCode == "cursor"){
-            std::cout << currentComponent -> getConnectionPoints()[i].connectedComponentCode << '\n';
+        else if (currentComponent->getConnectionPoints()[i].connectedComponentCode == "cursor")
+        {
+            std::cout << currentComponent->getConnectionPoints()[i].connectedComponentCode << '\n';
             POINT cursorPoint;
             GetCursorPos(&cursorPoint);
             setcurrentwindow(this->window_code);
@@ -40,7 +45,7 @@ void NewProjectMenu::drawWiresForComponent(std::string thisComponentCode, bool e
             Helper::Vector_2D point = currentComponent->getConnectionPoints()[i].position;
             Helper::Vector_2D lastCursor = NewProjectMenu_helper.makeVector_2D(lastCursorX, lastCursorY);
 
-            if(lastCursorX != -1)
+            if (lastCursorX != -1)
                 NewProjectMenu_helper.drawWire(point, lastCursor, BLACK);
             lastCursorX = cursorPoint.x, lastCursorY = cursorPoint.y;
 
@@ -50,7 +55,6 @@ void NewProjectMenu::drawWiresForComponent(std::string thisComponentCode, bool e
             NewProjectMenu_helper.drawWire(point, cursor, WHITE);
         }
     }
-
 }
 
 void NewProjectMenu::WatchClick()
@@ -66,15 +70,16 @@ void NewProjectMenu::WatchClick()
 
     while (ok)
     {
-        if(wiring)
-            if(currentSnapshot.getSelectedComponent()){
+        if (wiring)
+            if (currentSnapshot.getSelectedComponent())
+            {
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode, true);
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode);
             }
 
         if (GetAsyncKeyState(VK_LBUTTON) && !GetAsyncKeyState(VK_LCONTROL))
         {
-            std :: cout << "click " << std :: endl;
+            std ::cout << "click " << std ::endl;
             if (save.isCursorPointInButton())
             {
                 //currentSnapshot.saveToFile("text.xml");
@@ -83,7 +88,7 @@ void NewProjectMenu::WatchClick()
                 int code = nameFileMenu.ListenEvents();
                 setcurrentwindow(this->window_code);
 
-                bgiout << code << " " << nameFileMenu.filename << std :: endl;
+                bgiout << code << " " << nameFileMenu.filename << std ::endl;
                 outstreamxy(windowWidth / 5, windowHeight / 4);
 
                 if (code)
@@ -184,10 +189,10 @@ void NewProjectMenu::WatchClick()
                 GetCursorPos(&cursorPoint);
                 setcurrentwindow(this->window_code);
 
-                bool isNotBounded = (cursorPoint.x - COMPONENT_SIZE/2) < this->rl ||
-                                    (cursorPoint.y - COMPONENT_SIZE/2) < this->rt ||
-                                    (cursorPoint.x + COMPONENT_SIZE/2) > this->rr ||
-                                    (cursorPoint.y + COMPONENT_SIZE/2) > this->rb;
+                bool isNotBounded = (cursorPoint.x - COMPONENT_SIZE / 2) < this->rl ||
+                                    (cursorPoint.y - COMPONENT_SIZE / 2) < this->rt ||
+                                    (cursorPoint.x + COMPONENT_SIZE / 2) > this->rr ||
+                                    (cursorPoint.y + COMPONENT_SIZE / 2) > this->rb;
                 if (!isNotBounded)
                 {
                     currentSnapshot.addComponent(cType);
@@ -201,7 +206,13 @@ void NewProjectMenu::WatchClick()
 
                 cType = _none;
             }
-            else if (flip_h.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
+
+            // if (cType == _none && currentSnapshot.getSelectedComponent() && !currentSnapshot.getSelectedComponent() -> isCursorPointInButton())
+            // {
+            //     currentSnapshot.getSelectedComponent()->setOutterBox(false);
+            // }
+
+            if (flip_h.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode, true);
 
@@ -211,7 +222,8 @@ void NewProjectMenu::WatchClick()
 
                 delay(300);
             }
-            else if (flip_v.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
+
+            if (flip_v.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode, true);
 
@@ -222,7 +234,8 @@ void NewProjectMenu::WatchClick()
 
                 delay(300);
             }
-            else if (rotate_l.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
+
+            if (rotate_l.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode, true);
 
@@ -230,7 +243,8 @@ void NewProjectMenu::WatchClick()
 
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode);
             }
-            else if (rotate_r.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
+
+            if (rotate_r.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode, true);
 
@@ -238,7 +252,8 @@ void NewProjectMenu::WatchClick()
 
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode);
             }
-            else if (inc.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
+
+            if (inc.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode, true);
 
@@ -246,7 +261,8 @@ void NewProjectMenu::WatchClick()
 
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode);
             }
-            else if (dec.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
+
+            if (dec.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode, true);
 
@@ -254,7 +270,8 @@ void NewProjectMenu::WatchClick()
 
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode);
             }
-            else{
+            else
+            {
                 std::cout << "select\n";
 
                 POINT cursorPoint;
@@ -263,37 +280,44 @@ void NewProjectMenu::WatchClick()
 
                 Helper::Vector_2D cursor = NewProjectMenu_helper.makeVector_2D(cursorPoint.x, cursorPoint.y);
 
-                ElectronicComponent** components = currentSnapshot.getComponents();
-                ElectronicComponent* currentComponent = currentSnapshot.getSelectedComponent();
+                ElectronicComponent **components = currentSnapshot.getComponents();
+                ElectronicComponent *currentComponent = currentSnapshot.getSelectedComponent();
                 int isInComponent = -1;
 
                 //Getting the index of the clicked component:
                 for (int i = 0; i < currentSnapshot.getComponentsNumber(); i++)
-                    if(components[i])
-                        if (components[i]->isCursorPointInButton()){
-                            isInComponent = i;  break;
+                    if (components[i])
+                        if (components[i]->isCursorPointInButton())
+                        {
+                            isInComponent = i;
+                            break;
                         }
 
                 //Selecting a component:
-                if(!wiring && !currentComponent && isInComponent != -1){
+                if (!wiring && !currentComponent && isInComponent != -1)
+                {
                     components[isInComponent]->setOutterBox(true);
                 }
 
                 //Selecting another component:
-                else if(!wiring && currentComponent && isInComponent != -1){
+                else if (!wiring && currentComponent && isInComponent != -1)
+                {
                     currentComponent->setOutterBox(false);
                     components[isInComponent]->setOutterBox(true);
                 }
-                else if(!wiring && currentComponent && isInComponent == -1){
+                else if (!wiring && currentComponent && isInComponent == -1)
+                {
                     currentComponent->setOutterBox(false);
                 }
 
                 //Starting wiring from a connection point of a component:
-                if(!wiring && isInComponent != -1)
-                    for(int i = 0; i < components[isInComponent]->getNumberOfConnectionPoints(); i++){
+                if (!wiring && isInComponent != -1)
+                    for (int i = 0; i < components[isInComponent]->getNumberOfConnectionPoints(); i++)
+                    {
                         Helper::Vector_2D point = components[isInComponent]->getConnectionPoints()[i].position;
 
-                        if(NewProjectMenu_helper.distanceBetween(cursor, point) < components[isInComponent]->getHeight() / 7){
+                        if (NewProjectMenu_helper.distanceBetween(cursor, point) < components[isInComponent]->getHeight() / 7)
+                        {
                             wiring = true;
                             components[isInComponent]->setConnectedComponentCodeAtPoint(i, "cursor");
                             break;
@@ -301,9 +325,11 @@ void NewProjectMenu::WatchClick()
                     }
 
                 //Ending wiring for a point by clicking outside any component:
-                else if(wiring && isInComponent == -1){
-                    for(int i = 0; i < currentComponent->getNumberOfConnectionPoints(); i++)
-                        if(currentComponent->getConnectionPoints()[i].connectedComponentCode == "cursor"){
+                else if (wiring && isInComponent == -1)
+                {
+                    for (int i = 0; i < currentComponent->getNumberOfConnectionPoints(); i++)
+                        if (currentComponent->getConnectionPoints()[i].connectedComponentCode == "cursor")
+                        {
                             wiring = false;
                             currentComponent->getConnectionPoints()[i].connectedComponentCode = "-2";
 
@@ -317,16 +343,20 @@ void NewProjectMenu::WatchClick()
                         }
                 }
 
-                else if(wiring && isInComponent != -1){
-                    for(int i = 0; i < components[isInComponent]->getNumberOfConnectionPoints(); i++){
+                else if (wiring && isInComponent != -1)
+                {
+                    for (int i = 0; i < components[isInComponent]->getNumberOfConnectionPoints(); i++)
+                    {
                         Helper::Vector_2D point = components[isInComponent]->getConnectionPoints()[i].position;
 
-                        if(NewProjectMenu_helper.distanceBetween(cursor, point) < components[isInComponent]->getHeight() / 7){
+                        if (NewProjectMenu_helper.distanceBetween(cursor, point) < components[isInComponent]->getHeight() / 7)
+                        {
                             wiring = false;
 
                             int index = 0;
 
-                            while(currentComponent->getConnectionPoints()[index].connectedComponentCode != "cursor")    index++;
+                            while (currentComponent->getConnectionPoints()[index].connectedComponentCode != "cursor")
+                                index++;
 
                             components[isInComponent]->getConnectionPoints()[i].connectedComponentCode = currentComponent->getComponentCode();
                             components[isInComponent]->getConnectionPoints()[i].connectedIndex = index;
@@ -342,13 +372,51 @@ void NewProjectMenu::WatchClick()
         }
         else if (GetAsyncKeyState(VK_LBUTTON) && GetAsyncKeyState(VK_LCONTROL))
         {
-            std :: cout << "move component" << std :: endl;
+            std ::cout << "move component" << std ::endl;
+            ElectronicComponent **components = currentSnapshot.getComponents();
+            for (int i = 0; i < currentSnapshot.getComponentsNumber(); i++)
+            {
+                setcurrentwindow(this->window_code);
 
+                if (components[i]->isSelected())
+                {
+                    POINT cursorPoint;
+                    GetCursorPos(&cursorPoint);
+
+                    double x_point = cursorPoint.x;
+                    double y_point = cursorPoint.y;
+
+                    //keep the component in boundaries
+                    if (x_point - components[i]->getWidth() / 2 < this->rl + BORDER_SPACE)
+                    {
+                        x_point = this->rl + BORDER_SPACE + components[i]->getWidth() / 2;
+                    }
+                    else if (x_point + components[i]->getWidth() / 2 > this->rr - BORDER_SPACE)
+                    {
+                        x_point = this->rr - BORDER_SPACE - components[i]->getWidth() / 2;
+                    }
+
+                    if (y_point - components[i]->getHeight() / 2 < this->rt + BORDER_SPACE)
+                    {
+                        y_point = this->rt + BORDER_SPACE + components[i]->getHeight() / 2;
+                    }
+                    else if (y_point + components[i]->getHeight() / 2 > this->rb - BORDER_SPACE)
+                    {
+                        y_point = this->rb - BORDER_SPACE - components[i]->getHeight() / 2;
+                    }
+
+                    components[i]->setPositionCenter(helper.makeVector_2D(x_point, y_point));
+                }
+            }
+        }
+        else if (GetAsyncKeyState(VK_LBUTTON) && GetAsyncKeyState(VK_LSHIFT))
+        {
+            std ::cout << "wire component" << std ::endl;
             POINT cursorPoint;
             GetCursorPos(&cursorPoint);
-            setcurrentwindow(this->window_code);
 
-            if(currentSnapshot.getSelectedComponent()){
+            if (currentSnapshot.getSelectedComponent())
+            {
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode, true);
                 currentSnapshot.getSelectedComponent()->setPositionCenter(NewProjectMenu_helper.makeVector_2D(cursorPoint.x, cursorPoint.y));
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode);
@@ -367,7 +435,6 @@ void NewProjectMenu::WatchClick()
                     currentSnapshot.removeComponent(components[i]->getComponentCode());
                     break;
                 }
-
         }
         delay(50);
     }
@@ -389,8 +456,8 @@ void NewProjectMenu::Show()
     int windowHeight = getwindowheight();
     double BUTTON_WIDTH = (windowWidth - 50) / 10;
 
-    this->rl = BUTTON_WIDTH * 2,  this->rt = BUTTON_HEIGHT * 3,
-          this->rr = windowWidth - BUTTON_WIDTH * 2, this->rb = windowHeight - 3 * BUTTON_HEIGHT;
+    this->rl = BUTTON_WIDTH * 2, this->rt = BUTTON_HEIGHT * 3,
+    this->rr = windowWidth - BUTTON_WIDTH * 2, this->rb = windowHeight - 3 * BUTTON_HEIGHT;
 
     rectangle(this->rl, this->rt, this->rr, this->rb);
 
@@ -462,37 +529,37 @@ void NewProjectMenu::Show()
 
     double r = 25;
 
-    rotate_l.setPositionCenter(helper.makeVector_2D(this->rr + 3*r, this->rb - 5*r));
+    rotate_l.setPositionCenter(helper.makeVector_2D(this->rr + 3 * r, this->rb - 5 * r));
     rotate_l.setWidth(r);
     rotate_l.setHeight(r);
     rotate_l.setTitle("R<-");
     rotate_l.ShowCircleMode();
 
-    rotate_r.setPositionCenter(helper.makeVector_2D(this->rr + 6*r, this->rb - 5*r));
+    rotate_r.setPositionCenter(helper.makeVector_2D(this->rr + 6 * r, this->rb - 5 * r));
     rotate_r.setWidth(r);
     rotate_r.setHeight(r);
     rotate_r.setTitle("R->");
     rotate_r.ShowCircleMode();
 
-    flip_h.setPositionCenter(helper.makeVector_2D(this->rr + 3*r, this->rb - r));
+    flip_h.setPositionCenter(helper.makeVector_2D(this->rr + 3 * r, this->rb - r));
     flip_h.setWidth(r);
     flip_h.setHeight(r);
     flip_h.setTitle("F<|>");
     flip_h.ShowCircleMode();
 
-    flip_v.setPositionCenter(helper.makeVector_2D(this->rr + 6*r, this->rb -r));
+    flip_v.setPositionCenter(helper.makeVector_2D(this->rr + 6 * r, this->rb - r));
     flip_v.setWidth(r);
     flip_v.setHeight(r);
     flip_v.setTitle("F<->");
     flip_v.ShowCircleMode();
 
-    inc.setPositionCenter(helper.makeVector_2D(this->rl - 3*r, this->rb - 5*r));
+    inc.setPositionCenter(helper.makeVector_2D(this->rl - 3 * r, this->rb - 5 * r));
     inc.setWidth(r);
     inc.setHeight(r);
     inc.setTitle("+");
     inc.ShowCircleMode();
 
-    dec.setPositionCenter(helper.makeVector_2D(this->rl - 6*r, this->rb - 5*r));
+    dec.setPositionCenter(helper.makeVector_2D(this->rl - 6 * r, this->rb - 5 * r));
     dec.setWidth(r);
     dec.setHeight(r);
     dec.setTitle("-");

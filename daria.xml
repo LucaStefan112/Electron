@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ElectronicComponent>
+  <Name>Gunn Diode</Name>
+  <Ctype>7</Ctype>
+  <ComponentCode>1641673877</ComponentCode>
+  <PositionType>1</PositionType>
+  <PositionUpLeft>
+    <x>486</x>
+    <y>203.5</y>
+  </PositionUpLeft>
+  <PositionCenter>
+    <x>536</x>
+    <y>216</y>
+  </PositionCenter>
+  <PositionDownRight>
+    <x>586</x>
+    <y>228.5</y>
+  </PositionDownRight>
+  <Width>100</Width>
+  <Height>25</Height>
+  <NumberOfConnectionPoints>2</NumberOfConnectionPoints>
+  <RotationState>0</RotationState>
+  <Flipped>0</Flipped>
+  <CursorPointInButton>0</CursorPointInButton>
+  <Selected>1</Selected>
+ </ElectronicComponent>
