@@ -100,6 +100,7 @@ void ElectronicComponent::setPositionDownRight(Helper::Vector_2D thisPosition)
 //Setter of the width:
 void ElectronicComponent::setWidth(double thisWidth)
 {
+    if(thisWidth < 30 || thisWidth > 500)  return;
     Erase();
 
     width = thisWidth;
@@ -130,6 +131,8 @@ void ElectronicComponent::setWidth(double thisWidth)
 //Setter of the height:
 void ElectronicComponent::setHeight(double thisHeight)
 {
+    if(thisHeight < 30 || thisHeight > 500)  return;
+
     Erase();
 
     height = thisHeight;
