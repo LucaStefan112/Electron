@@ -199,6 +199,17 @@ void NewProjectMenu::WatchClick()
                     {
                         currentSnapshot.getSelectedComponent()->setWidth(COMPONENT_SIZE);
                         currentSnapshot.getSelectedComponent()->setPositionCenter(helper.makeVector_2D(cursorPoint.x, cursorPoint.y));
+
+                        Change c;
+                        c.type = "add";
+                        c.componentCode = currentSnapshot.getSelectedComponent()->getComponentCode();
+                        c.typeOfValue = "component";
+                        c.oldValue = "NULL";
+                        std::stringstream component;
+                        currentSnapshot.saveToStream(component, currentSnapshot.getComponentsNumber() - 1);
+                        c.newValue = component.str();
+                        changes.clearRedo();
+                        changes.addChange(c);
                     }
                 }
 
@@ -207,17 +218,33 @@ void NewProjectMenu::WatchClick()
 
             if (flip_h.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
+                Change c;
+                c.type = "flip";
+                c.componentCode = currentSnapshot.getSelectedComponent()->getComponentCode();
+                c.typeOfValue = "bool";
+                c.oldValue = currentSnapshot.getSelectedComponent()->flipped ? "true" : "false";
+
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode, true);
 
                 currentSnapshot.getSelectedComponent()->flipComponent();
 
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode);
 
+                c.newValue = currentSnapshot.getSelectedComponent()->flipped ? "true" : "false";
+                changes.clearRedo();
+                changes.addChange(c);
+
                 delay(300);
             }
 
             if (flip_v.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
+                Change c;
+                c.type = "flip";
+                c.componentCode = currentSnapshot.getSelectedComponent()->getComponentCode();
+                c.typeOfValue = "bool";
+                c.oldValue = currentSnapshot.getSelectedComponent()->flipped ? "true" : "false";
+
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode, true);
 
                 currentSnapshot.getSelectedComponent()->flipComponent();
@@ -225,46 +252,109 @@ void NewProjectMenu::WatchClick()
 
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode);
 
+                c.newValue = currentSnapshot.getSelectedComponent()->flipped ? "true" : "false";
+                changes.clearRedo();
+                changes.addChange(c);
+
                 delay(300);
             }
 
             if (rotate_l.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
+                Change c;
+                c.type = "rotate";
+                c.componentCode = currentSnapshot.getSelectedComponent()->getComponentCode();
+                c.typeOfValue = "int";
+                c.oldValue = std::to_string(currentSnapshot.getSelectedComponent()->rotateState);
+
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode, true);
 
                 currentSnapshot.getSelectedComponent()->rotateComponent(currentSnapshot.getSelectedComponent()->getRotationState() - 15);
 
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode);
+
+                c.newValue = std::to_string(currentSnapshot.getSelectedComponent()->rotateState);
+                changes.clearRedo();
+                changes.addChange(c);
             }
 
             if (rotate_r.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
+                Change c;
+                c.type = "rotate";
+                c.componentCode = currentSnapshot.getSelectedComponent()->getComponentCode();
+                c.typeOfValue = "int";
+                c.oldValue = std::to_string(currentSnapshot.getSelectedComponent()->rotateState);
+
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode, true);
 
                 currentSnapshot.getSelectedComponent()->rotateComponent(currentSnapshot.getSelectedComponent()->getRotationState() + 15);
 
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode);
+
+                c.newValue = std::to_string(currentSnapshot.getSelectedComponent()->rotateState);
+                changes.clearRedo();
+                changes.addChange(c);
             }
 
             if (inc.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
+                Change c;
+                c.type = "width";
+                c.componentCode = currentSnapshot.getSelectedComponent()->getComponentCode();
+                c.typeOfValue = "double";
+                std::stringstream oldValue;
+                oldValue << currentSnapshot.getSelectedComponent()->getWidth();
+                c.oldValue = oldValue.str();
+
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode, true);
 
                 currentSnapshot.getSelectedComponent()->setWidth(currentSnapshot.getSelectedComponent()->getWidth() + 15);
 
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode);
+
+                std::stringstream newValue;
+                newValue << currentSnapshot.getSelectedComponent()->getWidth();
+                c.newValue = newValue.str();
+
+                changes.clearRedo();
+                changes.addChange(c);
             }
 
             if (dec.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
             {
+                Change c;
+                c.type = "width";
+                c.componentCode = currentSnapshot.getSelectedComponent()->getComponentCode();
+                c.typeOfValue = "double";
+                std::stringstream oldValue;
+                oldValue << currentSnapshot.getSelectedComponent()->getWidth();
+                c.oldValue = oldValue.str();
+
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode, true);
 
                 currentSnapshot.getSelectedComponent()->setWidth(currentSnapshot.getSelectedComponent()->getWidth() - 15);
 
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode);
+
+                std::stringstream newValue;
+                newValue << currentSnapshot.getSelectedComponent()->getWidth();
+                c.newValue = newValue.str();
+
+                changes.clearRedo();
+                changes.addChange(c);
             }
-            else
+
+            if (undo.isCursorPointInButton() && !changes.undoEmpty())
             {
+                implementChangeUndo();
+            }
+
+            if (redo.isCursorPointInButton() && !changes.redoEmpty())
+            {
+                implementChangeRedo();
+            }
+            else {
                 std::cout << "select\n";
 
                 POINT cursorPoint;
@@ -432,11 +522,45 @@ void NewProjectMenu::WatchClick()
                 if (components[i]->isCursorPointInButton())
                 {
                     std::cout << "delete\n";
+
+                    Change c;
+                    c.type = "delete";
+                    c.componentCode = currentSnapshot.getSelectedComponent()->getComponentCode();
+                    c.typeOfValue = "component";
+                    std::stringstream component;
+                    currentSnapshot.saveToStream(component, i);
+                    c.oldValue = component.str();
+                    c.newValue = "NULL";
+                    changes.clearRedo();
+                    changes.addChange(c);
+
                     drawWiresForComponent(components[i]->getComponentCode(), true);
                     currentSnapshot.removeComponent(components[i]->getComponentCode());
                     break;
                 }
         }
+
+
+        if (currentSnapshot.getSelectedComponent()) {
+            box.setPositionCenter(helper.makeVector_2D(100, 225));
+            box.setWidth(150);
+            box.setHeight(300);
+            std::string title = "- Info -\n";
+            title += "N " + currentSnapshot.getSelectedComponent()->name + '\n';
+            title += "C " + currentSnapshot.getSelectedComponent()->getComponentCode() + '\n';
+            title += "W " + std::to_string(currentSnapshot.getSelectedComponent()->getWidth()) + '\n';
+            title += "H " + std::to_string(currentSnapshot.getSelectedComponent()->getHeight()) + '\n';
+            title += "R " + std::to_string(currentSnapshot.getSelectedComponent()->getRotationState()) + '\n';
+            title += "F " + std::to_string(currentSnapshot.getSelectedComponent()->flipped) + '\n';
+/*
+            if (currentSnapshot.getSelectedComponent()->name == "Resistor")
+                title += "V " + std::to_string(((Resistor)currentSnapshot.getSelectedComponent())->getResistance());
+*/
+            box.setTitle(title);
+            box.ShowBox();
+        }
+
+
         delay(50);
     }
 
@@ -565,4 +689,51 @@ void NewProjectMenu::Show()
     dec.setHeight(r);
     dec.setTitle("-");
     dec.ShowCircleMode();
+
+    redo.setPositionCenter(helper.makeVector_2D(this->rl - 3*r, this->rb - r));
+    redo.setWidth(r);
+    redo.setHeight(r);
+    redo.setTitle("Redo");
+    redo.ShowCircleMode();
+
+    undo.setPositionCenter(helper.makeVector_2D(this->rl - 6*r, this->rb - r));
+    undo.setWidth(r);
+    undo.setHeight(r);
+    undo.setTitle("Undo");
+    undo.ShowCircleMode();
+}
+
+void NewProjectMenu::implementChangeUndo() {
+    auto c = changes.getUndo();
+
+    if (c.type == "add") {
+        currentSnapshot.removeComponent(c.componentCode);
+    } else if (c.type == "delete") {
+        std::stringstream strm(c.oldValue);
+        currentSnapshot.importFromStream(strm);
+    } else if (c.type == "flip") { // works
+        currentSnapshot.getComponent(c.componentCode)->flipComponent();
+    } else if (c.type == "rotate") { // works
+        currentSnapshot.getComponent(c.componentCode)->rotateComponent(std::stoi(c.oldValue));
+    } else if (c.type == "width") { // works
+        currentSnapshot.getComponent(c.componentCode)->setWidth(std::stod(c.oldValue));
+    }
+}
+
+void NewProjectMenu::implementChangeRedo() {
+    auto c = changes.getRedo();
+
+    if (c.type == "add") {
+        std::stringstream strm(c.newValue);
+        std::cout << strm.str();
+        currentSnapshot.importFromStream(strm);
+    } else if (c.type == "delete") {
+        currentSnapshot.removeComponent(c.componentCode);
+    } else if (c.type == "flip") { // works
+        currentSnapshot.getComponent(c.componentCode)->flipComponent();
+    } else if (c.type == "rotate") { // works
+        currentSnapshot.getComponent(c.componentCode)->rotateComponent(std::stoi(c.newValue));
+    } else if (c.type == "width") { // works
+        currentSnapshot.getComponent(c.componentCode)->setWidth(std::stod(c.newValue));
+    }
 }

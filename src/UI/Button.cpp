@@ -1,6 +1,7 @@
 #include "UI/Button.h"
-#include <string>
 
+#include <string>
+#include <sstream>
 
 Helper Button_helper;
 
@@ -186,4 +187,22 @@ void Button::ShowCircleMode()
     circle(position.center.x, position.center.y, dimension);
     settextstyle(3, 0, 1);
     outtextxy(position.center.x, position.center.y, strdup(title.c_str()));
+}
+
+void Button::ShowBox() {
+    setlinestyle(0, 0, 3);
+    rectangle(position.up_left.x, position.up_left.y, position.down_right.x, position.down_right.y);
+    settextstyle(3, 0, 2);
+
+    std::stringstream titleStream(title);
+    std::string temporary;
+
+    int k = 0;
+    while(std::getline(titleStream, temporary, '\n')){
+      outtextxy(position.center.x - Button_helper.textSpace(temporary) / 2, position.up_left.y + 4 + k * 20, strdup(temporary.c_str()));
+      k++;
+      settextstyle(3, 0, 1);
+    }
+
+    settextstyle(3, 0, 1);
 }

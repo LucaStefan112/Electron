@@ -8,7 +8,7 @@
 
 #include "Electronic Components/Electronics.h"
 #include "UI/UI.h"
-#include "Data Structures/ColectionOfSnapshots.h"
+#include "Data Structures/Changes.h"
 #include "Data Structures/Snapshot.h"
 
 #include "Helper.h"
@@ -22,8 +22,10 @@ class NewProjectMenu
         Button save, capacitors, diodes, logicGates, measurements, resistors, sources, switches, transistors, other, exit;
         Button rotate_l, rotate_r, flip_h, flip_v;
         Button inc, dec;
+        Button undo, redo;
+        Button box;
 
-        ColectionOfSnapshots completeSnapshots;
+        Changes changes;
         Snapshot currentSnapshot;
 
         NameFile nameFileMenu;
@@ -43,6 +45,9 @@ class NewProjectMenu
         void WatchClick();
 
         void drawWiresForComponent(std::string thisComponentCode, bool eraseMode);
+
+        void implementChangeUndo();
+        void implementChangeRedo();
 };
 
 #endif // NEWPROJECTMENU_H
