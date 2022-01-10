@@ -172,8 +172,6 @@ void ElectronicComponent::setComponentCode(std::string thisComponentCode){
 //Setter of the code of the connected component at a given index:
 void ElectronicComponent::setConnectedComponentCodeAtPoint(int thisPoint, std::string thisComponentCode){
 
-    if(this->name == "Connection Point")    return;
-
     if(0 <= thisPoint && thisPoint < numberOfConnectionPoints)
         connectionPoints[thisPoint].connectedComponentCode = thisComponentCode;
 }
@@ -187,7 +185,6 @@ void ElectronicComponent::setOutterBox(bool thisState){
 }
 
 void ElectronicComponent::setConnectionPoints(bool thisState){
-    if(this->name == "Connection Point")    return;
 
     Erase();
 
@@ -305,6 +302,18 @@ void ElectronicComponent::showElements(bool modeErase){
 
         setcolor(RED);
 
+        if(this->name == "Connection Node"){
+            if(modeErase)
+                setcolor(BLACK);
+
+            fillellipse(getPositionCenter().x, getPositionCenter().y, 10, 10);
+
+            setcolor(WHITE);
+
+            return;
+        }
+
+
         if(modeErase) {
             setcolor(BLACK);
 
@@ -406,9 +415,8 @@ bool ElectronicComponent::isCursorPointInButton()
     POINT cursorPoint;
     GetCursorPos(&cursorPoint);
 
-    if(this->name == "Connection Node" && ElectronicComponent_helper.distanceBetween(ElectronicComponent_helper.makeVector_2D(cursorPoint.x, cursorPoint.y), getPositionCenter()) < 20){
-        return true; std::cout<<"da";
-        }
+    if(this->name == "Connection Node" && ElectronicComponent_helper.distanceBetween(ElectronicComponent_helper.makeVector_2D(cursorPoint.x, cursorPoint.y), getPositionCenter()) < 20)
+        return true;
     else if(this->name == "Connection Node")
         return false;
 
@@ -441,14 +449,6 @@ bool ElectronicComponent::isSelected()
 int ElectronicComponent::getRotationState()
 {
     return rotateState;
-}
-
-void ElectronicComponent::drawConnectionLines(){
-    /*
-    for(int i = 0; i < numberOfConnectionPoints; i++){
-        if(connectionPoints[i].connectedComponentCode != "-2")
-            ElectronicComponent_helper.drawWire(connectionPoints[i].position, currentSnapshot.getComponent(connectionPoints[i].connectedComponentCode).connectionPoints[connectionPoints[i].connectedIndex].position);
-    }*/
 }
 
 //Passing trough a string all the data about the component:

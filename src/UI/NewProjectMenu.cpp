@@ -21,10 +21,25 @@ void NewProjectMenu::drawWiresForComponent(std::string thisComponentCode, bool e
 
     auto colorMode = (eraseMode) ? BLACK : WHITE;
 
-    for (int i = 0; i < currentComponent->getNumberOfConnectionPoints(); i++)
-    {
+    if(currentComponent->name == "Connection Node"){
 
-        if (currentComponent->getConnectionPoints()[i].connectedComponentCode != "cursor" && currentComponent->getConnectionPoints()[i].connectedComponentCode != "-2")
+        ElectronicComponent** components = currentSnapshot.getComponents();
+
+        for(int i = 0; i < currentSnapshot.getComponentsNumber(); i++){
+            if(components[i])
+                for(int j = 0; j < components[i]->getNumberOfConnectionPoints(); j++)
+                    if(components[i]->getConnectionPoints()[j].connectedComponentCode == currentComponent->getComponentCode()){
+                        NewProjectMenu_helper.drawWire(
+                            currentComponent->getPositionCenter(),
+                            components[i]->getConnectionPoints()[j].position,
+                            colorMode);
+                    }
+        }
+    }
+
+    for (int i = 0; i < currentComponent->getNumberOfConnectionPoints(); i++){
+
+        if (currentComponent->name != "Connection Node" && currentComponent->getConnectionPoints()[i].connectedComponentCode != "cursor" && currentComponent->getConnectionPoints()[i].connectedComponentCode != "-2")
         {
 
             std::string connectedComponentCode = currentComponent->getConnectionPoints()[i].connectedComponentCode;
@@ -54,6 +69,21 @@ void NewProjectMenu::drawWiresForComponent(std::string thisComponentCode, bool e
             NewProjectMenu_helper.drawWire(point, cursor, WHITE);
         }
     }
+}
+
+void NewProjectMenu::refreshScreen(){
+    //Clearing the background:
+    setfillstyle(SOLID_FILL, BLACK);
+    bar(this->rl + 2, this->rt + 2, this->rr, this->rb);
+    setfillstyle(SOLID_FILL, WHITE);
+
+    for(int i = 0; i < currentSnapshot.getComponentsNumber(); i++)
+            if(currentSnapshot.getComponents()[i]){
+                drawWiresForComponent(currentSnapshot.getComponents()[i]->getComponentCode());
+                currentSnapshot.getComponents()[i]->Show();
+            }
+
+    if(currentSnapshot.getSelectedComponent())  currentSnapshot.getSelectedComponent()->Show();
 }
 
 void NewProjectMenu::WatchClick()
@@ -234,6 +264,8 @@ void NewProjectMenu::WatchClick()
                 changes.clearRedo();
                 changes.addChange(c);
 
+                refreshScreen();
+
                 delay(300);
             }
 
@@ -256,6 +288,8 @@ void NewProjectMenu::WatchClick()
                 changes.clearRedo();
                 changes.addChange(c);
 
+                refreshScreen();
+
                 delay(300);
             }
 
@@ -276,6 +310,8 @@ void NewProjectMenu::WatchClick()
                 c.newValue = std::to_string(currentSnapshot.getSelectedComponent()->rotateState);
                 changes.clearRedo();
                 changes.addChange(c);
+
+                refreshScreen();
             }
 
             if (rotate_r.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
@@ -295,6 +331,8 @@ void NewProjectMenu::WatchClick()
                 c.newValue = std::to_string(currentSnapshot.getSelectedComponent()->rotateState);
                 changes.clearRedo();
                 changes.addChange(c);
+
+                refreshScreen();
             }
 
             if (inc.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
@@ -319,6 +357,8 @@ void NewProjectMenu::WatchClick()
 
                 changes.clearRedo();
                 changes.addChange(c);
+
+                refreshScreen();
             }
 
             if (dec.isCursorPointInButton() && currentSnapshot.getSelectedComponent())
@@ -343,18 +383,24 @@ void NewProjectMenu::WatchClick()
 
                 changes.clearRedo();
                 changes.addChange(c);
+
+                refreshScreen();
             }
 
             if (undo.isCursorPointInButton() && !changes.undoEmpty())
             {
                 implementChangeUndo();
                 delay(300);
+
+                refreshScreen();
             }
 
             if (redo.isCursorPointInButton() && !changes.redoEmpty())
             {
                 implementChangeRedo();
                 delay(300);
+
+                refreshScreen();
             }
 
             //Selecting the component:
@@ -409,11 +455,17 @@ void NewProjectMenu::WatchClick()
 
                         if (NewProjectMenu_helper.distanceBetween(cursor, point) < components[isInComponent]->getHeight() / 5)
                         {
+                            if(components[isInComponent]->getConnectionPoints()[i].connectedComponentCode != "-2"){
+                                std::string connectedComponentCode = components[isInComponent]->getConnectionPoints()[i].connectedComponentCode;
+                                int connectedComponentIndex = components[isInComponent]->getConnectionPoints()[i].connectedIndex;
+                                currentSnapshot.getComponent(connectedComponentCode)->getConnectionPoints()[connectedComponentIndex].connectedComponentCode = "-2";
+                            }
                             wiring = true;
                             components[isInComponent]->setConnectedComponentCodeAtPoint(i, "cursor");
                             break;
                         }
                     }
+                    refreshScreen();
                     delay(300);
                 }
 
@@ -444,7 +496,7 @@ void NewProjectMenu::WatchClick()
                     {
                         Helper::Vector_2D point = components[isInComponent]->getConnectionPoints()[i].position;
 
-                        if (NewProjectMenu_helper.distanceBetween(cursor, point) < components[isInComponent]->getHeight() / 5 || components[isInComponent]->name == "Connection Node" && NewProjectMenu_helper.distanceBetween(cursor, point) < 20)
+                        if (components[isInComponent]->componentCode != currentComponent->componentCode && NewProjectMenu_helper.distanceBetween(cursor, point) < components[isInComponent]->getHeight() / 5 || components[isInComponent]->name == "Connection Node" && NewProjectMenu_helper.distanceBetween(cursor, point) < 20)
                         {
                             wiring = false;
 
@@ -464,6 +516,8 @@ void NewProjectMenu::WatchClick()
                     }
                     delay(300);
                 }
+
+                refreshScreen();
             }
         }
 
@@ -507,6 +561,8 @@ void NewProjectMenu::WatchClick()
 
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode);
             }
+
+            refreshScreen();
         }
 
         //Deleting the component:
@@ -532,6 +588,7 @@ void NewProjectMenu::WatchClick()
                     currentSnapshot.removeComponent(components[i]->getComponentCode());
                     break;
                 }
+            refreshScreen();
         }
 
         else if(GetAsyncKeyState('n') || GetAsyncKeyState('N')){
@@ -555,6 +612,8 @@ void NewProjectMenu::WatchClick()
                     currentSnapshot.getSelectedComponent()->setPositionCenter(NewProjectMenu_helper.makeVector_2D(x_point, y_point));
                 }
             }
+            refreshScreen();
+            delay(300);
         }
 
         if (currentSnapshot.getSelectedComponent()) {
@@ -576,7 +635,13 @@ void NewProjectMenu::WatchClick()
             box.ShowBox();
         }
 
+        for(int i = 0; i < currentSnapshot.getComponentsNumber(); i++)
+            if(currentSnapshot.getComponents()[i]){
+                drawWiresForComponent(currentSnapshot.getComponents()[i]->getComponentCode());
+                currentSnapshot.getComponents()[i]->Show();
+            }
 
+        if(currentSnapshot.getSelectedComponent())  currentSnapshot.getSelectedComponent()->Show();
         delay(50);
     }
 

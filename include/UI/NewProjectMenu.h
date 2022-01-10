@@ -48,6 +48,8 @@ class NewProjectMenu
 
         void implementChangeUndo();
         void implementChangeRedo();
+
+        void refreshScreen();
 };
 
 #endif // NEWPROJECTMENU_H
