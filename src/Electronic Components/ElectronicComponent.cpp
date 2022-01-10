@@ -100,6 +100,8 @@ void ElectronicComponent::setPositionDownRight(Helper::Vector_2D thisPosition)
 //Setter of the width:
 void ElectronicComponent::setWidth(double thisWidth)
 {
+    if(this->name == "Connection Point")    return;
+
     if(thisWidth < 30 || thisWidth > 500)  return;
     Erase();
 
@@ -131,6 +133,8 @@ void ElectronicComponent::setWidth(double thisWidth)
 //Setter of the height:
 void ElectronicComponent::setHeight(double thisHeight)
 {
+    if(this->name == "Connection Point")    return;
+
     if(thisHeight < 30 || thisHeight > 500)  return;
 
     Erase();
@@ -168,6 +172,8 @@ void ElectronicComponent::setComponentCode(std::string thisComponentCode){
 //Setter of the code of the connected component at a given index:
 void ElectronicComponent::setConnectedComponentCodeAtPoint(int thisPoint, std::string thisComponentCode){
 
+    if(this->name == "Connection Point")    return;
+
     if(0 <= thisPoint && thisPoint < numberOfConnectionPoints)
         connectionPoints[thisPoint].connectedComponentCode = thisComponentCode;
 }
@@ -181,6 +187,8 @@ void ElectronicComponent::setOutterBox(bool thisState){
 }
 
 void ElectronicComponent::setConnectionPoints(bool thisState){
+    if(this->name == "Connection Point")    return;
+
     Erase();
 
     showConnectionPoints = thisState;
@@ -190,6 +198,8 @@ void ElectronicComponent::setConnectionPoints(bool thisState){
 
 //Flipping the component:
 void ElectronicComponent::flipComponent(){
+    if(this->name == "Connection Point")    return;
+
     this->Erase();
 
     flipped = !flipped;
@@ -201,6 +211,8 @@ void ElectronicComponent::flipComponent(){
 
 //Rotating the component:
 void ElectronicComponent::rotateComponent(int thisDegree){
+    if(this->name == "Connection Point")    return;
+
     Erase();
 
     rotateState = thisDegree % 360;
@@ -275,6 +287,19 @@ void ElectronicComponent::showElements(bool modeErase){
 
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
+
+    if(this->name == "Connection Point"){
+
+        setcolor(RED);
+
+        if(modeErase)   setcolor(BLACK);
+
+        fillellipse(getPositionCenter().x, getPositionCenter().y, 7, 7);
+
+        setcolor(WHITE);
+
+        return;
+    }
 
     if(showOutterBox){
 
@@ -380,6 +405,12 @@ bool ElectronicComponent::isCursorPointInButton()
 {
     POINT cursorPoint;
     GetCursorPos(&cursorPoint);
+
+    if(this->name == "Connection Node" && ElectronicComponent_helper.distanceBetween(ElectronicComponent_helper.makeVector_2D(cursorPoint.x, cursorPoint.y), getPositionCenter()) < 20){
+        return true; std::cout<<"da";
+        }
+    else if(this->name == "Connection Node")
+        return false;
 
     if (cursorPoint.x < position.up_left.x)
     {

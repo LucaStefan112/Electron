@@ -78,4 +78,7 @@
 #include "Electronic Components/Switches/Switch_SPDT.h"
 #include "Electronic Components/Switches/Switch_DPST.h"
 
+//Connection Node:
+#include "Electronic Components/ConnectionNode.h"
+
 #endif // ELECTRONICS_H

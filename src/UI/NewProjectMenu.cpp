@@ -348,15 +348,17 @@ void NewProjectMenu::WatchClick()
             if (undo.isCursorPointInButton() && !changes.undoEmpty())
             {
                 implementChangeUndo();
+                delay(300);
             }
 
             if (redo.isCursorPointInButton() && !changes.redoEmpty())
             {
                 implementChangeRedo();
+                delay(300);
             }
-            else {
-                std::cout << "select\n";
 
+            //Selecting the component:
+            else {
                 POINT cursorPoint;
                 GetCursorPos(&cursorPoint);
                 setcurrentwindow(this->window_code);
@@ -400,18 +402,20 @@ void NewProjectMenu::WatchClick()
                 }
 
                 //Starting wiring from a connection point of a component:
-                if (!wiring && isInComponent != -1)
+                if (!wiring && isInComponent != -1){
                     for (int i = 0; i < components[isInComponent]->getNumberOfConnectionPoints(); i++)
                     {
                         Helper::Vector_2D point = components[isInComponent]->getConnectionPoints()[i].position;
 
-                        if (NewProjectMenu_helper.distanceBetween(cursor, point) < components[isInComponent]->getHeight() / 7)
+                        if (NewProjectMenu_helper.distanceBetween(cursor, point) < components[isInComponent]->getHeight() / 5)
                         {
                             wiring = true;
                             components[isInComponent]->setConnectedComponentCodeAtPoint(i, "cursor");
                             break;
                         }
                     }
+                    delay(300);
+                }
 
                 //Ending wiring for a point by clicking outside any component:
                 else if (wiring && isInComponent == -1)
@@ -430,6 +434,7 @@ void NewProjectMenu::WatchClick()
                             lastCursorX = lastCursorY = -1;
                             break;
                         }
+                    delay(300);
                 }
 
                 //Wiring two components:
@@ -439,7 +444,7 @@ void NewProjectMenu::WatchClick()
                     {
                         Helper::Vector_2D point = components[isInComponent]->getConnectionPoints()[i].position;
 
-                        if (NewProjectMenu_helper.distanceBetween(cursor, point) < components[isInComponent]->getHeight() / 7)
+                        if (NewProjectMenu_helper.distanceBetween(cursor, point) < components[isInComponent]->getHeight() / 5 || components[isInComponent]->name == "Connection Node" && NewProjectMenu_helper.distanceBetween(cursor, point) < 20)
                         {
                             wiring = false;
 
@@ -457,9 +462,12 @@ void NewProjectMenu::WatchClick()
                             break;
                         }
                     }
+                    delay(300);
                 }
             }
         }
+
+        //Moving the component:
         else if (GetAsyncKeyState(VK_LBUTTON) && GetAsyncKeyState(VK_LCONTROL))
         {
 
@@ -500,29 +508,15 @@ void NewProjectMenu::WatchClick()
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode);
             }
         }
-        else if (GetAsyncKeyState(VK_LBUTTON) && GetAsyncKeyState(VK_LSHIFT))
-        {
-            std ::cout << "wire component" << std ::endl;
-            POINT cursorPoint;
-            GetCursorPos(&cursorPoint);
 
-            if (currentSnapshot.getSelectedComponent())
-            {
-                drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode, true);
-                currentSnapshot.getSelectedComponent()->setPositionCenter(NewProjectMenu_helper.makeVector_2D(cursorPoint.x, cursorPoint.y));
-                drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode);
-            }
-        }
+        //Deleting the component:
         else if (GetAsyncKeyState(VK_RBUTTON))
         {
-            std::cout << "trydelete\n";
             auto components = currentSnapshot.getComponents();
 
             for (int i = 0; i < currentSnapshot.getComponentsNumber(); i++)
                 if (components[i]->isCursorPointInButton())
                 {
-                    std::cout << "delete\n";
-
                     Change c;
                     c.type = "delete";
                     c.componentCode = currentSnapshot.getSelectedComponent()->getComponentCode();
@@ -540,6 +534,28 @@ void NewProjectMenu::WatchClick()
                 }
         }
 
+        else if(GetAsyncKeyState('n') || GetAsyncKeyState('N')){
+
+            POINT cursorPoint;
+            GetCursorPos(&cursorPoint);
+
+            double x_point = cursorPoint.x;
+            double y_point = cursorPoint.y;
+
+            if(this->rl + 4 < x_point && x_point < this->rr - 4 && this->rt + 4 < y_point && y_point < this->rb - 4){
+
+                bool ok = true;
+
+                for(int i = 0; i < currentSnapshot.getComponentsNumber() && ok; i++)
+                    if(currentSnapshot.getComponents()[i]->isCursorPointInButton())
+                        ok = false;
+
+                if(ok){
+                    currentSnapshot.addComponent(100);
+                    currentSnapshot.getSelectedComponent()->setPositionCenter(NewProjectMenu_helper.makeVector_2D(x_point, y_point));
+                }
+            }
+        }
 
         if (currentSnapshot.getSelectedComponent()) {
             box.setPositionCenter(helper.makeVector_2D(100, 225));

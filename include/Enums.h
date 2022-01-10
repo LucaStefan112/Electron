@@ -67,7 +67,8 @@ enum ComponentType {
     _transistorMOSFETN,
     _transistorMOSFETP,
     _transistorSingleN,
-    _transistorSingleP
+    _transistorSingleP,
+    _connectionNode
 };
 
 #endif // ENUMS_H

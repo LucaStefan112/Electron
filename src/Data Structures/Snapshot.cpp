@@ -78,6 +78,7 @@ void Snapshot::addComponent(int cType) {
     else if(cType == _microphone) current[sizeOfCurrent] = new Microphone;
     else if(cType == _motor) current[sizeOfCurrent] = new Motor;
     else if(cType == _speaker) current[sizeOfCurrent] = new Speaker;
+    else if(cType == 100) current[sizeOfCurrent] = new ConnectionNode;
     else return;
 
     current[sizeOfCurrent++]->setOutterBox(1);
@@ -341,7 +342,8 @@ int Snapshot::nameToCtype(std::string name) {
         {"Lamp", _lamp},
         {"Microphone", _microphone},
         {"Motor", _motor},
-        {"Speaker", _speaker}
+        {"Speaker", _speaker},
+        {"Connection Node", _connectionNode}
     };
 
     return mapping[name];
