@@ -412,27 +412,67 @@ void NewProjectMenu::WatchClick()
             }
 
             if (dec_v1.isCursorPointInButton()) {
+                Change c;
+                c.type = "value";
+                c.componentCode = currentSnapshot.getSelectedComponent()->getComponentCode();
+                c.typeOfValue = "string double";
+                c.oldValue = currentSnapshot.getSelectedComponent()->getValues()[0].first + ' ' + std::to_string(currentSnapshot.getSelectedComponent()->getValues()[0].second);
+
                 currentSnapshot.getSelectedComponent()->setValue(
                     currentSnapshot.getSelectedComponent()->getValues()[0].first,
                     currentSnapshot.getSelectedComponent()->getValues()[0].second - 1);
+
+                c.newValue = currentSnapshot.getSelectedComponent()->getValues()[0].first + ' ' + std::to_string(currentSnapshot.getSelectedComponent()->getValues()[0].second);
+                changes.clearRedo();
+                changes.addChange(c);
             }
 
             if (inc_v1.isCursorPointInButton()) {
+                Change c;
+                c.type = "value";
+                c.componentCode = currentSnapshot.getSelectedComponent()->getComponentCode();
+                c.typeOfValue = "string double";
+                c.oldValue = currentSnapshot.getSelectedComponent()->getValues()[0].first + ' ' + std::to_string(currentSnapshot.getSelectedComponent()->getValues()[0].second);
+
                 currentSnapshot.getSelectedComponent()->setValue(
                     currentSnapshot.getSelectedComponent()->getValues()[0].first,
                     currentSnapshot.getSelectedComponent()->getValues()[0].second + 1);
+
+                c.newValue = currentSnapshot.getSelectedComponent()->getValues()[0].first + ' ' + std::to_string(currentSnapshot.getSelectedComponent()->getValues()[0].second);
+                changes.clearRedo();
+                changes.addChange(c);
             }
 
             if (dec_v2.isCursorPointInButton()) {
+                Change c;
+                c.type = "value";
+                c.componentCode = currentSnapshot.getSelectedComponent()->getComponentCode();
+                c.typeOfValue = "string double";
+                c.oldValue = currentSnapshot.getSelectedComponent()->getValues()[1].first + ' ' + std::to_string(currentSnapshot.getSelectedComponent()->getValues()[1].second);
+
                 currentSnapshot.getSelectedComponent()->setValue(
                     currentSnapshot.getSelectedComponent()->getValues()[1].first,
                     currentSnapshot.getSelectedComponent()->getValues()[1].second - 1);
+
+                c.newValue = currentSnapshot.getSelectedComponent()->getValues()[1].first + ' ' + std::to_string(currentSnapshot.getSelectedComponent()->getValues()[1].second);
+                changes.clearRedo();
+                changes.addChange(c);
             }
 
             if (inc_v2.isCursorPointInButton()) {
+                Change c;
+                c.type = "value";
+                c.componentCode = currentSnapshot.getSelectedComponent()->getComponentCode();
+                c.typeOfValue = "string double";
+                c.oldValue = currentSnapshot.getSelectedComponent()->getValues()[1].first + ' ' + std::to_string(currentSnapshot.getSelectedComponent()->getValues()[1].second);
+
                 currentSnapshot.getSelectedComponent()->setValue(
                     currentSnapshot.getSelectedComponent()->getValues()[1].first,
                     currentSnapshot.getSelectedComponent()->getValues()[1].second + 1);
+
+                c.newValue = currentSnapshot.getSelectedComponent()->getValues()[1].first + ' ' + std::to_string(currentSnapshot.getSelectedComponent()->getValues()[1].second);
+                changes.clearRedo();
+                changes.addChange(c);
             }
 
             //Selecting the component:
@@ -646,7 +686,6 @@ void NewProjectMenu::WatchClick()
             dec_v2.Hide();
             v2.Hide();
             box.Hide();
-
 
             POINT cursorPoint;
             GetCursorPos(&cursorPoint);
@@ -904,6 +943,12 @@ void NewProjectMenu::implementChangeUndo() {
         currentSnapshot.getComponent(c.componentCode)->rotateComponent(std::stoi(c.oldValue));
     } else if (c.type == "width") { // works
         currentSnapshot.getComponent(c.componentCode)->setWidth(std::stod(c.oldValue));
+    } else if (c.type == "value") {
+        std::stringstream strm(c.oldValue);
+        std::string str;
+        double value;
+        strm >> str >> value;
+        currentSnapshot.getComponent(c.componentCode)->setValue(str, value);
     }
 }
 
@@ -922,5 +967,11 @@ void NewProjectMenu::implementChangeRedo() {
         currentSnapshot.getComponent(c.componentCode)->rotateComponent(std::stoi(c.newValue));
     } else if (c.type == "width") { // works
         currentSnapshot.getComponent(c.componentCode)->setWidth(std::stod(c.newValue));
+    } else if (c.type == "value") {
+        std::stringstream strm(c.newValue);
+        std::string str;
+        double value;
+        strm >> str >> value;
+        currentSnapshot.getComponent(c.componentCode)->setValue(str, value);
     }
 }
