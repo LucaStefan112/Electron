@@ -135,148 +135,98 @@ void Snapshot::reset() {
 }
 
 void Snapshot::saveToStream(std::ostream &stream, int i) {
-    stream << "<ElectronicComponent>\n";
-    stream << "  <Name>" << current[i]->name << "</Name>\n";
-    stream << "  <Ctype>" << Snapshot::nameToCtype(current[i]->name) << "</Ctype>\n";
-    stream << "  <ComponentCode>" << current[i]->getComponentCode() << "</ComponentCode>\n";
-    stream << "  <PositionType>" << current[i]->positionType << "</PositionType>\n";
-    stream << "  <PositionUpLeft>\n";
-    stream << "    <x>" << current[i]->getPositionUpLeft().x << "</x>\n";
-    stream << "    <y>" << current[i]->getPositionUpLeft().y << "</y>\n";
-    stream << "  </PositionUpLeft>\n";
-    stream << "  <PositionCenter>\n";
-    stream << "    <x>" << current[i]->getPositionCenter().x << "</x>\n";
-    stream << "    <y>" << current[i]->getPositionCenter().y << "</y>\n";
-    stream << "  </PositionCenter>\n";
-    stream << "  <PositionDownRight>\n";
-    stream << "    <x>" << current[i]->getPositionDownRight().x << "</x>\n";
-    stream << "    <y>" << current[i]->getPositionDownRight().y << "</y>\n";
-    stream << "  </PositionDownRight>\n";
-    stream << "  <Width>" << current[i]->getWidth() << "</Width>\n";
-    stream << "  <Height>" << current[i]->getHeight() << "</Height>\n";
-    stream << "  <NumberOfConnectionPoints>" << current[i]->getNumberOfConnectionPoints() << "</NumberOfConnectionPoints>\n";
+    stream << Snapshot::nameToCtype(current[i]->name);
+    stream << ' ';
+
+    stream << current[i]->getPositionUpLeft().x;
+    stream << ' ';
+
+    stream << current[i]->getPositionUpLeft().y;
+    stream << ' ';
+
+    stream << current[i]->getPositionCenter().x;
+    stream << ' ';
+
+    stream << current[i]->getPositionCenter().y;
+    stream << ' ';
+
+    stream << current[i]->getPositionDownRight().x;
+    stream << ' ';
+
+    stream << current[i]->getPositionDownRight().y;
+    stream << ' ';
+
+    stream << current[i]->getWidth();
+    stream << ' ';
+
+    stream << current[i]->getHeight();
+    stream << ' ';
+
     // todo connections
-    stream << "  <RotationState>" << current[i]->getRotationState() << "</RotationState>\n";
-    stream << "  <Flipped>" << current[i]->flipped << "</Flipped>\n";
-    stream << "  <CursorPointInButton>" << current[i]->isCursorPointInButton() << "</CursorPointInButton>\n";
-    stream << "  <Selected>" << current[i]->isSelected() << "</Selected>\n";
-    stream << " </ElectronicComponent>\n";
+    // todo values
+    stream << current[i]->getRotationState();
+    stream << ' ';
+
+    stream << current[i]->flipped;
 }
 
 void Snapshot::saveToFile(std::string filepath) {
     std::ofstream fout(filepath);
-    fout << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+
     for (int i = 0; i < sizeOfCurrent; i++) {
         saveToStream(fout, i);
+        if (i != sizeOfCurrent - 1) fout << '\n';
     }
 
-    fout.seekp(-1, std::ios_base::end);;
     fout.close();
 }
 
 void Snapshot::importFromStream(std::istream &stream) {
     Helper helper;
-    std::string temp_str, temp_x, temp_y, junk;
     int temp_int;
-    double temp_double, x, y;
+    double temp_double, temp_x, temp_y;
 
-    getline(stream, junk); // <ElectronicComponent>
-    getline(stream, junk); // <Name></Name>
-
-    getline(stream, temp_str); // <Ctype></Ctype>
-    temp_str = Snapshot::removeSubString(Snapshot::removeSubString(temp_str, "<Ctype>"), "</Ctype>");
-    std::stringstream Ctype(temp_str);
-    Ctype >> temp_int;
+    //ctype
+    stream >> temp_int;
     addComponent(temp_int);
-    current[sizeOfCurrent - 1]->setOutterBox(temp_int);
 
-    getline(stream, temp_str); // <ComponentCode></ComponentCode>
-    temp_str = Snapshot::removeSubString(Snapshot::removeSubString(temp_str, "<ComponentCode>"), "</ComponentCode>");
-    current[sizeOfCurrent - 1]->setComponentCode(temp_str);
+    auto *component = getSelectedComponent();
 
-    getline(stream, temp_str); // <PositionType></PositionType>
-    temp_str = Snapshot::removeSubString(Snapshot::removeSubString(temp_str, "<PositionType>"), "</PositionType>");
-    std::stringstream PositionType(temp_str);
-    PositionType >> temp_int;
-    current[sizeOfCurrent - 1]->positionType = temp_int == 0 ? up_left : temp_int == 1 ? center : down_right;
+    //positionLeft
+    stream >> temp_x >> temp_y;
+    component->setPositionUpLeft(helper.makeVector_2D(temp_x, temp_y));
 
-    getline(stream, junk); // <PositionUpLeft>
-    getline(stream, temp_x); // <x></x>
-    temp_x = Snapshot::removeSubString(Snapshot::removeSubString(temp_x, "<x>"), "</x>");
-    getline(stream, temp_y); // <y></y>
-    temp_y = Snapshot::removeSubString(Snapshot::removeSubString(temp_y, "<y>"), "</y>");
-    std::stringstream PositionUpLeftX(temp_x), PositionUpLeftY(temp_y);
-    PositionUpLeftX >> x; PositionUpLeftY >> y;
-    current[sizeOfCurrent - 1]->setPositionUpLeft(helper.makeVector_2D(x, y));
-    getline(stream, junk); // </PositionUpLeft>
+    //positionCenter
+    stream >> temp_x >> temp_y;
+    component->setPositionCenter(helper.makeVector_2D(temp_x, temp_y));
 
-    getline(stream, junk); // <PositionCenter>
-    getline(stream, temp_x); // <x></x>
-    temp_x = Snapshot::removeSubString(Snapshot::removeSubString(temp_x, "<x>"), "</x>");
-    getline(stream, temp_y); // <y></y>
-    temp_y = Snapshot::removeSubString(Snapshot::removeSubString(temp_y, "<y>"), "</y>");
-    std::stringstream PositionCenterX(temp_x), PositionCenterY(temp_y);
-    PositionCenterX >> x; PositionCenterY >> y;
-    current[sizeOfCurrent - 1]->setPositionCenter(helper.makeVector_2D(x, y));
-    getline(stream, junk); // </PositionCenter>
+    //positionRight
+    stream >> temp_x >> temp_y;
+    component->setPositionDownRight(helper.makeVector_2D(temp_x, temp_y));
 
-    getline(stream, junk); // <PositionDownRight>
-    getline(stream, temp_x); // <x></x>
-    temp_x = Snapshot::removeSubString(Snapshot::removeSubString(temp_x, "<x>"), "</x>");
-    getline(stream, temp_y); // <y></y>
-    temp_y = Snapshot::removeSubString(Snapshot::removeSubString(temp_y, "<y>"), "</y>");
-    std::stringstream PositionDownRightX(temp_x), PositionDownRightY(temp_y);
-    PositionDownRightX >> x; PositionDownRightY >> y;
-    current[sizeOfCurrent - 1]->setPositionDownRight(helper.makeVector_2D(x, y));
-    getline(stream, junk); // </PositionDownRight>
+    //width
+    stream >> temp_double;
+    component->setWidth(temp_double);
 
-    getline(stream, temp_str); // <Width></Width>
-    temp_str = Snapshot::removeSubString(Snapshot::removeSubString(temp_str, "<Width>"), "</Width>");
-    std::stringstream Width(temp_str);
-    Width >> temp_double;
-    current[sizeOfCurrent - 1]->setWidth(temp_double);
+    //height
+    stream >> temp_double;
+    component->setHeight(temp_double);
 
-    getline(stream, temp_str); // <Height></Height>
-    temp_str = Snapshot::removeSubString(Snapshot::removeSubString(temp_str, "<Height>"), "</Height>");
-    std::stringstream Height(temp_str);
-    Height >> temp_double;
-    current[sizeOfCurrent - 1]->setHeight(temp_double);
+    //rotate
+    stream >> temp_int;
+    component->rotateComponent(temp_int);
 
-    getline(stream, junk); // <NumberOfConnectionPoints></NumberOfConnectionPoints>
-
-    getline(stream, temp_str); // <RotationState></RotationState>
-    temp_str = Snapshot::removeSubString(Snapshot::removeSubString(temp_str, "<RotationState>"), "</RotationState>");
-    std::stringstream RotationState(temp_str);
-    RotationState >> temp_int;
-    current[sizeOfCurrent - 1]->rotateComponent(temp_int);
-
-    getline(stream, temp_str); // <Flipped></Flipped>
-    temp_str = Snapshot::removeSubString(Snapshot::removeSubString(temp_str, "<Flipped>"), "</Flipped>");
-    std::stringstream Flipped(temp_str);
-    Flipped >> temp_int;
-    current[sizeOfCurrent - 1]->flipped = temp_int;
-    if (temp_int == 1) current[sizeOfCurrent - 1]->flipComponent();
-
-    getline(stream, junk); // <CursorPointInButton></CursorPointInButton>
-
-    getline(stream, temp_str); // <Selected></Selected>
-    temp_str = Snapshot::removeSubString(Snapshot::removeSubString(temp_str, "<Selected>"), "</Selected>");
-    std::stringstream Selected(temp_str);
-    Selected >> temp_int;
-    // TODO when click on element is available
-    // current[sizeOfCurrent - 1]->setOutterBox(temp_int);
-
-    getline(stream, junk); // </ElectronicComponent>
+    //flipped
+    stream >> temp_int;
+    if (temp_int) component->flipComponent();
 }
 
 void Snapshot::importFromFile(std::string filepath) {
     std::ifstream fin(filepath);
-    std::string junk;
-    getline(fin, junk); // <?xml version="1.0" encoding="UTF-8"?>
 
     while (!fin.eof()) {
         importFromStream(fin);
-        delay(200);
+        delay(50);
     }
 
     fin.close();
@@ -347,14 +297,4 @@ int Snapshot::nameToCtype(std::string name) {
     };
 
     return mapping[name];
-}
-
-std::string Snapshot::removeSubString(std::string str, std::string subStr) {
-    std::string::size_type i = str.find(subStr);
-
-    if (i != std::string::npos) {
-       str.erase(i, subStr.length());
-    }
-
-    return str;
 }

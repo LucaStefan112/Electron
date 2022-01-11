@@ -89,3 +89,11 @@ void Capacitor_Variable::setCapacitance(double thisCapacitance){
 double Capacitor_Variable::getCapacitance(){
     return capacitance;
 }
+
+std::vector<std::pair<std::string, double>> Capacitor_Variable::getValues() {
+    return std::vector<std::pair<std::string, double>> { std::make_pair("capacitance", capacitance) };
+};
+
+void Capacitor_Variable::setValue(std::string name, double value) {
+    if (name == "capacitance") capacitance = value;
+}

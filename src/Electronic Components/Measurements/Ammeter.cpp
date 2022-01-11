@@ -83,3 +83,11 @@ void Ammeter::setCurrent(double thisCurrent){
 double Ammeter::getCurrent(){
     return current;
 }
+
+std::vector<std::pair<std::string, double>> Ammeter::getValues() {
+    return std::vector<std::pair<std::string, double>> { std::make_pair("current", current) };
+};
+
+void Ammeter::setValue(std::string name, double value) {
+    if (name == "current") current = value;
+}

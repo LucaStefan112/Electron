@@ -84,3 +84,11 @@ void Capacitor_Electrolytic::setCapacitance(double thisCapacitance){
 double Capacitor_Electrolytic::getCapacitance(){
     return capacitance;
 }
+
+std::vector<std::pair<std::string, double>> Capacitor_Electrolytic::getValues() {
+    return std::vector<std::pair<std::string, double>> { std::make_pair("capacitance", capacitance) };
+};
+
+void Capacitor_Electrolytic::setValue(std::string name, double value) {
+    if (name == "capacitance") capacitance = value;
+}

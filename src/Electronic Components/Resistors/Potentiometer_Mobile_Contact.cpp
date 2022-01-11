@@ -112,3 +112,11 @@ void Potentiometer_Mobile_Contact::setResistance(double thisResistance){
 double Potentiometer_Mobile_Contact::getResistance(){
     return resistance;
 }
+
+std::vector<std::pair<std::string, double>> Potentiometer_Mobile_Contact::getValues() {
+    return std::vector<std::pair<std::string, double>> { std::make_pair("resistance", resistance) };
+};
+
+void Potentiometer_Mobile_Contact::setValue(std::string name, double value) {
+    if (name == "resistance") resistance = value;
+}

@@ -79,3 +79,12 @@ void Voltmeter::setVoltage(double thisVoltage){
 double Voltmeter::getVoltage(){
     return voltage;
 }
+
+
+std::vector<std::pair<std::string, double>> Voltmeter::getValues() {
+    return std::vector<std::pair<std::string, double>> { std::make_pair("voltage", voltage) };
+};
+
+void Voltmeter::setValue(std::string name, double value) {
+    if (name == "voltage") voltage = value;
+}

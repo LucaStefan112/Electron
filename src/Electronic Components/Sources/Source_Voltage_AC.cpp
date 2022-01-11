@@ -91,3 +91,12 @@ double Source_Voltage_AC::getVolts(){
 double Source_Voltage_AC::getAmpers(){
     return ampers;
 }
+
+std::vector<std::pair<std::string, double>> Source_Voltage_AC::getValues() {
+    return std::vector<std::pair<std::string, double>> { std::make_pair("volts", volts), std::make_pair("ampers", ampers) };
+};
+
+void Source_Voltage_AC::setValue(std::string name, double value) {
+    if (name == "volts") volts = value;
+    if (name == "ampers") ampers = value;
+}

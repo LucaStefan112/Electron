@@ -110,3 +110,11 @@ void Resistor_Mobile_Contact_Stop_Position::setResistance(double thisResistance)
 double Resistor_Mobile_Contact_Stop_Position::getResistance(){
     return resistance;
 }
+
+std::vector<std::pair<std::string, double>> Resistor_Mobile_Contact_Stop_Position::getValues() {
+    return std::vector<std::pair<std::string, double>> { std::make_pair("resistance", resistance) };
+};
+
+void Resistor_Mobile_Contact_Stop_Position::setValue(std::string name, double value) {
+    if (name == "resistance") resistance = value;
+}

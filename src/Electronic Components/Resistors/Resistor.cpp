@@ -91,3 +91,11 @@ void Resistor::setResistance(double thisResistance){
 double Resistor::getResistance(){
     return resistance;
 }
+
+std::vector<std::pair<std::string, double>> Resistor::getValues() {
+    return std::vector<std::pair<std::string, double>> { std::make_pair("resistance", resistance) };
+};
+
+void Resistor::setValue(std::string name, double value) {
+    if (name == "resistance") resistance = value;
+}

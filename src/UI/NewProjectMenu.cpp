@@ -627,10 +627,15 @@ void NewProjectMenu::WatchClick()
             title += "H " + std::to_string(currentSnapshot.getSelectedComponent()->getHeight()) + '\n';
             title += "R " + std::to_string(currentSnapshot.getSelectedComponent()->getRotationState()) + '\n';
             title += "F " + std::to_string(currentSnapshot.getSelectedComponent()->flipped) + '\n';
-/*
-            if (currentSnapshot.getSelectedComponent()->name == "Resistor")
-                title += "V " + std::to_string(((Resistor)currentSnapshot.getSelectedComponent())->getResistance());
-*/
+
+            auto values = currentSnapshot.getSelectedComponent()->getValues();
+            if (values[0].first != "unsupported") {
+                for (auto value : values)
+                    title += "V " + std::to_string(value.second) + '\n';
+            } else {
+                 title += "       \n";
+            }
+
             box.setTitle(title);
             box.ShowBox();
         }

@@ -86,3 +86,11 @@ void Capacitor_Trimmer::setCapacitance(double thisCapacitance){
 double Capacitor_Trimmer::getCapacitance(){
     return capacitance;
 }
+
+std::vector<std::pair<std::string, double>> Capacitor_Trimmer::getValues() {
+    return std::vector<std::pair<std::string, double>> { std::make_pair("capacitance", capacitance) };
+};
+
+void Capacitor_Trimmer::setValue(std::string name, double value) {
+    if (name == "capacitance") capacitance = value;
+}
