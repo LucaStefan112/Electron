@@ -138,6 +138,9 @@ void Snapshot::saveToStream(std::ostream &stream, int i) {
     stream << Snapshot::nameToCtype(current[i]->name);
     stream << ' ';
 
+    stream << current[i]->getComponentCode();
+    stream << ' ';
+
     stream << current[i]->getPositionUpLeft().x;
     stream << ' ';
 
@@ -202,6 +205,10 @@ void Snapshot::importFromStream(std::istream &stream) {
     addComponent(temp_int);
 
     auto *component = getSelectedComponent();
+
+    //componentCode
+    stream >> temp_string;
+    component->setComponentCode(temp_string);
 
     //positionLeft
     stream >> temp_x >> temp_y;
