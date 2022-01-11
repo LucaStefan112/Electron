@@ -162,12 +162,22 @@ void Snapshot::saveToStream(std::ostream &stream, int i) {
     stream << current[i]->getHeight();
     stream << ' ';
 
-    // todo connections
-    // todo values
     stream << current[i]->getRotationState();
     stream << ' ';
 
     stream << current[i]->flipped;
+    stream << ' ';
+
+    auto values = current[i]->getValues();
+    if (values[0].first == "unsupported") {
+        stream << "unsupported 0 unsupported 0";
+    } else if (values.size() == 1) {
+        stream << values[0].first << ' ' << values[0].second << " unsupported 0";
+    } else {
+        stream << values[0].first << ' ' << values[0].second << ' ' << values[1].first << ' ' << values[1].second;
+    }
+
+    // todo connections
 }
 
 void Snapshot::saveToFile(std::string filepath) {
@@ -185,6 +195,7 @@ void Snapshot::importFromStream(std::istream &stream) {
     Helper helper;
     int temp_int;
     double temp_double, temp_x, temp_y;
+    std::string temp_string;
 
     //ctype
     stream >> temp_int;
@@ -219,6 +230,12 @@ void Snapshot::importFromStream(std::istream &stream) {
     //flipped
     stream >> temp_int;
     if (temp_int) component->flipComponent();
+
+    //values
+    stream >> temp_string >> temp_double;
+    if (temp_string != "unsupported") component->setValue(temp_string, temp_double);
+    stream >> temp_string >> temp_double;
+    if (temp_string != "unsupported") component->setValue(temp_string, temp_double);
 }
 
 void Snapshot::importFromFile(std::string filepath) {
