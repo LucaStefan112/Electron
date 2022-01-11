@@ -617,10 +617,10 @@ void NewProjectMenu::WatchClick()
         }
 
         if (currentSnapshot.getSelectedComponent()) {
-            box.setPositionCenter(helper.makeVector_2D(100, 225));
+            box.setPositionCenter(helper.makeVector_2D(this->rl - 125, this->rt + 150));
             box.setWidth(150);
             box.setHeight(300);
-            std::string title = "- Info -\n";
+            std::string title = "- Information -\n\n";
             title += "N " + currentSnapshot.getSelectedComponent()->name + '\n';
             title += "C " + currentSnapshot.getSelectedComponent()->getComponentCode() + '\n';
             title += "W " + std::to_string(currentSnapshot.getSelectedComponent()->getWidth()) + '\n';
