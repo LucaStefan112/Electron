@@ -206,3 +206,11 @@ void Button::ShowBox() {
 
     settextstyle(3, 0, 1);
 }
+
+void Button::Hide() {
+    setcolor(BLACK);
+    for(int i = position.up_left.y; i <= position.down_right.y; i++) {
+        line(position.up_left.x, i, position.down_right.x, i);
+    }
+    setcolor(WHITE);
+}

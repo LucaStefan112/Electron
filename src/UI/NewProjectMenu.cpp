@@ -108,6 +108,14 @@ void NewProjectMenu::WatchClick()
 
         if (GetAsyncKeyState(VK_LBUTTON) && !GetAsyncKeyState(VK_LCONTROL))
         {
+            inc_v1.Hide();
+            v1.Hide();
+            dec_v1.Hide();
+            inc_v2.Hide();
+            dec_v2.Hide();
+            v2.Hide();
+            box.Hide();
+
             if (save.isCursorPointInButton())
             {
                 //currentSnapshot.saveToFile("text.xml");
@@ -403,6 +411,30 @@ void NewProjectMenu::WatchClick()
                 refreshScreen();
             }
 
+            if (dec_v1.isCursorPointInButton()) {
+                currentSnapshot.getSelectedComponent()->setValue(
+                    currentSnapshot.getSelectedComponent()->getValues()[0].first,
+                    currentSnapshot.getSelectedComponent()->getValues()[0].second - 1);
+            }
+
+            if (inc_v1.isCursorPointInButton()) {
+                currentSnapshot.getSelectedComponent()->setValue(
+                    currentSnapshot.getSelectedComponent()->getValues()[0].first,
+                    currentSnapshot.getSelectedComponent()->getValues()[0].second + 1);
+            }
+
+            if (dec_v2.isCursorPointInButton()) {
+                currentSnapshot.getSelectedComponent()->setValue(
+                    currentSnapshot.getSelectedComponent()->getValues()[1].first,
+                    currentSnapshot.getSelectedComponent()->getValues()[1].second - 1);
+            }
+
+            if (inc_v2.isCursorPointInButton()) {
+                currentSnapshot.getSelectedComponent()->setValue(
+                    currentSnapshot.getSelectedComponent()->getValues()[1].first,
+                    currentSnapshot.getSelectedComponent()->getValues()[1].second + 1);
+            }
+
             //Selecting the component:
             else {
                 POINT cursorPoint;
@@ -524,6 +556,13 @@ void NewProjectMenu::WatchClick()
         //Moving the component:
         else if (GetAsyncKeyState(VK_LBUTTON) && GetAsyncKeyState(VK_LCONTROL))
         {
+            inc_v1.Hide();
+            v1.Hide();
+            dec_v1.Hide();
+            inc_v2.Hide();
+            dec_v2.Hide();
+            v2.Hide();
+            box.Hide();
 
             ElectronicComponent *currentComponent = currentSnapshot.getSelectedComponent();
 
@@ -568,6 +607,14 @@ void NewProjectMenu::WatchClick()
         //Deleting the component:
         else if (GetAsyncKeyState(VK_RBUTTON))
         {
+            inc_v1.Hide();
+            v1.Hide();
+            dec_v1.Hide();
+            inc_v2.Hide();
+            dec_v2.Hide();
+            v2.Hide();
+            box.Hide();
+
             auto components = currentSnapshot.getComponents();
 
             for (int i = 0; i < currentSnapshot.getComponentsNumber(); i++)
@@ -592,6 +639,14 @@ void NewProjectMenu::WatchClick()
         }
 
         else if(GetAsyncKeyState('n') || GetAsyncKeyState('N')){
+            inc_v1.Hide();
+            v1.Hide();
+            dec_v1.Hide();
+            inc_v2.Hide();
+            dec_v2.Hide();
+            v2.Hide();
+            box.Hide();
+
 
             POINT cursorPoint;
             GetCursorPos(&cursorPoint);
@@ -616,10 +671,12 @@ void NewProjectMenu::WatchClick()
             delay(300);
         }
 
+
+        box.setPositionCenter(helper.makeVector_2D(this->rl - 125, this->rt + 175));
+        box.setWidth(150);
+        box.setHeight(350);
+
         if (currentSnapshot.getSelectedComponent()) {
-            box.setPositionCenter(helper.makeVector_2D(this->rl - 125, this->rt + 150));
-            box.setWidth(150);
-            box.setHeight(300);
             std::string title = "- Information -\n\n";
             title += "N " + currentSnapshot.getSelectedComponent()->name + '\n';
             title += "C " + currentSnapshot.getSelectedComponent()->getComponentCode() + '\n';
@@ -627,17 +684,60 @@ void NewProjectMenu::WatchClick()
             title += "H " + std::to_string(currentSnapshot.getSelectedComponent()->getHeight()) + '\n';
             title += "R " + std::to_string(currentSnapshot.getSelectedComponent()->getRotationState()) + '\n';
             title += "F " + std::to_string(currentSnapshot.getSelectedComponent()->flipped) + '\n';
-
-            auto values = currentSnapshot.getSelectedComponent()->getValues();
-            if (values[0].first != "unsupported") {
-                for (auto value : values)
-                    title += "V " + std::to_string(value.second) + '\n';
-            } else {
-                 title += "       \n";
-            }
-
+            title += "Xdr " + std::to_string(currentSnapshot.getSelectedComponent()->getPositionDownRight().x) + '\n';
+            title += "Ydr " + std::to_string(currentSnapshot.getSelectedComponent()->getPositionDownRight().y) + '\n';
+            title += "Xc " + std::to_string(currentSnapshot.getSelectedComponent()->getPositionCenter().x) + '\n';
+            title += "Yc " + std::to_string(currentSnapshot.getSelectedComponent()->getPositionCenter().y) + '\n';
+            title += "Xul " + std::to_string(currentSnapshot.getSelectedComponent()->getPositionUpLeft().x) + '\n';
+            title += "Yul " + std::to_string(currentSnapshot.getSelectedComponent()->getPositionUpLeft().y) + '\n';
             box.setTitle(title);
             box.ShowBox();
+        }
+
+        dec_v1.setPositionCenter(helper.makeVector_2D(this->rr + 40, this->rt + 15));
+        dec_v1.setWidth(30);
+        dec_v1.setHeight(30);
+        dec_v1.setTitle("-");
+        v1.setPositionCenter(helper.makeVector_2D(this->rr + 150, this->rt + 15));
+        v1.setWidth(150);
+        v1.setHeight(30);
+        inc_v1.setPositionCenter(helper.makeVector_2D(this->rr + 260, this->rt + 15));
+        inc_v1.setWidth(30);
+        inc_v1.setHeight(30);
+        inc_v1.setTitle("+");
+
+        dec_v2.setPositionCenter(helper.makeVector_2D(this->rr + 40, this->rt + 15 + 50));
+        dec_v2.setWidth(30);
+        dec_v2.setHeight(30);
+        dec_v2.setTitle("-");
+        v2.setPositionCenter(helper.makeVector_2D(this->rr + 150, this->rt + 15 + 50));
+        v2.setWidth(150);
+        v2.setHeight(30);
+        inc_v2.setPositionCenter(helper.makeVector_2D(this->rr + 260, this->rt + 15 + 50));
+        inc_v2.setWidth(30);
+        inc_v2.setHeight(30);
+        inc_v2.setTitle("+");
+
+        if (currentSnapshot.getSelectedComponent()) {
+            auto values = currentSnapshot.getSelectedComponent()->getValues();
+            if (values[0].first != "unsupported") {
+                if (values.size() == 1) {
+                    v1.setTitle(values[0].first + ' ' + std::to_string(values[0].second));
+                    dec_v1.Show();
+                    v1.Show();
+                    inc_v1.Show();
+                }else if (values.size() == 2) {
+                    v1.setTitle(values[0].first + ' ' + std::to_string(values[0].second));
+                    dec_v1.Show();
+                    v1.Show();
+                    inc_v1.Show();
+
+                    v2.setTitle(values[1].first + ' ' + std::to_string(values[1].second));
+                    dec_v2.Show();
+                    v2.Show();
+                    inc_v2.Show();
+                }
+            }
         }
 
         for(int i = 0; i < currentSnapshot.getComponentsNumber(); i++)
@@ -647,6 +747,7 @@ void NewProjectMenu::WatchClick()
             }
 
         if(currentSnapshot.getSelectedComponent())  currentSnapshot.getSelectedComponent()->Show();
+
         delay(50);
     }
 

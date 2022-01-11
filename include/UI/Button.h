@@ -45,6 +45,8 @@ protected:
         void ShowCircleMode();
         void ShowBox();
 
+        void Hide();
+
         //Parsing the component's data to string:
 };
 
