@@ -61,8 +61,8 @@ void Snapshot::addComponent(int cType) {
     else if(cType == _switchThermal) current[sizeOfCurrent] = new Switch_Thermal_Magnetic_Breaker;
     else if(cType == _transistorBipolarNPN) current[sizeOfCurrent] = new Transistor_Bipolar_NPN;
     else if(cType == _transistorBipolarPNP) current[sizeOfCurrent] = new Transistor_Bipolar_PNP;
-    else if(cType == _transistorMOSFETN) current[sizeOfCurrent] = new Transistor_Dual_Gate_MOSFET_Nchannel;
-    else if(cType == _transistorMOSFETP) current[sizeOfCurrent] = new Transistor_Dual_Gate_MOSFET_Pchannel;
+    else if(cType == _transistorDualN) current[sizeOfCurrent] = new Transistor_Dual_Gate_MOSFET_Nchannel;
+    else if(cType == _transistorDualP) current[sizeOfCurrent] = new Transistor_Dual_Gate_MOSFET_Pchannel;
     else if(cType == _transistorFETN) current[sizeOfCurrent] = new Transistor_FET_Nchannel;
     else if(cType == _transistorFETP) current[sizeOfCurrent] = new Transistor_FET_Pchannel;
     else if(cType == _transistorInductiveN) current[sizeOfCurrent] = new Transistor_Inductive_Channel_MOSFET_Nchannel;
@@ -293,8 +293,8 @@ int Snapshot::nameToCtype(std::string name) {
         {"Thermal Magnetic Breaker Switch", _switchThermal},
         {"Bipolar NPN Transistor", _transistorBipolarNPN},
         {"Bipolar PNP Transistor", _transistorBipolarPNP},
-        {"Dual Gate MOSFET N-channel Transistor", _transistorMOSFETN},
-        {"Dual Gate MOSFET P-channel Transistor", _transistorMOSFETP},
+        {"Dual Gate MOSFET N-channel Transistor", _transistorDualN},
+        {"Dual Gate MOSFET P-channel Transistor", _transistorDualP},
         {"FET N-channel Transistor", _transistorFETN},
         {"FET P-channel Transistor", _transistorFETP},
         {"MOSFET Inductive Channel N-channel Transistor", _transistorInductiveN},
