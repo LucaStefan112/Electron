@@ -25,6 +25,7 @@ void MainMenu::WatchClick()
             }
             else if (openProject.isCursorPointInButton())
             {
+                nameFileMenu.setMode(1);
                 nameFileMenu.Show();
                 int code = nameFileMenu.ListenEvents();
                 setcurrentwindow(this->window_code);

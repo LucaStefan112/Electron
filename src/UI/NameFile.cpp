@@ -56,7 +56,8 @@ int NameFile::ListenEvents () {
         } else if (ascii_c == 13) { // enter
             ok = 0;
             if (filename.size() == 0) {
-                std::cout << "cannot save file without a name";
+                std::cout << "cannot " << (mode ? "open" : "save") << " file without a name";
+                ok = 1;
             } else {
                 ok = 0;
             }
@@ -74,4 +75,8 @@ int NameFile::ListenEvents () {
 
     closegraph(this->window_code);
     return code;
+}
+
+void NameFile::setMode(int m) {
+    mode = m;
 }

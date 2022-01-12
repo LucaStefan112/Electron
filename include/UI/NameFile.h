@@ -14,6 +14,7 @@ class NameFile
 
         void Show();
         int ListenEvents();
+        void setMode(int m);
 };
 
 #endif // NAMEFILE_H
