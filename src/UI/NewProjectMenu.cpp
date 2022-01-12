@@ -21,6 +21,21 @@ void NewProjectMenu::drawWiresForComponent(std::string thisComponentCode, bool e
 
     auto colorMode = (eraseMode) ? BLACK : WHITE;
 
+    /*
+    if (eraseMode) {
+        auto* originComponent = currentSnapshot.getComponent(thisComponentCode);
+
+        for (int i = 0; i < originComponent->getNumberOfConnectionPoints(); i++) {
+            auto* destinationComponent = currentSnapshot.getComponent(originComponent->getConnectionPoints()[i].connectedComponentCode);
+            for (int j = 0; j < destinationComponent->getNumberOfConnectionPoints(); j++) {
+                if (destinationComponent->getConnectionPoints()[i].connectedComponentCode == thisComponentCode) {
+                    destinationComponent->getConnectionPoints()[i].connectedComponentCode = "-2";
+                    refreshScreen();
+                }
+            }
+        }
+    } */
+
     if(currentComponent->name == "Connection Node"){
 
         ElectronicComponent** components = currentSnapshot.getComponents();
