@@ -135,52 +135,36 @@ void Snapshot::reset() {
 }
 
 void Snapshot::saveToStream(std::ostream &stream, int i) {
-    stream << Snapshot::nameToCtype(current[i]->name);
-    stream << ' ';
-
-    stream << current[i]->getComponentCode();
-    stream << ' ';
-
-    stream << current[i]->getPositionUpLeft().x;
-    stream << ' ';
-
-    stream << current[i]->getPositionUpLeft().y;
-    stream << ' ';
-
-    stream << current[i]->getPositionCenter().x;
-    stream << ' ';
-
-    stream << current[i]->getPositionCenter().y;
-    stream << ' ';
-
-    stream << current[i]->getPositionDownRight().x;
-    stream << ' ';
-
-    stream << current[i]->getPositionDownRight().y;
-    stream << ' ';
-
-    stream << current[i]->getWidth();
-    stream << ' ';
-
-    stream << current[i]->getHeight();
-    stream << ' ';
-
-    stream << current[i]->getRotationState();
-    stream << ' ';
-
-    stream << current[i]->flipped;
-    stream << ' ';
+    stream << Snapshot::nameToCtype(current[i]->name) << ' ';
+    stream << current[i]->getComponentCode() << ' ';
+    stream << current[i]->getPositionUpLeft().x << ' ';
+    stream << current[i]->getPositionUpLeft().y << ' ';
+    stream << current[i]->getPositionCenter().x << ' ';
+    stream << current[i]->getPositionCenter().y << ' ';
+    stream << current[i]->getPositionDownRight().x << ' ';
+    stream << current[i]->getPositionDownRight().y << ' ';
+    stream << current[i]->getWidth() << ' ';
+    stream << current[i]->getHeight() << ' ';
+    stream << current[i]->getRotationState() << ' ';
+    stream << current[i]->flipped << ' ';
 
     auto values = current[i]->getValues();
     if (values[0].first == "unsupported") {
-        stream << "unsupported 0 unsupported 0";
+        stream << "unsupported 0 unsupported 0 ";
     } else if (values.size() == 1) {
-        stream << values[0].first << ' ' << values[0].second << " unsupported 0";
+        stream << values[0].first << ' ' << values[0].second << " unsupported 0 ";
     } else {
-        stream << values[0].first << ' ' << values[0].second << ' ' << values[1].first << ' ' << values[1].second;
+        stream << values[0].first << ' ' << values[0].second << ' ' << values[1].first << ' ' << values[1].second << ' ';
     }
 
     // todo connections
+
+    for (int j = 0; j < 5; j++) {
+        stream << current[i]->getConnectionPoints()[j].connectedComponentCode << ' ';
+        stream << current[i]->getConnectionPoints()[j].position.x << ' ';
+        stream << current[i]->getConnectionPoints()[j].position.y << ' ';
+        stream << current[i]->getConnectionPoints()[j].connectedIndex << (j == 4 ? "" : " ");
+    }
 }
 
 void Snapshot::saveToFile(std::string filepath) {
@@ -243,6 +227,13 @@ void Snapshot::importFromStream(std::istream &stream) {
     if (temp_string != "unsupported") component->setValue(temp_string, temp_double);
     stream >> temp_string >> temp_double;
     if (temp_string != "unsupported") component->setValue(temp_string, temp_double);
+
+    for (int i = 0; i < 5; i++) {
+        stream >> component->getConnectionPoints()[i].connectedComponentCode;
+        stream >> component->getConnectionPoints()[i].position.x;
+        stream >> component->getConnectionPoints()[i].position.y;
+        stream >> component->getConnectionPoints()[i].connectedIndex;
+    }
 }
 
 void Snapshot::importFromFile(std::string filepath) {
