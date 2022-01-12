@@ -649,6 +649,7 @@ void NewProjectMenu::WatchClick()
         //Deleting the component:
         else if (GetAsyncKeyState(VK_RBUTTON))
         {
+
             inc_v1.Hide();
             v1.Hide();
             dec_v1.Hide();
@@ -662,9 +663,10 @@ void NewProjectMenu::WatchClick()
             for (int i = 0; i < currentSnapshot.getComponentsNumber(); i++)
                 if (components[i]->isCursorPointInButton())
                 {
+
                     Change c;
                     c.type = "delete";
-                    c.componentCode = currentSnapshot.getSelectedComponent()->getComponentCode();
+                    c.componentCode = components[i]->getComponentCode();
                     c.typeOfValue = "component";
                     std::stringstream component;
                     currentSnapshot.saveToStream(component, i);
@@ -673,8 +675,8 @@ void NewProjectMenu::WatchClick()
                     changes.clearRedo();
                     changes.addChange(c);
 
-                    drawWiresForComponent(components[i]->getComponentCode(), true);
-                    currentSnapshot.removeComponent(components[i]->getComponentCode());
+                    drawWiresForComponent(c.componentCode, true);
+                    currentSnapshot.removeComponent(c.componentCode);
                     break;
                 }
             refreshScreen();
@@ -703,9 +705,20 @@ void NewProjectMenu::WatchClick()
                     if(currentSnapshot.getComponents()[i]->isCursorPointInButton())
                         ok = false;
 
-                if(ok){
+                if(ok) {
                     currentSnapshot.addComponent(100);
                     currentSnapshot.getSelectedComponent()->setPositionCenter(NewProjectMenu_helper.makeVector_2D(x_point, y_point));
+
+                    Change c;
+                    c.type = "add";
+                    c.componentCode = currentSnapshot.getSelectedComponent()->getComponentCode();
+                    c.typeOfValue = "component";
+                    c.oldValue = "NULL";
+                    std::stringstream component;
+                    currentSnapshot.saveToStream(component, currentSnapshot.getComponentsNumber() - 1);
+                    c.newValue = component.str();
+                    changes.clearRedo();
+                    changes.addChange(c);
                 }
             }
             refreshScreen();

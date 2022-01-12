@@ -250,7 +250,7 @@ void Snapshot::importFromFile(std::string filepath) {
 
     while (!fin.eof()) {
         importFromStream(fin);
-        delay(50);
+        delay(100);
     }
 
     fin.close();
@@ -317,7 +317,7 @@ int Snapshot::nameToCtype(std::string name) {
         {"Microphone", _microphone},
         {"Motor", _motor},
         {"Speaker", _speaker},
-        {"Connection Node", _connectionNode}
+        {"Connection Node", 100}
     };
 
     return mapping[name];
