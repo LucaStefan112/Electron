@@ -21,21 +21,6 @@ void NewProjectMenu::drawWiresForComponent(std::string thisComponentCode, bool e
 
     auto colorMode = (eraseMode) ? BLACK : WHITE;
 
-    /*
-    if (eraseMode) {
-        auto* originComponent = currentSnapshot.getComponent(thisComponentCode);
-
-        for (int i = 0; i < originComponent->getNumberOfConnectionPoints(); i++) {
-            auto* destinationComponent = currentSnapshot.getComponent(originComponent->getConnectionPoints()[i].connectedComponentCode);
-            for (int j = 0; j < destinationComponent->getNumberOfConnectionPoints(); j++) {
-                if (destinationComponent->getConnectionPoints()[i].connectedComponentCode == thisComponentCode) {
-                    destinationComponent->getConnectionPoints()[i].connectedComponentCode = "-2";
-                    refreshScreen();
-                }
-            }
-        }
-    } */
-
     if(currentComponent->name == "Connection Node"){
 
         ElectronicComponent** components = currentSnapshot.getComponents();
@@ -530,7 +515,7 @@ void NewProjectMenu::WatchClick()
                     components[isInComponent]->setOutterBox(true);
                 }
 
-                //Deselecting a component:
+                //De-selecting a component:
                 else if (!wiring && currentComponent && isInComponent == -1 && cursorOnTable)
                 {
                     currentComponent->setOutterBox(false);
@@ -683,11 +668,20 @@ void NewProjectMenu::WatchClick()
             v2.Hide();
             box.Hide();
 
-            auto components = currentSnapshot.getComponents();
+            ElectronicComponent** components = currentSnapshot.getComponents();
 
             for (int i = 0; i < currentSnapshot.getComponentsNumber(); i++)
                 if (components[i]->isCursorPointInButton())
                 {
+                    for(int j = 0; j < components[i]->getNumberOfConnectionPoints(); j++){
+
+                        std::string code = components[i]->getConnectionPoints()[j].connectedComponentCode;
+
+                        if(code != "-2"){
+                            int index = components[i]->getConnectionPoints()[j].connectedIndex;
+                            currentSnapshot.getComponent(code)->getConnectionPoints()[index].connectedComponentCode = "-2";
+                        }
+                    }
 
                     Change c;
                     c.type = "delete";
