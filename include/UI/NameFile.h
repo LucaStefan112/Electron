@@ -8,6 +8,7 @@ class NameFile
     public:
         NameFile();
 
+        bool mode = 0; // 0 -> save, 1 -> open
         std::string filename;
         int window_code;
 

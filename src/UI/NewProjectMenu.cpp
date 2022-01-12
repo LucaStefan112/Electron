@@ -129,7 +129,7 @@ void NewProjectMenu::WatchClick()
 
                 if (code)
                 {
-                    currentSnapshot.saveToFile(nameFileMenu.filename + ".xml");
+                    currentSnapshot.saveToFile(nameFileMenu.filename + ".elc");
                 }
             }
             else if (capacitors.isCursorPointInButton())
@@ -215,7 +215,9 @@ void NewProjectMenu::WatchClick()
             }
             else if (exit.isCursorPointInButton())
             {
-                currentSnapshot.reset();
+                for (int i = 0; i < currentSnapshot.getComponentsNumber(); i++) {
+                    currentSnapshot.getComponents()[i]->Erase();
+                }currentSnapshot.reset();
                 ok = 0;
             }
             else if (cType != _none)

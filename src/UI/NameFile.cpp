@@ -2,7 +2,7 @@
 
 NameFile::NameFile()
 {
-    //ctor
+
 }
 
 void NameFile::Show() {
@@ -19,7 +19,7 @@ void NameFile::Show() {
     int textw = windowWidth / 5;
     int texth = windowHeight / 4;
 
-    bgiout << "Please insert the complete name of the file that will be saved." <<std :: endl;
+    bgiout << "Please insert the complete name of the file that will be " << (mode ? "opened" : "saved") << "." <<std :: endl;
     bgiout << "(Example: 'circuit1')" <<std :: endl;
 
     outstreamxy(windowWidth / 5, windowHeight / 4);
