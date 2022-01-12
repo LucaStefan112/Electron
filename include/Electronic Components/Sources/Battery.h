@@ -24,6 +24,9 @@ public:
 
     //Drawing the component:
     void Show();
+
+    std::vector<std::pair<std::string, double>> getValues();
+    void setValue(std::string name, double value);
 };
 
 #endif // BATTERY_H

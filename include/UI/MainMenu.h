@@ -17,6 +17,7 @@ class MainMenu
         MainMenu();
 
         Snapshot importedSnapshot;
+        NameFile nameFileMenu;
 
         int window_code;
         void Show();

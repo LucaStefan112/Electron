@@ -3,6 +3,7 @@
 
 #include <string>
 #include <sstream>
+#include <vector>
 #include "Helper.h"
 #include "Enums.h"
 
@@ -97,6 +98,9 @@ public:
 
     //Parsing the component's data to string:
     std::string toString();
+
+    virtual std::vector<std::pair<std::string, double>> getValues();
+    virtual void setValue(std::string name, double value);
 
     void saveToFile(char *filename);
 };

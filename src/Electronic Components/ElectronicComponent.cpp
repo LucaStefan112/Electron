@@ -540,3 +540,11 @@ std::string ElectronicComponent::toString()
 
     return text;
 }
+
+std::vector<std::pair<std::string, double>> ElectronicComponent::getValues() {
+    return std::vector<std::pair<std::string, double>> { std::make_pair("unsupported", 0) };
+}
+
+void ElectronicComponent::setValue(std::string name, double value) {
+    return;
+}

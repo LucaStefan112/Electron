@@ -25,11 +25,18 @@ void MainMenu::WatchClick()
             }
             else if (openProject.isCursorPointInButton())
             {
-                NewProjectMenu newProjectMenu;
-                newProjectMenu.Show();
-                newProjectMenu.filepath = "test2.xml";
-                newProjectMenu.currentSnapshot.importFromFile(newProjectMenu.filepath);
-                newProjectMenu.WatchClick();
+                nameFileMenu.Show();
+                int code = nameFileMenu.ListenEvents();
+                setcurrentwindow(this->window_code);
+
+                if (code)
+                {
+                    NewProjectMenu newProjectMenu;
+                    newProjectMenu.Show();
+                    newProjectMenu.currentSnapshot.importFromFile(nameFileMenu.filename + ".elc");
+                    newProjectMenu.WatchClick();
+                }
+
                 setcurrentwindow(this->window_code);
             }
             else if (info.isCursorPointInButton())

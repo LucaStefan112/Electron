@@ -76,3 +76,12 @@ void Capacitor_Ceramic::setCapacitance(double thisCapacitance){
 double Capacitor_Ceramic::getCapacitance(){
     return capacitance;
 }
+
+
+std::vector<std::pair<std::string, double>> Capacitor_Ceramic::getValues() {
+    return std::vector<std::pair<std::string, double>> { std::make_pair("capacitance", capacitance) };
+};
+
+void Capacitor_Ceramic::setValue(std::string name, double value) {
+    if (name == "capacitance") capacitance = value;
+}
