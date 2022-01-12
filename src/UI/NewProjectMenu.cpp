@@ -638,9 +638,19 @@ void NewProjectMenu::WatchClick()
                     y_point = this->rb - BORDER_SPACE - currentComponent->getHeight() / 2;
                 }
 
-                    currentComponent->setPositionCenter(helper.makeVector_2D(x_point, y_point));
+                Change c;
+                c.type = "move";
+                c.componentCode = currentComponent->getComponentCode();
+                c.typeOfValue = "double double";
+                c.oldValue = std::to_string(currentComponent->getPositionCenter().x) + ' ' + std::to_string(currentComponent->getPositionCenter().y);
+
+                currentComponent->setPositionCenter(helper.makeVector_2D(x_point, y_point));
 
                 drawWiresForComponent(currentSnapshot.getSelectedComponent()->componentCode);
+
+                c.newValue = std::to_string(currentComponent->getPositionCenter().x) + ' ' + std::to_string(currentComponent->getPositionCenter().y);
+                changes.clearRedo();
+                changes.addChange(c);
             }
 
             refreshScreen();
@@ -945,6 +955,7 @@ void NewProjectMenu::Show()
 }
 
 void NewProjectMenu::implementChangeUndo() {
+    Helper helper;
     auto c = changes.getUndo();
 
     if (c.type == "add") {
@@ -952,11 +963,16 @@ void NewProjectMenu::implementChangeUndo() {
     } else if (c.type == "delete") {
         std::stringstream strm(c.oldValue);
         currentSnapshot.importFromStream(strm);
-    } else if (c.type == "flip") { // works
+    } else if (c.type == "move") {
+        std::stringstream strm(c.oldValue);
+        double temp_x, temp_y;
+        strm >> temp_x >> temp_y;
+        currentSnapshot.getComponent(c.componentCode)->setPositionCenter(helper.makeVector_2D(temp_x, temp_y));
+    } else if (c.type == "flip") {
         currentSnapshot.getComponent(c.componentCode)->flipComponent();
-    } else if (c.type == "rotate") { // works
+    } else if (c.type == "rotate") {
         currentSnapshot.getComponent(c.componentCode)->rotateComponent(std::stoi(c.oldValue));
-    } else if (c.type == "width") { // works
+    } else if (c.type == "width") {
         currentSnapshot.getComponent(c.componentCode)->setWidth(std::stod(c.oldValue));
     } else if (c.type == "value") {
         std::stringstream strm(c.oldValue);
@@ -968,6 +984,7 @@ void NewProjectMenu::implementChangeUndo() {
 }
 
 void NewProjectMenu::implementChangeRedo() {
+    Helper helper;
     auto c = changes.getRedo();
 
     if (c.type == "add") {
@@ -976,11 +993,16 @@ void NewProjectMenu::implementChangeRedo() {
         currentSnapshot.importFromStream(strm);
     } else if (c.type == "delete") {
         currentSnapshot.removeComponent(c.componentCode);
-    } else if (c.type == "flip") { // works
+    } else if (c.type == "move") {
+        std::stringstream strm(c.newValue);
+        double temp_x, temp_y;
+        strm >> temp_x >> temp_y;
+        currentSnapshot.getComponent(c.componentCode)->setPositionCenter(helper.makeVector_2D(temp_x, temp_y));
+    } else if (c.type == "flip") {
         currentSnapshot.getComponent(c.componentCode)->flipComponent();
-    } else if (c.type == "rotate") { // works
+    } else if (c.type == "rotate") {
         currentSnapshot.getComponent(c.componentCode)->rotateComponent(std::stoi(c.newValue));
-    } else if (c.type == "width") { // works
+    } else if (c.type == "width") {
         currentSnapshot.getComponent(c.componentCode)->setWidth(std::stod(c.newValue));
     } else if (c.type == "value") {
         std::stringstream strm(c.newValue);
