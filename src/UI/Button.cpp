@@ -8,7 +8,7 @@ Helper Button_helper;
 Button::Button(double thisWidth, double thisHeight, std::string thisTitle)
 {
 
-    if(thisWidth <= 0 || thisHeight <= 0)
+    if (thisWidth <= 0 || thisHeight <= 0)
     {
         std::cout << "Width and height must be greater than 0!";
         return;
@@ -77,15 +77,15 @@ void Button::setWidth(double thisWidth)
     width = thisWidth;
     switch (positionType)
     {
-        case up_left:
-            position.center.x = position.up_left.x + width / 2;
-            position.down_right.x = position.up_left.x + width;
-        case center:
-            position.up_left.x = position.center.x - width / 2;
-            position.down_right.x = position.center.x + width / 2;
-        case down_right:
-            position.up_left.x = position.down_right.x - width;
-            position.center.x = position.down_right.x - width / 2;
+    case up_left:
+        position.center.x = position.up_left.x + width / 2;
+        position.down_right.x = position.up_left.x + width;
+    case center:
+        position.up_left.x = position.center.x - width / 2;
+        position.down_right.x = position.center.x + width / 2;
+    case down_right:
+        position.up_left.x = position.down_right.x - width;
+        position.center.x = position.down_right.x - width / 2;
     }
 }
 
@@ -95,18 +95,18 @@ void Button::setHeight(double thisHeight)
     height = thisHeight;
     switch (positionType)
     {
-        case up_left:
-            position.center.y = position.up_left.y + height / 2;
-            position.down_right.y = position.up_left.y + height;
-            break;
-        case center:
-            position.up_left.y = position.center.y - height / 2;
-            position.down_right.y = position.center.y + height / 2;
-            break;
-        case down_right:
-            position.up_left.y = position.down_right.y - height;
-            position.center.y = position.down_right.y - height / 2;
-            break;
+    case up_left:
+        position.center.y = position.up_left.y + height / 2;
+        position.down_right.y = position.up_left.y + height;
+        break;
+    case center:
+        position.up_left.y = position.center.y - height / 2;
+        position.down_right.y = position.center.y + height / 2;
+        break;
+    case down_right:
+        position.up_left.y = position.down_right.y - height;
+        position.center.y = position.down_right.y - height / 2;
+        break;
     }
 }
 
@@ -142,6 +142,7 @@ double Button::getHeight()
 
 bool Button::isCursorPointInButton()
 {
+    Helper helper;
     POINT cursorPoint;
     GetCursorPos(&cursorPoint);
 
@@ -164,7 +165,6 @@ bool Button::isCursorPointInButton()
         return false;
     }
     return true;
-
 }
 
 std::string Button::getTitle()
@@ -184,12 +184,13 @@ void Button::ShowCircleMode()
 {
     double dimension = (this->width > this->height) ? this->width : this->height;
     setlinestyle(0, 0, 3);
-    circle(position.center.x, position.center.y, dimension);
+    circle(position.center.x, position.center.y, dimension / 2);
     settextstyle(3, 0, 1);
     outtextxy(position.center.x, position.center.y, strdup(title.c_str()));
 }
 
-void Button::ShowBox() {
+void Button::ShowBox()
+{
     setlinestyle(0, 0, 3);
     rectangle(position.up_left.x, position.up_left.y, position.down_right.x, position.down_right.y);
     settextstyle(3, 0, 2);
@@ -198,10 +199,11 @@ void Button::ShowBox() {
     std::string temporary;
 
     int k = 0;
-    while(std::getline(titleStream, temporary, '\n')){
-      outtextxy(position.center.x - Button_helper.textSpace(temporary) / 2, position.up_left.y + 4 + k * 20, strdup(temporary.c_str()));
-      k++;
-      settextstyle(3, 0, 1);
+    while (std::getline(titleStream, temporary, '\n'))
+    {
+        outtextxy(position.center.x - Button_helper.textSpace(temporary) / 2, position.up_left.y + 4 + k * 20, strdup(temporary.c_str()));
+        k++;
+        settextstyle(3, 0, 1);
     }
 
     settextstyle(3, 0, 1);

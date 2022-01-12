@@ -27,7 +27,7 @@ void MainMenu::WatchClick()
             {
                 NewProjectMenu newProjectMenu;
                 newProjectMenu.Show();
-                newProjectMenu.filepath = "test.xml";
+                newProjectMenu.filepath = "test2.xml";
                 newProjectMenu.currentSnapshot.importFromFile(newProjectMenu.filepath);
                 newProjectMenu.WatchClick();
                 setcurrentwindow(this->window_code);

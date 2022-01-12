@@ -496,7 +496,7 @@ void NewProjectMenu::WatchClick()
                     {
                         Helper::Vector_2D point = components[isInComponent]->getConnectionPoints()[i].position;
 
-                        if (components[isInComponent]->componentCode != currentComponent->componentCode && NewProjectMenu_helper.distanceBetween(cursor, point) < components[isInComponent]->getHeight() / 5 || components[isInComponent]->name == "Connection Node" && NewProjectMenu_helper.distanceBetween(cursor, point) < 20)
+                        if (components[isInComponent]->componentCode != currentComponent->componentCode && NewProjectMenu_helper.distanceBetween(cursor, point) < components[isInComponent]->getHeight() / 4 || components[isInComponent]->name == "Connection Node" && NewProjectMenu_helper.distanceBetween(cursor, point) < 20)
                         {
                             wiring = false;
 
@@ -736,50 +736,50 @@ void NewProjectMenu::Show()
     double r = 25;
 
     rotate_l.setPositionCenter(helper.makeVector_2D(this->rr + 3 * r, this->rb - 5 * r));
-    rotate_l.setWidth(r);
-    rotate_l.setHeight(r);
+    rotate_l.setWidth(2 * r);
+    rotate_l.setHeight(2 * r);
     rotate_l.setTitle("R<-");
     rotate_l.ShowCircleMode();
 
     rotate_r.setPositionCenter(helper.makeVector_2D(this->rr + 6 * r, this->rb - 5 * r));
-    rotate_r.setWidth(r);
-    rotate_r.setHeight(r);
+    rotate_r.setWidth(2 * r);
+    rotate_r.setHeight(2 * r);
     rotate_r.setTitle("R->");
     rotate_r.ShowCircleMode();
 
     flip_h.setPositionCenter(helper.makeVector_2D(this->rr + 3 * r, this->rb - r));
-    flip_h.setWidth(r);
-    flip_h.setHeight(r);
+    flip_h.setWidth(2 * r);
+    flip_h.setHeight(2 * r);
     flip_h.setTitle("F<|>");
     flip_h.ShowCircleMode();
 
     flip_v.setPositionCenter(helper.makeVector_2D(this->rr + 6 * r, this->rb - r));
-    flip_v.setWidth(r);
-    flip_v.setHeight(r);
+    flip_v.setWidth(2 * r);
+    flip_v.setHeight(2 * r);
     flip_v.setTitle("F<->");
     flip_v.ShowCircleMode();
 
     inc.setPositionCenter(helper.makeVector_2D(this->rl - 3 * r, this->rb - 5 * r));
-    inc.setWidth(r);
-    inc.setHeight(r);
+    inc.setWidth(2 * r);
+    inc.setHeight(2 * r);
     inc.setTitle("+");
     inc.ShowCircleMode();
 
     dec.setPositionCenter(helper.makeVector_2D(this->rl - 6 * r, this->rb - 5 * r));
-    dec.setWidth(r);
-    dec.setHeight(r);
+    dec.setWidth(2 * r);
+    dec.setHeight(2 * r);
     dec.setTitle("-");
     dec.ShowCircleMode();
 
     redo.setPositionCenter(helper.makeVector_2D(this->rl - 3*r, this->rb - r));
-    redo.setWidth(r);
-    redo.setHeight(r);
+    redo.setWidth(2 * r);
+    redo.setHeight(2 * r);
     redo.setTitle("Redo");
     redo.ShowCircleMode();
 
     undo.setPositionCenter(helper.makeVector_2D(this->rl - 6*r, this->rb - r));
-    undo.setWidth(r);
-    undo.setHeight(r);
+    undo.setWidth(2 * r);
+    undo.setHeight(2 * r);
     undo.setTitle("Undo");
     undo.ShowCircleMode();
 }

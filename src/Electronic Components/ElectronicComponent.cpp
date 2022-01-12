@@ -110,19 +110,25 @@ void ElectronicComponent::setWidth(double thisWidth)
 
     switch (positionType)
     {
-        case up_left:
-            position.center.x = position.up_left.x + width / 2; position.center.y = position.up_left.y + height / 2;
-            position.down_right.x = position.up_left.x + width; position.down_right.y = position.up_left.x + height;
+    case up_left:
+        position.center.x = position.up_left.x + width / 2;
+        position.center.y = position.up_left.y + height / 2;
+        position.down_right.x = position.up_left.x + width;
+        position.down_right.y = position.up_left.x + height;
         break;
 
-        case center:
-            position.up_left.x = position.center.x - width / 2; position.up_left.y = position.center.y - height / 2;
-            position.down_right.x = position.center.x + width / 2; position.down_right.y = position.center.y + height / 2;
+    case center:
+        position.up_left.x = position.center.x - width / 2;
+        position.up_left.y = position.center.y - height / 2;
+        position.down_right.x = position.center.x + width / 2;
+        position.down_right.y = position.center.y + height / 2;
         break;
 
-        case down_right:
-            position.up_left.x = position.down_right.x - width; position.up_left.y = position.down_right.y - height;
-            position.center.x = position.down_right.x - width / 2; position.center.y = position.down_right.y - height / 2;
+    case down_right:
+        position.up_left.x = position.down_right.x - width;
+        position.up_left.y = position.down_right.y - height;
+        position.center.x = position.down_right.x - width / 2;
+        position.center.y = position.down_right.y - height / 2;
         break;
     }
 
@@ -144,19 +150,25 @@ void ElectronicComponent::setHeight(double thisHeight)
 
     switch (positionType)
     {
-        case up_left:
-            position.center.y = position.up_left.y + height / 2; position.center.x = position.up_left.x + width / 2;
-            position.down_right.y = position.up_left.y + height; position.down_right.x = position.up_left.x + width;
+    case up_left:
+        position.center.y = position.up_left.y + height / 2;
+        position.center.x = position.up_left.x + width / 2;
+        position.down_right.y = position.up_left.y + height;
+        position.down_right.x = position.up_left.x + width;
         break;
 
-        case center:
-            position.up_left.y = position.center.y - height / 2; position.up_left.x = position.center.x - width / 2;
-            position.down_right.y = position.center.y + height / 2; position.down_right.x = position.center.x + width / 2;
+    case center:
+        position.up_left.y = position.center.y - height / 2;
+        position.up_left.x = position.center.x - width / 2;
+        position.down_right.y = position.center.y + height / 2;
+        position.down_right.x = position.center.x + width / 2;
         break;
 
-        case down_right:
-            position.up_left.y = position.down_right.y - height; position.up_left.x = position.down_right.x - width;
-            position.center.y = position.down_right.y - height / 2; position.center.x = position.down_right.x - width / 2;
+    case down_right:
+        position.up_left.y = position.down_right.y - height;
+        position.up_left.x = position.down_right.x - width;
+        position.center.y = position.down_right.y - height / 2;
+        position.center.x = position.down_right.x - width / 2;
         break;
     }
 
@@ -165,18 +177,21 @@ void ElectronicComponent::setHeight(double thisHeight)
 }
 
 //Setter of the component code:
-void ElectronicComponent::setComponentCode(std::string thisComponentCode){
+void ElectronicComponent::setComponentCode(std::string thisComponentCode)
+{
     componentCode = thisComponentCode;
 }
 
 //Setter of the code of the connected component at a given index:
-void ElectronicComponent::setConnectedComponentCodeAtPoint(int thisPoint, std::string thisComponentCode){
+void ElectronicComponent::setConnectedComponentCodeAtPoint(int thisPoint, std::string thisComponentCode)
+{
 
     if(0 <= thisPoint && thisPoint < numberOfConnectionPoints)
         connectionPoints[thisPoint].connectedComponentCode = thisComponentCode;
 }
 
-void ElectronicComponent::setOutterBox(bool thisState){
+void ElectronicComponent::setOutterBox(bool thisState)
+{
     Erase();
 
     showOutterBox = thisState;
@@ -184,7 +199,8 @@ void ElectronicComponent::setOutterBox(bool thisState){
     this->Show();
 }
 
-void ElectronicComponent::setConnectionPoints(bool thisState){
+void ElectronicComponent::setConnectionPoints(bool thisState)
+{
 
     Erase();
 
@@ -194,7 +210,8 @@ void ElectronicComponent::setConnectionPoints(bool thisState){
 }
 
 //Flipping the component:
-void ElectronicComponent::flipComponent(){
+void ElectronicComponent::flipComponent()
+{
     if(this->name == "Connection Point")    return;
 
     this->Erase();
@@ -207,7 +224,8 @@ void ElectronicComponent::flipComponent(){
 }
 
 //Rotating the component:
-void ElectronicComponent::rotateComponent(int thisDegree){
+void ElectronicComponent::rotateComponent(int thisDegree)
+{
     if(this->name == "Connection Point")    return;
 
     Erase();
@@ -249,28 +267,33 @@ double ElectronicComponent::getHeight()
 }
 
 //Getter of the component code:
-std::string ElectronicComponent::getComponentCode(){
+std::string ElectronicComponent::getComponentCode()
+{
 
     return componentCode;
 }
 
 //Getter of the number of connecting points:
-int ElectronicComponent::getNumberOfConnectionPoints(){
+int ElectronicComponent::getNumberOfConnectionPoints()
+{
 
     return numberOfConnectionPoints;
 }
 
-std::string ElectronicComponent::getCodeOfConnectedComponentAtPoint(int thisPoint){
+std::string ElectronicComponent::getCodeOfConnectedComponentAtPoint(int thisPoint)
+{
 
     return connectionPoints[thisPoint].connectedComponentCode;
 }
 
-Helper::ConnectionPoint* ElectronicComponent::getConnectionPoints(){
+Helper::ConnectionPoint* ElectronicComponent::getConnectionPoints()
+{
     return connectionPoints;
 }
 
 //Updating the position of the connection points:
-void ElectronicComponent::updateConnectionPointsPosition(){
+void ElectronicComponent::updateConnectionPointsPosition()
+{
     if(numberOfConnectionPoints == 0)   return;
 }
 
@@ -280,12 +303,14 @@ void ElectronicComponent::Show()
     return;
 }
 
-void ElectronicComponent::showElements(bool modeErase){
+void ElectronicComponent::showElements(bool modeErase)
+{
 
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(this->name == "Connection Point"){
+    if(this->name == "Connection Point")
+    {
 
         setcolor(RED);
 
@@ -298,11 +323,13 @@ void ElectronicComponent::showElements(bool modeErase){
         return;
     }
 
-    if(showOutterBox){
+    if(showOutterBox)
+    {
 
         setcolor(RED);
 
-        if(this->name == "Connection Node"){
+        if(this->name == "Connection Node")
+        {
             if(modeErase)
                 setcolor(BLACK);
 
@@ -314,61 +341,73 @@ void ElectronicComponent::showElements(bool modeErase){
         }
 
 
-        if(modeErase) {
+        if(modeErase)
+        {
             setcolor(BLACK);
 
-            for (int i = 0; i < 4; i++) {
+            for (int i = 0; i < 4; i++)
+            {
                 ElectronicComponent_helper.rotationalLine(
-                up_left_x - i, up_left_y - i, down_right_x + i, up_left_y - i, getPositionCenter(),
-                rotateState);
+                    up_left_x - i, up_left_y - i, down_right_x + i, up_left_y - i, getPositionCenter(),
+                    rotateState);
             }
 
-            for (int i = 0; i < 4; i++) {
+            for (int i = 0; i < 4; i++)
+            {
                 ElectronicComponent_helper.rotationalLine(
-                down_right_x + i, up_left_y - i, down_right_x + i, down_right_y + i, getPositionCenter(),
-                rotateState);
+                    down_right_x + i, up_left_y - i, down_right_x + i, down_right_y + i, getPositionCenter(),
+                    rotateState);
             }
 
-            for (int i = 0; i < 4; i++) {
+            for (int i = 0; i < 4; i++)
+            {
                 ElectronicComponent_helper.rotationalLine(
-                down_right_x + i, down_right_y + i, up_left_x - i, down_right_y + i, getPositionCenter(),
-                rotateState);
+                    down_right_x + i, down_right_y + i, up_left_x - i, down_right_y + i, getPositionCenter(),
+                    rotateState);
             }
 
-            for (int i = 0; i < 4; i++) {
+            for (int i = 0; i < 4; i++)
+            {
                 ElectronicComponent_helper.rotationalLine(
-                up_left_x - i, down_right_y + i, up_left_x - i, up_left_y - i, getPositionCenter(),
-                rotateState);
+                    up_left_x - i, down_right_y + i, up_left_x - i, up_left_y - i, getPositionCenter(),
+                    rotateState);
             }
         }
-        else {
+        else
+        {
             ElectronicComponent_helper.rotationalLine(
-            up_left_x, up_left_y, down_right_x, up_left_y, getPositionCenter(),
-            rotateState);
+                up_left_x, up_left_y, down_right_x, up_left_y, getPositionCenter(),
+                rotateState);
 
             ElectronicComponent_helper.rotationalLine(
-            down_right_x, up_left_y, down_right_x, down_right_y, getPositionCenter(),
-            rotateState);
+                down_right_x, up_left_y, down_right_x, down_right_y, getPositionCenter(),
+                rotateState);
 
             ElectronicComponent_helper.rotationalLine(
-            down_right_x, down_right_y, up_left_x, down_right_y, getPositionCenter(),
-            rotateState);
+                down_right_x, down_right_y, up_left_x, down_right_y, getPositionCenter(),
+                rotateState);
 
             ElectronicComponent_helper.rotationalLine(
-            up_left_x, down_right_y, up_left_x, up_left_y, getPositionCenter(),
-            rotateState);
+                up_left_x, down_right_y, up_left_x, up_left_y, getPositionCenter(),
+                rotateState);
         }
 
         setcolor(WHITE);
     }
 
-    if(showConnectionPoints){
+    if(showConnectionPoints)
+    {
 
         setfillstyle(INTERLEAVE_FILL, RED);
 
-        if(modeErase)    {setfillstyle(INTERLEAVE_FILL, BLACK); setcolor(BLACK);}
+        if(modeErase)
+        {
+            setfillstyle(INTERLEAVE_FILL, BLACK);
+            setcolor(BLACK);
+        }
 
-        for(int i = 0; i < numberOfConnectionPoints; i++){
+        for(int i = 0; i < numberOfConnectionPoints; i++)
+        {
             if(width_height_ratio == 4)
                 fillellipse(connectionPoints[i].position.x, connectionPoints[i].position.y, height / 10, height / 10);
 
@@ -397,7 +436,8 @@ void ElectronicComponent::Erase()
 
     int outline = 5;
 
-    int points[] = {
+    int points[] =
+    {
         int(getPositionUpLeft().x - outline), int(getPositionUpLeft().y - outline),
         int(getPositionDownRight().x + outline), int(getPositionUpLeft().y - outline),
         int(getPositionDownRight().x + outline), int(getPositionDownRight().y + outline),
@@ -412,6 +452,7 @@ void ElectronicComponent::Erase()
 
 bool ElectronicComponent::isCursorPointInButton()
 {
+    Helper helper;
     POINT cursorPoint;
     GetCursorPos(&cursorPoint);
 
@@ -419,6 +460,20 @@ bool ElectronicComponent::isCursorPointInButton()
         return true;
     else if(this->name == "Connection Node")
         return false;
+
+
+    // // get the original coordinates of the point
+    // // a----------b
+    // // |          |
+    // // c----------d
+    // Helper::Vector_2D a = position.up_left, b = position.down_right, c = position.up_left, d = position.up_left;
+    // c.y = c.y + height;
+    // d.x = d.x + width;
+
+    // Helper::Vector_2D a_rot = helper.rotatePointToReference(a, position.center, rotateState);
+    // Helper::Vector_2D b_rot = helper.rotatePointToReference(b, position.center, rotateState);
+    // Helper::Vector_2D c_rot = helper.rotatePointToReference(c, position.center, rotateState);
+    // Helper::Vector_2D d_rot = helper.rotatePointToReference(d, position.center, rotateState);
 
     if (cursorPoint.x < position.up_left.x)
     {
@@ -475,11 +530,11 @@ std::string ElectronicComponent::toString()
 
     for(int i = 0; i < numberOfConnectionPoints; i++)
         text += std::string(std::string("Point ") +
-                std::to_string(i) + std::string(": ") +
-                connectionPoints[i].connectedComponentCode +
-                std::string(" | Coordinates: ") +
-                std::string("x: ") + std::to_string(connectionPoints[i].position.x) + std::string(" \ ") +
-                std::string("y: ") + std::to_string(connectionPoints[i].position.y) + std::string(";\n"));
+                            std::to_string(i) + std::string(": ") +
+                            connectionPoints[i].connectedComponentCode +
+                            std::string(" | Coordinates: ") +
+                            std::string("x: ") + std::to_string(connectionPoints[i].position.x) + std::string(" \ ") +
+                            std::string("y: ") + std::to_string(connectionPoints[i].position.y) + std::string(";\n"));
 
     text += std::string("\n====================================================\n\n");
 
