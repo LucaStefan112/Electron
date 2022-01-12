@@ -57,6 +57,7 @@ int NameFile::ListenEvents () {
             ok = 0;
             if (filename.size() == 0) {
                 std::cout << "cannot " << (mode ? "open" : "save") << " file without a name";
+                code = 0;
             } else {
                 ok = 0;
             }
