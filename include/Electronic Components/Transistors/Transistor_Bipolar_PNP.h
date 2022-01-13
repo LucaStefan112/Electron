@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Transistor_Bipolar_PNP : public ElectronicComponent{
+class Transistor_Bipolar_PNP : public ElectronicComponent
+{
 
 public:
     Transistor_Bipolar_PNP();

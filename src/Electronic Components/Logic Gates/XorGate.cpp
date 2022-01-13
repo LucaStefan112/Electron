@@ -2,15 +2,17 @@
 
 Helper XorGate_Helper;
 
-XorGate::XorGate(): ElectronicComponent(200, 50, "Xor Gate", 3){}
+XorGate::XorGate(): ElectronicComponent(200, 50, "Xor Gate", 3) {}
 
 //Drawing the component:
-void XorGate::Show(){
+void XorGate::Show()
+{
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -60,13 +62,15 @@ void XorGate::Show(){
     showElements();
 }
 
-void XorGate::updateConnectionPointsPosition(){
+void XorGate::updateConnectionPointsPosition()
+{
 
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -74,17 +78,17 @@ void XorGate::updateConnectionPointsPosition(){
     double thisHeight = (down_right_x - up_left_x) / width_height_ratio;
 
     connectionPoints[0].position = XorGate_Helper.rotatePointToReference(
-        XorGate_Helper.makeVector_2D(up_left_x + thisHeight / 10, center_y - height / 4),
-        getPositionCenter(),
-        rotateState);
+                                       XorGate_Helper.makeVector_2D(up_left_x + thisHeight / 10, center_y - height / 4),
+                                       getPositionCenter(),
+                                       rotateState);
 
     connectionPoints[1].position = XorGate_Helper.rotatePointToReference(
-        XorGate_Helper.makeVector_2D(up_left_x + thisHeight / 10, center_y + height / 4),
-        getPositionCenter(),
-        rotateState);
+                                       XorGate_Helper.makeVector_2D(up_left_x + thisHeight / 10, center_y + height / 4),
+                                       getPositionCenter(),
+                                       rotateState);
 
     connectionPoints[2].position = XorGate_Helper.rotatePointToReference(
-        XorGate_Helper.makeVector_2D(down_right_x - thisHeight / 10, center_y),
-        getPositionCenter(),
-        rotateState);
+                                       XorGate_Helper.makeVector_2D(down_right_x - thisHeight / 10, center_y),
+                                       getPositionCenter(),
+                                       rotateState);
 }

@@ -4,13 +4,13 @@
 
 class watev
 {
-    public:
-        watev();
-        virtual ~watev();
+public:
+    watev();
+    virtual ~watev();
 
-    protected:
+protected:
 
-    private:
+private:
 };
 
 #endif // WATEV_H

@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Diode_Laser : public ElectronicComponent{
+class Diode_Laser : public ElectronicComponent
+{
 
 public:
     Diode_Laser();

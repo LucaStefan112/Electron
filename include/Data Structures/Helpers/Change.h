@@ -1,8 +1,9 @@
 #ifndef CHANGE_H
 #define CHANGE_H
 
-class Change {
-    public:
+class Change
+{
+public:
     std::string type;
     std::string componentCode;
     std::string typeOfValue;

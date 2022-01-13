@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Transistor_MOSFET_Nchannel : public ElectronicComponent{
+class Transistor_MOSFET_Nchannel : public ElectronicComponent
+{
 
 public:
     Transistor_MOSFET_Nchannel();

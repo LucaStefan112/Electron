@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Ammeter : public ElectronicComponent{
+class Ammeter : public ElectronicComponent
+{
 
 private:
     double current = 0;

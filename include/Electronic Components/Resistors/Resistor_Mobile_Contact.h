@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Resistor_Mobile_Contact : public ElectronicComponent{
+class Resistor_Mobile_Contact : public ElectronicComponent
+{
 
 private:
     double resistance = 0;

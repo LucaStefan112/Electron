@@ -2,15 +2,17 @@
 
 Helper Battery_Helper;
 
-Battery::Battery(): ElectronicComponent(200, 50, "Battery", 2){}
+Battery::Battery(): ElectronicComponent(200, 50, "Battery", 2) {}
 
 //Drawing the component:
-void Battery::Show(){
+void Battery::Show()
+{
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -64,13 +66,15 @@ void Battery::Show(){
     showElements();
 }
 
-void Battery::updateConnectionPointsPosition(){
+void Battery::updateConnectionPointsPosition()
+{
 
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -78,37 +82,43 @@ void Battery::updateConnectionPointsPosition(){
     double thisHeight = (down_right_x - up_left_x) / width_height_ratio;
 
     connectionPoints[0].position = Battery_Helper.rotatePointToReference(
-        Battery_Helper.makeVector_2D(up_left_x + thisHeight / 10, center_y),
-        getPositionCenter(),
-        rotateState);
+                                       Battery_Helper.makeVector_2D(up_left_x + thisHeight / 10, center_y),
+                                       getPositionCenter(),
+                                       rotateState);
 
     connectionPoints[1].position = Battery_Helper.rotatePointToReference(
-        Battery_Helper.makeVector_2D(down_right_x - thisHeight / 10, center_y),
-        getPositionCenter(),
-        rotateState);
+                                       Battery_Helper.makeVector_2D(down_right_x - thisHeight / 10, center_y),
+                                       getPositionCenter(),
+                                       rotateState);
 }
 
-void Battery::setVolts(double thisVolts){
+void Battery::setVolts(double thisVolts)
+{
     volts = thisVolts;
 }
 
-void Battery::setAmpers(double thisAmpers){
+void Battery::setAmpers(double thisAmpers)
+{
     ampers = thisAmpers;
 }
 
-double Battery::getVolts(){
+double Battery::getVolts()
+{
     return volts;
 }
 
-double Battery::getAmpers(){
+double Battery::getAmpers()
+{
     return ampers;
 }
 
-std::vector<std::pair<std::string, double>> Battery::getValues() {
+std::vector<std::pair<std::string, double>> Battery::getValues()
+{
     return std::vector<std::pair<std::string, double>> { std::make_pair("volts", volts), std::make_pair("ampers", ampers) };
 };
 
-void Battery::setValue(std::string name, double value) {
+void Battery::setValue(std::string name, double value)
+{
     if (name == "volts") volts = value;
     if (name == "ampers") ampers = value;
 }

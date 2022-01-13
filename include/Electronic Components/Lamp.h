@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Lamp : public ElectronicComponent{
+class Lamp : public ElectronicComponent
+{
 
 public:
     Lamp();

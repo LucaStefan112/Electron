@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Potentiometer_Mobile_Contact : public ElectronicComponent{
+class Potentiometer_Mobile_Contact : public ElectronicComponent
+{
 
 private:
     double resistance = 0;

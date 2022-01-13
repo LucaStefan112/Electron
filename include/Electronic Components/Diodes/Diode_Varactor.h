@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Diode_Varactor : public ElectronicComponent{
+class Diode_Varactor : public ElectronicComponent
+{
 
 public:
     Diode_Varactor();

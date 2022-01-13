@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Buzzer : public ElectronicComponent{
+class Buzzer : public ElectronicComponent
+{
 
 public:
     Buzzer();

@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Resistor_Variable_Resistance : public ElectronicComponent{
+class Resistor_Variable_Resistance : public ElectronicComponent
+{
 
 private:
     double resistance = 0;

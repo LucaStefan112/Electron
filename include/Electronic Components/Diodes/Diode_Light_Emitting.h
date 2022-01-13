@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Diode_Light_Emitting : public ElectronicComponent{
+class Diode_Light_Emitting : public ElectronicComponent
+{
 
 public:
     Diode_Light_Emitting();

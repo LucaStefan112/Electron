@@ -2,15 +2,17 @@
 
 Helper Transistor_FET_Pchannel_Helper;
 
-Transistor_FET_Pchannel::Transistor_FET_Pchannel() : ElectronicComponent(150, 200, "FET P-channel Transistor", 3){}
+Transistor_FET_Pchannel::Transistor_FET_Pchannel() : ElectronicComponent(150, 200, "FET P-channel Transistor", 3) {}
 
 //Drawing the component:
-void Transistor_FET_Pchannel::Show(){
+void Transistor_FET_Pchannel::Show()
+{
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -38,7 +40,8 @@ void Transistor_FET_Pchannel::Show(){
         down_right_x - thisHeight / 6, center_y + height / 15, center_x + thisHeight / 10, center_y + height / 15, getPositionCenter(),
         rotateState);
 
-    int points[] = {
+    int points[] =
+    {
         int(center_x - thisHeight / 10), int(center_y + height / 15),
         int(center_x), int(center_y + height / 15 + height / 30),
         int(center_x), int(center_y + height / 15 - height / 30)
@@ -49,7 +52,8 @@ void Transistor_FET_Pchannel::Show(){
         rotateState);
 
     settextstyle(8, HORIZ_DIR, 3);
-    if(height / 50 > 2){
+    if(height / 50 > 2)
+    {
         Transistor_FET_Pchannel_Helper.rotationalOuttextxy(
             down_right_x - thisHeight / 6 - thisHeight / 5 - 5, up_left_y + height / 40, getPositionCenter(), "D",
             rotateState);
@@ -67,7 +71,8 @@ void Transistor_FET_Pchannel::Show(){
         up_left_x + thisHeight / 15, center_y + height / 15, center_x + thisHeight / 20, center_y + height / 15, getPositionCenter(),
         rotateState);
 
-    int points1[] = {
+    int points1[] =
+    {
         int(center_x + thisHeight / 20), int(center_y - height / 8),
         int(center_x + thisHeight / 20), int(center_y + height / 8),
         int(center_x + thisHeight / 10), int(center_y + height / 8),
@@ -79,27 +84,29 @@ void Transistor_FET_Pchannel::Show(){
         rotateState);
 
     Transistor_FET_Pchannel_Helper.rotationalCircle(
-            up_left_x + thisHeight / 30, center_y + height / 15, getPositionCenter(),  height / 30,
-            rotateState);
+        up_left_x + thisHeight / 30, center_y + height / 15, getPositionCenter(),  height / 30,
+        rotateState);
 
     Transistor_FET_Pchannel_Helper.rotationalCircle(
-            down_right_x - thisHeight / 6, up_left_y + height / 30, getPositionCenter(),  height / 30,
-            rotateState);
+        down_right_x - thisHeight / 6, up_left_y + height / 30, getPositionCenter(),  height / 30,
+        rotateState);
 
     Transistor_FET_Pchannel_Helper.rotationalCircle(
-            down_right_x - thisHeight / 6, down_right_y - height / 30, getPositionCenter(),  height / 30,
-            rotateState);
+        down_right_x - thisHeight / 6, down_right_y - height / 30, getPositionCenter(),  height / 30,
+        rotateState);
 
     showElements();
 }
 
-void Transistor_FET_Pchannel::updateConnectionPointsPosition(){
+void Transistor_FET_Pchannel::updateConnectionPointsPosition()
+{
 
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -107,17 +114,17 @@ void Transistor_FET_Pchannel::updateConnectionPointsPosition(){
     double thisHeight = (down_right_x - up_left_x) / width_height_ratio;
 
     connectionPoints[0].position = Transistor_FET_Pchannel_Helper.rotatePointToReference(
-        Transistor_FET_Pchannel_Helper.makeVector_2D(up_left_x + thisHeight / 30, center_y + height / 15),
-        getPositionCenter(),
-        rotateState);
+                                       Transistor_FET_Pchannel_Helper.makeVector_2D(up_left_x + thisHeight / 30, center_y + height / 15),
+                                       getPositionCenter(),
+                                       rotateState);
 
     connectionPoints[1].position = Transistor_FET_Pchannel_Helper.rotatePointToReference(
-        Transistor_FET_Pchannel_Helper.makeVector_2D(down_right_x - thisHeight / 6, up_left_y + height / 30),
-        getPositionCenter(),
-        rotateState);
+                                       Transistor_FET_Pchannel_Helper.makeVector_2D(down_right_x - thisHeight / 6, up_left_y + height / 30),
+                                       getPositionCenter(),
+                                       rotateState);
 
     connectionPoints[2].position = Transistor_FET_Pchannel_Helper.rotatePointToReference(
-        Transistor_FET_Pchannel_Helper.makeVector_2D(down_right_x - thisHeight / 6, down_right_y - height / 30),
-        getPositionCenter(),
-        rotateState);
+                                       Transistor_FET_Pchannel_Helper.makeVector_2D(down_right_x - thisHeight / 6, down_right_y - height / 30),
+                                       getPositionCenter(),
+                                       rotateState);
 }

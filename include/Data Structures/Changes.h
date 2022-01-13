@@ -3,7 +3,8 @@
 
 #include "Data Structures/Helpers/Change.h"
 
-class Changes {
+class Changes
+{
 private:
     std::vector <Change> undo;
     std::vector <Change> redo;

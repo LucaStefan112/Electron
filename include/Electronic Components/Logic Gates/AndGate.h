@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class AndGate : public ElectronicComponent{
+class AndGate : public ElectronicComponent
+{
 
 public:
     AndGate();

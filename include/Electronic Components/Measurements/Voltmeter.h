@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Voltmeter : public ElectronicComponent{
+class Voltmeter : public ElectronicComponent
+{
 
 private:
     double voltage = 0;

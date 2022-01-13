@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class OrGate : public ElectronicComponent{
+class OrGate : public ElectronicComponent
+{
 
 public:
     OrGate();

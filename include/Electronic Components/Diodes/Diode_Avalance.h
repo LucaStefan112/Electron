@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Diode_Avalance : public ElectronicComponent{
+class Diode_Avalance : public ElectronicComponent
+{
 
 public:
     Diode_Avalance();

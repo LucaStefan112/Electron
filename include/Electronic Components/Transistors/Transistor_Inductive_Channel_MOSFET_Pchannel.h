@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Transistor_Inductive_Channel_MOSFET_Pchannel : public ElectronicComponent{
+class Transistor_Inductive_Channel_MOSFET_Pchannel : public ElectronicComponent
+{
 
 public:
     Transistor_Inductive_Channel_MOSFET_Pchannel();

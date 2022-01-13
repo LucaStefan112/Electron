@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Battery : public ElectronicComponent{
+class Battery : public ElectronicComponent
+{
 
 public:
     double volts = 0, ampers = 0;

@@ -4,6 +4,9 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <ctime>
+#include <stdio.h>
+
 #include "Helper.h"
 #include "Enums.h"
 
@@ -19,12 +22,14 @@
 #define DEFAULT_OUTTERBOX_VALUE false;
 #define DEFAULT_CONNECTIONPOINTS_VALUE false;
 
-class ElectronicComponent{
+class ElectronicComponent
+{
 protected:
     //Reference points:
-    struct{
+    struct
+    {
         Helper::Vector_2D up_left, center, down_right;
-    }position;
+    } position;
 
     //Dimensions of the component:
     double width = DEFAULT_WIDTH, height = DEFAULT_HEIGHT, width_height_ratio = DEFAULT_WIDTH_HEIGHT_RATIO;
@@ -32,24 +37,14 @@ protected:
     int numberOfConnectionPoints = DEFAULT_NUMBER_OF_CONNECTION_POINTS;
     Helper::ConnectionPoint connectionPoints[MAX_NUMBER_OF_CONNECTION_POINTS];
 
-    /* TODO getters and setters
-    bool flipped = DEFAULT_FLIP_STATE;
-    int rotateState = DEFAULT_ROTATE_STATE;
-
-    bool showOutterBox = DEFAULT_OUTTERBOX_VALUE;
-    bool showConnectionPoints = DEFAULT_CONNECTIONPOINTS_VALUE;
-    ENDTODO */
-
 public:
     ElectronicComponent(double thisWidth = DEFAULT_WIDTH, double thisHeight = DEFAULT_HEIGHT, std::string thisName = DEFAULT_NAME, int thisNumberOfConnectionPoints = DEFAULT_NUMBER_OF_CONNECTION_POINTS);
 
-    /* TODO getters and setters */
     bool flipped = DEFAULT_FLIP_STATE;
     int rotateState = DEFAULT_ROTATE_STATE;
 
     bool showOutterBox = DEFAULT_OUTTERBOX_VALUE;
     bool showConnectionPoints = DEFAULT_CONNECTIONPOINTS_VALUE;
-    /* ENDTODO  */
 
     //Name of the component:
     std::string name = DEFAULT_NAME;
@@ -101,8 +96,6 @@ public:
 
     virtual std::vector<std::pair<std::string, double>> getValues();
     virtual void setValue(std::string name, double value);
-
-    void saveToFile(char *filename);
 };
 
 

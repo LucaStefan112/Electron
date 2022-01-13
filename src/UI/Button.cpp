@@ -80,12 +80,15 @@ void Button::setWidth(double thisWidth)
     case up_left:
         position.center.x = position.up_left.x + width / 2;
         position.down_right.x = position.up_left.x + width;
+        break;
     case center:
         position.up_left.x = position.center.x - width / 2;
         position.down_right.x = position.center.x + width / 2;
+        break;
     case down_right:
         position.up_left.x = position.down_right.x - width;
         position.center.x = position.down_right.x - width / 2;
+        break;
     }
 }
 
@@ -146,25 +149,7 @@ bool Button::isCursorPointInButton()
     POINT cursorPoint;
     GetCursorPos(&cursorPoint);
 
-    if (cursorPoint.x < position.up_left.x)
-    {
-        return false;
-    }
-
-    if (cursorPoint.x > position.down_right.x)
-    {
-        return false;
-    }
-
-    if (cursorPoint.y < position.up_left.y)
-    {
-        return false;
-    }
-    if (cursorPoint.y > position.down_right.y)
-    {
-        return false;
-    }
-    return true;
+    return cursorPoint.x >= position.up_left.x && cursorPoint.x <= position.down_right.x && cursorPoint.y >= position.up_left.y && cursorPoint.y <= position.down_right.y;
 }
 
 std::string Button::getTitle()
@@ -189,6 +174,7 @@ void Button::ShowCircleMode()
     outtextxy(position.center.x, position.center.y, strdup(title.c_str()));
 }
 
+//Show left box with component info
 void Button::ShowBox()
 {
     setlinestyle(0, 0, 3);
@@ -209,9 +195,13 @@ void Button::ShowBox()
     settextstyle(3, 0, 1);
 }
 
-void Button::Hide() {
+
+//Hide the left box right buttons (measures)
+void Button::Hide()
+{
     setcolor(BLACK);
-    for(int i = position.up_left.y; i <= position.down_right.y; i++) {
+    for(int i = position.up_left.y; i <= position.down_right.y; i++)
+    {
         line(position.up_left.x, i, position.down_right.x, i);
     }
     setcolor(WHITE);

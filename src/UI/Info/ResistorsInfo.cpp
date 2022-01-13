@@ -46,8 +46,6 @@ void ResistorsInfo::Show(double w, double h)
 int ResistorsInfo::WatchClick()
 {
     int ok = 1;
-
-    Helper helper;
     int cType = _none;
     while (ok)
     {
@@ -87,7 +85,7 @@ int ResistorsInfo::WatchClick()
         delay(200);
     }
 
-   closegraph(this->window_code);
+    closegraph(this->window_code);
     return cType;
 }
 
@@ -95,8 +93,6 @@ int ResistorsInfo::WatchExit()
 {
 
     int ok = 1;
-
-    Helper helper;
 
     while (ok)
     {

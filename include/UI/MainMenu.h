@@ -11,17 +11,17 @@
 
 class MainMenu
 {
-    protected:
-        Button newProject, openProject, info, exit;
-    public:
-        MainMenu();
+protected:
+    Button newProject, openProject, info, exit;
+public:
+    MainMenu();
 
-        Snapshot importedSnapshot;
-        NameFile nameFileMenu;
+    Snapshot importedSnapshot;
+    NameFile nameFileMenu;
 
-        int window_code;
-        void Show();
-        void WatchClick();
+    int window_code;
+    void Show();
+    void WatchClick();
 };
 
 #endif // MENU_H

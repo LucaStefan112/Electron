@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Transistor_FET_Pchannel : public ElectronicComponent{
+class Transistor_FET_Pchannel : public ElectronicComponent
+{
 
 public:
     Transistor_FET_Pchannel();

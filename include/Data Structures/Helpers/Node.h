@@ -5,8 +5,9 @@
 
 #include "Data Structures/Snapshot.h"
 
-class Node {
-    public:
+class Node
+{
+public:
     Snapshot state;
     Node* next;
     Node* previous;

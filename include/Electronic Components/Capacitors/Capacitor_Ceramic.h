@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Capacitor_Ceramic : public ElectronicComponent{
+class Capacitor_Ceramic : public ElectronicComponent
+{
 
 private:
     double capacitance = 0;

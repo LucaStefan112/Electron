@@ -1,7 +1,3 @@
-#include <ctime>
-#include <sstream>
-
-#include <stdio.h>
 #include "Electronic Components/ElectronicComponent.h"
 
 Helper ElectronicComponent_helper;
@@ -190,6 +186,7 @@ void ElectronicComponent::setConnectedComponentCodeAtPoint(int thisPoint, std::s
         connectionPoints[thisPoint].connectedComponentCode = thisComponentCode;
 }
 
+// Set red box to the component
 void ElectronicComponent::setOutterBox(bool thisState)
 {
     Erase();
@@ -201,7 +198,6 @@ void ElectronicComponent::setOutterBox(bool thisState)
 
 void ElectronicComponent::setConnectionPoints(bool thisState)
 {
-
     Erase();
 
     showConnectionPoints = thisState;
@@ -280,12 +276,14 @@ int ElectronicComponent::getNumberOfConnectionPoints()
     return numberOfConnectionPoints;
 }
 
+//Getter of the connected component code
 std::string ElectronicComponent::getCodeOfConnectedComponentAtPoint(int thisPoint)
 {
 
     return connectionPoints[thisPoint].connectedComponentCode;
 }
 
+//Getter of the connection points
 Helper::ConnectionPoint* ElectronicComponent::getConnectionPoints()
 {
     return connectionPoints;
@@ -299,9 +297,7 @@ void ElectronicComponent::updateConnectionPointsPosition()
 
 //Drawing the component:
 void ElectronicComponent::Show()
-{
-    return;
-}
+{}
 
 void ElectronicComponent::showElements(bool modeErase)
 {
@@ -311,15 +307,10 @@ void ElectronicComponent::showElements(bool modeErase)
 
     if(this->name == "Connection Point")
     {
-
         setcolor(RED);
-
         if(modeErase)   setcolor(BLACK);
-
         fillellipse(getPositionCenter().x, getPositionCenter().y, 7, 7);
-
         setcolor(WHITE);
-
         return;
     }
 
@@ -450,50 +441,16 @@ void ElectronicComponent::Erase()
     setfillstyle(SOLID_FILL, WHITE);
 }
 
+//Checks if the cursor is on the component
 bool ElectronicComponent::isCursorPointInButton()
 {
-    Helper helper;
     POINT cursorPoint;
     GetCursorPos(&cursorPoint);
 
-    if(this->name == "Connection Node" && ElectronicComponent_helper.distanceBetween(ElectronicComponent_helper.makeVector_2D(cursorPoint.x, cursorPoint.y), getPositionCenter()) < 20)
-        return true;
-    else if(this->name == "Connection Node")
-        return false;
+    if(this->name == "Connection Node")
+        return ElectronicComponent_helper.distanceBetween(ElectronicComponent_helper.makeVector_2D(cursorPoint.x, cursorPoint.y), getPositionCenter()) < 20;
 
-
-    // // get the original coordinates of the point
-    // // a----------b
-    // // |          |
-    // // c----------d
-    // Helper::Vector_2D a = position.up_left, b = position.down_right, c = position.up_left, d = position.up_left;
-    // c.y = c.y + height;
-    // d.x = d.x + width;
-
-    // Helper::Vector_2D a_rot = helper.rotatePointToReference(a, position.center, rotateState);
-    // Helper::Vector_2D b_rot = helper.rotatePointToReference(b, position.center, rotateState);
-    // Helper::Vector_2D c_rot = helper.rotatePointToReference(c, position.center, rotateState);
-    // Helper::Vector_2D d_rot = helper.rotatePointToReference(d, position.center, rotateState);
-
-    if (cursorPoint.x < position.up_left.x)
-    {
-        return false;
-    }
-
-    if (cursorPoint.x > position.down_right.x)
-    {
-        return false;
-    }
-
-    if (cursorPoint.y < position.up_left.y)
-    {
-        return false;
-    }
-    if (cursorPoint.y > position.down_right.y)
-    {
-        return false;
-    }
-    return true;
+    return cursorPoint.x >= position.up_left.x && cursorPoint.x <= position.down_right.x && cursorPoint.y >= position.up_left.y && cursorPoint.y <= position.down_right.y;
 }
 
 bool ElectronicComponent::isSelected()
@@ -541,10 +498,13 @@ std::string ElectronicComponent::toString()
     return text;
 }
 
-std::vector<std::pair<std::string, double>> ElectronicComponent::getValues() {
+// [[string, double], [string, double]]
+std::vector<std::pair<std::string, double>> ElectronicComponent::getValues()
+{
     return std::vector<std::pair<std::string, double>> { std::make_pair("unsupported", 0) };
 }
 
-void ElectronicComponent::setValue(std::string name, double value) {
+void ElectronicComponent::setValue(std::string name, double value)
+{
     return;
 }

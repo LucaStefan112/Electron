@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Source_Voltage_AC : public ElectronicComponent{
+class Source_Voltage_AC : public ElectronicComponent
+{
 
 public:
     double volts = 0, ampers = 0;

@@ -7,22 +7,22 @@
 
 class LogicGatesInfo
 {
-    public:
-        LogicGatesInfo();
-        
-        Button exit;
-        AndGate andGate;
-        NandGate nandGate;
-        NorGate norGate;
-        NotGate notGate;
-        OrGate orGate;
-        XorGate xorGate;
+public:
+    LogicGatesInfo();
 
-        int window_code;
+    Button exit;
+    AndGate andGate;
+    NandGate nandGate;
+    NorGate norGate;
+    NotGate notGate;
+    OrGate orGate;
+    XorGate xorGate;
 
-        void Show(double w, double h);
-        int WatchClick();
-        int WatchExit();
+    int window_code;
+
+    void Show(double w, double h);
+    int WatchClick();
+    int WatchExit();
 };
 
 #endif // LOGICGATESINFO_H

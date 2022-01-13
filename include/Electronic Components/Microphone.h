@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Microphone : public ElectronicComponent{
+class Microphone : public ElectronicComponent
+{
 
 public:
     Microphone();

@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Switch_SPDT : public ElectronicComponent{
+class Switch_SPDT : public ElectronicComponent
+{
 
 public:
     Switch_SPDT();

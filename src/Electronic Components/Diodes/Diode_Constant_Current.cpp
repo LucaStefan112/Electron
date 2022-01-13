@@ -2,15 +2,17 @@
 
 Helper Diode_Constant_Current_Helper;
 
-Diode_Constant_Current::Diode_Constant_Current(): ElectronicComponent(200, 50, "Constant Current Diode", 2){}
+Diode_Constant_Current::Diode_Constant_Current(): ElectronicComponent(200, 50, "Constant Current Diode", 2) {}
 
 //Drawing the component:
-void Diode_Constant_Current::Show(){
+void Diode_Constant_Current::Show()
+{
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -60,13 +62,15 @@ void Diode_Constant_Current::Show(){
     showElements();
 }
 
-void Diode_Constant_Current::updateConnectionPointsPosition(){
+void Diode_Constant_Current::updateConnectionPointsPosition()
+{
 
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -74,12 +78,12 @@ void Diode_Constant_Current::updateConnectionPointsPosition(){
     double thisHeight = (down_right_x - up_left_x) / width_height_ratio;
 
     connectionPoints[0].position = Diode_Constant_Current_Helper.rotatePointToReference(
-        Diode_Constant_Current_Helper.makeVector_2D(up_left_x + thisHeight / 10, center_y),
-        getPositionCenter(),
-        rotateState);
+                                       Diode_Constant_Current_Helper.makeVector_2D(up_left_x + thisHeight / 10, center_y),
+                                       getPositionCenter(),
+                                       rotateState);
 
     connectionPoints[1].position = Diode_Constant_Current_Helper.rotatePointToReference(
-        Diode_Constant_Current_Helper.makeVector_2D(down_right_x - thisHeight / 10, center_y),
-        getPositionCenter(),
-        rotateState);
+                                       Diode_Constant_Current_Helper.makeVector_2D(down_right_x - thisHeight / 10, center_y),
+                                       getPositionCenter(),
+                                       rotateState);
 }

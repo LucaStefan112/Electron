@@ -8,20 +8,20 @@
 
 class CapacitorsInfo
 {
-    public:
-        CapacitorsInfo();
+public:
+    CapacitorsInfo();
 
-        Button exit;
-        Capacitor_Ceramic capacitorCeramic;
-        Capacitor_Electrolytic capacitorElectrolyt;
-        Capacitor_Trimmer capacitorTrimmer;
-        Capacitor_Variable capacitorVariable;
+    Button exit;
+    Capacitor_Ceramic capacitorCeramic;
+    Capacitor_Electrolytic capacitorElectrolyt;
+    Capacitor_Trimmer capacitorTrimmer;
+    Capacitor_Variable capacitorVariable;
 
-        int window_code;
+    int window_code;
 
-        void Show(double w, double h);
-        int WatchClick();
-        int WatchExit();
+    void Show(double w, double h);
+    int WatchClick();
+    int WatchExit();
 };
 
 #endif // CAPACITORSINFO_H

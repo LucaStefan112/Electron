@@ -2,15 +2,17 @@
 
 Helper Speaker_Helper;
 
-Speaker::Speaker() : ElectronicComponent(200, 100, "Speaker", 2){}
+Speaker::Speaker() : ElectronicComponent(200, 100, "Speaker", 2) {}
 
 //Drawing the component:
-void Speaker::Show(){
+void Speaker::Show()
+{
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -64,12 +66,14 @@ void Speaker::Show(){
     showElements();
 }
 
-void Speaker::updateConnectionPointsPosition(){
+void Speaker::updateConnectionPointsPosition()
+{
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -77,12 +81,12 @@ void Speaker::updateConnectionPointsPosition(){
     double thisHeight = (down_right_x - up_left_x) / width_height_ratio;
 
     connectionPoints[0].position = Speaker_Helper.rotatePointToReference(
-        Speaker_Helper.makeVector_2D(up_left_x + thisHeight / 20, center_y + 3 * height / 8),
-        getPositionCenter(),
-        rotateState);
+                                       Speaker_Helper.makeVector_2D(up_left_x + thisHeight / 20, center_y + 3 * height / 8),
+                                       getPositionCenter(),
+                                       rotateState);
 
     connectionPoints[1].position = Speaker_Helper.rotatePointToReference(
-        Speaker_Helper.makeVector_2D(down_right_x - thisHeight / 20, center_y + 3 * height / 8),
-        getPositionCenter(),
-        rotateState);
+                                       Speaker_Helper.makeVector_2D(down_right_x - thisHeight / 20, center_y + 3 * height / 8),
+                                       getPositionCenter(),
+                                       rotateState);
 }

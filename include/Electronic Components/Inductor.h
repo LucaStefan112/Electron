@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Inductor : public ElectronicComponent{
+class Inductor : public ElectronicComponent
+{
 
 public:
     Inductor();

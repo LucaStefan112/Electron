@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class ConnectionNode : public ElectronicComponent{
+class ConnectionNode : public ElectronicComponent
+{
 
 public:
     ConnectionNode();

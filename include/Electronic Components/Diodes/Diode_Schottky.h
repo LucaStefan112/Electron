@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Diode_Schottky : public ElectronicComponent{
+class Diode_Schottky : public ElectronicComponent
+{
 
 public:
     Diode_Schottky();

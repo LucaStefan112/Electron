@@ -7,21 +7,21 @@
 
 class ResistorsInfo
 {
-    public:
-        ResistorsInfo();
-        
-        Button exit;
+public:
+    ResistorsInfo();
 
-        Potentiometer_Mobile_Contact potentiometer;
-        Resistor_Mobile_Contact_Stop_Position resistorMobileStop;
-        Resistor_Mobile_Contact resistorMobile;
-        Resistor_Variable_Resistance resistorVariableResistance;
-        Resistor resistor;
+    Button exit;
 
-        int window_code;
-        void Show(double w, double h);
-        int WatchClick();
-        int WatchExit();
+    Potentiometer_Mobile_Contact potentiometer;
+    Resistor_Mobile_Contact_Stop_Position resistorMobileStop;
+    Resistor_Mobile_Contact resistorMobile;
+    Resistor_Variable_Resistance resistorVariableResistance;
+    Resistor resistor;
+
+    int window_code;
+    void Show(double w, double h);
+    int WatchClick();
+    int WatchExit();
 };
 
 #endif // RESISTORSINFO_H

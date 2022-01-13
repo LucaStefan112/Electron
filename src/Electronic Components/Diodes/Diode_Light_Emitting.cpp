@@ -2,15 +2,17 @@
 
 Helper Diode_Light_Emitting_Helper;
 
-Diode_Light_Emitting::Diode_Light_Emitting(): ElectronicComponent(200, 100, "Light Emitting Diode", 2){}
+Diode_Light_Emitting::Diode_Light_Emitting(): ElectronicComponent(200, 100, "Light Emitting Diode", 2) {}
 
 //Drawing the component:
-void Diode_Light_Emitting::Show(){
+void Diode_Light_Emitting::Show()
+{
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -78,12 +80,14 @@ void Diode_Light_Emitting::Show(){
     showElements();
 }
 
-void Diode_Light_Emitting::updateConnectionPointsPosition(){
+void Diode_Light_Emitting::updateConnectionPointsPosition()
+{
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -94,12 +98,12 @@ void Diode_Light_Emitting::updateConnectionPointsPosition(){
     double center_yz = center_y + height / 8;
 
     connectionPoints[0].position = Diode_Light_Emitting_Helper.rotatePointToReference(
-        Diode_Light_Emitting_Helper.makeVector_2D(up_left_x + thisHeight / 20, center_yz),
-        getPositionCenter(),
-        rotateState);
+                                       Diode_Light_Emitting_Helper.makeVector_2D(up_left_x + thisHeight / 20, center_yz),
+                                       getPositionCenter(),
+                                       rotateState);
 
     connectionPoints[1].position = Diode_Light_Emitting_Helper.rotatePointToReference(
-        Diode_Light_Emitting_Helper.makeVector_2D(down_right_x - thisHeight / 20, center_yz),
-        getPositionCenter(),
-        rotateState);
+                                       Diode_Light_Emitting_Helper.makeVector_2D(down_right_x - thisHeight / 20, center_yz),
+                                       getPositionCenter(),
+                                       rotateState);
 }

@@ -16,41 +16,38 @@
 
 class NewProjectMenu
 {
-    public:
-        NewProjectMenu();
+public:
+    NewProjectMenu();
 
-        Button save, capacitors, diodes, logicGates, measurements, resistors, sources, switches, transistors, other, exit;
-        Button rotate_l, rotate_r, flip_h, flip_v;
-        Button inc, dec;
-        Button undo, redo;
-        Button box;
-        Button v1, v2, inc_v1, dec_v1, inc_v2, dec_v2;
+    Button save, capacitors, diodes, logicGates, measurements, resistors, sources, switches, transistors, other, exit;
+    Button rotate_l, rotate_r, flip_h, flip_v;
+    Button inc, dec;
+    Button undo, redo;
+    Button box;
+    Button v1, v2, inc_v1, dec_v1, inc_v2, dec_v2;
 
-        Changes changes;
-        Snapshot currentSnapshot;
+    Changes changes;
+    Snapshot currentSnapshot;
 
-        NameFile nameFileMenu;
+    NameFile nameFileMenu;
 
-        bool iscurrentSnapshotelected;
-        ElectronicComponent selectedComponent;
+    int window_code;
+    std::string filepath;
+    //boundaries
+    double rl,rt,rr,rb;
 
-        int window_code;
-        std::string filepath;
-        //boundaries
-        double rl,rt,rr,rb;
+    bool wiring = false;
+    double lastCursorX = -1, lastCursorY = -1;
 
-        bool wiring = false;
-        double lastCursorX = -1, lastCursorY = -1;
+    void Show();
+    void WatchClick();
 
-        void Show();
-        void WatchClick();
+    void drawWiresForComponent(std::string thisComponentCode, bool eraseMode);
 
-        void drawWiresForComponent(std::string thisComponentCode, bool eraseMode);
+    void implementChangeUndo();
+    void implementChangeRedo();
 
-        void implementChangeUndo();
-        void implementChangeRedo();
-
-        void refreshScreen();
+    void refreshScreen();
 };
 
 #endif // NEWPROJECTMENU_H

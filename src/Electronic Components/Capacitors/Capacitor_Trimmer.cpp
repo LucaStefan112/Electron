@@ -2,15 +2,17 @@
 
 Helper Capacitor_Trimmer_Helper;
 
-Capacitor_Trimmer::Capacitor_Trimmer(): ElectronicComponent(200, 50, "Trimmer Capacitor", 2){}
+Capacitor_Trimmer::Capacitor_Trimmer(): ElectronicComponent(200, 50, "Trimmer Capacitor", 2) {}
 
 //Drawing the component:
-void Capacitor_Trimmer::Show(){
+void Capacitor_Trimmer::Show()
+{
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -55,13 +57,15 @@ void Capacitor_Trimmer::Show(){
 }
 
 //Updating the positions of the connection points:
-void Capacitor_Trimmer::updateConnectionPointsPosition(){
+void Capacitor_Trimmer::updateConnectionPointsPosition()
+{
 
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -69,28 +73,32 @@ void Capacitor_Trimmer::updateConnectionPointsPosition(){
     double thisHeight = (down_right_x - up_left_x) / width_height_ratio;
 
     connectionPoints[0].position = Capacitor_Trimmer_Helper.rotatePointToReference(
-        Capacitor_Trimmer_Helper.makeVector_2D(up_left_x + thisHeight / 10, center_y),
-        getPositionCenter(),
-        rotateState);
+                                       Capacitor_Trimmer_Helper.makeVector_2D(up_left_x + thisHeight / 10, center_y),
+                                       getPositionCenter(),
+                                       rotateState);
 
     connectionPoints[1].position = Capacitor_Trimmer_Helper.rotatePointToReference(
-        Capacitor_Trimmer_Helper.makeVector_2D(down_right_x - thisHeight / 10, center_y),
-        getPositionCenter(),
-        rotateState);
+                                       Capacitor_Trimmer_Helper.makeVector_2D(down_right_x - thisHeight / 10, center_y),
+                                       getPositionCenter(),
+                                       rotateState);
 }
 
-void Capacitor_Trimmer::setCapacitance(double thisCapacitance){
+void Capacitor_Trimmer::setCapacitance(double thisCapacitance)
+{
     capacitance = thisCapacitance;
 }
 
-double Capacitor_Trimmer::getCapacitance(){
+double Capacitor_Trimmer::getCapacitance()
+{
     return capacitance;
 }
 
-std::vector<std::pair<std::string, double>> Capacitor_Trimmer::getValues() {
+std::vector<std::pair<std::string, double>> Capacitor_Trimmer::getValues()
+{
     return std::vector<std::pair<std::string, double>> { std::make_pair("capacitance", capacitance) };
 };
 
-void Capacitor_Trimmer::setValue(std::string name, double value) {
+void Capacitor_Trimmer::setValue(std::string name, double value)
+{
     if (name == "capacitance") capacitance = value;
 }

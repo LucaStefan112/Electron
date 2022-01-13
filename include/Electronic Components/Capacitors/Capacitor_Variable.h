@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Capacitor_Variable : public ElectronicComponent{
+class Capacitor_Variable : public ElectronicComponent
+{
 
 private:
     double capacitance = 0;

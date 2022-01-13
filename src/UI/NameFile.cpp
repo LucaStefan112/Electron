@@ -5,7 +5,8 @@ NameFile::NameFile()
 
 }
 
-void NameFile::Show() {
+void NameFile::Show()
+{
     Helper helper;
     DWORD screenWidth = GetSystemMetrics(SM_CXSCREEN);
     DWORD screenHeight = GetSystemMetrics(SM_CYSCREEN);
@@ -29,7 +30,8 @@ void NameFile::Show() {
     int ok = 1;
 }
 
-int NameFile::ListenEvents () {
+int NameFile::ListenEvents ()
+{
     int ok = 1;
     int code = 1;
 
@@ -43,28 +45,40 @@ int NameFile::ListenEvents () {
     memset(path, '\0', 101);
     int pos = 0;
 
-    while(ok) {
+    while(ok)
+    {
         ascii_c = getch();
-        if (ascii_c == 8) { //backspace
-            if (pos > 0) {
+        if (ascii_c == 8)   //backspace
+        {
+            if (pos > 0)
+            {
                 pos--;
                 path[pos] = '\0';
             }
             bar(windowWidth / 4, windowHeight / 2, 3 * windowWidth / 4, windowHeight / 2 + 50);
             outtextxy(letterw, letterh, path);
             this->filename = path;
-        } else if (ascii_c == 13) { // enter
+        }
+        else if (ascii_c == 13)     // enter
+        {
             ok = 0;
-            if (filename.size() == 0) {
+            if (filename.size() == 0)
+            {
                 std::cout << "cannot " << (mode ? "open" : "save") << " file without a name";
                 code = 0;
-            } else {
+            }
+            else
+            {
                 ok = 0;
             }
-        } else if (ascii_c == 27) { // escape
+        }
+        else if (ascii_c == 27)     // escape
+        {
             ok = 0;
             code = 0;
-        } else {
+        }
+        else
+        {
             path[pos++] = (char)(ascii_c);
             path[pos] = '\0';
             outtextxy(letterw, letterh, path);
@@ -77,6 +91,7 @@ int NameFile::ListenEvents () {
     return code;
 }
 
-void NameFile::setMode(int m) {
+void NameFile::setMode(int m)
+{
     mode = m;
 }

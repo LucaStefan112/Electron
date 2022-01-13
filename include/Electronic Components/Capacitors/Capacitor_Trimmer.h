@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Capacitor_Trimmer : public ElectronicComponent{
+class Capacitor_Trimmer : public ElectronicComponent
+{
 
 private:
     double capacitance = 0;

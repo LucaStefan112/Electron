@@ -2,15 +2,17 @@
 
 Helper Diode_Transient_Voltage_Suppression_Helper;
 
-Diode_Transient_Voltage_Suppression::Diode_Transient_Voltage_Suppression(): ElectronicComponent(200, 50, "Transient Voltage Suppression Diode", 2){}
+Diode_Transient_Voltage_Suppression::Diode_Transient_Voltage_Suppression(): ElectronicComponent(200, 50, "Transient Voltage Suppression Diode", 2) {}
 
 //Drawing the component:
-void Diode_Transient_Voltage_Suppression::Show(){
+void Diode_Transient_Voltage_Suppression::Show()
+{
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -56,13 +58,15 @@ void Diode_Transient_Voltage_Suppression::Show(){
     showElements();
 }
 
-void Diode_Transient_Voltage_Suppression::updateConnectionPointsPosition(){
+void Diode_Transient_Voltage_Suppression::updateConnectionPointsPosition()
+{
 
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -70,12 +74,12 @@ void Diode_Transient_Voltage_Suppression::updateConnectionPointsPosition(){
     double thisHeight = (down_right_x - up_left_x) / width_height_ratio;
 
     connectionPoints[0].position = Diode_Transient_Voltage_Suppression_Helper.rotatePointToReference(
-        Diode_Transient_Voltage_Suppression_Helper.makeVector_2D(up_left_x + thisHeight / 10, center_y),
-        getPositionCenter(),
-        rotateState);
+                                       Diode_Transient_Voltage_Suppression_Helper.makeVector_2D(up_left_x + thisHeight / 10, center_y),
+                                       getPositionCenter(),
+                                       rotateState);
 
     connectionPoints[1].position = Diode_Transient_Voltage_Suppression_Helper.rotatePointToReference(
-        Diode_Transient_Voltage_Suppression_Helper.makeVector_2D(down_right_x - thisHeight / 10, center_y),
-        getPositionCenter(),
-        rotateState);
+                                       Diode_Transient_Voltage_Suppression_Helper.makeVector_2D(down_right_x - thisHeight / 10, center_y),
+                                       getPositionCenter(),
+                                       rotateState);
 }

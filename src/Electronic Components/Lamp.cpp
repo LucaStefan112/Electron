@@ -2,15 +2,17 @@
 
 Helper Lamp_Helper;
 
-Lamp::Lamp() : ElectronicComponent(200, 50, "Lamp", 2){}
+Lamp::Lamp() : ElectronicComponent(200, 50, "Lamp", 2) {}
 
 //Drawing the component:
-void Lamp::Show(){
+void Lamp::Show()
+{
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -48,12 +50,14 @@ void Lamp::Show(){
     showElements();
 }
 
-void Lamp::updateConnectionPointsPosition(){
+void Lamp::updateConnectionPointsPosition()
+{
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -61,12 +65,12 @@ void Lamp::updateConnectionPointsPosition(){
     double thisHeight = (down_right_x - up_left_x) / width_height_ratio;
 
     connectionPoints[0].position = Lamp_Helper.rotatePointToReference(
-        Lamp_Helper.makeVector_2D(up_left_x + thisHeight / 10, center_y),
-        getPositionCenter(),
-        rotateState);
+                                       Lamp_Helper.makeVector_2D(up_left_x + thisHeight / 10, center_y),
+                                       getPositionCenter(),
+                                       rotateState);
 
     connectionPoints[1].position = Lamp_Helper.rotatePointToReference(
-        Lamp_Helper.makeVector_2D(down_right_x - thisHeight / 10, center_y),
-        getPositionCenter(),
-        rotateState);
+                                       Lamp_Helper.makeVector_2D(down_right_x - thisHeight / 10, center_y),
+                                       getPositionCenter(),
+                                       rotateState);
 }

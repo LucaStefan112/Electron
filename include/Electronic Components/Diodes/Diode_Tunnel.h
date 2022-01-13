@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Diode_Tunnel : public ElectronicComponent{
+class Diode_Tunnel : public ElectronicComponent
+{
 
 public:
     Diode_Tunnel();

@@ -2,15 +2,17 @@
 
 Helper Source_Voltage_AC_Helper;
 
-Source_Voltage_AC::Source_Voltage_AC() : ElectronicComponent(200, 50, "AC Voltage Source", 2){}
+Source_Voltage_AC::Source_Voltage_AC() : ElectronicComponent(200, 50, "AC Voltage Source", 2) {}
 
 //Drawing the component:
-void Source_Voltage_AC::Show(){
+void Source_Voltage_AC::Show()
+{
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -52,13 +54,15 @@ void Source_Voltage_AC::Show(){
     showElements();
 }
 
-void Source_Voltage_AC::updateConnectionPointsPosition(){
+void Source_Voltage_AC::updateConnectionPointsPosition()
+{
 
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -66,37 +70,43 @@ void Source_Voltage_AC::updateConnectionPointsPosition(){
     double thisHeight = (down_right_x - up_left_x) / width_height_ratio;
 
     connectionPoints[0].position = Source_Voltage_AC_Helper.rotatePointToReference(
-        Source_Voltage_AC_Helper.makeVector_2D(up_left_x + thisHeight / 10, center_y),
-        getPositionCenter(),
-        rotateState);
+                                       Source_Voltage_AC_Helper.makeVector_2D(up_left_x + thisHeight / 10, center_y),
+                                       getPositionCenter(),
+                                       rotateState);
 
     connectionPoints[1].position = Source_Voltage_AC_Helper.rotatePointToReference(
-        Source_Voltage_AC_Helper.makeVector_2D(down_right_x - thisHeight / 10, center_y),
-        getPositionCenter(),
-        rotateState);
+                                       Source_Voltage_AC_Helper.makeVector_2D(down_right_x - thisHeight / 10, center_y),
+                                       getPositionCenter(),
+                                       rotateState);
 }
 
-void Source_Voltage_AC::setVolts(double thisVolts){
+void Source_Voltage_AC::setVolts(double thisVolts)
+{
     volts = thisVolts;
 }
 
-void Source_Voltage_AC::setAmpers(double thisAmpers){
+void Source_Voltage_AC::setAmpers(double thisAmpers)
+{
     ampers = thisAmpers;
 }
 
-double Source_Voltage_AC::getVolts(){
+double Source_Voltage_AC::getVolts()
+{
     return volts;
 }
 
-double Source_Voltage_AC::getAmpers(){
+double Source_Voltage_AC::getAmpers()
+{
     return ampers;
 }
 
-std::vector<std::pair<std::string, double>> Source_Voltage_AC::getValues() {
+std::vector<std::pair<std::string, double>> Source_Voltage_AC::getValues()
+{
     return std::vector<std::pair<std::string, double>> { std::make_pair("volts", volts), std::make_pair("ampers", ampers) };
 };
 
-void Source_Voltage_AC::setValue(std::string name, double value) {
+void Source_Voltage_AC::setValue(std::string name, double value)
+{
     if (name == "volts") volts = value;
     if (name == "ampers") ampers = value;
 }

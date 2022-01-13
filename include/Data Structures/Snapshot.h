@@ -8,7 +8,8 @@
 #include "Electronic Components/ElectronicComponent.h"
 #include "Electronic Components/Electronics.h"
 
-class Snapshot {
+class Snapshot
+{
 private:
     ElectronicComponent* current[100];
     int sizeOfCurrent = 0;
@@ -25,7 +26,6 @@ public:
     ElectronicComponent* getSelectedComponent();
 
     static int nameToCtype(std::string name);
-    static std::string removeSubString(std::string str, std::string subStr);
 
     void saveToStream(std::ostream &stream, int i);
     void saveToFile(std::string filepath);

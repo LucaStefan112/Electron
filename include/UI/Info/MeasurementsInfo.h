@@ -7,17 +7,17 @@
 
 class MeasurementsInfo
 {
-    public:
-        MeasurementsInfo();
-        
-        Button exit;
-        Ammeter ammeter;
-        Voltmeter voltmeter;
+public:
+    MeasurementsInfo();
 
-        int window_code;
-        void Show(double w, double h);
-        int WatchClick();
-        int WatchExit();
+    Button exit;
+    Ammeter ammeter;
+    Voltmeter voltmeter;
+
+    int window_code;
+    void Show(double w, double h);
+    int WatchClick();
+    int WatchExit();
 };
 
 

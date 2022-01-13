@@ -94,7 +94,8 @@ void InfoMenu::WatchClick()
                 ok = 0;
                 screenActive = 0;
             }
-            if (screenActive) {
+            if (screenActive)
+            {
                 setcurrentwindow(this->window_code);
             }
         }

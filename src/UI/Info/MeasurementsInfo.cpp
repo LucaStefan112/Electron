@@ -60,7 +60,7 @@ int MeasurementsInfo::WatchClick()
         delay(200);
     }
 
-   closegraph(this->window_code);
+    closegraph(this->window_code);
     return cType;
 }
 

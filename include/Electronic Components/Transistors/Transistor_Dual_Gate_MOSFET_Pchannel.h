@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Transistor_Dual_Gate_MOSFET_Pchannel : public ElectronicComponent{
+class Transistor_Dual_Gate_MOSFET_Pchannel : public ElectronicComponent
+{
 
 public:
     Transistor_Dual_Gate_MOSFET_Pchannel();

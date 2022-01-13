@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Switch_Thermal_Magnetic_Breaker : public ElectronicComponent{
+class Switch_Thermal_Magnetic_Breaker : public ElectronicComponent
+{
 
 public:
     Switch_Thermal_Magnetic_Breaker();

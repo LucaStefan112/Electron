@@ -2,15 +2,17 @@
 
 Helper Diode_Laser_Helper;
 
-Diode_Laser::Diode_Laser(): ElectronicComponent(200, 100, "Laser Diode", 2){}
+Diode_Laser::Diode_Laser(): ElectronicComponent(200, 100, "Laser Diode", 2) {}
 
 //Drawing the component:
-void Diode_Laser::Show(){
+void Diode_Laser::Show()
+{
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -87,12 +89,14 @@ void Diode_Laser::Show(){
     showElements();
 }
 
-void Diode_Laser::updateConnectionPointsPosition(){
+void Diode_Laser::updateConnectionPointsPosition()
+{
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -103,12 +107,12 @@ void Diode_Laser::updateConnectionPointsPosition(){
     double center_yz = center_y + height / 8;
 
     connectionPoints[0].position = Diode_Laser_Helper.rotatePointToReference(
-        Diode_Laser_Helper.makeVector_2D(up_left_x + thisHeight / 20, center_yz),
-        getPositionCenter(),
-        rotateState);
+                                       Diode_Laser_Helper.makeVector_2D(up_left_x + thisHeight / 20, center_yz),
+                                       getPositionCenter(),
+                                       rotateState);
 
     connectionPoints[1].position = Diode_Laser_Helper.rotatePointToReference(
-        Diode_Laser_Helper.makeVector_2D(down_right_x - thisHeight / 20, center_yz),
-        getPositionCenter(),
-        rotateState);
+                                       Diode_Laser_Helper.makeVector_2D(down_right_x - thisHeight / 20, center_yz),
+                                       getPositionCenter(),
+                                       rotateState);
 }

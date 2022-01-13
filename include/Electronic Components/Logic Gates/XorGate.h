@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class XorGate : public ElectronicComponent{
+class XorGate : public ElectronicComponent
+{
 
 public:
     XorGate();

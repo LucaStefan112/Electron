@@ -39,7 +39,6 @@ void SourcesInfo::Show(double w, double h)
 int SourcesInfo::WatchClick()
 {
     int ok = 1;
-
     int cType = _none;
     while (ok)
     {

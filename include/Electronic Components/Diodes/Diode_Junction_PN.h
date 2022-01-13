@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Diode_Junction_PN : public ElectronicComponent{
+class Diode_Junction_PN : public ElectronicComponent
+{
 
 public:
     Diode_Junction_PN();

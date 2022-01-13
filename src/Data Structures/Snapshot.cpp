@@ -8,14 +8,18 @@
 #include "Electronic Components/ElectronicComponent.h"
 #include "Data Structures/Snapshot.h"
 
-Snapshot::Snapshot() {
-    for(int i = 0; i < 100; i++) {
+Snapshot::Snapshot()
+{
+    for(int i = 0; i < 100; i++)
+    {
         current[i] = NULL;
     }
 }
 
-void Snapshot::addComponent(int cType) {
-    for(int i = 0; i < sizeOfCurrent; i++) {
+void Snapshot::addComponent(int cType)
+{
+    for(int i = 0; i < sizeOfCurrent; i++)
+    {
         current[i]->setOutterBox(false);
     }
 
@@ -84,17 +88,22 @@ void Snapshot::addComponent(int cType) {
     current[sizeOfCurrent++]->setOutterBox(1);
 }
 
-ElectronicComponent* *Snapshot::getComponents() {
+ElectronicComponent* *Snapshot::getComponents()
+{
     return current;
 }
 
-int Snapshot::getComponentsNumber() {
+int Snapshot::getComponentsNumber()
+{
     return sizeOfCurrent;
 }
 
-ElectronicComponent* Snapshot::getComponent(std::string componentCode) {
-    for (int i = 0; i < sizeOfCurrent; i++) {
-        if (current[i]->componentCode == componentCode) {
+ElectronicComponent* Snapshot::getComponent(std::string componentCode)
+{
+    for (int i = 0; i < sizeOfCurrent; i++)
+    {
+        if (current[i]->componentCode == componentCode)
+        {
             return current[i];
         }
     }
@@ -102,7 +111,8 @@ ElectronicComponent* Snapshot::getComponent(std::string componentCode) {
     return NULL;
 }
 
-ElectronicComponent* Snapshot::getSelectedComponent(){
+ElectronicComponent* Snapshot::getSelectedComponent()
+{
     for(int i = 0; i < 100; i++)
         if(current[i])
             if(current[i]->isSelected())
@@ -111,10 +121,14 @@ ElectronicComponent* Snapshot::getSelectedComponent(){
     return NULL;
 }
 
-void Snapshot::removeComponent(std::string component_code) {
-    for (int i = 0; i < sizeOfCurrent; i++) {
-        if (current[i]) {
-            if (current[i]->componentCode == component_code) {
+void Snapshot::removeComponent(std::string component_code)
+{
+    for (int i = 0; i < sizeOfCurrent; i++)
+    {
+        if (current[i])
+        {
+            if (current[i]->componentCode == component_code)
+            {
                 current[i]->Erase();
                 current[i] = NULL;
                 for (int j = i; j < sizeOfCurrent - 1; j++)
@@ -126,15 +140,18 @@ void Snapshot::removeComponent(std::string component_code) {
     }
 }
 
-void Snapshot::reset() {
-    for (int i = 0; i < sizeOfCurrent; i++) {
+void Snapshot::reset()
+{
+    for (int i = 0; i < sizeOfCurrent; i++)
+    {
         current[i] = NULL;
     }
 
     sizeOfCurrent = 0;
 }
 
-void Snapshot::saveToStream(std::ostream &stream, int i) {
+void Snapshot::saveToStream(std::ostream &stream, int i)
+{
     stream << Snapshot::nameToCtype(current[i]->name) << ' ';
     stream << current[i]->getComponentCode() << ' ';
     stream << current[i]->getPositionUpLeft().x << ' ';
@@ -149,17 +166,23 @@ void Snapshot::saveToStream(std::ostream &stream, int i) {
     stream << current[i]->flipped << ' ';
 
     auto values = current[i]->getValues();
-    if (values[0].first == "unsupported") {
+    if (values[0].first == "unsupported")
+    {
         stream << "unsupported 0 unsupported 0 ";
-    } else if (values.size() == 1) {
+    }
+    else if (values.size() == 1)
+    {
         stream << values[0].first << ' ' << values[0].second << " unsupported 0 ";
-    } else {
+    }
+    else
+    {
         stream << values[0].first << ' ' << values[0].second << ' ' << values[1].first << ' ' << values[1].second << ' ';
     }
 
     // todo connections
 
-    for (int j = 0; j < 5; j++) {
+    for (int j = 0; j < 5; j++)
+    {
         stream << current[i]->getConnectionPoints()[j].connectedComponentCode << ' ';
         stream << current[i]->getConnectionPoints()[j].position.x << ' ';
         stream << current[i]->getConnectionPoints()[j].position.y << ' ';
@@ -167,10 +190,12 @@ void Snapshot::saveToStream(std::ostream &stream, int i) {
     }
 }
 
-void Snapshot::saveToFile(std::string filepath) {
+void Snapshot::saveToFile(std::string filepath)
+{
     std::ofstream fout(filepath);
 
-    for (int i = 0; i < sizeOfCurrent; i++) {
+    for (int i = 0; i < sizeOfCurrent; i++)
+    {
         saveToStream(fout, i);
         if (i != sizeOfCurrent - 1) fout << '\n';
     }
@@ -178,7 +203,8 @@ void Snapshot::saveToFile(std::string filepath) {
     fout.close();
 }
 
-void Snapshot::importFromStream(std::istream &stream) {
+void Snapshot::importFromStream(std::istream &stream)
+{
     Helper helper;
     int temp_int;
     double temp_double, temp_x, temp_y;
@@ -228,7 +254,8 @@ void Snapshot::importFromStream(std::istream &stream) {
     stream >> temp_string >> temp_double;
     if (temp_string != "unsupported") component->setValue(temp_string, temp_double);
 
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 5; i++)
+    {
         stream >> component->getConnectionPoints()[i].connectedComponentCode;
         stream >> component->getConnectionPoints()[i].position.x;
         stream >> component->getConnectionPoints()[i].position.y;
@@ -236,10 +263,12 @@ void Snapshot::importFromStream(std::istream &stream) {
     }
 }
 
-void Snapshot::importFromFile(std::string filepath) {
+void Snapshot::importFromFile(std::string filepath)
+{
     std::ifstream fin(filepath);
 
-    while (!fin.eof()) {
+    while (!fin.eof())
+    {
         importFromStream(fin);
         delay(100);
     }
@@ -247,8 +276,10 @@ void Snapshot::importFromFile(std::string filepath) {
     fin.close();
 }
 
-int Snapshot::nameToCtype(std::string name) {
-    std::map<std::string, int> mapping = {
+int Snapshot::nameToCtype(std::string name)
+{
+    std::map<std::string, int> mapping =
+    {
         {"Ceramic Capacitor", _capacitorCeramic},
         {"Electrolytic Capacitor", _capacitorElectrolyt},
         {"Trimmer Capacitor", _capacitorTrimmer},

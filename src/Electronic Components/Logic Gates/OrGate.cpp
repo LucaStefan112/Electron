@@ -2,15 +2,17 @@
 
 Helper OrGate_Helper;
 
-OrGate::OrGate(): ElectronicComponent(200, 50, "Or Gate", 3){}
+OrGate::OrGate(): ElectronicComponent(200, 50, "Or Gate", 3) {}
 
 //Drawing the component:
-void OrGate::Show(){
+void OrGate::Show()
+{
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -56,13 +58,15 @@ void OrGate::Show(){
     showElements();
 }
 
-void OrGate::updateConnectionPointsPosition(){
+void OrGate::updateConnectionPointsPosition()
+{
 
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -70,17 +74,17 @@ void OrGate::updateConnectionPointsPosition(){
     double thisHeight = (down_right_x - up_left_x) / width_height_ratio;
 
     connectionPoints[0].position = OrGate_Helper.rotatePointToReference(
-        OrGate_Helper.makeVector_2D(up_left_x + thisHeight / 10, center_y - height / 4),
-        getPositionCenter(),
-        rotateState);
+                                       OrGate_Helper.makeVector_2D(up_left_x + thisHeight / 10, center_y - height / 4),
+                                       getPositionCenter(),
+                                       rotateState);
 
     connectionPoints[1].position = OrGate_Helper.rotatePointToReference(
-        OrGate_Helper.makeVector_2D(up_left_x + thisHeight / 10, center_y + height / 4),
-        getPositionCenter(),
-        rotateState);
+                                       OrGate_Helper.makeVector_2D(up_left_x + thisHeight / 10, center_y + height / 4),
+                                       getPositionCenter(),
+                                       rotateState);
 
     connectionPoints[2].position = OrGate_Helper.rotatePointToReference(
-        OrGate_Helper.makeVector_2D(down_right_x - thisHeight / 10, center_y),
-        getPositionCenter(),
-        rotateState);
+                                       OrGate_Helper.makeVector_2D(down_right_x - thisHeight / 10, center_y),
+                                       getPositionCenter(),
+                                       rotateState);
 }

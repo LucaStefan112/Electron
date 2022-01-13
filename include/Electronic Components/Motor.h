@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Motor : public ElectronicComponent{
+class Motor : public ElectronicComponent
+{
 
 public:
     Motor();

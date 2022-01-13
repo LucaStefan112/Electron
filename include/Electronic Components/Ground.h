@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Ground : public ElectronicComponent{
+class Ground : public ElectronicComponent
+{
 
 public:
     Ground();

@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Transistor_Single_Connection_Pchannel : public ElectronicComponent{
+class Transistor_Single_Connection_Pchannel : public ElectronicComponent
+{
 
 public:
     Transistor_Single_Connection_Pchannel();

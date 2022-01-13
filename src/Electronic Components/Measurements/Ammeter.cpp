@@ -2,15 +2,17 @@
 
 Helper Ammeter_Helper;
 
-Ammeter::Ammeter() : ElectronicComponent(200, 50, "Ammeter", 2){}
+Ammeter::Ammeter() : ElectronicComponent(200, 50, "Ammeter", 2) {}
 
 //Drawing the component:
-void Ammeter::Show(){
+void Ammeter::Show()
+{
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -52,13 +54,15 @@ void Ammeter::Show(){
     showElements();
 }
 
-void Ammeter::updateConnectionPointsPosition(){
+void Ammeter::updateConnectionPointsPosition()
+{
 
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -66,28 +70,32 @@ void Ammeter::updateConnectionPointsPosition(){
     double thisHeight = (down_right_x - up_left_x) / width_height_ratio;
 
     connectionPoints[0].position = Ammeter_Helper.rotatePointToReference(
-        Ammeter_Helper.makeVector_2D(up_left_x + thisHeight / 10, center_y),
-        getPositionCenter(),
-        rotateState);
+                                       Ammeter_Helper.makeVector_2D(up_left_x + thisHeight / 10, center_y),
+                                       getPositionCenter(),
+                                       rotateState);
 
     connectionPoints[1].position = Ammeter_Helper.rotatePointToReference(
-        Ammeter_Helper.makeVector_2D(down_right_x - thisHeight / 10, center_y),
-        getPositionCenter(),
-        rotateState);
+                                       Ammeter_Helper.makeVector_2D(down_right_x - thisHeight / 10, center_y),
+                                       getPositionCenter(),
+                                       rotateState);
 }
 
-void Ammeter::setCurrent(double thisCurrent){
+void Ammeter::setCurrent(double thisCurrent)
+{
     current = thisCurrent;
 }
 
-double Ammeter::getCurrent(){
+double Ammeter::getCurrent()
+{
     return current;
 }
 
-std::vector<std::pair<std::string, double>> Ammeter::getValues() {
+std::vector<std::pair<std::string, double>> Ammeter::getValues()
+{
     return std::vector<std::pair<std::string, double>> { std::make_pair("current", current) };
 };
 
-void Ammeter::setValue(std::string name, double value) {
+void Ammeter::setValue(std::string name, double value)
+{
     if (name == "current") current = value;
 }

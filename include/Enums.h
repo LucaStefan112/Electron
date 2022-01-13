@@ -1,13 +1,15 @@
 #ifndef ENUMS_H
 #define ENUMS_H
 
-enum PositionType {
+enum PositionType
+{
     up_left,
     center,
     down_right
 };
 
-enum ComponentType {
+enum ComponentType
+{
     _none,
     _capacitorCeramic,
     _capacitorElectrolyt,

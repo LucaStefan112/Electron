@@ -9,15 +9,15 @@
 
 class InfoMenu
 {
-    protected:
-        Button capacitors, diodes, logicGates, measurements, resistors, sources, switches, transistors, other, exit;
-    public:
-        InfoMenu();
+protected:
+    Button capacitors, diodes, logicGates, measurements, resistors, sources, switches, transistors, other, exit;
+public:
+    InfoMenu();
 
-        int window_code;
+    int window_code;
 
-        void Show();
-        void WatchClick();
+    void Show();
+    void WatchClick();
 };
 
 #endif // INFOMENU_H

@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Diode_Transient_Voltage_Suppression : public ElectronicComponent{
+class Diode_Transient_Voltage_Suppression : public ElectronicComponent
+{
 
 public:
     Diode_Transient_Voltage_Suppression();

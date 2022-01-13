@@ -2,15 +2,17 @@
 
 Helper Ground_Helper;
 
-Ground::Ground(): ElectronicComponent(100, 100, "Ground", 1){}
+Ground::Ground(): ElectronicComponent(100, 100, "Ground", 1) {}
 
 //Drawing the component:
-void Ground::Show(){
+void Ground::Show()
+{
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -40,12 +42,14 @@ void Ground::Show(){
     showElements();
 }
 
-void Ground::updateConnectionPointsPosition(){
+void Ground::updateConnectionPointsPosition()
+{
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double center_x = getPositionCenter().x, center_y = getPositionCenter().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
-    if(flipped){
+    if(flipped)
+    {
         up_left_x = getPositionDownRight().x;
         down_right_x = getPositionUpLeft().x;
     }
@@ -53,7 +57,7 @@ void Ground::updateConnectionPointsPosition(){
     double thisHeight = (down_right_x - up_left_x) / width_height_ratio;
 
     connectionPoints[0].position = Ground_Helper.rotatePointToReference(
-        Ground_Helper.makeVector_2D(up_left_x + thisHeight / 20, center_y),
-        getPositionCenter(),
-        rotateState);
+                                       Ground_Helper.makeVector_2D(up_left_x + thisHeight / 20, center_y),
+                                       getPositionCenter(),
+                                       rotateState);
 }

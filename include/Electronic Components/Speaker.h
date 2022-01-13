@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Speaker : public ElectronicComponent{
+class Speaker : public ElectronicComponent
+{
 
 public:
     Speaker();

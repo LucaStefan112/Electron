@@ -15,14 +15,19 @@
 #define DEFAULT_Y 0
 #define PI 3.14159265
 
-class Helper{
+class Helper
+{
 public:
-    struct Vector_2D{double x = DEFAULT_X, y = DEFAULT_Y;};
+    struct Vector_2D
+    {
+        double x = DEFAULT_X, y = DEFAULT_Y;
+    };
 
     Vector_2D makeVector_2D(double x, double y);
     int textSpace(std::string text);
 
-    struct ConnectionPoint{
+    struct ConnectionPoint
+    {
         std::string connectedComponentCode = DEFAULT_CONNECTED_COMPONENT;
         Vector_2D position;
         int connectedIndex = DEFAULT_CONNECTED_INDEX;

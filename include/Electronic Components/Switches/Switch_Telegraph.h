@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Switch_Telegraph : public ElectronicComponent{
+class Switch_Telegraph : public ElectronicComponent
+{
 
 public:
     Switch_Telegraph();

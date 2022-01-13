@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Switch_Open : public ElectronicComponent{
+class Switch_Open : public ElectronicComponent
+{
 
 public:
     Switch_Open();

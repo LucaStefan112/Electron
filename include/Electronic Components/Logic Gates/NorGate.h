@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class NorGate : public ElectronicComponent{
+class NorGate : public ElectronicComponent
+{
 
 public:
     NorGate();

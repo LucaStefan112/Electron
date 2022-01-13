@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class Diode_PIN : public ElectronicComponent{
+class Diode_PIN : public ElectronicComponent
+{
 
 public:
     Diode_PIN();

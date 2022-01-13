@@ -3,7 +3,8 @@
 
 #include "Electronic Components/ElectronicComponent.h"
 
-class NandGate : public ElectronicComponent{
+class NandGate : public ElectronicComponent
+{
 
 public:
     NandGate();
