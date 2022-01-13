@@ -482,6 +482,13 @@ void NewProjectMenu::WatchClick()
                 //Selecting another component:
                 else if (!wiring && currentComponent && isInComponent != -1)
                 {
+                    inc_v1.Hide();
+                    v1.Hide();
+                    dec_v1.Hide();
+                    inc_v2.Hide();
+                    dec_v2.Hide();
+                    v2.Hide();
+                    box.Hide();
                     currentComponent->setOutterBox(false);
                     components[isInComponent]->setOutterBox(true);
                 }
