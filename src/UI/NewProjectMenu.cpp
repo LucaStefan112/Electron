@@ -790,7 +790,7 @@ void NewProjectMenu::Show()
 
     int windowWidth = getwindowwidth();
     int windowHeight = getwindowheight();
-    double BUTTON_WIDTH = (windowWidth - 50) / 10;
+    double BUTTON_WIDTH = (windowWidth - 75) / 10;
 
     this->rl = BUTTON_WIDTH * 2, this->rt = BUTTON_HEIGHT * 3,
           this->rr = windowWidth - BUTTON_WIDTH * 2, this->rb = windowHeight - 3 * BUTTON_HEIGHT;
