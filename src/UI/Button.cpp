@@ -145,7 +145,6 @@ double Button::getHeight()
 
 bool Button::isCursorPointInButton()
 {
-    Helper helper;
     POINT cursorPoint;
     GetCursorPos(&cursorPoint);
 

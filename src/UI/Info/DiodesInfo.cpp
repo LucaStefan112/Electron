@@ -84,9 +84,6 @@ void DiodesInfo::Show(double w, double h)
 int DiodesInfo::WatchClick()
 {
     int ok = 1;
-
-    Helper helper;
-
     int cType = _none;
     while (ok)
     {
