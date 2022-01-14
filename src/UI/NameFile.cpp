@@ -5,6 +5,7 @@ NameFile::NameFile()
 
 }
 
+//daria
 void NameFile::Show()
 {
     Helper helper;
@@ -30,6 +31,7 @@ void NameFile::Show()
     int ok = 1;
 }
 
+//daria
 int NameFile::ListenEvents ()
 {
     int ok = 1;
@@ -59,6 +61,7 @@ int NameFile::ListenEvents ()
             outtextxy(letterw, letterh, path);
             this->filename = path;
         }
+        //andrei
         else if (ascii_c == 13)     // enter
         {
             ok = 0;
@@ -90,6 +93,7 @@ int NameFile::ListenEvents ()
     closegraph(this->window_code);
     return code;
 }
+//andrei
 
 void NameFile::setMode(int m)
 {

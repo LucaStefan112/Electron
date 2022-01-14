@@ -122,6 +122,7 @@ void NewProjectMenu::WatchClick()
                     currentSnapshot.saveToFile(nameFileMenu.filename + ".elc");
                 }
             }
+            //daria
             else if (capacitors.isCursorPointInButton())
             {
                 CapacitorsInfo capacitorsInfo;
@@ -182,6 +183,7 @@ void NewProjectMenu::WatchClick()
                 ok = 0;
             }
             // add component to screen on click
+            //daria
             else if (cType != _none)
             {
                 POINT cursorPoint;
@@ -778,6 +780,7 @@ void NewProjectMenu::WatchClick()
     closegraph(this->window_code);
 }
 
+//daria
 void NewProjectMenu::Show()
 {
     Helper helper;
@@ -790,6 +793,7 @@ void NewProjectMenu::Show()
 
     int windowWidth = getwindowwidth();
     int windowHeight = getwindowheight();
+    //75 is exit size
     double BUTTON_WIDTH = (windowWidth - 75) / 10;
 
     this->rl = BUTTON_WIDTH * 2, this->rt = BUTTON_HEIGHT * 3,

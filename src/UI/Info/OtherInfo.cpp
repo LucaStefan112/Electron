@@ -1,5 +1,6 @@
 #include "UI/Info/OtherInfo.h"
 
+//daria
 OtherInfo::OtherInfo()
 {
     //ctor

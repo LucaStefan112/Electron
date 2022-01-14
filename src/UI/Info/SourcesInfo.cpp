@@ -1,5 +1,6 @@
 #include "UI/Info/SourcesInfo.h"
 
+//daria
 SourcesInfo::SourcesInfo()
 {
     //ctor

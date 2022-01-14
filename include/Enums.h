@@ -1,6 +1,7 @@
 #ifndef ENUMS_H
 #define ENUMS_H
 
+//daria
 enum PositionType
 {
     up_left,

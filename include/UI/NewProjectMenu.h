@@ -14,6 +14,8 @@
 #include "Helper.h"
 #include "Enums.h"
 
+
+//daria
 class NewProjectMenu
 {
 public:

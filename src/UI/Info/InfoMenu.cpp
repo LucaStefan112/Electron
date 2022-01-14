@@ -3,6 +3,7 @@
 
 #define BUTTON_HEIGHT 30
 
+//daria
 InfoMenu::InfoMenu()
 {
     //ctor

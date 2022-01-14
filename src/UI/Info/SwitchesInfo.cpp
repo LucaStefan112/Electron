@@ -1,5 +1,6 @@
 #include "UI/Info/SwitchesInfo.h"
 
+//daria
 SwitchesInfo::SwitchesInfo()
 {
     //ctor

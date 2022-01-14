@@ -1,5 +1,6 @@
 #include "UI/Info/TransistorsInfo.h"
 
+//daria
 TransistorsInfo::TransistorsInfo()
 {
     //ctor

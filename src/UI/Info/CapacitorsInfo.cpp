@@ -1,5 +1,6 @@
 #include "UI/Info/CapacitorsInfo.h"
 
+//daria
 CapacitorsInfo::CapacitorsInfo()
 {
     //ctor

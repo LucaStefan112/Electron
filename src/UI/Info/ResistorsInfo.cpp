@@ -1,5 +1,6 @@
 #include "UI/Info/ResistorsInfo.h"
 
+//daria
 ResistorsInfo::ResistorsInfo()
 {
     //ctor

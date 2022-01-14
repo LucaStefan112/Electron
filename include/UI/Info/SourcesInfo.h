@@ -5,6 +5,7 @@
 #include "Electronic Components/Electronics.h"
 #include "Helper.h"
 
+//daria
 class SourcesInfo
 {
 public:

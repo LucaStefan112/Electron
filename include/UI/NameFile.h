@@ -3,6 +3,7 @@
 
 #include "Helper.h"
 
+//daria
 class NameFile
 {
 public:

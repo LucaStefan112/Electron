@@ -1,5 +1,6 @@
 #include "UI/Info/DiodesInfo.h"
 
+//daria
 DiodesInfo::DiodesInfo()
 {
     //ctor

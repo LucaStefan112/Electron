@@ -9,6 +9,7 @@
 #include "Info/InfoMenu.h"
 #include "Data Structures/Snapshot.h"
 
+//daria
 class MainMenu
 {
 protected:

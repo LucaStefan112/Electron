@@ -192,6 +192,7 @@ void Helper::rotationalOuttextxy(double x, double y, Vector_2D thisReference, ch
     outtextxy(textPosition.x, textPosition.y, text);
 }
 
+//daria
 void Helper::drawWire(Helper::Vector_2D v1, Helper::Vector_2D v2, colors COLOR)
 {
     setcolor(COLOR);

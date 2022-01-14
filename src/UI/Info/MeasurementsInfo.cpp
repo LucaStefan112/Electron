@@ -1,5 +1,6 @@
 #include "UI/Info/MeasurementsInfo.h"
 
+//daria
 MeasurementsInfo::MeasurementsInfo()
 {
     //ctor

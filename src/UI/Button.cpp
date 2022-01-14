@@ -3,6 +3,7 @@
 #include <string>
 #include <sstream>
 
+//daria
 Helper Button_helper;
 
 Button::Button(double thisWidth, double thisHeight, std::string thisTitle)

@@ -8,6 +8,7 @@ MainMenu::MainMenu()
 {
 }
 
+//daria
 void MainMenu::WatchClick()
 {
     int ok = 1;
@@ -25,6 +26,7 @@ void MainMenu::WatchClick()
             }
             else if (openProject.isCursorPointInButton())
             {
+                //andrei
                 nameFileMenu.setMode(1);
                 nameFileMenu.Show();
                 int code = nameFileMenu.ListenEvents();
@@ -57,6 +59,8 @@ void MainMenu::WatchClick()
     closegraph(this->window_code);
 }
 
+
+//daria
 void MainMenu::Show()
 {
     Helper helper;

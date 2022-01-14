@@ -7,6 +7,7 @@
 
 #include "UI/UI.h"
 
+//daria
 class InfoMenu
 {
 protected:

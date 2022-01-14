@@ -1,5 +1,6 @@
 #include "UI/Info/LogicGatesInfo.h"
 
+//daria
 LogicGatesInfo::LogicGatesInfo()
 {
     //ctor
