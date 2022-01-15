@@ -1,5 +1,5 @@
 #include "Electronic Components/Transistors/Transistor_FET_Pchannel.h"
-
+//Tamas Luca-Stefan
 Helper Transistor_FET_Pchannel_Helper;
 
 Transistor_FET_Pchannel::Transistor_FET_Pchannel() : ElectronicComponent(150, 200, "FET P-channel Transistor", 3) {}

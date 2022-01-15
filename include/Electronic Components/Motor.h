@@ -1,6 +1,6 @@
 #ifndef MOTOR_H
 #define MOTOR_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class Motor : public ElectronicComponent

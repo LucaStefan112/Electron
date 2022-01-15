@@ -1,5 +1,5 @@
 #include "Electronic Components/Transistors/Transistor_Bipolar_PNP.h"
-
+//Tamas Luca-Stefan
 Helper Transistor_Bipolar_PNP_Helper;
 
 Transistor_Bipolar_PNP::Transistor_Bipolar_PNP() : ElectronicComponent(150, 200, "Bipolar PNP Transistor", 3) {}

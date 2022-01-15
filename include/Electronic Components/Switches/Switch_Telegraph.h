@@ -1,6 +1,6 @@
 #ifndef SWITCH_TELEGRAPH_H
 #define SWITCH_TELEGRAPH_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class Switch_Telegraph : public ElectronicComponent

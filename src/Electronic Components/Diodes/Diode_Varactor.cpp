@@ -1,5 +1,5 @@
 #include "Electronic Components/Diodes/Diode_Varactor.h"
-
+//Tamas Luca-Stefan
 Helper Diode_Varactor_Helper;
 
 Diode_Varactor::Diode_Varactor(): ElectronicComponent(200, 50, "Varactor Diode", 2) {}

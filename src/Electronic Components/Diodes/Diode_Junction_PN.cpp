@@ -1,5 +1,5 @@
 #include "Electronic Components/Diodes/Diode_Junction_PN.h"
-
+//Tamas Luca-Stefan
 Helper Diode_Junction_PN_Helper;
 
 Diode_Junction_PN::Diode_Junction_PN(): ElectronicComponent(200, 50, "PN Junction Diode", 2) {}

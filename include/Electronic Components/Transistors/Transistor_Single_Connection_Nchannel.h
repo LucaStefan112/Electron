@@ -1,6 +1,6 @@
 #ifndef TRANSISTOR_SINGLE_CONNECTION_NCHANNEL_H
 #define TRANSISTOR_SINGLE_CONNECTION_NCHANNEL_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class Transistor_Single_Connection_Nchannel : public ElectronicComponent

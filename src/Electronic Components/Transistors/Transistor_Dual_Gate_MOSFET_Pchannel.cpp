@@ -1,5 +1,5 @@
 #include "Electronic Components/Transistors/Transistor_Dual_Gate_MOSFET_Pchannel.h"
-
+//Tamas Luca-Stefan
 Helper Transistor_Dual_Gate_MOSFET_Pchannel_Helper;
 
 Transistor_Dual_Gate_MOSFET_Pchannel::Transistor_Dual_Gate_MOSFET_Pchannel() : ElectronicComponent(150, 200, "Dual Gate MOSFET P-channel Transistor", 4) {}

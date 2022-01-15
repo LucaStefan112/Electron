@@ -1,5 +1,5 @@
 #include "Electronic Components/Transistors/Transistor_Inductive_Channel_MOSFET_Pchannel.h"
-
+//Tamas Luca-Stefan
 Helper Transistor_Inductive_Channel_MOSFET_Pchannel_Helper;
 
 Transistor_Inductive_Channel_MOSFET_Pchannel::Transistor_Inductive_Channel_MOSFET_Pchannel() : ElectronicComponent(150, 200, "MOSFET Inductive Channel P-channel Transistor", 3) {}

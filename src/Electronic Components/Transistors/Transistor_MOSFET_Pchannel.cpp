@@ -1,5 +1,5 @@
 #include "Electronic Components/Transistors/Transistor_MOSFET_Pchannel.h"
-
+//Tamas Luca-Stefan
 Helper  Transistor_MOSFET_Pchannel_Helper;
 
 Transistor_MOSFET_Pchannel::Transistor_MOSFET_Pchannel() : ElectronicComponent(150, 200, "MOSFET P-channel Transistor", 3) {}

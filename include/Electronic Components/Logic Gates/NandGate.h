@@ -1,6 +1,6 @@
 #ifndef NANDGATE_H
 #define NANDGATE_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class NandGate : public ElectronicComponent

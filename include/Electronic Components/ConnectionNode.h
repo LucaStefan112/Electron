@@ -1,6 +1,6 @@
 #ifndef CONNECTIONNODE_H
 #define CONNECTIONNODE_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class ConnectionNode : public ElectronicComponent

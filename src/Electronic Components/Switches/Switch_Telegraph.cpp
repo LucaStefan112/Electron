@@ -1,5 +1,5 @@
 #include "Electronic Components/Switches/Switch_Telegraph.h"
-
+//Tamas Luca-Stefan
 Helper Switch_Telegraph_Helper;
 
 Switch_Telegraph::Switch_Telegraph(): ElectronicComponent(200, 50, "Telegraph Switch", 2) {}

@@ -1,5 +1,5 @@
 #include "Electronic Components/Logic Gates/OrGate.h"
-
+//Tamas Luca-Stefan
 Helper OrGate_Helper;
 
 OrGate::OrGate(): ElectronicComponent(200, 50, "Or Gate", 3) {}

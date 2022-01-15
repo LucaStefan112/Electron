@@ -1,5 +1,5 @@
 #include "Electronic Components/Buzzer.h"
-
+//Tamas Luca-Stefan
 Helper Buzzer_Helper;
 
 Buzzer::Buzzer() : ElectronicComponent(100, 100, "Buzzer", 2) {}

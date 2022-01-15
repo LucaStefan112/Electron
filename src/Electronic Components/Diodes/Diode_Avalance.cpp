@@ -1,5 +1,5 @@
 #include "Electronic Components/Diodes/Diode_Avalance.h"
-
+//Tamas Luca-Stefan
 Helper Diode_Avalance_Helper;
 
 Diode_Avalance::Diode_Avalance(): ElectronicComponent(200, 50, "Avalance Diode", 2) {}

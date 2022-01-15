@@ -13,7 +13,7 @@ NewProjectMenu::NewProjectMenu()
 
 void NewProjectMenu::drawWiresForComponent(std::string thisComponentCode, bool eraseMode = false)
 {
-
+    //Tamas Luca-Stefan
     ElectronicComponent *currentComponent = currentSnapshot.getComponent(thisComponentCode);
 
     if (!currentComponent)
@@ -76,6 +76,7 @@ void NewProjectMenu::drawWiresForComponent(std::string thisComponentCode, bool e
 
 void NewProjectMenu::refreshScreen()
 {
+    //Tamas Luca-Stefan
     //Clearing the background:
     setfillstyle(SOLID_FILL, BLACK);
     bar(this->rl + 2, this->rt + 2, this->rr, this->rb);
@@ -447,6 +448,7 @@ void NewProjectMenu::WatchClick()
             //Selecting the component:
             else
             {
+                //Tamas Luca-Stefan
                 POINT cursorPoint;
                 GetCursorPos(&cursorPoint);
                 setcurrentwindow(this->window_code);

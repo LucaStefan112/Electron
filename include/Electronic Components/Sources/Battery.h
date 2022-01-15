@@ -1,6 +1,6 @@
 #ifndef BATTERY_H
 #define BATTERY_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class Battery : public ElectronicComponent

@@ -1,5 +1,5 @@
 #include "Electronic Components/Lamp.h"
-
+//Tamas Luca-Stefan
 Helper Lamp_Helper;
 
 Lamp::Lamp() : ElectronicComponent(200, 50, "Lamp", 2) {}

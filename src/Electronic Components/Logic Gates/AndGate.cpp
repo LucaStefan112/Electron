@@ -1,5 +1,5 @@
 #include "Electronic Components/Logic Gates/AndGate.h"
-
+//Tamas Luca-Stefan
 Helper AndGate_Helper;
 
 AndGate::AndGate(): ElectronicComponent(200, 50, "And Gate", 3) {}

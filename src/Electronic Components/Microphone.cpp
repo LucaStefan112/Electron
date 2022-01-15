@@ -1,5 +1,5 @@
 #include "Electronic Components/Microphone.h"
-
+//Tamas Luca-Stefan
 Helper Microphone_Helper;
 
 Microphone::Microphone() : ElectronicComponent(200, 100, "Microphone", 2) {}

@@ -1,6 +1,6 @@
 #ifndef AMMETER_H
 #define AMMETER_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class Ammeter : public ElectronicComponent

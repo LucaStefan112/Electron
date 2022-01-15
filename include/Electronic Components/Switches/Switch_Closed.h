@@ -1,6 +1,6 @@
 #ifndef SWITCH_CLOSED_H
 #define SWITCH_CLOSED_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class Switch_Closed : public ElectronicComponent

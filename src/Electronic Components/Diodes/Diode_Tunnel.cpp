@@ -1,5 +1,5 @@
 #include "Electronic Components/Diodes/Diode_Tunnel.h"
-
+//Tamas Luca-Stefan
 Helper Diode_Tunnel_Helper;
 
 Diode_Tunnel::Diode_Tunnel(): ElectronicComponent(200, 50, "Tunnel Diode", 2) {}

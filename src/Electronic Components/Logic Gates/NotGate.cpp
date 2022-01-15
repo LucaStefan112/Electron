@@ -1,5 +1,5 @@
 #include "Electronic Components/Logic Gates/NotGate.h"
-
+//Tamas Luca-Stefan
 Helper NotGate_Helper;
 
 NotGate::NotGate(): ElectronicComponent(200, 50, "Not Gate", 2) {}

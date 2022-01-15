@@ -1,5 +1,5 @@
 #include "Electronic Components/ConnectionNode.h"
-
+//Tamas Luca-Stefan
 Helper ConnectionNode_Helper;
 
 ConnectionNode::ConnectionNode() : ElectronicComponent(10, 10, "Connection Node", 1) {}

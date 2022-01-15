@@ -1,6 +1,6 @@
 #ifndef LAMP_H
 #define LAMP_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class Lamp : public ElectronicComponent

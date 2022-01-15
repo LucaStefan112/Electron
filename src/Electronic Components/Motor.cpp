@@ -1,5 +1,5 @@
 #include "Electronic Components/Motor.h"
-
+//Tamas Luca-Stefan
 Helper Motor_Helper;
 
 Motor::Motor(): ElectronicComponent(200, 50, "Motor", 2) {}

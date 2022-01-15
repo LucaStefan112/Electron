@@ -1,5 +1,5 @@
 #include "Electronic Components/Sources/Battery.h"
-
+//Tamas Luca-Stefan
 Helper Battery_Helper;
 
 Battery::Battery(): ElectronicComponent(200, 50, "Battery", 2) {}

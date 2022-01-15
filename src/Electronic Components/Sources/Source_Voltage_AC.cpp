@@ -1,5 +1,5 @@
 #include "Electronic Components/Sources/Source_Voltage_AC.h"
-
+//Tamas Luca-Stefan
 Helper Source_Voltage_AC_Helper;
 
 Source_Voltage_AC::Source_Voltage_AC() : ElectronicComponent(200, 50, "AC Voltage Source", 2) {}

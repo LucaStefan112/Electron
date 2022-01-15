@@ -1,6 +1,6 @@
 #ifndef INDUCTOR_H
 #define INDUCTOR_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class Inductor : public ElectronicComponent

@@ -1,5 +1,5 @@
 #include "Electronic Components/Speaker.h"
-
+//Tamas Luca-Stefan
 Helper Speaker_Helper;
 
 Speaker::Speaker() : ElectronicComponent(200, 100, "Speaker", 2) {}

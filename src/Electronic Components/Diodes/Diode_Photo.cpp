@@ -1,5 +1,5 @@
 #include "Electronic Components/Diodes/Diode_Photo.h"
-
+//Tamas Luca-Stefan
 Helper Diode_Photo_Helper;
 
 Diode_Photo::Diode_Photo(): ElectronicComponent(200, 100, "Photo Diode", 2) {}

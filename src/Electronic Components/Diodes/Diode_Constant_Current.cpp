@@ -1,5 +1,5 @@
 #include "Electronic Components/Diodes/Diode_Constant_Current.h"
-
+//Tamas Luca-Stefan
 Helper Diode_Constant_Current_Helper;
 
 Diode_Constant_Current::Diode_Constant_Current(): ElectronicComponent(200, 50, "Constant Current Diode", 2) {}

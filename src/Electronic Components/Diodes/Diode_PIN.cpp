@@ -1,5 +1,5 @@
 #include "Electronic Components/Diodes/Diode_PIN.h"
-
+//Tamas Luca-Stefan
 Helper Diode_PIN_Helper;
 
 Diode_PIN::Diode_PIN(): ElectronicComponent(200, 50, "PIN Diode", 2) {}

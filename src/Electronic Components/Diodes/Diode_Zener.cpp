@@ -1,5 +1,5 @@
 #include "Electronic Components/Diodes/Diode_Zener.h"
-
+//Tamas Luca-Stefan
 Helper Diode_Zener_Helper;
 
 Diode_Zener::Diode_Zener(): ElectronicComponent(200, 50, "Zener Diode", 2) {}

@@ -1,5 +1,5 @@
 #include "Electronic Components/Diodes/Diode_Gunn.h"
-
+//Tamas Luca-Stefan
 Helper Diode_Gunn_Helper;
 
 Diode_Gunn::Diode_Gunn(): ElectronicComponent(200, 50, "Gunn Diode", 2) {}

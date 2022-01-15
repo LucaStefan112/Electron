@@ -1,5 +1,5 @@
 #include "Electronic Components/Measurements/Voltmeter.h"
-
+//Tamas Luca-Stefan
 Helper Voltmeter_Helper;
 
 Voltmeter::Voltmeter(): ElectronicComponent(200, 50, "Voltmeter", 2) {}

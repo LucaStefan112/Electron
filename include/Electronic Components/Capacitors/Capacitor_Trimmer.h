@@ -1,6 +1,6 @@
 #ifndef CAPACITOR_TRIMMER_H
 #define CAPACITOR_TRIMMER_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class Capacitor_Trimmer : public ElectronicComponent

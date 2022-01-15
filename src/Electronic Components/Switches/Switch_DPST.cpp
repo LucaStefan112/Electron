@@ -1,5 +1,5 @@
 #include "Electronic Components/Switches/Switch_DPST.h"
-
+//Tamas Luca-Stefan
 Helper Switch_DPST_Helper;
 
 Switch_DPST::Switch_DPST(): ElectronicComponent(200, 100, "DPST Switch", 4) {}

@@ -1,6 +1,6 @@
 #ifndef GROUND_H
 #define GROUND_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class Ground : public ElectronicComponent

@@ -1,6 +1,6 @@
 #ifndef DIODE_SHOCKLEY_H
 #define DIODE_SHOCKLEY_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class Diode_Shockley : public ElectronicComponent

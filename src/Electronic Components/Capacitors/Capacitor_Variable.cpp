@@ -1,5 +1,5 @@
 #include "Electronic Components/Capacitors/Capacitor_Variable.h"
-
+//Tamas Luca-Stefan
 Helper Capacitor_Variable_Helper;
 
 Capacitor_Variable::Capacitor_Variable(): ElectronicComponent(200, 50, "Variable Capacitor", 2) {}

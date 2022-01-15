@@ -1,5 +1,5 @@
 #include "Electronic Components/Logic Gates/NorGate.h"
-
+//Tamas Luca-Stefan
 Helper NorGate_Helper;
 
 NorGate::NorGate(): ElectronicComponent(200, 50, "Nor Gate", 3) {}

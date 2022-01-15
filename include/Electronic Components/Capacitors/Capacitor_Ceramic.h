@@ -1,6 +1,6 @@
 #ifndef CAPACITOR_CERAMIC_H
 #define CAPACITOR_CERAMIC_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class Capacitor_Ceramic : public ElectronicComponent

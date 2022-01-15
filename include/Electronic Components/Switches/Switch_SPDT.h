@@ -1,6 +1,6 @@
 #ifndef SWITCH_SPDT_H
 #define SWITCH_SPDT_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class Switch_SPDT : public ElectronicComponent

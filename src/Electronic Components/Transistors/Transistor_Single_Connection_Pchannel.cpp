@@ -1,5 +1,5 @@
 #include "Electronic Components/Transistors/Transistor_Single_Connection_Pchannel.h"
-
+//Tamas Luca-Stefan
 Helper Transistor_Single_Connection_Pchannel_Helper;
 
 Transistor_Single_Connection_Pchannel::Transistor_Single_Connection_Pchannel() : ElectronicComponent(150, 200, "Single Connection P-channel Transistor", 3) {}

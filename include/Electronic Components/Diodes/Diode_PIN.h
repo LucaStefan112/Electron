@@ -1,6 +1,6 @@
 #ifndef DIODE_PIN_H
 #define DIODE_PIN_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class Diode_PIN : public ElectronicComponent

@@ -1,5 +1,5 @@
 #include "Electronic Components/Resistors/Resistor_Mobile_Contact.h"
-
+//Tamas Luca-Stefan
 Helper Resistor_Mobile_Contact_Helper;
 
 Resistor_Mobile_Contact::Resistor_Mobile_Contact(): ElectronicComponent(200, 50, "Mobile Contact Resistor", 2) {}

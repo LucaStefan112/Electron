@@ -4,6 +4,7 @@
 
 Helper::Vector_2D Helper::makeVector_2D(double x, double y)
 {
+    //Tamas Luca-Stefan
     Vector_2D thisVector;
     thisVector.x = x;
     thisVector.y = y;
@@ -17,12 +18,13 @@ int Helper::textSpace(std::string title)
 
 double Helper::distanceBetween(Vector_2D a, Vector_2D b)
 {
+    //Tamas Luca-Stefan
     return sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y));
 }
 
 Helper::Vector_2D Helper::rotatePointToReference(Vector_2D b, Vector_2D a, int degrees)
 {
-
+    //Tamas Luca-Stefan
     if(a.x == b.x && a.y == b.y)  return a;
 
     double defaultAngle = asin(abs(a.y - b.y) / distanceBetween(a, b)) * 180 / PI;
@@ -37,7 +39,7 @@ Helper::Vector_2D Helper::rotatePointToReference(Vector_2D b, Vector_2D a, int d
 
 void Helper::rotationalLine(double x1, double y1, double x2, double y2, Vector_2D thisReference, int degrees)
 {
-
+    //Tamas Luca-Stefan
     Vector_2D linePosition1 = rotatePointToReference(
                                   makeVector_2D(x1, y1),
                                   thisReference,
@@ -52,7 +54,7 @@ void Helper::rotationalLine(double x1, double y1, double x2, double y2, Vector_2
 
 void Helper::rotationalBar(double x1, double y1, double x2, double y2, Vector_2D thisReference, int degrees)
 {
-
+    //Tamas Luca-Stefan
     Vector_2D barPosition1 = rotatePointToReference(
                                  makeVector_2D(x1, y1),
                                  thisReference,
@@ -67,7 +69,7 @@ void Helper::rotationalBar(double x1, double y1, double x2, double y2, Vector_2D
 
 void Helper::rotationalCircle(double x, double y, Vector_2D thisReference, double radius, int degrees)
 {
-
+    //Tamas Luca-Stefan
     Vector_2D circlePosition = rotatePointToReference(
                                    makeVector_2D(x, y),
                                    thisReference,
@@ -78,7 +80,7 @@ void Helper::rotationalCircle(double x, double y, Vector_2D thisReference, doubl
 
 void Helper::rotationalEllipse(double x, double y, Vector_2D thisReference, double D1, double D2, double R1, double R2, int degrees, bool thisFlipped)
 {
-
+    //Tamas Luca-Stefan
     Vector_2D ellipsePosition = rotatePointToReference(
                                     makeVector_2D(x, y),
                                     thisReference,
@@ -125,7 +127,7 @@ void Helper::rotationalEllipse(double x, double y, Vector_2D thisReference, doub
 
 void Helper::rotationalFillPoly(int nr, int* arr, Vector_2D thisReference, int degrees)
 {
-
+    //Tamas Luca-Stefan
     int thisArr[2 * nr];
 
     for(int i = 0; i < nr; i++)
@@ -144,7 +146,7 @@ void Helper::rotationalFillPoly(int nr, int* arr, Vector_2D thisReference, int d
 
 void Helper::rotationalArc(double x, double y, Vector_2D thisReference, double D1, double D2, double R, int degrees, bool thisFlipped)
 {
-
+    //Tamas Luca-Stefan
     Vector_2D arcPosition = rotatePointToReference(
                                 makeVector_2D(x, y),
                                 thisReference,
@@ -183,7 +185,7 @@ void Helper::rotationalArc(double x, double y, Vector_2D thisReference, double D
 
 void Helper::rotationalOuttextxy(double x, double y, Vector_2D thisReference, char* text, int degrees)
 {
-
+    //Tamas Luca-Stefan
     Vector_2D textPosition = rotatePointToReference(
                                  makeVector_2D(x, y),
                                  thisReference,

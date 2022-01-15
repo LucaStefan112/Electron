@@ -1,5 +1,5 @@
 #include "Electronic Components/Transistors/Transistor_Single_Connection_Nchannel.h"
-
+//Tamas Luca-Stefan
 Helper Transistor_Single_Connection_Nchannel_Helper;
 
 Transistor_Single_Connection_Nchannel::Transistor_Single_Connection_Nchannel() : ElectronicComponent(150, 200, "Single Connection N-channel Transistor", 3) {}

@@ -1,5 +1,5 @@
 #include "Electronic Components/Capacitors/Capacitor_Electrolytic.h"
-
+//Tamas Luca-Stefan
 Helper Capacitor_Electrolytic_Helper;
 
 Capacitor_Electrolytic::Capacitor_Electrolytic(): ElectronicComponent(200, 50, "Electrolytic Capacitor", 2) {}

@@ -1,5 +1,5 @@
 #include "Electronic Components/Capacitors/Capacitor_Trimmer.h"
-
+//Tamas Luca-Stefan
 Helper Capacitor_Trimmer_Helper;
 
 Capacitor_Trimmer::Capacitor_Trimmer(): ElectronicComponent(200, 50, "Trimmer Capacitor", 2) {}

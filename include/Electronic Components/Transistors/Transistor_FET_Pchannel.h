@@ -1,6 +1,6 @@
 #ifndef TRANSISTOR_FET_PCHANNEL_H
 #define TRANSISTOR_FET_PCHANNEL_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class Transistor_FET_Pchannel : public ElectronicComponent

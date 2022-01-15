@@ -1,5 +1,5 @@
 #include "Electronic Components/Inductor.h"
-
+//Tamas Luca-Stefan
 Helper Indoctor_Helper;
 
 Inductor::Inductor() : ElectronicComponent(200, 50, "Inductor", 2) {}

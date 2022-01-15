@@ -1,5 +1,5 @@
 #include "Electronic Components/Diodes/Diode_Transient_Voltage_Suppression.h"
-
+//Tamas Luca-Stefan
 Helper Diode_Transient_Voltage_Suppression_Helper;
 
 Diode_Transient_Voltage_Suppression::Diode_Transient_Voltage_Suppression(): ElectronicComponent(200, 50, "Transient Voltage Suppression Diode", 2) {}

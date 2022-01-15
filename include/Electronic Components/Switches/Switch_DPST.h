@@ -1,6 +1,6 @@
 #ifndef SWITCH_DPST_H
 #define SWITCH_DPST_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class Switch_DPST : public ElectronicComponent

@@ -1,5 +1,5 @@
 #include "Electronic Components/Resistors/Resistor_Variable_Resistance.h"
-
+//Tamas Luca-Stefan
 Helper Resistor_Variable_Resistance_Helper;
 
 Resistor_Variable_Resistance::Resistor_Variable_Resistance(): ElectronicComponent(200, 50, "Variable Resistance Resistor", 2) {}

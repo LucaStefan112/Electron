@@ -1,6 +1,6 @@
 #ifndef XORGATE_H
 #define XORGATE_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class XorGate : public ElectronicComponent

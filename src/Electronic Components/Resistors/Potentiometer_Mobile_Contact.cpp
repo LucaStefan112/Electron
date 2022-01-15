@@ -1,5 +1,5 @@
 #include "Electronic Components/Resistors/Potentiometer_Mobile_Contact.h"
-
+//Tamas Luca-Stefan
 Helper Potentiometer_Mobile_Contact_Helper;
 
 Potentiometer_Mobile_Contact::Potentiometer_Mobile_Contact(): ElectronicComponent(200, 50, "Mobile Contact Potentiometer", 3) {}

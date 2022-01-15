@@ -1,5 +1,5 @@
 #include "Electronic Components/Measurements/Ammeter.h"
-
+//Tamas Luca-Stefan
 Helper Ammeter_Helper;
 
 Ammeter::Ammeter() : ElectronicComponent(200, 50, "Ammeter", 2) {}

@@ -1,5 +1,5 @@
 #include "Electronic Components/Diodes/Diode_Laser.h"
-
+//Tamas Luca-Stefan
 Helper Diode_Laser_Helper;
 
 Diode_Laser::Diode_Laser(): ElectronicComponent(200, 100, "Laser Diode", 2) {}

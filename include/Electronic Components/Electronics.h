@@ -1,6 +1,6 @@
 #ifndef ELECTRONICS_H
 #define ELECTRONICS_H
-
+//Tamas Luca-Stefan
 //Header for including all electronic components headers:
 #include "Electronic Components/Ground.h"
 #include "Electronic Components/Inductor.h"

@@ -1,6 +1,6 @@
 #ifndef DIODE_GUNN_H
 #define DIODE_GUNN_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class Diode_Gunn : public ElectronicComponent

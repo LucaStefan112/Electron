@@ -1,5 +1,5 @@
 #include "Electronic Components/Switches/Switch_Thermal_Magnetic_Breaker.h"
-
+//Tamas Luca-Stefan
 Helper Switch_Thermal_Magnetic_Breaker_Helper;
 
 Switch_Thermal_Magnetic_Breaker::Switch_Thermal_Magnetic_Breaker(): ElectronicComponent(200, 50, "Thermal Magnetic Breaker Switch", 2) {}

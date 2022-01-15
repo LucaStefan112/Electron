@@ -1,5 +1,5 @@
 #include "Electronic Components/Ground.h"
-
+//Tamas Luca-Stefan
 Helper Ground_Helper;
 
 Ground::Ground(): ElectronicComponent(100, 100, "Ground", 1) {}

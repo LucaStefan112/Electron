@@ -1,6 +1,6 @@
 #ifndef SOURCE_VOLTAGE_DC_H
 #define SOURCE_VOLTAGE_DC_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class Source_Voltage_DC : public ElectronicComponent

@@ -1,5 +1,5 @@
 #include "Electronic Components/Transistors/Transistor_MOSFET_Nchannel.h"
-
+//Tamas Luca-Stefan
 Helper Transistor_MOSFET_Nchannel_Helper;
 
 Transistor_MOSFET_Nchannel::Transistor_MOSFET_Nchannel() : ElectronicComponent(150, 200, "MOSFET N-channel Transistor", 3) {}

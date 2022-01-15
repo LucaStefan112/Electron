@@ -1,6 +1,6 @@
 #ifndef DIODE_ZENER_H
 #define DIODE_ZENER_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class Diode_Zener : public ElectronicComponent

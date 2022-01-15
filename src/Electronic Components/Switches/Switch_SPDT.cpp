@@ -1,5 +1,5 @@
 #include "Electronic Components/Switches/Switch_SPDT.h"
-
+//Tamas Luca-Stefan
 Helper Switch_SPDT_Helper;
 
 Switch_SPDT::Switch_SPDT(): ElectronicComponent(200, 50, "SPDT Switch", 3) {}

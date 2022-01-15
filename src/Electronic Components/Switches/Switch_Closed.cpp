@@ -1,5 +1,5 @@
 #include "Electronic Components/Switches/Switch_Closed.h"
-
+//Tamas Luca-Stefan
 Helper Switch_Closed_Helper;
 
 Switch_Closed::Switch_Closed(): ElectronicComponent(200, 50, "Closed Switch", 2) {}

@@ -1,5 +1,5 @@
 #include "Electronic Components/Capacitors/Capacitor_Ceramic.h"
-
+//Tamas Luca-Stefan
 Helper Capacitor_Ceramic_Helper;
 
 Capacitor_Ceramic::Capacitor_Ceramic(): ElectronicComponent(200, 50, "Ceramic Capacitor", 2) {}

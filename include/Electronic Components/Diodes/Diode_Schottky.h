@@ -1,6 +1,6 @@
 #ifndef DIODE_SCHOTTKY_H
 #define DIODE_SCHOTTKY_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class Diode_Schottky : public ElectronicComponent

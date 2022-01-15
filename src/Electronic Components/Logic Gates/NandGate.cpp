@@ -1,5 +1,5 @@
 #include "Electronic Components/Logic Gates/NandGate.h"
-
+//Tamas Luca-Stefan
 Helper NandGate_Helper;
 
 NandGate::NandGate(): ElectronicComponent(200, 50, "Nand Gate", 3) {}

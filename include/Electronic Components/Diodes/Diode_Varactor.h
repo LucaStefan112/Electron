@@ -1,6 +1,6 @@
 #ifndef DIODE_VARACTOR_H
 #define DIODE_VARACTOR_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class Diode_Varactor : public ElectronicComponent

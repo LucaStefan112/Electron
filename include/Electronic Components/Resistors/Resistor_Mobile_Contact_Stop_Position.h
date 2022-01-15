@@ -1,6 +1,6 @@
 #ifndef RESISTOR_MOBILE_CONTACT_STOP_POSITION_H
 #define RESISTOR_MOBILE_CONTACT_STOP_POSITION_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class Resistor_Mobile_Contact_Stop_Position : public ElectronicComponent

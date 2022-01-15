@@ -1,5 +1,5 @@
 #include "Electronic Components/Diodes/Diode_Shockley.h"
-
+//Tamas Luca-Stefan
 Helper Diode_Shockley_Helper;
 
 Diode_Shockley::Diode_Shockley(): ElectronicComponent(200, 50, "Shockley Diode", 2) {}

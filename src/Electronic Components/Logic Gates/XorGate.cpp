@@ -1,5 +1,5 @@
 #include "Electronic Components/Logic Gates/XorGate.h"
-
+//Tamas Luca-Stefan
 Helper XorGate_Helper;
 
 XorGate::XorGate(): ElectronicComponent(200, 50, "Xor Gate", 3) {}

@@ -1,6 +1,6 @@
 #ifndef TRANSISTOR_BIPOLAR_PNP_H
 #define TRANSISTOR_BIPOLAR_PNP_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class Transistor_Bipolar_PNP : public ElectronicComponent

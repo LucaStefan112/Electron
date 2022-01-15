@@ -1,5 +1,5 @@
 #include "Electronic Components/Resistors/Resistor.h"
-
+//Tamas Luca-Stefan
 Helper Resistor_Helper;
 
 Resistor::Resistor(): ElectronicComponent(200, 50, "Resistor", 2) {}

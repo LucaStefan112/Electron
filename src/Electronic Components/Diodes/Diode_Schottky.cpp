@@ -1,5 +1,5 @@
 #include "Electronic Components/Diodes/Diode_Schottky.h"
-
+//Tamas Luca-Stefan
 Helper Diode_Schottky_Helper;
 
 Diode_Schottky::Diode_Schottky(): ElectronicComponent(200, 50, "Schottky Diode", 2) {}

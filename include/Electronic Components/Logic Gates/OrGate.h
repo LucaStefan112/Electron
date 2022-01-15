@@ -1,6 +1,6 @@
 #ifndef ORGATE_H
 #define ORGATE_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class OrGate : public ElectronicComponent

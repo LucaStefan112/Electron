@@ -1,6 +1,6 @@
 #ifndef VOLTMETER_H
 #define VOLTMETER_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class Voltmeter : public ElectronicComponent

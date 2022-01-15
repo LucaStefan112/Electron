@@ -1,6 +1,6 @@
 #ifndef NORGATE_H
 #define NORGATE_H
-
+//Tamas Luca-Stefan
 #include "Electronic Components/ElectronicComponent.h"
 
 class NorGate : public ElectronicComponent

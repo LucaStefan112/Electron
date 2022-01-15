@@ -1,5 +1,5 @@
 #include "Electronic Components/Switches/Switch_Open.h"
-
+//Tamas Luca-Stefan
 Helper Switch_Open_Helper;
 
 Switch_Open::Switch_Open(): ElectronicComponent(200, 50, "Open Switch", 2) {}

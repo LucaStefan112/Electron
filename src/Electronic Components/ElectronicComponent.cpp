@@ -4,6 +4,7 @@ Helper ElectronicComponent_helper;
 
 ElectronicComponent::ElectronicComponent(double thisWidth, double thisHeight, std::string thisName, int thisNumberOfConnectionPoints)
 {
+    //Tamas Luca-Stefan
     width = thisWidth;
     height = thisHeight;
     width_height_ratio = thisWidth / thisHeight;
@@ -39,6 +40,7 @@ ElectronicComponent::ElectronicComponent(double thisWidth, double thisHeight, st
 //Setter of the up_left point:
 void ElectronicComponent::setPositionUpLeft(Helper::Vector_2D thisPosition)
 {
+    //Tamas Luca-Stefan
     Erase();
 
     positionType = up_left;
@@ -58,6 +60,7 @@ void ElectronicComponent::setPositionUpLeft(Helper::Vector_2D thisPosition)
 //Setter of the center point:
 void ElectronicComponent::setPositionCenter(Helper::Vector_2D thisPosition)
 {
+    //Tamas Luca-Stefan
     Erase();
 
     positionType = center;
@@ -77,6 +80,7 @@ void ElectronicComponent::setPositionCenter(Helper::Vector_2D thisPosition)
 //Setter of the down_right point:
 void ElectronicComponent::setPositionDownRight(Helper::Vector_2D thisPosition)
 {
+    //Tamas Luca-Stefan
     Erase();
 
     positionType = down_right;
@@ -96,6 +100,7 @@ void ElectronicComponent::setPositionDownRight(Helper::Vector_2D thisPosition)
 //Setter of the width:
 void ElectronicComponent::setWidth(double thisWidth)
 {
+    //Tamas Luca-Stefan
     if(this->name == "Connection Point")    return;
 
     if(thisWidth < 30 || thisWidth > 500)  return;
@@ -135,6 +140,7 @@ void ElectronicComponent::setWidth(double thisWidth)
 //Setter of the height:
 void ElectronicComponent::setHeight(double thisHeight)
 {
+    //Tamas Luca-Stefan
     if(this->name == "Connection Point")    return;
 
     if(thisHeight < 30 || thisHeight > 500)  return;
@@ -175,13 +181,14 @@ void ElectronicComponent::setHeight(double thisHeight)
 //Setter of the component code:
 void ElectronicComponent::setComponentCode(std::string thisComponentCode)
 {
+    //Tamas Luca-Stefan
     componentCode = thisComponentCode;
 }
 
 //Setter of the code of the connected component at a given index:
 void ElectronicComponent::setConnectedComponentCodeAtPoint(int thisPoint, std::string thisComponentCode)
 {
-
+    //Tamas Luca-Stefan
     if(0 <= thisPoint && thisPoint < numberOfConnectionPoints)
         connectionPoints[thisPoint].connectedComponentCode = thisComponentCode;
 }
@@ -189,6 +196,7 @@ void ElectronicComponent::setConnectedComponentCodeAtPoint(int thisPoint, std::s
 // Set red box to the component
 void ElectronicComponent::setOutterBox(bool thisState)
 {
+    //Tamas Luca-Stefan
     Erase();
 
     showOutterBox = thisState;
@@ -198,6 +206,7 @@ void ElectronicComponent::setOutterBox(bool thisState)
 
 void ElectronicComponent::setConnectionPoints(bool thisState)
 {
+    //Tamas Luca-Stefan
     Erase();
 
     showConnectionPoints = thisState;
@@ -208,6 +217,7 @@ void ElectronicComponent::setConnectionPoints(bool thisState)
 //Flipping the component:
 void ElectronicComponent::flipComponent()
 {
+    //Tamas Luca-Stefan
     if(this->name == "Connection Point")    return;
 
     this->Erase();
@@ -222,6 +232,7 @@ void ElectronicComponent::flipComponent()
 //Rotating the component:
 void ElectronicComponent::rotateComponent(int thisDegree)
 {
+    //Tamas Luca-Stefan
     if(this->name == "Connection Point")    return;
 
     Erase();
@@ -235,73 +246,82 @@ void ElectronicComponent::rotateComponent(int thisDegree)
 //Getter of the up_left point:
 Helper::Vector_2D ElectronicComponent::getPositionUpLeft()
 {
+    //Tamas Luca-Stefan
     return ElectronicComponent_helper.makeVector_2D(position.up_left.x, position.up_left.y);
 }
 
 //Getter of the center point:
 Helper::Vector_2D ElectronicComponent::getPositionCenter()
 {
+    //Tamas Luca-Stefan
     return ElectronicComponent_helper.makeVector_2D(position.center.x, position.center.y);
 }
 
 //Getter of the down_right point:
 Helper::Vector_2D ElectronicComponent::getPositionDownRight()
 {
+    //Tamas Luca-Stefan
     return ElectronicComponent_helper.makeVector_2D(position.down_right.x, position.down_right.y);
 }
 
 //Getter of the width:
 double ElectronicComponent::getWidth()
 {
+    //Tamas Luca-Stefan
     return width;
 }
 
 //Getter of the height:
 double ElectronicComponent::getHeight()
 {
+    //Tamas Luca-Stefan
     return height;
 }
 
 //Getter of the component code:
 std::string ElectronicComponent::getComponentCode()
 {
-
+    //Tamas Luca-Stefan
     return componentCode;
 }
 
 //Getter of the number of connecting points:
 int ElectronicComponent::getNumberOfConnectionPoints()
 {
-
+    //Tamas Luca-Stefan
     return numberOfConnectionPoints;
 }
 
 //Getter of the connected component code
 std::string ElectronicComponent::getCodeOfConnectedComponentAtPoint(int thisPoint)
 {
-
+    //Tamas Luca-Stefan
     return connectionPoints[thisPoint].connectedComponentCode;
 }
 
 //Getter of the connection points
 Helper::ConnectionPoint* ElectronicComponent::getConnectionPoints()
 {
+    //Tamas Luca-Stefan
     return connectionPoints;
 }
 
 //Updating the position of the connection points:
 void ElectronicComponent::updateConnectionPointsPosition()
 {
+    //Tamas Luca-Stefan
     if(numberOfConnectionPoints == 0)   return;
 }
 
 //Drawing the component:
 void ElectronicComponent::Show()
-{}
+{
+    //Tamas Luca-Stefan
+}
 
 void ElectronicComponent::showElements(bool modeErase)
 {
-
+    //Tamas Luca-Stefan
     double up_left_x = getPositionUpLeft().x, up_left_y = getPositionUpLeft().y;
     double down_right_x = getPositionDownRight().x, down_right_y = getPositionDownRight().y;
 
@@ -422,6 +442,7 @@ void ElectronicComponent::showElements(bool modeErase)
 //Erasing the component:
 void ElectronicComponent::Erase()
 {
+    //Tamas Luca-Stefan
     setfillstyle(SOLID_FILL, BLACK);
     setcolor(BLACK);
 
@@ -444,6 +465,7 @@ void ElectronicComponent::Erase()
 //Checks if the cursor is on the component
 bool ElectronicComponent::isCursorPointInButton()
 {
+    //Melinte Daria
     POINT cursorPoint;
     GetCursorPos(&cursorPoint);
 
@@ -466,6 +488,7 @@ int ElectronicComponent::getRotationState()
 //Passing trough a string all the data about the component:
 std::string ElectronicComponent::toString()
 {
+    //Tamas Luca-Stefan
     std::string text =  std::string(std::string("Type: ") + name + std::string(" | ")+
                                     std::string("Code: ") + componentCode + std::string(";\n\n") +
                                     std::string("Width: ") + std::to_string(width) + std::string(" | ") +
@@ -501,10 +524,12 @@ std::string ElectronicComponent::toString()
 // [[string, double], [string, double]]
 std::vector<std::pair<std::string, double>> ElectronicComponent::getValues()
 {
+    //Hirbu Andrei
     return std::vector<std::pair<std::string, double>> { std::make_pair("unsupported", 0) };
 }
 
 void ElectronicComponent::setValue(std::string name, double value)
 {
+    //Hirbu Andrei
     return;
 }
