@@ -1,4 +1,4 @@
-# Circuit Designer Desktop App
+# Electron
 This repository contains a desktop application built in C++ using the WinBGIm library, specifically designed for designing and simulating circuit boards and complex circuits. With this application, you can create, visualize, and analyze circuits with ease.
 
 **Features**
